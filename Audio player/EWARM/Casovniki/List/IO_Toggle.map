@@ -1,0 +1,746 @@
+###############################################################################
+#                                                                             #
+# IAR ELF Linker V6.50.3.4676/W32 for ARM               06/Nov/2014  16:34:44 #
+# Copyright 2007-2013 IAR Systems AB.                                         #
+#                                                                             #
+#    Output file  =  C:\Users\Elis\Desktop\IAR projekti\STM32F4-Discovery_FW_ #
+#                    V1.1.0\Project\Mp3 player V4.1\Mp3                       #
+#                    player\EWARM\Casovniki\Exe\IO_Toggle.out                 #
+#    Map file     =  C:\Users\Elis\Desktop\IAR projekti\STM32F4-Discovery_FW_ #
+#                    V1.1.0\Project\Mp3 player V4.1\Mp3                       #
+#                    player\EWARM\Casovniki\List\IO_Toggle.map                #
+#    Command line =  "C:\Users\Elis\Desktop\IAR projekti\STM32F4-Discovery_FW #
+#                    _V1.1.0\Project\Mp3 player V4.1\Mp3                      #
+#                    player\EWARM\Casovniki\Obj\codec.o"                      #
+#                    "C:\Users\Elis\Desktop\IAR projekti\STM32F4-Discovery_FW #
+#                    _V1.1.0\Project\Mp3 player V4.1\Mp3                      #
+#                    player\EWARM\Casovniki\Obj\crystalLcd.o"                 #
+#                    "C:\Users\Elis\Desktop\IAR projekti\STM32F4-Discovery_FW #
+#                    _V1.1.0\Project\Mp3 player V4.1\Mp3                      #
+#                    player\EWARM\Casovniki\Obj\diskio.o"                     #
+#                    "C:\Users\Elis\Desktop\IAR projekti\STM32F4-Discovery_FW #
+#                    _V1.1.0\Project\Mp3 player V4.1\Mp3                      #
+#                    player\EWARM\Casovniki\Obj\fatfs_sd.o"                   #
+#                    "C:\Users\Elis\Desktop\IAR projekti\STM32F4-Discovery_FW #
+#                    _V1.1.0\Project\Mp3 player V4.1\Mp3                      #
+#                    player\EWARM\Casovniki\Obj\ff.o"                         #
+#                    "C:\Users\Elis\Desktop\IAR projekti\STM32F4-Discovery_FW #
+#                    _V1.1.0\Project\Mp3 player V4.1\Mp3                      #
+#                    player\EWARM\Casovniki\Obj\keypad.o"                     #
+#                    "C:\Users\Elis\Desktop\IAR projekti\STM32F4-Discovery_FW #
+#                    _V1.1.0\Project\Mp3 player V4.1\Mp3                      #
+#                    player\EWARM\Casovniki\Obj\main.o"                       #
+#                    "C:\Users\Elis\Desktop\IAR projekti\STM32F4-Discovery_FW #
+#                    _V1.1.0\Project\Mp3 player V4.1\Mp3                      #
+#                    player\EWARM\Casovniki\Obj\misc.o"                       #
+#                    "C:\Users\Elis\Desktop\IAR projekti\STM32F4-Discovery_FW #
+#                    _V1.1.0\Project\Mp3 player V4.1\Mp3                      #
+#                    player\EWARM\Casovniki\Obj\startup_stm32f4xx.o"          #
+#                    "C:\Users\Elis\Desktop\IAR projekti\STM32F4-Discovery_FW #
+#                    _V1.1.0\Project\Mp3 player V4.1\Mp3                      #
+#                    player\EWARM\Casovniki\Obj\stm32f4_discovery.o"          #
+#                    "C:\Users\Elis\Desktop\IAR projekti\STM32F4-Discovery_FW #
+#                    _V1.1.0\Project\Mp3 player V4.1\Mp3                      #
+#                    player\EWARM\Casovniki\Obj\stm32f4xx_dma.o"              #
+#                    "C:\Users\Elis\Desktop\IAR projekti\STM32F4-Discovery_FW #
+#                    _V1.1.0\Project\Mp3 player V4.1\Mp3                      #
+#                    player\EWARM\Casovniki\Obj\stm32f4xx_exti.o"             #
+#                    "C:\Users\Elis\Desktop\IAR projekti\STM32F4-Discovery_FW #
+#                    _V1.1.0\Project\Mp3 player V4.1\Mp3                      #
+#                    player\EWARM\Casovniki\Obj\stm32f4xx_gpio.o"             #
+#                    "C:\Users\Elis\Desktop\IAR projekti\STM32F4-Discovery_FW #
+#                    _V1.1.0\Project\Mp3 player V4.1\Mp3                      #
+#                    player\EWARM\Casovniki\Obj\stm32f4xx_i2c.o"              #
+#                    "C:\Users\Elis\Desktop\IAR projekti\STM32F4-Discovery_FW #
+#                    _V1.1.0\Project\Mp3 player V4.1\Mp3                      #
+#                    player\EWARM\Casovniki\Obj\stm32f4xx_it.o"               #
+#                    "C:\Users\Elis\Desktop\IAR projekti\STM32F4-Discovery_FW #
+#                    _V1.1.0\Project\Mp3 player V4.1\Mp3                      #
+#                    player\EWARM\Casovniki\Obj\stm32f4xx_rcc.o"              #
+#                    "C:\Users\Elis\Desktop\IAR projekti\STM32F4-Discovery_FW #
+#                    _V1.1.0\Project\Mp3 player V4.1\Mp3                      #
+#                    player\EWARM\Casovniki\Obj\stm32f4xx_sdio.o"             #
+#                    "C:\Users\Elis\Desktop\IAR projekti\STM32F4-Discovery_FW #
+#                    _V1.1.0\Project\Mp3 player V4.1\Mp3                      #
+#                    player\EWARM\Casovniki\Obj\stm32f4xx_spi.o"              #
+#                    "C:\Users\Elis\Desktop\IAR projekti\STM32F4-Discovery_FW #
+#                    _V1.1.0\Project\Mp3 player V4.1\Mp3                      #
+#                    player\EWARM\Casovniki\Obj\stm32f4xx_syscfg.o"           #
+#                    "C:\Users\Elis\Desktop\IAR projekti\STM32F4-Discovery_FW #
+#                    _V1.1.0\Project\Mp3 player V4.1\Mp3                      #
+#                    player\EWARM\Casovniki\Obj\syscall.o"                    #
+#                    "C:\Users\Elis\Desktop\IAR projekti\STM32F4-Discovery_FW #
+#                    _V1.1.0\Project\Mp3 player V4.1\Mp3                      #
+#                    player\EWARM\Casovniki\Obj\system_stm32f4xx.o"           #
+#                    "C:\Users\Elis\Desktop\IAR projekti\STM32F4-Discovery_FW #
+#                    _V1.1.0\Project\Mp3 player V4.1\Mp3                      #
+#                    player\EWARM\Casovniki\Obj\tm_stm32f4_delay.o"           #
+#                    "C:\Users\Elis\Desktop\IAR projekti\STM32F4-Discovery_FW #
+#                    _V1.1.0\Project\Mp3 player V4.1\Mp3                      #
+#                    player\EWARM\Casovniki\Obj\tm_stm32f4_fatfs.o"           #
+#                    "C:\Users\Elis\Desktop\IAR projekti\STM32F4-Discovery_FW #
+#                    _V1.1.0\Project\Mp3 player V4.1\Mp3                      #
+#                    player\EWARM\Casovniki\Obj\tm_stm32f4_spi.o"             #
+#                    "C:\Users\Elis\Desktop\IAR projekti\STM32F4-Discovery_FW #
+#                    _V1.1.0\Project\Mp3 player V4.1\Mp3                      #
+#                    player\EWARM\Casovniki\Obj\unicode.o" --redirect         #
+#                    _Printf=_PrintfSmall --redirect _Scanf=_ScanfSmall -o    #
+#                    "C:\Users\Elis\Desktop\IAR projekti\STM32F4-Discovery_FW #
+#                    _V1.1.0\Project\Mp3 player V4.1\Mp3                      #
+#                    player\EWARM\Casovniki\Exe\IO_Toggle.out" --map          #
+#                    "C:\Users\Elis\Desktop\IAR projekti\STM32F4-Discovery_FW #
+#                    _V1.1.0\Project\Mp3 player V4.1\Mp3                      #
+#                    player\EWARM\Casovniki\List\IO_Toggle.map" --config      #
+#                    "C:\Users\Elis\Desktop\IAR projekti\STM32F4-Discovery_FW #
+#                    _V1.1.0\Project\Mp3 player V4.1\Mp3                      #
+#                    player\EWARM\stm32f4xx_flash.icf" --semihosting --entry  #
+#                    __iar_program_start --vfe                                #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__Heap_Handler  = DLMalloc
+__SystemLibrary = DLib
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A1":  place at 0x08000000 { ro section .intvec };
+"P1":  place in [from 0x08000000 to 0x080fffff] { ro };
+"P2":  place in [from 0x20000000 to 0x20020000] { rw, block CSTACK, block HEAP };
+
+  Section            Kind        Address    Size  Object
+  -------            ----        -------    ----  ------
+"A1":                                      0x188
+  .intvec            ro code  0x08000000   0x188  startup_stm32f4xx.o [1]
+                            - 0x08000188   0x188
+
+"P1":                                     0x55b8
+  .text              ro code  0x08000188  0x16d6  ff.o [1]
+  .text              ro code  0x0800185e    0x2e  copy_init3.o [4]
+  .text              ro code  0x0800188c    0x66  ABImemset.o [4]
+  .text              ro code  0x080018f2    0x22  zero_init3.o [4]
+  .text              ro code  0x08001914    0x74  diskio.o [1]
+  .text              ro code  0x08001988   0x514  unicode.o [1]
+  .text              ro code  0x08001e9c   0x5ae  fatfs_sd.o [1]
+  .text              ro code  0x0800244c   0x2e8  tm_stm32f4_spi.o [1]
+  .text              ro code  0x08002734    0xa4  tm_stm32f4_delay.o [1]
+  .text              ro code  0x080027d8   0x140  stm32f4xx_rcc.o [1]
+  .text              ro code  0x08002918    0xaa  stm32f4xx_gpio.o [1]
+  .text              ro code  0x080029c4   0x14e  stm32f4xx_spi.o [1]
+  .text              ro code  0x08002b14  0x1408  dlmalloc.o [3]
+  .text              ro code  0x08003f1c     0x6  abort.o [3]
+  .text              ro code  0x08003f24    0x2c  xgetmemchunk.o [3]
+  .text              ro code  0x08003f50    0x14  exit.o [5]
+  .text              ro code  0x08003f64   0x5f0  crystalLcd.o [1]
+  .text              ro code  0x08004554   0x174  stm32f4xx_i2c.o [1]
+  .text              ro code  0x080046c8   0x524  codec.o [1]
+  .text              ro code  0x08004bec   0x100  stm32f4xx_dma.o [1]
+  .text              ro code  0x08004cec    0x68  misc.o [1]
+  .text              ro code  0x08004d54   0x510  main.o [1]
+  .text              ro code  0x08005264    0x88  keypad.o [1]
+  .text              ro code  0x080052ec     0xc  main.o [1]
+  .text              ro code  0x080052f8    0x42  strcmp.o [4]
+  .text              ro code  0x0800533c    0x36  strlen.o [4]
+  .text              ro code  0x08005374    0x44  strcpy.o [4]
+  .text              ro code  0x080053b8    0x6c  strncpy.o [4]
+  .text              ro code  0x08005424    0xe0  system_stm32f4xx.o [1]
+  .text              ro code  0x08005504    0x28  data_init.o [4]
+  .iar.init_table    const    0x0800552c    0x24  - Linker created -
+  .text              ro code  0x08005550    0x16  cmain.o [4]
+  .text              ro code  0x08005566     0x4  low_level_init.o [3]
+  .text              ro code  0x0800556a     0x4  exit.o [3]
+  .text              ro code  0x08005570     0xa  cexit.o [4]
+  .text              ro code  0x0800557c    0x10  startup_stm32f4xx.o [1]
+  .text              ro code  0x0800558c    0x10  stm32f4xx_it.o [1]
+  .text              ro code  0x0800559c     0xc  cstartup_M.o [4]
+  .text              ro code  0x080055a8     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x080055ac     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x080055b0     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x080055b4     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x080055b8     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x080055bc     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x080055c0     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x080055c4     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x080055c8     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x080055cc     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x080055d0     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x080055d4     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x080055d8     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x080055dc     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x080055e0     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x080055e4     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x080055e8     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x080055ec     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x080055f0     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x080055f4     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x080055f8     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x080055fc     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x08005600     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x08005604     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x08005608     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x0800560c     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x08005610     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x08005614     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x08005618     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x0800561c     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x08005620     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x08005624     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x08005628     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x0800562c     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x08005630     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x08005634     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x08005638     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x0800563c     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x08005640     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x08005644     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x08005648     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x0800564c     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x08005650     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x08005654     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x08005658     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x0800565c     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x08005660     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x08005664     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x08005668     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x0800566c     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x08005670     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x08005674     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x08005678     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x0800567c     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x08005680     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x08005684     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x08005688     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x0800568c     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x08005690     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x08005694     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x08005698     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x0800569c     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x080056a0     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x080056a4     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x080056a8     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x080056ac     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x080056b0     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x080056b4     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x080056b8     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x080056bc     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x080056c0     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x080056c4     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x080056c8     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x080056cc     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x080056d0     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x080056d4     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x080056d8     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x080056dc     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x080056e0     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x080056e4     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x080056e8     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x080056ec     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x080056f0     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x080056f4     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x080056f8     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x080056fc     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x08005700     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x08005704     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x08005708     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x0800570c     0x4  startup_stm32f4xx.o [1]
+  .text              ro code  0x08005710     0x4  startup_stm32f4xx.o [1]
+  .rodata            const    0x08005714     0x0  zero_init3.o [4]
+  .rodata            const    0x08005714     0x0  copy_init3.o [4]
+  Initializer bytes  ro data  0x08005714    0x2c  <for P2 s0>
+                            - 0x08005740  0x55b8
+
+"P2", part 1 of 3:                          0x2c
+  P2 s0                       0x20000000    0x2c  <Init block>
+    .data            inited   0x20000000    0x14  system_stm32f4xx.o [1]
+    .data            inited   0x20000014    0x10  stm32f4xx_rcc.o [1]
+    .data            inited   0x20000024     0x3  codec.o [1]
+    .data            inited   0x20000027     0x2  fatfs_sd.o [1]
+                            - 0x2000002c    0x2c
+
+"P2", part 2 of 3:                        0x5814
+  .bss               zero     0x2000002c  0x2710  main.o [1]
+  .bss               zero     0x2000273c  0x2710  main.o [1]
+  .bss               zero     0x20004e4c   0x388  main.o [1]
+  .bss               zero     0x200051d4   0x224  main.o [1]
+  .bss               zero     0x200053f8   0x200  ff.o [1]
+  .bss               zero     0x200055f8   0x1d4  dlmalloc.o [3]
+  .bss               zero     0x200057cc    0x3c  codec.o [1]
+  .bss               zero     0x20005808    0x18  dlmalloc.o [3]
+  .bss               zero     0x20005820     0xc  ff.o [1]
+  .bss               zero     0x2000582c     0xc  tm_stm32f4_delay.o [1]
+  .bss               zero     0x20005838     0x4  xgetmemchunk.o [3]
+  .bss               zero     0x2000583c     0x1  tm_stm32f4_delay.o [1]
+                            - 0x2000583d  0x5811
+
+"P2", part 3 of 3:                         0xd00
+  CSTACK                      0x20005840   0x900  <Block>
+    CSTACK           uninit   0x20005840   0x900  <Block tail>
+  HEAP                        0x20006140   0x400  <Block>
+    HEAP             uninit   0x20006140   0x400  <Block tail>
+                            - 0x20006540   0xd00
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x5811:
+          0x2000002c  0x5811
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0x2c (107% of destination):
+          0x08005714    0x2c
+    1 destination range, total size 0x29:
+          0x20000000    0x29
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module               ro code  ro data  rw data
+    ------               -------  -------  -------
+C:\Users\Elis\Desktop\IAR projekti\STM32F4-Discovery_FW_V1.1.0\Project\Mp3 player V4.1\Mp3 player\EWARM\Casovniki\Obj: [1]
+    codec.o                1 316        3       63
+    crystalLcd.o           1 520
+    diskio.o                 116
+    fatfs_sd.o             1 454        2        2
+    ff.o                   5 846               524
+    keypad.o                 136
+    main.o                 1 308            21 452
+    misc.o                   104
+    startup_stm32f4xx.o      772
+    stm32f4xx_dma.o          256
+    stm32f4xx_gpio.o         170
+    stm32f4xx_i2c.o          372
+    stm32f4xx_it.o            16
+    stm32f4xx_rcc.o          320       16       16
+    stm32f4xx_spi.o          334
+    system_stm32f4xx.o       224       20       20
+    tm_stm32f4_delay.o       164                13
+    tm_stm32f4_spi.o         744
+    unicode.o              1 300
+    ----------------------------------------------
+    Total:                16 472       41   22 090
+
+command line: [2]
+    ----------------------------------------------
+    Total:
+
+dl7M_tln.a: [3]
+    abort.o                    6
+    dlmalloc.o             5 128               492
+    exit.o                     4
+    low_level_init.o           4
+    xgetmemchunk.o            44                 4
+    ----------------------------------------------
+    Total:                 5 186               496
+
+rt7M_tl.a: [4]
+    ABImemset.o              102
+    cexit.o                   10
+    cmain.o                   22
+    copy_init3.o              46
+    cstartup_M.o              12
+    data_init.o               40
+    strcmp.o                  66
+    strcpy.o                  68
+    strlen.o                  54
+    strncpy.o                108
+    zero_init3.o              34
+    ----------------------------------------------
+    Total:                   562
+
+shb_l.a: [5]
+    exit.o                    20
+    ----------------------------------------------
+    Total:                    20
+
+    Gaps                      16
+    Linker created                     39    3 328
+--------------------------------------------------
+    Grand Total:          22 256       80   25 914
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address    Size  Type      Object
+-----                      -------    ----  ----      ------
+?main                   0x08005551          Code  Gb  cmain.o [4]
+ADC_IRQHandler          0x08005615          Code  Wk  startup_stm32f4xx.o [1]
+AHBPrescTable           0x20000000    0x10  Data  Gb  system_stm32f4xx.o [1]
+APBAHBPrescTable        0x20000014    0x10  Data  Lc  stm32f4xx_rcc.o [1]
+BusFault_Handler        0x08005593     0x2  Code  Gb  stm32f4xx_it.o [1]
+CAN1_RX0_IRQHandler     0x0800561d          Code  Wk  startup_stm32f4xx.o [1]
+CAN1_RX1_IRQHandler     0x08005621          Code  Wk  startup_stm32f4xx.o [1]
+CAN1_SCE_IRQHandler     0x08005625          Code  Wk  startup_stm32f4xx.o [1]
+CAN1_TX_IRQHandler      0x08005619          Code  Wk  startup_stm32f4xx.o [1]
+CAN2_RX0_IRQHandler     0x080056cd          Code  Wk  startup_stm32f4xx.o [1]
+CAN2_RX1_IRQHandler     0x080056d1          Code  Wk  startup_stm32f4xx.o [1]
+CAN2_SCE_IRQHandler     0x080056d5          Code  Wk  startup_stm32f4xx.o [1]
+CAN2_TX_IRQHandler      0x080056c9          Code  Wk  startup_stm32f4xx.o [1]
+CODEC_BASS              0x20000026     0x1  Data  Gb  codec.o [1]
+CODEC_TREBLE            0x20000025     0x1  Data  Gb  codec.o [1]
+CODEC_VOLUME            0x20000024     0x1  Data  Gb  codec.o [1]
+CRYP_IRQHandler         0x08005709          Code  Wk  startup_stm32f4xx.o [1]
+CSTACK$$Base            0x20005840           --   Gb  - Linker created -
+CSTACK$$Limit           0x20006140           --   Gb  - Linker created -
+DCMI_IRQHandler         0x08005705          Code  Wk  startup_stm32f4xx.o [1]
+DMA1_Stream0_IRQHandler
+                        0x080055f9          Code  Wk  startup_stm32f4xx.o [1]
+DMA1_Stream1_IRQHandler
+                        0x080055fd          Code  Wk  startup_stm32f4xx.o [1]
+DMA1_Stream2_IRQHandler
+                        0x08005601          Code  Wk  startup_stm32f4xx.o [1]
+DMA1_Stream3_IRQHandler
+                        0x08005605          Code  Wk  startup_stm32f4xx.o [1]
+DMA1_Stream4_IRQHandler
+                        0x08005609          Code  Wk  startup_stm32f4xx.o [1]
+DMA1_Stream5_IRQHandler
+                        0x0800560d          Code  Wk  startup_stm32f4xx.o [1]
+DMA1_Stream6_IRQHandler
+                        0x08005611          Code  Wk  startup_stm32f4xx.o [1]
+DMA1_Stream7_IRQHandler
+                        0x08004b61    0x24  Code  Gb  codec.o [1]
+DMA2_Stream0_IRQHandler
+                        0x080056ad          Code  Wk  startup_stm32f4xx.o [1]
+DMA2_Stream1_IRQHandler
+                        0x080056b1          Code  Wk  startup_stm32f4xx.o [1]
+DMA2_Stream2_IRQHandler
+                        0x080056b5          Code  Wk  startup_stm32f4xx.o [1]
+DMA2_Stream3_IRQHandler
+                        0x080056b9          Code  Wk  startup_stm32f4xx.o [1]
+DMA2_Stream4_IRQHandler
+                        0x080056bd          Code  Wk  startup_stm32f4xx.o [1]
+DMA2_Stream5_IRQHandler
+                        0x080056dd          Code  Wk  startup_stm32f4xx.o [1]
+DMA2_Stream6_IRQHandler
+                        0x080056e1          Code  Wk  startup_stm32f4xx.o [1]
+DMA2_Stream7_IRQHandler
+                        0x080056e5          Code  Wk  startup_stm32f4xx.o [1]
+DMA_ClearITPendingBit   0x08004cb9    0x1a  Code  Gb  stm32f4xx_dma.o [1]
+DMA_Cmd                 0x08004c3d    0x12  Code  Gb  stm32f4xx_dma.o [1]
+DMA_GetITStatus         0x08004c7b    0x3e  Code  Gb  stm32f4xx_dma.o [1]
+DMA_ITConfig            0x08004c4f    0x2c  Code  Gb  stm32f4xx_dma.o [1]
+DMA_Init                0x08004bed    0x50  Code  Gb  stm32f4xx_dma.o [1]
+DMA_InitStruct          0x200057cc    0x3c  Data  Gb  codec.o [1]
+DebugMon_Handler        0x08005599     0x2  Code  Gb  stm32f4xx_it.o [1]
+Delayms                 0x08002735     0xc  Code  Gb  tm_stm32f4_delay.o [1]
+ETH_IRQHandler          0x080056c1          Code  Wk  startup_stm32f4xx.o [1]
+ETH_WKUP_IRQHandler     0x080056c5          Code  Wk  startup_stm32f4xx.o [1]
+EXTI0_IRQHandler        0x080055e5          Code  Wk  startup_stm32f4xx.o [1]
+EXTI15_10_IRQHandler    0x0800566d          Code  Wk  startup_stm32f4xx.o [1]
+EXTI1_IRQHandler        0x080055e9          Code  Wk  startup_stm32f4xx.o [1]
+EXTI2_IRQHandler        0x080055ed          Code  Wk  startup_stm32f4xx.o [1]
+EXTI3_IRQHandler        0x080055f1          Code  Wk  startup_stm32f4xx.o [1]
+EXTI4_IRQHandler        0x080055f5          Code  Wk  startup_stm32f4xx.o [1]
+EXTI9_5_IRQHandler      0x08005629          Code  Wk  startup_stm32f4xx.o [1]
+ExCvt                   0x08000e30    0x80  Data  Lc  ff.o [1]
+FLASH_IRQHandler        0x080055dd          Code  Wk  startup_stm32f4xx.o [1]
+FPU_IRQHandler          0x08005711          Code  Wk  startup_stm32f4xx.o [1]
+FSMC_IRQHandler         0x0800568d          Code  Wk  startup_stm32f4xx.o [1]
+FatFs                   0x20005824     0x8  Data  Lc  ff.o [1]
+Fsid                    0x20005820     0x2  Data  Lc  ff.o [1]
+GPIO_Init               0x08002919    0x70  Code  Gb  stm32f4xx_gpio.o [1]
+GPIO_PinAFConfig        0x0800299f    0x24  Code  Gb  stm32f4xx_gpio.o [1]
+GPIO_ReadInputDataBit   0x08002989     0xe  Code  Gb  stm32f4xx_gpio.o [1]
+GPIO_ResetBits          0x0800299b     0x4  Code  Gb  stm32f4xx_gpio.o [1]
+GPIO_SetBits            0x08002997     0x4  Code  Gb  stm32f4xx_gpio.o [1]
+HASH_RNG_IRQHandler     0x0800570d          Code  Wk  startup_stm32f4xx.o [1]
+HEAP$$Base              0x20006140           --   Gb  - Linker created -
+HEAP$$Limit             0x20006540           --   Gb  - Linker created -
+HardFault_Handler       0x0800558f     0x2  Code  Gb  stm32f4xx_it.o [1]
+I2C1_ER_IRQHandler      0x0800564d          Code  Wk  startup_stm32f4xx.o [1]
+I2C1_EV_IRQHandler      0x08005649          Code  Wk  startup_stm32f4xx.o [1]
+I2C2_ER_IRQHandler      0x08005655          Code  Wk  startup_stm32f4xx.o [1]
+I2C2_EV_IRQHandler      0x08005651          Code  Wk  startup_stm32f4xx.o [1]
+I2C3_ER_IRQHandler      0x080056f1          Code  Wk  startup_stm32f4xx.o [1]
+I2C3_EV_IRQHandler      0x080056ed          Code  Wk  startup_stm32f4xx.o [1]
+I2C_AcknowledgeConfig   0x0800465d    0x14  Code  Gb  stm32f4xx_i2c.o [1]
+I2C_CheckEvent          0x0800467b    0x1a  Code  Gb  stm32f4xx_i2c.o [1]
+I2C_Cmd                 0x08004611    0x14  Code  Gb  stm32f4xx_i2c.o [1]
+I2C_GenerateSTART       0x08004625    0x14  Code  Gb  stm32f4xx_i2c.o [1]
+I2C_GenerateSTOP        0x08004639    0x14  Code  Gb  stm32f4xx_i2c.o [1]
+I2C_GetFlagStatus       0x08004695    0x34  Code  Gb  stm32f4xx_i2c.o [1]
+I2C_Init                0x08004555    0xb0  Code  Gb  stm32f4xx_i2c.o [1]
+I2C_ReceiveData         0x08004675     0x6  Code  Gb  stm32f4xx_i2c.o [1]
+I2C_Send7bitAddress     0x0800464d    0x10  Code  Gb  stm32f4xx_i2c.o [1]
+I2C_SendData            0x08004671     0x4  Code  Gb  stm32f4xx_i2c.o [1]
+I2S_Cmd                 0x08002ae1    0x14  Code  Gb  stm32f4xx_spi.o [1]
+I2S_Init                0x080029fd    0xac  Code  Gb  stm32f4xx_spi.o [1]
+LfnBuf                  0x200053f8   0x200  Data  Lc  ff.o [1]
+LfnOfs                  0x08000b78    0x10  Data  Lc  ff.o [1]
+MemManage_Handler       0x08005591     0x2  Code  Gb  stm32f4xx_it.o [1]
+NMI_Handler             0x0800558d     0x2  Code  Gb  stm32f4xx_it.o [1]
+NVIC_Init               0x08004ced    0x58  Code  Gb  misc.o [1]
+OTG_FS_IRQHandler       0x080056d9          Code  Wk  startup_stm32f4xx.o [1]
+OTG_FS_WKUP_IRQHandler  0x08005675          Code  Wk  startup_stm32f4xx.o [1]
+OTG_HS_EP1_IN_IRQHandler
+                        0x080056f9          Code  Wk  startup_stm32f4xx.o [1]
+OTG_HS_EP1_OUT_IRQHandler
+                        0x080056f5          Code  Wk  startup_stm32f4xx.o [1]
+OTG_HS_IRQHandler       0x08005701          Code  Wk  startup_stm32f4xx.o [1]
+OTG_HS_WKUP_IRQHandler  0x080056fd          Code  Wk  startup_stm32f4xx.o [1]
+PVD_IRQHandler          0x080055d1          Code  Wk  startup_stm32f4xx.o [1]
+PendSV_Handler          0x0800559b     0x2  Code  Gb  stm32f4xx_it.o [1]
+RCC_AHB1PeriphClockCmd  0x08002899    0x12  Code  Gb  stm32f4xx_rcc.o [1]
+RCC_APB1PeriphClockCmd  0x080028ab    0x12  Code  Gb  stm32f4xx_rcc.o [1]
+RCC_APB2PeriphClockCmd  0x080028bd    0x12  Code  Gb  stm32f4xx_rcc.o [1]
+RCC_GetClocksFreq       0x08002819    0x80  Code  Gb  stm32f4xx_rcc.o [1]
+RCC_GetFlagStatus       0x080028cf    0x22  Code  Gb  stm32f4xx_rcc.o [1]
+RCC_HSEConfig           0x080027d9     0xa  Code  Gb  stm32f4xx_rcc.o [1]
+RCC_IRQHandler          0x080055e1          Code  Wk  startup_stm32f4xx.o [1]
+RCC_PLLI2SCmd           0x08002813     0x6  Code  Gb  stm32f4xx_rcc.o [1]
+RCC_WaitForHSEStartUp   0x080027e3    0x30  Code  Gb  stm32f4xx_rcc.o [1]
+RTC_Alarm_IRQHandler    0x08005671          Code  Wk  startup_stm32f4xx.o [1]
+RTC_WKUP_IRQHandler     0x080055d9          Code  Wk  startup_stm32f4xx.o [1]
+Region$$Table$$Base     0x0800552c           --   Gb  - Linker created -
+Region$$Table$$Limit    0x08005550           --   Gb  - Linker created -
+Reset_Handler           0x0800557d          Code  Wk  startup_stm32f4xx.o [1]
+SDIO_IRQHandler         0x08005691          Code  Wk  startup_stm32f4xx.o [1]
+SPI1_IRQHandler         0x08005659          Code  Wk  startup_stm32f4xx.o [1]
+SPI2_IRQHandler         0x0800565d          Code  Wk  startup_stm32f4xx.o [1]
+SPI3_IRQHandler         0x08005699          Code  Wk  startup_stm32f4xx.o [1]
+SPI_Cmd                 0x08002acd    0x14  Code  Gb  stm32f4xx_spi.o [1]
+SPI_I2S_DMACmd          0x08002af5    0x10  Code  Gb  stm32f4xx_spi.o [1]
+SPI_I2S_GetFlagStatus   0x08002b05     0xe  Code  Gb  stm32f4xx_spi.o [1]
+SPI_Init                0x080029c5    0x38  Code  Gb  stm32f4xx_spi.o [1]
+SPI_StructInit          0x08002ab5    0x18  Code  Gb  stm32f4xx_spi.o [1]
+SVC_Handler             0x08005597     0x2  Code  Gb  stm32f4xx_it.o [1]
+SysTick_Handler         0x0800274d    0x1e  Code  Gb  tm_stm32f4_delay.o [1]
+SystemCoreClock         0x20000010     0x4  Data  Gb  system_stm32f4xx.o [1]
+SystemInit              0x08005425    0xc4  Code  Gb  system_stm32f4xx.o [1]
+TAMP_STAMP_IRQHandler   0x080055d5          Code  Wk  startup_stm32f4xx.o [1]
+TIM1_BRK_TIM9_IRQHandler
+                        0x0800562d          Code  Wk  startup_stm32f4xx.o [1]
+TIM1_CC_IRQHandler      0x08005639          Code  Wk  startup_stm32f4xx.o [1]
+TIM1_TRG_COM_TIM11_IRQHandler
+                        0x08005635          Code  Wk  startup_stm32f4xx.o [1]
+TIM1_UP_TIM10_IRQHandler
+                        0x08005631          Code  Wk  startup_stm32f4xx.o [1]
+TIM2_IRQHandler         0x0800563d          Code  Wk  startup_stm32f4xx.o [1]
+TIM3_IRQHandler         0x08005641          Code  Wk  startup_stm32f4xx.o [1]
+TIM4_IRQHandler         0x08005645          Code  Wk  startup_stm32f4xx.o [1]
+TIM5_IRQHandler         0x08005695          Code  Wk  startup_stm32f4xx.o [1]
+TIM6_DAC_IRQHandler     0x080056a5          Code  Wk  startup_stm32f4xx.o [1]
+TIM7_IRQHandler         0x080056a9          Code  Wk  startup_stm32f4xx.o [1]
+TIM8_BRK_TIM12_IRQHandler
+                        0x08005679          Code  Wk  startup_stm32f4xx.o [1]
+TIM8_CC_IRQHandler      0x08005685          Code  Wk  startup_stm32f4xx.o [1]
+TIM8_TRG_COM_TIM14_IRQHandler
+                        0x08005681          Code  Wk  startup_stm32f4xx.o [1]
+TIM8_UP_TIM13_IRQHandler
+                        0x0800567d          Code  Wk  startup_stm32f4xx.o [1]
+TM_DELAY_Init           0x0800276b    0x48  Code  Gb  tm_stm32f4_delay.o [1]
+TM_DELAY_Initialized    0x2000583c     0x1  Data  Gb  tm_stm32f4_delay.o [1]
+TM_DELAY_SetTime2       0x080027b9     0x6  Code  Gb  tm_stm32f4_delay.o [1]
+TM_DELAY_Time2          0x080027b3     0x6  Code  Gb  tm_stm32f4_delay.o [1]
+TM_FATFS_Detect         0x0800205d    0x14  Code  Gb  fatfs_sd.o [1]
+TM_FATFS_InitPins       0x08001fff    0x52  Code  Gb  fatfs_sd.o [1]
+TM_FATFS_SD_CardType    0x20000028     0x1  Data  Lc  fatfs_sd.o [1]
+TM_FATFS_SD_Stat        0x20000027     0x1  Data  Lc  fatfs_sd.o [1]
+TM_FATFS_SD_disk_initialize
+                        0x08002071   0x118  Code  Gb  fatfs_sd.o [1]
+TM_FATFS_SD_disk_ioctl  0x0800229d   0x18a  Code  Gb  fatfs_sd.o [1]
+TM_FATFS_SD_disk_read   0x080021a3    0x60  Code  Gb  fatfs_sd.o [1]
+TM_FATFS_SD_disk_status
+                        0x08002189    0x1a  Code  Gb  fatfs_sd.o [1]
+TM_FATFS_SD_disk_write  0x0800220b    0x8a  Code  Gb  fatfs_sd.o [1]
+TM_SPI1_Init            0x08002473    0x70  Code  Gb  tm_stm32f4_spi.o [1]
+TM_SPI2_Init            0x080024f7    0xd0  Code  Gb  tm_stm32f4_spi.o [1]
+TM_SPI3_Init            0x08002613    0x70  Code  Gb  tm_stm32f4_spi.o [1]
+TM_SPI_Init             0x0800244d    0x26  Code  Gb  tm_stm32f4_spi.o [1]
+TM_SPI_ReadMulti        0x08002711    0x24  Code  Gb  tm_stm32f4_spi.o [1]
+TM_SPI_Send             0x080026c1    0x30  Code  Gb  tm_stm32f4_spi.o [1]
+TM_SPI_WriteMulti       0x080026f7    0x1a  Code  Gb  tm_stm32f4_spi.o [1]
+TM_Time                 0x20005834     0x4  Data  Lc  tm_stm32f4_delay.o [1]
+TM_Time2                0x2000582c     0x4  Data  Lc  tm_stm32f4_delay.o [1]
+TM_TimingDelay          0x20005830     0x4  Data  Lc  tm_stm32f4_delay.o [1]
+Tbl                     0x080019dc   0x100  Data  Lc  unicode.o [1]
+UART4_IRQHandler        0x0800569d          Code  Wk  startup_stm32f4xx.o [1]
+UART5_IRQHandler        0x080056a1          Code  Wk  startup_stm32f4xx.o [1]
+USART1_IRQHandler       0x08005661          Code  Wk  startup_stm32f4xx.o [1]
+USART2_IRQHandler       0x08005665          Code  Wk  startup_stm32f4xx.o [1]
+USART3_IRQHandler       0x08005669          Code  Wk  startup_stm32f4xx.o [1]
+USART6_IRQHandler       0x080056e9          Code  Wk  startup_stm32f4xx.o [1]
+UsageFault_Handler      0x08005595     0x2  Code  Gb  stm32f4xx_it.o [1]
+WWDG_IRQHandler         0x080055cd          Code  Wk  startup_stm32f4xx.o [1]
+__aeabi_memset          0x0800188d          Code  Gb  ABImemset.o [4]
+__cmain                 0x08005551          Code  Gb  cmain.o [4]
+__data_GetMemChunk      0x08003f25    0x2c  Code  Gb  xgetmemchunk.o [3]
+__exit                  0x08003f51    0x14  Code  Gb  exit.o [5]
+__iar_Memset            0x0800188d          Code  Gb  ABImemset.o [4]
+__iar_Memset_word       0x08001895          Code  Gb  ABImemset.o [4]
+__iar_copy_init3        0x0800185f    0x2e  Code  Gb  copy_init3.o [4]
+__iar_data_init3        0x08005505    0x28  Code  Gb  data_init.o [4]
+__iar_dlfree            0x08003a37   0x4de  Code  Gb  dlmalloc.o [3]
+__iar_dlmalloc          0x0800379b   0x29c  Code  Gb  dlmalloc.o [3]
+__iar_program_start     0x0800559d          Code  Gb  cstartup_M.o [4]
+__iar_strcmp            0x080052f9          Code  Gb  strcmp.o [4]
+__iar_zero_init3        0x080018f3    0x22  Code  Gb  zero_init3.o [4]
+__low_level_init        0x08005567     0x4  Code  Gb  low_level_init.o [3]
+__vector_table          0x08000000          Data  Gb  startup_stm32f4xx.o [1]
+_call_main              0x0800555d          Code  Gb  cmain.o [4]
+_exit                   0x08005571          Code  Gb  cexit.o [4]
+_gm_                    0x200055f8   0x1d4  Data  Lc  dlmalloc.o [3]
+_main                   0x08005563          Code  Gb  cmain.o [4]
+abort                   0x08003f1d     0x6  Code  Gb  abort.o [3]
+audio_sample_buffer_one
+                        0x2000002c  0x2710  Data  Gb  main.o [1]
+audio_sample_buffer_two
+                        0x2000273c  0x2710  Data  Gb  main.o [1]
+buffer1Length           0x20004e50     0x2  Data  Gb  main.o [1]
+buffer2Length           0x20004e52     0x2  Data  Gb  main.o [1]
+check_fs                0x08000f5f    0x66  Code  Lc  ff.o [1]
+chk_chr                 0x080001ab    0x12  Code  Lc  ff.o [1]
+clust2sect              0x080002f5    0x18  Code  Gb  ff.o [1]
+create_chain            0x08000509    0x98  Code  Lc  ff.o [1]
+create_name             0x08000c51   0x1d0  Code  Lc  ff.o [1]
+currentSongIndex        0x20004e78     0x4  Data  Gb  main.o [1]
+decreaseBass            0x08004ad9    0x16  Code  Gb  codec.o [1]
+decreaseTreble          0x08004aa7     0xe  Code  Gb  codec.o [1]
+decreaseVolume          0x08004b07    0x12  Code  Gb  codec.o [1]
+delay                   0x08004541    0x14  Code  Gb  crystalLcd.o [1]
+delayCodec              0x08004bd9    0x14  Code  Gb  codec.o [1]
+deselect                0x08001ec9     0xc  Code  Lc  fatfs_sd.o [1]
+dir                     0x200050b0    0x24  Data  Gb  main.o [1]
+dir_alloc               0x080006ef    0x3e  Code  Lc  ff.o [1]
+dir_find                0x080007f5   0x12c  Code  Lc  ff.o [1]
+dir_next                0x0800060f    0xce  Code  Lc  ff.o [1]
+dir_read                0x08000927    0xee  Code  Lc  ff.o [1]
+dir_register            0x08000a1b   0x15c  Code  Lc  ff.o [1]
+dir_sdi                 0x080005a1    0x6e  Code  Lc  ff.o [1]
+disk_initialize         0x08001915     0xe  Code  Gb  diskio.o [1]
+disk_ioctl              0x08001967    0x18  Code  Gb  diskio.o [1]
+disk_read               0x08001931    0x1a  Code  Gb  diskio.o [1]
+disk_status             0x08001923     0xe  Code  Gb  diskio.o [1]
+disk_write              0x0800194b    0x1c  Code  Gb  diskio.o [1]
+exit                    0x0800556b     0x4  Code  Gb  exit.o [3]
+f_close                 0x08001637    0x18  Code  Gb  ff.o [1]
+f_closedir              0x080017d3    0x10  Code  Gb  ff.o [1]
+f_lseek                 0x0800164f   0x11c  Code  Gb  ff.o [1]
+f_mount                 0x080012d9    0x4e  Code  Gb  ff.o [1]
+f_open                  0x08001327   0x132  Code  Gb  ff.o [1]
+f_opendir               0x08001777    0x5c  Code  Gb  ff.o [1]
+f_read                  0x08001459   0x130  Code  Gb  ff.o [1]
+f_readdir               0x080017e3    0x48  Code  Gb  ff.o [1]
+f_sync                  0x080015a5    0x92  Code  Gb  ff.o [1]
+fatfs                   0x20004e80   0x230  Data  Gb  main.o [1]
+ff_convert              0x08001989    0x36  Code  Gb  unicode.o [1]
+ff_wtoupper             0x080019bf    0x1e  Code  Gb  unicode.o [1]
+fil                     0x200051d4   0x224  Data  Gb  main.o [1]
+find_volume             0x08000fc5   0x2e6  Code  Lc  ff.o [1]
+fno                     0x20004e54    0x20  Data  Gb  main.o [1]
+follow_path             0x08000eb9    0x60  Code  Lc  ff.o [1]
+gen_numname             0x0800075d    0x7c  Code  Lc  ff.o [1]
+getMode                 0x080052c9     0x4  Code  Gb  keypad.o [1]
+getNextChunk            0x0800517b    0x4a  Code  Gb  main.o [1]
+getNextInc              0x080052dd     0x8  Code  Gb  keypad.o [1]
+getNumSongs             0x08005039    0x78  Code  Gb  main.o [1]
+getPlayPause            0x080052cd     0x2  Code  Gb  keypad.o [1]
+getPrevInc              0x080052d9     0x4  Code  Gb  keypad.o [1]
+getSongs                0x080050b1    0x8c  Code  Gb  main.o [1]
+getStop                 0x080052d5     0x4  Code  Gb  keypad.o [1]
+get_fat                 0x0800030d    0xb8  Code  Gb  ff.o [1]
+get_fattime             0x0800197f     0x4  Code  Gb  diskio.o [1]
+get_fileinfo            0x08000b93    0xbe  Code  Lc  ff.o [1]
+get_ldnumber            0x08000f21    0x3e  Code  Lc  ff.o [1]
+increaseBass            0x08004ac3    0x16  Code  Gb  codec.o [1]
+increaseTreble          0x08004a99     0xe  Code  Gb  codec.o [1]
+increaseVolume          0x08004aef    0x18  Code  Gb  codec.o [1]
+initCodec               0x080048a9    0xcc  Code  Gb  codec.o [1]
+initCodecPeriph         0x080046c9   0x1ce  Code  Gb  codec.o [1]
+initKeypad              0x08005265    0x5a  Code  Gb  keypad.o [1]
+initLcd                 0x08003fef    0x42  Code  Gb  crystalLcd.o [1]
+initLcdPeriph           0x08003f65    0x8a  Code  Gb  crystalLcd.o [1]
+init_mparams            0x08002b2f    0x34  Code  Lc  dlmalloc.o [3]
+init_top                0x08002b63    0x34  Code  Lc  dlmalloc.o [3]
+ld_clust                0x0800072d    0x1e  Code  Lc  ff.o [1]
+lfn                     0x200050d4   0x100  Data  Gb  main.o [1]
+main                    0x08004d55   0x2ca  Code  Gb  main.o [1]
+mem_cpy                 0x08000189    0x14  Code  Lc  ff.o [1]
+mem_set                 0x0800019d     0xe  Code  Lc  ff.o [1]
+mode                    0x20004e4d     0x1  Data  Gb  main.o [1]
+move_window             0x08000201    0x2e  Code  Lc  ff.o [1]
+mparams                 0x20005808    0x18  Data  Lc  dlmalloc.o [3]
+needAnotherChunk        0x20004e4c     0x1  Data  Gb  main.o [1]
+numberOfSongs           0x20004e74     0x4  Data  Gb  main.o [1]
+openFile                0x08005221    0x26  Code  Gb  main.o [1]
+pauseResume             0x08004b55     0xc  Code  Gb  codec.o [1]
+play                    0x08004b2d    0x28  Code  Gb  codec.o [1]
+playAudio               0x080051c5    0x56  Code  Gb  main.o [1]
+playermode              0x20004e4e     0x1  Data  Gb  main.o [1]
+prepend_alloc           0x08002b97   0x320  Code  Lc  dlmalloc.o [3]
+put_fat                 0x080003c5    0xda  Code  Gb  ff.o [1]
+rcvr_datablock          0x08001ef9    0x42  Code  Lc  fatfs_sd.o [1]
+readRegDac              0x080049e7    0xa0  Code  Gb  codec.o [1]
+remove_chain            0x080004a9    0x5a  Code  Lc  ff.o [1]
+resetCodec              0x08004b85     0x8  Code  Gb  codec.o [1]
+segment_holding         0x08002b15    0x1a  Code  Lc  dlmalloc.o [3]
+select                  0x08001ed5    0x24  Code  Lc  fatfs_sd.o [1]
+selectedBuffer          0x20004e4f     0x1  Data  Gb  main.o [1]
+sendChar                0x080040d5    0x56  Code  Gb  crystalLcd.o [1]
+sendCharOn              0x08004153    0x42  Code  Gb  crystalLcd.o [1]
+sendCmd                 0x08004061    0x5c  Code  Gb  crystalLcd.o [1]
+sendCmdDac              0x08004975    0x6a  Code  Gb  codec.o [1]
+send_cmd                0x08001f83    0x7c  Code  Lc  fatfs_sd.o [1]
+setNextSong             0x08005147    0x18  Code  Gb  main.o [1]
+setPreviousSong         0x0800515f    0x1c  Code  Gb  main.o [1]
+songs                   0x20004e7c     0x4  Data  Gb  main.o [1]
+st_clust                0x0800074b    0x12  Code  Lc  ff.o [1]
+startI2C                0x08004031    0x30  Code  Gb  crystalLcd.o [1]
+strcmp                  0x080052f9          Code  Gb  strcmp.o [4]
+strcpy                  0x08005375          Code  Gb  strcpy.o [4]
+strlen                  0x0800533d          Code  Gb  strlen.o [4]
+strncpy                 0x080053b9          Code  Gb  strncpy.o [4]
+sum_sfn                 0x080007d9    0x1c  Code  Lc  ff.o [1]
+sync_fs                 0x0800022f    0xc6  Code  Lc  ff.o [1]
+sync_window             0x080001bd    0x36  Code  Lc  ff.o [1]
+sys_alloc               0x08002eb7   0x34e  Code  Lc  dlmalloc.o [3]
+tmalloc_large           0x08003211   0x37e  Code  Lc  dlmalloc.o [3]
+tmalloc_small           0x0800358f   0x1f8  Code  Lc  dlmalloc.o [3]
+tolower                 0x080052ed     0xc  Code  Gb  main.o [1]
+validate                0x080012ab    0x2e  Code  Lc  ff.o [1]
+wait_ready              0x08001ea7    0x22  Code  Lc  fatfs_sd.o [1]
+writeBassDcrs           0x08004461    0x20  Code  Gb  crystalLcd.o [1]
+writeBassIncr           0x08004431    0x20  Code  Gb  crystalLcd.o [1]
+writeMode               0x08004195   0x16a  Code  Gb  crystalLcd.o [1]
+writeNext               0x080044fd    0x24  Code  Gb  crystalLcd.o [1]
+writePause              0x080044b3    0x1e  Code  Gb  crystalLcd.o [1]
+writePlay               0x08004491    0x1a  Code  Gb  crystalLcd.o [1]
+writePrev               0x08004529    0x18  Code  Gb  crystalLcd.o [1]
+writeStop               0x080044d9    0x24  Code  Gb  crystalLcd.o [1]
+writeTrebDcrs           0x080043f7    0x2a  Code  Gb  crystalLcd.o [1]
+writeTrebIncr           0x0800439d    0x1a  Code  Gb  crystalLcd.o [1]
+writeVolDcrs            0x08004361    0x2c  Code  Gb  crystalLcd.o [1]
+writeVolIncr            0x08004337    0x1a  Code  Gb  crystalLcd.o [1]
+xchg_spi                0x08001e9d     0xa  Code  Lc  fatfs_sd.o [1]
+xmit_datablock          0x08001f3b    0x44  Code  Lc  fatfs_sd.o [1]
+
+
+[1] = C:\Users\Elis\Desktop\IAR projekti\STM32F4-Discovery_FW_V1.1.0\Project\Mp3 player V4.1\Mp3 player\EWARM\Casovniki\Obj
+[2] = command line
+[3] = dl7M_tln.a
+[4] = rt7M_tl.a
+[5] = shb_l.a
+
+  22 256 bytes of readonly  code memory
+      80 bytes of readonly  data memory
+  25 914 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

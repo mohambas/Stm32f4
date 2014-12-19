@@ -1,0 +1,10 @@
+#define FATFS_SPI							SPI1
+#define FATFS_SPI_PINSPACK					TM_SPI_PinsPack_1
+#define FATFS_CS_RCC						RCC_AHB1Periph_GPIOC
+#define FATFS_CS_PORT						GPIOC
+#define FATFS_CS_PIN						GPIO_Pin_4
+#define FATFS_USE_DETECT_PIN                1
+#define FATFS_USE_DETECT_PIN_RCC			RCC_AHB1Periph_GPIOC
+#define FATFS_USE_DETECT_PIN_PORT			GPIOC
+#define FATFS_USE_DETECT_PIN_PIN			GPIO_Pin_5
+#define FATFS_USE_SDIO		                0

@@ -1,0 +1,3304 @@
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m4
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 2
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"gwin_image.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text._redraw,"ax",%progbits
+  19              		.align	2
+  20              		.p2align 4,,15
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	_redraw, %function
+  24              	_redraw:
+  25              	.LFB119:
+  26              		.file 1 "../../ugfx/src/gwin/gwin_image.c"
+  27              		.loc 1 32 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 8
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              	.LVL0:
+  32 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, sl, fp, lr}
+  33              	.LCFI0:
+  34              		.cfi_def_cfa_offset 36
+  35              		.cfi_offset 4, -36
+  36              		.cfi_offset 5, -32
+  37              		.cfi_offset 6, -28
+  38              		.cfi_offset 7, -24
+  39              		.cfi_offset 8, -20
+  40              		.cfi_offset 9, -16
+  41              		.cfi_offset 10, -12
+  42              		.cfi_offset 11, -8
+  43              		.cfi_offset 14, -4
+  44 0004 87B0     		sub	sp, sp, #28
+  45              	.LCFI1:
+  46              		.cfi_def_cfa_offset 64
+  47              		.loc 1 49 0
+  48 0006 00F12405 		add	r5, r0, #36
+  49              		.loc 1 32 0
+  50 000a 0446     		mov	r4, r0
+  51              		.loc 1 42 0
+  52 000c B0F80CA0 		ldrh	sl, [r0, #12]
+  53              	.LVL1:
+  54              		.loc 1 43 0
+  55 0010 B0F80E80 		ldrh	r8, [r0, #14]
+  56              	.LVL2:
+  57              		.loc 1 44 0
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 2
+
+
+  58 0014 078A     		ldrh	r7, [r0, #16]
+  59              	.LVL3:
+  60              		.loc 1 45 0
+  61 0016 468A     		ldrh	r6, [r0, #18]
+  62              	.LVL4:
+  63              		.loc 1 46 0
+  64 0018 FFF7FEFF 		bl	gwinGetDefaultBgColor
+  65              	.LVL5:
+  66 001c 8146     		mov	r9, r0
+  67              	.LVL6:
+  68              		.loc 1 49 0
+  69 001e 2846     		mov	r0, r5
+  70              	.LVL7:
+  71 0020 FFF7FEFF 		bl	gdispImageIsOpen
+  72              	.LVL8:
+  73 0024 0028     		cmp	r0, #0
+  74 0026 00F08880 		beq	.L19
+  75              		.loc 1 55 0
+  76 002a B4F82AB0 		ldrh	fp, [r4, #42]
+  77 002e 3FB2     		sxth	r7, r7
+  78              	.LVL9:
+  79 0030 0FFA8BF3 		sxth	r3, fp
+  80 0034 9F42     		cmp	r7, r3
+  81 0036 49DC     		bgt	.L20
+  82              		.loc 1 71 0
+  83 0038 B4F82CB0 		ldrh	fp, [r4, #44]
+  84              		.loc 1 67 0
+  85 003c BCBF     		itt	lt
+  86 003e C7EB0303 		rsblt	r3, r7, r3
+  87 0042 03EBD373 		addlt	r3, r3, r3, lsr #31
+  88 0046 36B2     		sxth	r6, r6
+  89              	.LVL10:
+  90              		.loc 1 71 0
+  91 0048 0FFA8BF2 		sxth	r2, fp
+  92              		.loc 1 67 0
+  93 004c B4BF     		ite	lt
+  94 004e C3F34F03 		ubfxlt	r3, r3, #1, #16
+  95              		.loc 1 40 0
+  96 0052 0023     		movge	r3, #0
+  97              		.loc 1 71 0
+  98 0054 9642     		cmp	r6, r2
+  99              		.loc 1 40 0
+ 100 0056 0593     		str	r3, [sp, #20]
+ 101              		.loc 1 71 0
+ 102 0058 63DD     		ble	.L7
+ 103              	.LVL11:
+ 104              	.L21:
+ 105              		.loc 1 73 0
+ 106 005a 618A     		ldrh	r1, [r4, #18]
+ 107 005c 0EB2     		sxth	r6, r1
+ 108 005e B31A     		subs	r3, r6, r2
+ 109 0060 03EBD370 		add	r0, r3, r3, lsr #31
+ 110 0064 C0F34F06 		ubfx	r6, r0, #1, #16
+ 111              	.LVL12:
+ 112              		.loc 1 74 0
+ 113 0068 B044     		add	r8, r6, r8
+ 114              	.LVL13:
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 3
+
+
+ 115 006a 1FFA88FC 		uxth	ip, r8
+ 116 006e 1FFA8CF8 		uxth	r8, ip
+ 117              	.LVL14:
+ 118              		.loc 1 75 0
+ 119 0072 002E     		cmp	r6, #0
+ 120 0074 6ED1     		bne	.L17
+ 121 0076 0FFA8AFA 		sxth	sl, sl
+ 122              	.LVL15:
+ 123              	.L8:
+ 124              		.loc 1 77 0
+ 125 007a 8B1B     		subs	r3, r1, r6
+ 126 007c 1FFA8BF2 		uxth	r2, fp
+ 127 0080 9E1A     		subs	r6, r3, r2
+ 128 0082 31B2     		sxth	r1, r6
+ 129 0084 6244     		add	r2, ip, r2
+ 130 0086 A068     		ldr	r0, [r4, #8]
+ 131 0088 0091     		str	r1, [sp, #0]
+ 132 008a 12B2     		sxth	r2, r2
+ 133 008c CDF80490 		str	r9, [sp, #4]
+ 134 0090 5146     		mov	r1, sl
+ 135 0092 3B46     		mov	r3, r7
+ 136 0094 FFF7FEFF 		bl	gdispGFillArea
+ 137              	.LVL16:
+ 138 0098 0FFA8BF6 		sxth	r6, fp
+ 139              		.loc 1 78 0
+ 140 009c 0022     		movs	r2, #0
+ 141              	.LVL17:
+ 142              	.L9:
+ 143              		.loc 1 87 0
+ 144 009e 2846     		mov	r0, r5
+ 145 00a0 4946     		mov	r1, r9
+ 146 00a2 0492     		str	r2, [sp, #16]
+ 147 00a4 FFF7FEFF 		bl	gdispImageSetBgColor
+ 148              	.LVL18:
+ 149              		.loc 1 90 0
+ 150 00a8 059B     		ldr	r3, [sp, #20]
+ 151 00aa 0499     		ldr	r1, [sp, #16]
+ 152 00ac A068     		ldr	r0, [r4, #8]
+ 153 00ae 0097     		str	r7, [sp, #0]
+ 154 00b0 1AB2     		sxth	r2, r3
+ 155 00b2 0BB2     		sxth	r3, r1
+ 156 00b4 0292     		str	r2, [sp, #8]
+ 157 00b6 0393     		str	r3, [sp, #12]
+ 158 00b8 0196     		str	r6, [sp, #4]
+ 159 00ba 2946     		mov	r1, r5
+ 160 00bc 5246     		mov	r2, sl
+ 161 00be 0FFA88F3 		sxth	r3, r8
+ 162 00c2 FFF7FEFF 		bl	gdispGImageDraw
+ 163              	.LVL19:
+ 164              	.L1:
+ 165              		.loc 1 111 0
+ 166 00c6 07B0     		add	sp, sp, #28
+ 167 00c8 BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, sl, fp, pc}
+ 168              	.LVL20:
+ 169              	.L20:
+ 170              		.loc 1 57 0
+ 171 00cc 228A     		ldrh	r2, [r4, #16]
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 4
+
+
+ 172 00ce 17B2     		sxth	r7, r2
+ 173 00d0 F81A     		subs	r0, r7, r3
+ 174 00d2 00EBD071 		add	r1, r0, r0, lsr #31
+ 175 00d6 C1F34F07 		ubfx	r7, r1, #1, #16
+ 176              	.LVL21:
+ 177              		.loc 1 58 0
+ 178 00da BA44     		add	sl, r7, sl
+ 179              	.LVL22:
+ 180 00dc 1FFA8AFC 		uxth	ip, sl
+ 181 00e0 1FFA8CFA 		uxth	sl, ip
+ 182              	.LVL23:
+ 183              		.loc 1 59 0
+ 184 00e4 002F     		cmp	r7, #0
+ 185 00e6 48D1     		bne	.L16
+ 186 00e8 0FFA88F3 		sxth	r3, r8
+ 187 00ec 0593     		str	r3, [sp, #20]
+ 188 00ee 36B2     		sxth	r6, r6
+ 189              	.LVL24:
+ 190              	.L5:
+ 191              		.loc 1 61 0
+ 192 00f0 1FFA8BF3 		uxth	r3, fp
+ 193 00f4 D71B     		subs	r7, r2, r7
+ 194 00f6 0CEB0301 		add	r1, ip, r3
+ 195 00fa FB1A     		subs	r3, r7, r3
+ 196 00fc A068     		ldr	r0, [r4, #8]
+ 197 00fe 059A     		ldr	r2, [sp, #20]
+ 198 0100 0096     		str	r6, [sp, #0]
+ 199 0102 CDF80490 		str	r9, [sp, #4]
+ 200 0106 09B2     		sxth	r1, r1
+ 201 0108 1BB2     		sxth	r3, r3
+ 202 010a FFF7FEFF 		bl	gdispGFillArea
+ 203              	.LVL25:
+ 204 010e 0FFA8BF7 		sxth	r7, fp
+ 205              	.LVL26:
+ 206              		.loc 1 71 0
+ 207 0112 B4F82CB0 		ldrh	fp, [r4, #44]
+ 208 0116 0FFA8BF2 		sxth	r2, fp
+ 209              		.loc 1 62 0
+ 210 011a 0020     		movs	r0, #0
+ 211              		.loc 1 71 0
+ 212 011c 9642     		cmp	r6, r2
+ 213              		.loc 1 62 0
+ 214 011e 0590     		str	r0, [sp, #20]
+ 215              		.loc 1 71 0
+ 216 0120 9BDC     		bgt	.L21
+ 217              	.LVL27:
+ 218              	.L7:
+ 219              		.loc 1 83 0
+ 220 0122 BEBF     		ittt	lt
+ 221 0124 C6EB0202 		rsblt	r2, r6, r2
+ 222 0128 02EBD272 		addlt	r2, r2, r2, lsr #31
+ 223 012c C2F34F02 		ubfxlt	r2, r2, #1, #16
+ 224 0130 0FFA8AFA 		sxth	sl, sl
+ 225              		.loc 1 41 0
+ 226 0134 A8BF     		it	ge
+ 227 0136 0022     		movge	r2, #0
+ 228 0138 B1E7     		b	.L9
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 5
+
+
+ 229              	.LVL28:
+ 230              	.L19:
+ 231              		.loc 1 50 0
+ 232 013a 36B2     		sxth	r6, r6
+ 233              	.LVL29:
+ 234 013c A068     		ldr	r0, [r4, #8]
+ 235 013e CDF80490 		str	r9, [sp, #4]
+ 236 0142 0096     		str	r6, [sp, #0]
+ 237 0144 0FFA8AF1 		sxth	r1, sl
+ 238 0148 0FFA88F2 		sxth	r2, r8
+ 239 014c 3BB2     		sxth	r3, r7
+ 240 014e FFF7FEFF 		bl	gdispGFillArea
+ 241              	.LVL30:
+ 242              		.loc 1 51 0
+ 243 0152 B8E7     		b	.L1
+ 244              	.LVL31:
+ 245              	.L17:
+ 246              		.loc 1 76 0
+ 247 0154 31B2     		sxth	r1, r6
+ 248 0156 0FFA8AFA 		sxth	sl, sl
+ 249 015a A068     		ldr	r0, [r4, #8]
+ 250 015c B4F90E20 		ldrsh	r2, [r4, #14]
+ 251 0160 0091     		str	r1, [sp, #0]
+ 252 0162 CDF80490 		str	r9, [sp, #4]
+ 253 0166 5146     		mov	r1, sl
+ 254 0168 3B46     		mov	r3, r7
+ 255 016a CDF810C0 		str	ip, [sp, #16]
+ 256 016e FFF7FEFF 		bl	gdispGFillArea
+ 257              	.LVL32:
+ 258 0172 618A     		ldrh	r1, [r4, #18]
+ 259 0174 DDF810C0 		ldr	ip, [sp, #16]
+ 260 0178 7FE7     		b	.L8
+ 261              	.LVL33:
+ 262              	.L16:
+ 263              		.loc 1 60 0
+ 264 017a 36B2     		sxth	r6, r6
+ 265              	.LVL34:
+ 266 017c A068     		ldr	r0, [r4, #8]
+ 267 017e B4F90C10 		ldrsh	r1, [r4, #12]
+ 268 0182 CDF80490 		str	r9, [sp, #4]
+ 269 0186 0FFA88F2 		sxth	r2, r8
+ 270 018a 0096     		str	r6, [sp, #0]
+ 271 018c 3BB2     		sxth	r3, r7
+ 272 018e 0592     		str	r2, [sp, #20]
+ 273 0190 CDF810C0 		str	ip, [sp, #16]
+ 274 0194 FFF7FEFF 		bl	gdispGFillArea
+ 275              	.LVL35:
+ 276 0198 228A     		ldrh	r2, [r4, #16]
+ 277 019a DDF810C0 		ldr	ip, [sp, #16]
+ 278 019e A7E7     		b	.L5
+ 279              		.cfi_endproc
+ 280              	.LFE119:
+ 281              		.size	_redraw, .-_redraw
+ 282              		.section	.text._destroy,"ax",%progbits
+ 283              		.align	2
+ 284              		.p2align 4,,15
+ 285              		.thumb
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 6
+
+
+ 286              		.thumb_func
+ 287              		.type	_destroy, %function
+ 288              	_destroy:
+ 289              	.LFB118:
+ 290              		.loc 1 21 0
+ 291              		.cfi_startproc
+ 292              		@ args = 0, pretend = 0, frame = 0
+ 293              		@ frame_needed = 0, uses_anonymous_args = 0
+ 294              	.LVL36:
+ 295 0000 10B5     		push	{r4, lr}
+ 296              	.LCFI2:
+ 297              		.cfi_def_cfa_offset 8
+ 298              		.cfi_offset 4, -8
+ 299              		.cfi_offset 14, -4
+ 300              		.loc 1 22 0
+ 301 0002 00F12404 		add	r4, r0, #36
+ 302 0006 2046     		mov	r0, r4
+ 303              	.LVL37:
+ 304 0008 FFF7FEFF 		bl	gdispImageIsOpen
+ 305              	.LVL38:
+ 306 000c 00B9     		cbnz	r0, .L24
+ 307 000e 10BD     		pop	{r4, pc}
+ 308              	.L24:
+ 309              		.loc 1 23 0
+ 310 0010 2046     		mov	r0, r4
+ 311              		.loc 1 24 0
+ 312 0012 BDE81040 		pop	{r4, lr}
+ 313              		.loc 1 23 0
+ 314 0016 FFF7FEBF 		b	gdispImageClose
+ 315              	.LVL39:
+ 316              		.cfi_endproc
+ 317              	.LFE118:
+ 318              		.size	_destroy, .-_destroy
+ 319 001a 00BFAFF3 		.section	.text.gwinGImageCreate,"ax",%progbits
+ 319      0080
+ 320              		.align	2
+ 321              		.p2align 4,,15
+ 322              		.global	gwinGImageCreate
+ 323              		.thumb
+ 324              		.thumb_func
+ 325              		.type	gwinGImageCreate, %function
+ 326              	gwinGImageCreate:
+ 327              	.LFB120:
+ 328              		.loc 1 121 0
+ 329              		.cfi_startproc
+ 330              		@ args = 0, pretend = 0, frame = 0
+ 331              		@ frame_needed = 0, uses_anonymous_args = 0
+ 332              	.LVL40:
+ 333 0000 30B5     		push	{r4, r5, lr}
+ 334              	.LCFI3:
+ 335              		.cfi_def_cfa_offset 12
+ 336              		.cfi_offset 4, -12
+ 337              		.cfi_offset 5, -8
+ 338              		.cfi_offset 14, -4
+ 339 0002 83B0     		sub	sp, sp, #12
+ 340              	.LCFI4:
+ 341              		.cfi_def_cfa_offset 24
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 7
+
+
+ 342              		.loc 1 122 0
+ 343 0004 0023     		movs	r3, #0
+ 344 0006 0093     		str	r3, [sp, #0]
+ 345 0008 084B     		ldr	r3, .L30
+ 346              		.loc 1 121 0
+ 347 000a 1546     		mov	r5, r2
+ 348              		.loc 1 122 0
+ 349 000c FFF7FEFF 		bl	_gwindowCreate
+ 350              	.LVL41:
+ 351 0010 0446     		mov	r4, r0
+ 352 0012 38B1     		cbz	r0, .L26
+ 353              		.loc 1 126 0
+ 354 0014 00F12400 		add	r0, r0, #36
+ 355              	.LVL42:
+ 356 0018 FFF7FEFF 		bl	gdispImageInit
+ 357              	.LVL43:
+ 358              		.loc 1 133 0
+ 359 001c 2046     		mov	r0, r4
+ 360 001e 297A     		ldrb	r1, [r5, #8]	@ zero_extendqisi2
+ 361 0020 FFF7FEFF 		bl	gwinSetVisible
+ 362              	.LVL44:
+ 363              	.L26:
+ 364              		.loc 1 136 0
+ 365 0024 2046     		mov	r0, r4
+ 366 0026 03B0     		add	sp, sp, #12
+ 367 0028 30BD     		pop	{r4, r5, pc}
+ 368              	.L31:
+ 369 002a 00BF     		.align	2
+ 370              	.L30:
+ 371 002c 00000000 		.word	.LANCHOR0
+ 372              		.cfi_endproc
+ 373              	.LFE120:
+ 374              		.size	gwinGImageCreate, .-gwinGImageCreate
+ 375              		.section	.text.gwinImageOpenGFile,"ax",%progbits
+ 376              		.align	2
+ 377              		.p2align 4,,15
+ 378              		.global	gwinImageOpenGFile
+ 379              		.thumb
+ 380              		.thumb_func
+ 381              		.type	gwinImageOpenGFile, %function
+ 382              	gwinImageOpenGFile:
+ 383              	.LFB121:
+ 384              		.loc 1 138 0
+ 385              		.cfi_startproc
+ 386              		@ args = 0, pretend = 0, frame = 8
+ 387              		@ frame_needed = 0, uses_anonymous_args = 0
+ 388              	.LVL45:
+ 389 0000 30B5     		push	{r4, r5, lr}
+ 390              	.LCFI5:
+ 391              		.cfi_def_cfa_offset 12
+ 392              		.cfi_offset 4, -12
+ 393              		.cfi_offset 5, -8
+ 394              		.cfi_offset 14, -4
+ 395              		.loc 1 140 0
+ 396 0002 4368     		ldr	r3, [r0, #4]
+ 397 0004 0F4A     		ldr	r2, .L41
+ 398 0006 9342     		cmp	r3, r2
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 8
+
+
+ 399              		.loc 1 138 0
+ 400 0008 83B0     		sub	sp, sp, #12
+ 401              	.LCFI6:
+ 402              		.cfi_def_cfa_offset 24
+ 403              		.loc 1 138 0
+ 404 000a 0446     		mov	r4, r0
+ 405              		.loc 1 140 0
+ 406 000c 02D0     		beq	.L33
+ 407              	.LVL46:
+ 408              	.L36:
+ 409              		.loc 1 141 0
+ 410 000e 0020     		movs	r0, #0
+ 411              	.L34:
+ 412              		.loc 1 152 0
+ 413 0010 03B0     		add	sp, sp, #12
+ 414 0012 30BD     		pop	{r4, r5, pc}
+ 415              	.LVL47:
+ 416              	.L33:
+ 417              		.loc 1 143 0
+ 418 0014 00F12405 		add	r5, r0, #36
+ 419 0018 2846     		mov	r0, r5
+ 420              	.LVL48:
+ 421 001a 0191     		str	r1, [sp, #4]
+ 422 001c FFF7FEFF 		bl	gdispImageIsOpen
+ 423              	.LVL49:
+ 424 0020 0199     		ldr	r1, [sp, #4]
+ 425 0022 48B9     		cbnz	r0, .L40
+ 426              	.L35:
+ 427              		.loc 1 146 0
+ 428 0024 2846     		mov	r0, r5
+ 429 0026 FFF7FEFF 		bl	gdispImageOpenGFile
+ 430              	.LVL50:
+ 431 002a 0304     		lsls	r3, r0, #16
+ 432 002c EFD4     		bmi	.L36
+ 433              		.loc 1 149 0
+ 434 002e 2046     		mov	r0, r4
+ 435 0030 FFF7FEFF 		bl	_gwinUpdate
+ 436              	.LVL51:
+ 437              		.loc 1 151 0
+ 438 0034 0120     		movs	r0, #1
+ 439 0036 EBE7     		b	.L34
+ 440              	.L40:
+ 441              		.loc 1 144 0
+ 442 0038 2846     		mov	r0, r5
+ 443 003a FFF7FEFF 		bl	gdispImageClose
+ 444              	.LVL52:
+ 445 003e 0199     		ldr	r1, [sp, #4]
+ 446 0040 F0E7     		b	.L35
+ 447              	.L42:
+ 448 0042 00BF     		.align	2
+ 449              	.L41:
+ 450 0044 00000000 		.word	.LANCHOR0
+ 451              		.cfi_endproc
+ 452              	.LFE121:
+ 453              		.size	gwinImageOpenGFile, .-gwinImageOpenGFile
+ 454 0048 AFF30080 		.section	.text.gwinImageCache,"ax",%progbits
+ 454      AFF30080 
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 9
+
+
+ 455              		.align	2
+ 456              		.p2align 4,,15
+ 457              		.global	gwinImageCache
+ 458              		.thumb
+ 459              		.thumb_func
+ 460              		.type	gwinImageCache, %function
+ 461              	gwinImageCache:
+ 462              	.LFB122:
+ 463              		.loc 1 154 0
+ 464              		.cfi_startproc
+ 465              		@ args = 0, pretend = 0, frame = 0
+ 466              		@ frame_needed = 0, uses_anonymous_args = 0
+ 467              		@ link register save eliminated.
+ 468              	.LVL53:
+ 469              		.loc 1 156 0
+ 470 0000 4368     		ldr	r3, [r0, #4]
+ 471 0002 044A     		ldr	r2, .L46
+ 472 0004 9342     		cmp	r3, r2
+ 473 0006 02D0     		beq	.L45
+ 474              		.loc 1 160 0
+ 475 0008 48F20100 		movw	r0, #32769
+ 476              	.LVL54:
+ 477 000c 7047     		bx	lr
+ 478              	.LVL55:
+ 479              	.L45:
+ 480              		.loc 1 159 0
+ 481 000e 2430     		adds	r0, r0, #36
+ 482              	.LVL56:
+ 483              		.loc 1 160 0
+ 484              		.loc 1 159 0
+ 485 0010 FFF7FEBF 		b	gdispImageCache
+ 486              	.LVL57:
+ 487              	.L47:
+ 488              		.align	2
+ 489              	.L46:
+ 490 0014 00000000 		.word	.LANCHOR0
+ 491              		.cfi_endproc
+ 492              	.LFE122:
+ 493              		.size	gwinImageCache, .-gwinImageCache
+ 494 0018 AFF30080 		.section	.rodata.imageVMT,"a",%progbits
+ 494      AFF30080 
+ 495              		.align	2
+ 496              		.set	.LANCHOR0,. + 0
+ 497              		.type	imageVMT, %object
+ 498              		.size	imageVMT, 20
+ 499              	imageVMT:
+ 500 0000 00000000 		.word	.LC0
+ 501 0004 3C000000 		.word	60
+ 502 0008 00000000 		.word	_destroy
+ 503 000c 00000000 		.word	_redraw
+ 504 0010 00000000 		.word	0
+ 505              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 506              		.align	2
+ 507              	.LC0:
+ 508 0000 496D6167 		.ascii	"Image\000"
+ 508      6500
+ 509 0006 0000     		.text
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 10
+
+
+ 510              	.Letext0:
+ 511              		.file 2 "c:\\chibistudio\\tools\\gnu tools arm embedded\\4.7 2014q2\\bin\\../lib/gcc/arm-none-eabi
+ 512              		.file 3 "c:\\chibistudio\\tools\\gnu tools arm embedded\\4.7 2014q2\\bin\\../lib/gcc/arm-none-eabi
+ 513              		.file 4 "../../chibios/os/ports/GCC/ARMCMx/chtypes.h"
+ 514              		.file 5 "../../ugfx/src/gfile/gfile.h"
+ 515              		.file 6 "../../ugfx/src/gqueue/gqueue.h"
+ 516              		.file 7 "../../ugfx/src/gdisp/gdisp.h"
+ 517              		.file 8 "../../ugfx/src/gdisp/gdisp_colors.h"
+ 518              		.file 9 "../../ugfx/src/gdisp/gdisp_image.h"
+ 519              		.file 10 "../../ugfx/src/gwin/gwin.h"
+ 520              		.file 11 "../../ugfx/src/gwin/gwin_class.h"
+ 521              		.file 12 "../../ugfx/src/gwin/gwin_image.h"
+ 522              		.file 13 "../../chibios/os/ports/common/ARMCMx/CMSIS/include/core_cm4.h"
+ 523              		.section	.debug_info,"",%progbits
+ 524              	.Ldebug_info0:
+ 525 0000 2B090000 		.4byte	0x92b
+ 526 0004 0200     		.2byte	0x2
+ 527 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 528 000a 04       		.byte	0x4
+ 529 000b 01       		.uleb128 0x1
+ 530 000c 84000000 		.4byte	.LASF73
+ 531 0010 01       		.byte	0x1
+ 532 0011 A7030000 		.4byte	.LASF74
+ 533 0015 C2010000 		.4byte	.LASF75
+ 534 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 535 001d 00000000 		.4byte	0
+ 536 0021 00000000 		.4byte	0
+ 537 0025 00000000 		.4byte	.Ldebug_line0
+ 538 0029 02       		.uleb128 0x2
+ 539 002a 04       		.byte	0x4
+ 540 002b 05       		.byte	0x5
+ 541 002c 696E7400 		.ascii	"int\000"
+ 542 0030 03       		.uleb128 0x3
+ 543 0031 50000000 		.4byte	.LASF3
+ 544 0035 02       		.byte	0x2
+ 545 0036 D5       		.byte	0xd5
+ 546 0037 3B000000 		.4byte	0x3b
+ 547 003b 04       		.uleb128 0x4
+ 548 003c 04       		.byte	0x4
+ 549 003d 07       		.byte	0x7
+ 550 003e 2A020000 		.4byte	.LASF0
+ 551 0042 04       		.uleb128 0x4
+ 552 0043 01       		.byte	0x1
+ 553 0044 06       		.byte	0x6
+ 554 0045 EA010000 		.4byte	.LASF1
+ 555 0049 04       		.uleb128 0x4
+ 556 004a 01       		.byte	0x1
+ 557 004b 08       		.byte	0x8
+ 558 004c A5010000 		.4byte	.LASF2
+ 559 0050 03       		.uleb128 0x3
+ 560 0051 AF020000 		.4byte	.LASF4
+ 561 0055 03       		.byte	0x3
+ 562 0056 35       		.byte	0x35
+ 563 0057 5B000000 		.4byte	0x5b
+ 564 005b 04       		.uleb128 0x4
+ 565 005c 02       		.byte	0x2
+ 566 005d 05       		.byte	0x5
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 11
+
+
+ 567 005e 46000000 		.4byte	.LASF5
+ 568 0062 03       		.uleb128 0x3
+ 569 0063 37020000 		.4byte	.LASF6
+ 570 0067 03       		.byte	0x3
+ 571 0068 36       		.byte	0x36
+ 572 0069 6D000000 		.4byte	0x6d
+ 573 006d 04       		.uleb128 0x4
+ 574 006e 02       		.byte	0x2
+ 575 006f 07       		.byte	0x7
+ 576 0070 40020000 		.4byte	.LASF7
+ 577 0074 03       		.uleb128 0x3
+ 578 0075 8B020000 		.4byte	.LASF8
+ 579 0079 03       		.byte	0x3
+ 580 007a 4F       		.byte	0x4f
+ 581 007b 7F000000 		.4byte	0x7f
+ 582 007f 04       		.uleb128 0x4
+ 583 0080 04       		.byte	0x4
+ 584 0081 05       		.byte	0x5
+ 585 0082 57010000 		.4byte	.LASF9
+ 586 0086 03       		.uleb128 0x3
+ 587 0087 12010000 		.4byte	.LASF10
+ 588 008b 03       		.byte	0x3
+ 589 008c 50       		.byte	0x50
+ 590 008d 91000000 		.4byte	0x91
+ 591 0091 04       		.uleb128 0x4
+ 592 0092 04       		.byte	0x4
+ 593 0093 07       		.byte	0x7
+ 594 0094 FC020000 		.4byte	.LASF11
+ 595 0098 04       		.uleb128 0x4
+ 596 0099 08       		.byte	0x8
+ 597 009a 05       		.byte	0x5
+ 598 009b 39010000 		.4byte	.LASF12
+ 599 009f 04       		.uleb128 0x4
+ 600 00a0 08       		.byte	0x8
+ 601 00a1 07       		.byte	0x7
+ 602 00a2 FC010000 		.4byte	.LASF13
+ 603 00a6 03       		.uleb128 0x3
+ 604 00a7 93020000 		.4byte	.LASF14
+ 605 00ab 04       		.byte	0x4
+ 606 00ac 2B       		.byte	0x2b
+ 607 00ad B1000000 		.4byte	0xb1
+ 608 00b1 04       		.uleb128 0x4
+ 609 00b2 01       		.byte	0x1
+ 610 00b3 02       		.byte	0x2
+ 611 00b4 BF020000 		.4byte	.LASF15
+ 612 00b8 04       		.uleb128 0x4
+ 613 00b9 04       		.byte	0x4
+ 614 00ba 07       		.byte	0x7
+ 615 00bb 7B000000 		.4byte	.LASF16
+ 616 00bf 05       		.uleb128 0x5
+ 617 00c0 04       		.byte	0x4
+ 618 00c1 C5000000 		.4byte	0xc5
+ 619 00c5 06       		.uleb128 0x6
+ 620 00c6 CA000000 		.4byte	0xca
+ 621 00ca 04       		.uleb128 0x4
+ 622 00cb 01       		.byte	0x1
+ 623 00cc 08       		.byte	0x8
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 12
+
+
+ 624 00cd 86020000 		.4byte	.LASF17
+ 625 00d1 07       		.uleb128 0x7
+ 626 00d2 74000000 		.4byte	0x74
+ 627 00d6 03       		.uleb128 0x3
+ 628 00d7 E1000000 		.4byte	.LASF18
+ 629 00db 05       		.byte	0x5
+ 630 00dc 22       		.byte	0x22
+ 631 00dd E1000000 		.4byte	0xe1
+ 632 00e1 08       		.uleb128 0x8
+ 633 00e2 E1000000 		.4byte	.LASF18
+ 634 00e6 01       		.byte	0x1
+ 635 00e7 09       		.uleb128 0x9
+ 636 00e8 0B000000 		.4byte	.LASF19
+ 637 00ec 04       		.byte	0x4
+ 638 00ed 06       		.byte	0x6
+ 639 00ee 28       		.byte	0x28
+ 640 00ef 02010000 		.4byte	0x102
+ 641 00f3 0A       		.uleb128 0xa
+ 642 00f4 2A000000 		.4byte	.LASF29
+ 643 00f8 06       		.byte	0x6
+ 644 00f9 29       		.byte	0x29
+ 645 00fa 02010000 		.4byte	0x102
+ 646 00fe 02       		.byte	0x2
+ 647 00ff 23       		.byte	0x23
+ 648 0100 00       		.uleb128 0
+ 649 0101 00       		.byte	0
+ 650 0102 05       		.uleb128 0x5
+ 651 0103 04       		.byte	0x4
+ 652 0104 E7000000 		.4byte	0xe7
+ 653 0108 03       		.uleb128 0x3
+ 654 0109 0B000000 		.4byte	.LASF19
+ 655 010d 06       		.byte	0x6
+ 656 010e 2A       		.byte	0x2a
+ 657 010f E7000000 		.4byte	0xe7
+ 658 0113 03       		.uleb128 0x3
+ 659 0114 B7020000 		.4byte	.LASF20
+ 660 0118 07       		.byte	0x7
+ 661 0119 27       		.byte	0x27
+ 662 011a 50000000 		.4byte	0x50
+ 663 011e 03       		.uleb128 0x3
+ 664 011f A0030000 		.4byte	.LASF21
+ 665 0123 07       		.byte	0x7
+ 666 0124 3E       		.byte	0x3e
+ 667 0125 29010000 		.4byte	0x129
+ 668 0129 05       		.uleb128 0x5
+ 669 012a 04       		.byte	0x4
+ 670 012b 2F010000 		.4byte	0x12f
+ 671 012f 06       		.uleb128 0x6
+ 672 0130 34010000 		.4byte	0x134
+ 673 0134 08       		.uleb128 0x8
+ 674 0135 08010000 		.4byte	.LASF22
+ 675 0139 01       		.byte	0x1
+ 676 013a 03       		.uleb128 0x3
+ 677 013b 9C010000 		.4byte	.LASF23
+ 678 013f 07       		.byte	0x7
+ 679 0140 4D       		.byte	0x4d
+ 680 0141 45010000 		.4byte	0x145
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 13
+
+
+ 681 0145 08       		.uleb128 0x8
+ 682 0146 9C010000 		.4byte	.LASF23
+ 683 014a 01       		.byte	0x1
+ 684 014b 0B       		.uleb128 0xb
+ 685 014c E7000000 		.4byte	.LASF24
+ 686 0150 08       		.byte	0x8
+ 687 0151 8C01     		.2byte	0x18c
+ 688 0153 62000000 		.4byte	0x62
+ 689 0157 03       		.uleb128 0x3
+ 690 0158 F9000000 		.4byte	.LASF25
+ 691 015c 09       		.byte	0x9
+ 692 015d 18       		.byte	0x18
+ 693 015e 62000000 		.4byte	0x62
+ 694 0162 03       		.uleb128 0x3
+ 695 0163 6F010000 		.4byte	.LASF26
+ 696 0167 09       		.byte	0x9
+ 697 0168 23       		.byte	0x23
+ 698 0169 62000000 		.4byte	0x62
+ 699 016d 03       		.uleb128 0x3
+ 700 016e 60020000 		.4byte	.LASF27
+ 701 0172 09       		.byte	0x9
+ 702 0173 30       		.byte	0x30
+ 703 0174 62000000 		.4byte	0x62
+ 704 0178 09       		.uleb128 0x9
+ 705 0179 64030000 		.4byte	.LASF28
+ 706 017d 18       		.byte	0x18
+ 707 017e 09       		.byte	0x9
+ 708 017f 66       		.byte	0x66
+ 709 0180 F3010000 		.4byte	0x1f3
+ 710 0184 0A       		.uleb128 0xa
+ 711 0185 1E020000 		.4byte	.LASF30
+ 712 0189 09       		.byte	0x9
+ 713 018a 67       		.byte	0x67
+ 714 018b 57010000 		.4byte	0x157
+ 715 018f 02       		.byte	0x2
+ 716 0190 23       		.byte	0x23
+ 717 0191 00       		.uleb128 0
+ 718 0192 0A       		.uleb128 0xa
+ 719 0193 F6010000 		.4byte	.LASF31
+ 720 0197 09       		.byte	0x9
+ 721 0198 68       		.byte	0x68
+ 722 0199 6D010000 		.4byte	0x16d
+ 723 019d 02       		.byte	0x2
+ 724 019e 23       		.byte	0x23
+ 725 019f 02       		.uleb128 0x2
+ 726 01a0 0A       		.uleb128 0xa
+ 727 01a1 1D000000 		.4byte	.LASF32
+ 728 01a5 09       		.byte	0x9
+ 729 01a6 69       		.byte	0x69
+ 730 01a7 4B010000 		.4byte	0x14b
+ 731 01ab 02       		.byte	0x2
+ 732 01ac 23       		.byte	0x23
+ 733 01ad 04       		.uleb128 0x4
+ 734 01ae 0A       		.uleb128 0xa
+ 735 01af 2C010000 		.4byte	.LASF33
+ 736 01b3 09       		.byte	0x9
+ 737 01b4 6A       		.byte	0x6a
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 14
+
+
+ 738 01b5 13010000 		.4byte	0x113
+ 739 01b9 02       		.byte	0x2
+ 740 01ba 23       		.byte	0x23
+ 741 01bb 06       		.uleb128 0x6
+ 742 01bc 0A       		.uleb128 0xa
+ 743 01bd 23020000 		.4byte	.LASF34
+ 744 01c1 09       		.byte	0x9
+ 745 01c2 6A       		.byte	0x6a
+ 746 01c3 13010000 		.4byte	0x113
+ 747 01c7 02       		.byte	0x2
+ 748 01c8 23       		.byte	0x23
+ 749 01c9 08       		.uleb128 0x8
+ 750 01ca 0C       		.uleb128 0xc
+ 751 01cb 6600     		.ascii	"f\000"
+ 752 01cd 09       		.byte	0x9
+ 753 01ce 6B       		.byte	0x6b
+ 754 01cf F3010000 		.4byte	0x1f3
+ 755 01d3 02       		.byte	0x2
+ 756 01d4 23       		.byte	0x23
+ 757 01d5 0C       		.uleb128 0xc
+ 758 01d6 0C       		.uleb128 0xc
+ 759 01d7 666E7300 		.ascii	"fns\000"
+ 760 01db 09       		.byte	0x9
+ 761 01dc 70       		.byte	0x70
+ 762 01dd FF010000 		.4byte	0x1ff
+ 763 01e1 02       		.byte	0x2
+ 764 01e2 23       		.byte	0x23
+ 765 01e3 10       		.uleb128 0x10
+ 766 01e4 0A       		.uleb128 0xa
+ 767 01e5 00000000 		.4byte	.LASF35
+ 768 01e9 09       		.byte	0x9
+ 769 01ea 71       		.byte	0x71
+ 770 01eb 10020000 		.4byte	0x210
+ 771 01ef 02       		.byte	0x2
+ 772 01f0 23       		.byte	0x23
+ 773 01f1 14       		.uleb128 0x14
+ 774 01f2 00       		.byte	0
+ 775 01f3 05       		.uleb128 0x5
+ 776 01f4 04       		.byte	0x4
+ 777 01f5 D6000000 		.4byte	0xd6
+ 778 01f9 08       		.uleb128 0x8
+ 779 01fa D5020000 		.4byte	.LASF36
+ 780 01fe 01       		.byte	0x1
+ 781 01ff 05       		.uleb128 0x5
+ 782 0200 04       		.byte	0x4
+ 783 0201 05020000 		.4byte	0x205
+ 784 0205 06       		.uleb128 0x6
+ 785 0206 F9010000 		.4byte	0x1f9
+ 786 020a 08       		.uleb128 0x8
+ 787 020b 34000000 		.4byte	.LASF37
+ 788 020f 01       		.byte	0x1
+ 789 0210 05       		.uleb128 0x5
+ 790 0211 04       		.byte	0x4
+ 791 0212 0A020000 		.4byte	0x20a
+ 792 0216 03       		.uleb128 0x3
+ 793 0217 64030000 		.4byte	.LASF28
+ 794 021b 09       		.byte	0x9
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 15
+
+
+ 795 021c 72       		.byte	0x72
+ 796 021d 78010000 		.4byte	0x178
+ 797 0221 03       		.uleb128 0x3
+ 798 0222 F4020000 		.4byte	.LASF38
+ 799 0226 0A       		.byte	0xa
+ 800 0227 1F       		.byte	0x1f
+ 801 0228 2C020000 		.4byte	0x22c
+ 802 022c 05       		.uleb128 0x5
+ 803 022d 04       		.byte	0x4
+ 804 022e 32020000 		.4byte	0x232
+ 805 0232 09       		.uleb128 0x9
+ 806 0233 56030000 		.4byte	.LASF39
+ 807 0237 24       		.byte	0x24
+ 808 0238 0A       		.byte	0xa
+ 809 0239 26       		.byte	0x26
+ 810 023a E3020000 		.4byte	0x2e3
+ 811 023e 0C       		.uleb128 0xc
+ 812 023f 776D7100 		.ascii	"wmq\000"
+ 813 0243 0A       		.byte	0xa
+ 814 0244 29       		.byte	0x29
+ 815 0245 08010000 		.4byte	0x108
+ 816 0249 02       		.byte	0x2
+ 817 024a 23       		.byte	0x23
+ 818 024b 00       		.uleb128 0
+ 819 024c 0C       		.uleb128 0xc
+ 820 024d 766D7400 		.ascii	"vmt\000"
+ 821 0251 0A       		.byte	0xa
+ 822 0252 2B       		.byte	0x2b
+ 823 0253 36030000 		.4byte	0x336
+ 824 0257 02       		.byte	0x2
+ 825 0258 23       		.byte	0x23
+ 826 0259 04       		.uleb128 0x4
+ 827 025a 0A       		.uleb128 0xa
+ 828 025b 26030000 		.4byte	.LASF40
+ 829 025f 0A       		.byte	0xa
+ 830 0260 2C       		.byte	0x2c
+ 831 0261 41030000 		.4byte	0x341
+ 832 0265 02       		.byte	0x2
+ 833 0266 23       		.byte	0x23
+ 834 0267 08       		.uleb128 0x8
+ 835 0268 0C       		.uleb128 0xc
+ 836 0269 7800     		.ascii	"x\000"
+ 837 026b 0A       		.byte	0xa
+ 838 026c 2D       		.byte	0x2d
+ 839 026d 13010000 		.4byte	0x113
+ 840 0271 02       		.byte	0x2
+ 841 0272 23       		.byte	0x23
+ 842 0273 0C       		.uleb128 0xc
+ 843 0274 0C       		.uleb128 0xc
+ 844 0275 7900     		.ascii	"y\000"
+ 845 0277 0A       		.byte	0xa
+ 846 0278 2D       		.byte	0x2d
+ 847 0279 13010000 		.4byte	0x113
+ 848 027d 02       		.byte	0x2
+ 849 027e 23       		.byte	0x23
+ 850 027f 0E       		.uleb128 0xe
+ 851 0280 0A       		.uleb128 0xa
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 16
+
+
+ 852 0281 2C010000 		.4byte	.LASF33
+ 853 0285 0A       		.byte	0xa
+ 854 0286 2E       		.byte	0x2e
+ 855 0287 13010000 		.4byte	0x113
+ 856 028b 02       		.byte	0x2
+ 857 028c 23       		.byte	0x23
+ 858 028d 10       		.uleb128 0x10
+ 859 028e 0A       		.uleb128 0xa
+ 860 028f 23020000 		.4byte	.LASF34
+ 861 0293 0A       		.byte	0xa
+ 862 0294 2E       		.byte	0x2e
+ 863 0295 13010000 		.4byte	0x113
+ 864 0299 02       		.byte	0x2
+ 865 029a 23       		.byte	0x23
+ 866 029b 12       		.uleb128 0x12
+ 867 029c 0A       		.uleb128 0xa
+ 868 029d 50030000 		.4byte	.LASF41
+ 869 02a1 0A       		.byte	0xa
+ 870 02a2 2F       		.byte	0x2f
+ 871 02a3 4B010000 		.4byte	0x14b
+ 872 02a7 02       		.byte	0x2
+ 873 02a8 23       		.byte	0x23
+ 874 02a9 14       		.uleb128 0x14
+ 875 02aa 0A       		.uleb128 0xa
+ 876 02ab 1D000000 		.4byte	.LASF32
+ 877 02af 0A       		.byte	0xa
+ 878 02b0 2F       		.byte	0x2f
+ 879 02b1 4B010000 		.4byte	0x14b
+ 880 02b5 02       		.byte	0x2
+ 881 02b6 23       		.byte	0x23
+ 882 02b7 16       		.uleb128 0x16
+ 883 02b8 0A       		.uleb128 0xa
+ 884 02b9 F6010000 		.4byte	.LASF31
+ 885 02bd 0A       		.byte	0xa
+ 886 02be 30       		.byte	0x30
+ 887 02bf 86000000 		.4byte	0x86
+ 888 02c3 02       		.byte	0x2
+ 889 02c4 23       		.byte	0x23
+ 890 02c5 18       		.uleb128 0x18
+ 891 02c6 0A       		.uleb128 0xa
+ 892 02c7 2F000000 		.4byte	.LASF42
+ 893 02cb 0A       		.byte	0xa
+ 894 02cc 32       		.byte	0x32
+ 895 02cd 1E010000 		.4byte	0x11e
+ 896 02d1 02       		.byte	0x2
+ 897 02d2 23       		.byte	0x23
+ 898 02d3 1C       		.uleb128 0x1c
+ 899 02d4 0A       		.uleb128 0xa
+ 900 02d5 32010000 		.4byte	.LASF43
+ 901 02d9 0A       		.byte	0xa
+ 902 02da 35       		.byte	0x35
+ 903 02db 21020000 		.4byte	0x221
+ 904 02df 02       		.byte	0x2
+ 905 02e0 23       		.byte	0x23
+ 906 02e1 20       		.uleb128 0x20
+ 907 02e2 00       		.byte	0
+ 908 02e3 09       		.uleb128 0x9
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 17
+
+
+ 909 02e4 39030000 		.4byte	.LASF44
+ 910 02e8 14       		.byte	0x14
+ 911 02e9 0B       		.byte	0xb
+ 912 02ea 3B       		.byte	0x3b
+ 913 02eb 36030000 		.4byte	0x336
+ 914 02ef 0A       		.uleb128 0xa
+ 915 02f0 EF000000 		.4byte	.LASF45
+ 916 02f4 0B       		.byte	0xb
+ 917 02f5 3C       		.byte	0x3c
+ 918 02f6 BF000000 		.4byte	0xbf
+ 919 02fa 02       		.byte	0x2
+ 920 02fb 23       		.byte	0x23
+ 921 02fc 00       		.uleb128 0
+ 922 02fd 0A       		.uleb128 0xa
+ 923 02fe 34030000 		.4byte	.LASF46
+ 924 0302 0B       		.byte	0xb
+ 925 0303 3D       		.byte	0x3d
+ 926 0304 30000000 		.4byte	0x30
+ 927 0308 02       		.byte	0x2
+ 928 0309 23       		.byte	0x23
+ 929 030a 04       		.uleb128 0x4
+ 930 030b 0A       		.uleb128 0xa
+ 931 030c CD000000 		.4byte	.LASF47
+ 932 0310 0B       		.byte	0xb
+ 933 0311 3E       		.byte	0x3e
+ 934 0312 FE030000 		.4byte	0x3fe
+ 935 0316 02       		.byte	0x2
+ 936 0317 23       		.byte	0x23
+ 937 0318 08       		.uleb128 0x8
+ 938 0319 0A       		.uleb128 0xa
+ 939 031a 1F030000 		.4byte	.LASF48
+ 940 031e 0B       		.byte	0xb
+ 941 031f 3F       		.byte	0x3f
+ 942 0320 FE030000 		.4byte	0x3fe
+ 943 0324 02       		.byte	0x2
+ 944 0325 23       		.byte	0x23
+ 945 0326 0C       		.uleb128 0xc
+ 946 0327 0A       		.uleb128 0xa
+ 947 0328 13020000 		.4byte	.LASF49
+ 948 032c 0B       		.byte	0xb
+ 949 032d 40       		.byte	0x40
+ 950 032e FE030000 		.4byte	0x3fe
+ 951 0332 02       		.byte	0x2
+ 952 0333 23       		.byte	0x23
+ 953 0334 10       		.uleb128 0x10
+ 954 0335 00       		.byte	0
+ 955 0336 05       		.uleb128 0x5
+ 956 0337 04       		.byte	0x4
+ 957 0338 3C030000 		.4byte	0x33c
+ 958 033c 06       		.uleb128 0x6
+ 959 033d E3020000 		.4byte	0x2e3
+ 960 0341 05       		.uleb128 0x5
+ 961 0342 04       		.byte	0x4
+ 962 0343 3A010000 		.4byte	0x13a
+ 963 0347 03       		.uleb128 0x3
+ 964 0348 56030000 		.4byte	.LASF39
+ 965 034c 0A       		.byte	0xa
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 18
+
+
+ 966 034d 37       		.byte	0x37
+ 967 034e 32020000 		.4byte	0x232
+ 968 0352 09       		.uleb128 0x9
+ 969 0353 E8020000 		.4byte	.LASF50
+ 970 0357 10       		.byte	0x10
+ 971 0358 0A       		.byte	0xa
+ 972 0359 46       		.byte	0x46
+ 973 035a AF030000 		.4byte	0x3af
+ 974 035e 0C       		.uleb128 0xc
+ 975 035f 7800     		.ascii	"x\000"
+ 976 0361 0A       		.byte	0xa
+ 977 0362 47       		.byte	0x47
+ 978 0363 13010000 		.4byte	0x113
+ 979 0367 02       		.byte	0x2
+ 980 0368 23       		.byte	0x23
+ 981 0369 00       		.uleb128 0
+ 982 036a 0C       		.uleb128 0xc
+ 983 036b 7900     		.ascii	"y\000"
+ 984 036d 0A       		.byte	0xa
+ 985 036e 47       		.byte	0x47
+ 986 036f 13010000 		.4byte	0x113
+ 987 0373 02       		.byte	0x2
+ 988 0374 23       		.byte	0x23
+ 989 0375 02       		.uleb128 0x2
+ 990 0376 0A       		.uleb128 0xa
+ 991 0377 2C010000 		.4byte	.LASF33
+ 992 037b 0A       		.byte	0xa
+ 993 037c 48       		.byte	0x48
+ 994 037d 13010000 		.4byte	0x113
+ 995 0381 02       		.byte	0x2
+ 996 0382 23       		.byte	0x23
+ 997 0383 04       		.uleb128 0x4
+ 998 0384 0A       		.uleb128 0xa
+ 999 0385 23020000 		.4byte	.LASF34
+ 1000 0389 0A       		.byte	0xa
+ 1001 038a 48       		.byte	0x48
+ 1002 038b 13010000 		.4byte	0x113
+ 1003 038f 02       		.byte	0x2
+ 1004 0390 23       		.byte	0x23
+ 1005 0391 06       		.uleb128 0x6
+ 1006 0392 0A       		.uleb128 0xa
+ 1007 0393 25000000 		.4byte	.LASF51
+ 1008 0397 0A       		.byte	0xa
+ 1009 0398 49       		.byte	0x49
+ 1010 0399 A6000000 		.4byte	0xa6
+ 1011 039d 02       		.byte	0x2
+ 1012 039e 23       		.byte	0x23
+ 1013 039f 08       		.uleb128 0x8
+ 1014 03a0 0A       		.uleb128 0xa
+ 1015 03a1 32010000 		.4byte	.LASF43
+ 1016 03a5 0A       		.byte	0xa
+ 1017 03a6 4B       		.byte	0x4b
+ 1018 03a7 2C020000 		.4byte	0x22c
+ 1019 03ab 02       		.byte	0x2
+ 1020 03ac 23       		.byte	0x23
+ 1021 03ad 0C       		.uleb128 0xc
+ 1022 03ae 00       		.byte	0
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 19
+
+
+ 1023 03af 03       		.uleb128 0x3
+ 1024 03b0 E8020000 		.4byte	.LASF50
+ 1025 03b4 0A       		.byte	0xa
+ 1026 03b5 4D       		.byte	0x4d
+ 1027 03b6 52030000 		.4byte	0x352
+ 1028 03ba 09       		.uleb128 0x9
+ 1029 03bb 53020000 		.4byte	.LASF52
+ 1030 03bf 3C       		.byte	0x3c
+ 1031 03c0 0C       		.byte	0xc
+ 1032 03c1 21       		.byte	0x21
+ 1033 03c2 E1030000 		.4byte	0x3e1
+ 1034 03c6 0C       		.uleb128 0xc
+ 1035 03c7 6700     		.ascii	"g\000"
+ 1036 03c9 0C       		.byte	0xc
+ 1037 03ca 22       		.byte	0x22
+ 1038 03cb 47030000 		.4byte	0x347
+ 1039 03cf 02       		.byte	0x2
+ 1040 03d0 23       		.byte	0x23
+ 1041 03d1 00       		.uleb128 0
+ 1042 03d2 0A       		.uleb128 0xa
+ 1043 03d3 2E030000 		.4byte	.LASF53
+ 1044 03d7 0C       		.byte	0xc
+ 1045 03d8 23       		.byte	0x23
+ 1046 03d9 16020000 		.4byte	0x216
+ 1047 03dd 02       		.byte	0x2
+ 1048 03de 23       		.byte	0x23
+ 1049 03df 24       		.uleb128 0x24
+ 1050 03e0 00       		.byte	0
+ 1051 03e1 03       		.uleb128 0x3
+ 1052 03e2 53020000 		.4byte	.LASF52
+ 1053 03e6 0C       		.byte	0xc
+ 1054 03e7 27       		.byte	0x27
+ 1055 03e8 BA030000 		.4byte	0x3ba
+ 1056 03ec 0D       		.uleb128 0xd
+ 1057 03ed 01       		.byte	0x1
+ 1058 03ee F8030000 		.4byte	0x3f8
+ 1059 03f2 0E       		.uleb128 0xe
+ 1060 03f3 F8030000 		.4byte	0x3f8
+ 1061 03f7 00       		.byte	0
+ 1062 03f8 05       		.uleb128 0x5
+ 1063 03f9 04       		.byte	0x4
+ 1064 03fa 47030000 		.4byte	0x347
+ 1065 03fe 05       		.uleb128 0x5
+ 1066 03ff 04       		.byte	0x4
+ 1067 0400 EC030000 		.4byte	0x3ec
+ 1068 0404 03       		.uleb128 0x3
+ 1069 0405 39030000 		.4byte	.LASF44
+ 1070 0409 0B       		.byte	0xb
+ 1071 040a 41       		.byte	0x41
+ 1072 040b E3020000 		.4byte	0x2e3
+ 1073 040f 05       		.uleb128 0x5
+ 1074 0410 04       		.byte	0x4
+ 1075 0411 15040000 		.4byte	0x415
+ 1076 0415 06       		.uleb128 0x6
+ 1077 0416 AF030000 		.4byte	0x3af
+ 1078 041a 0F       		.uleb128 0xf
+ 1079 041b 24010000 		.4byte	.LASF54
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 20
+
+
+ 1080 041f 01       		.byte	0x1
+ 1081 0420 20       		.byte	0x20
+ 1082 0421 01       		.byte	0x1
+ 1083 0422 00000000 		.4byte	.LFB119
+ 1084 0426 A0010000 		.4byte	.LFE119
+ 1085 042a 00000000 		.4byte	.LLST0
+ 1086 042e 01       		.byte	0x1
+ 1087 042f E3050000 		.4byte	0x5e3
+ 1088 0433 10       		.uleb128 0x10
+ 1089 0434 676800   		.ascii	"gh\000"
+ 1090 0437 01       		.byte	0x1
+ 1091 0438 20       		.byte	0x20
+ 1092 0439 2C020000 		.4byte	0x22c
+ 1093 043d 2D000000 		.4byte	.LLST1
+ 1094 0441 11       		.uleb128 0x11
+ 1095 0442 7800     		.ascii	"x\000"
+ 1096 0444 01       		.byte	0x1
+ 1097 0445 21       		.byte	0x21
+ 1098 0446 13010000 		.4byte	0x113
+ 1099 044a 4B000000 		.4byte	.LLST2
+ 1100 044e 11       		.uleb128 0x11
+ 1101 044f 7900     		.ascii	"y\000"
+ 1102 0451 01       		.byte	0x1
+ 1103 0452 21       		.byte	0x21
+ 1104 0453 13010000 		.4byte	0x113
+ 1105 0457 AC000000 		.4byte	.LLST3
+ 1106 045b 11       		.uleb128 0x11
+ 1107 045c 7700     		.ascii	"w\000"
+ 1108 045e 01       		.byte	0x1
+ 1109 045f 21       		.byte	0x21
+ 1110 0460 13010000 		.4byte	0x113
+ 1111 0464 02010000 		.4byte	.LLST4
+ 1112 0468 11       		.uleb128 0x11
+ 1113 0469 6800     		.ascii	"h\000"
+ 1114 046b 01       		.byte	0x1
+ 1115 046c 21       		.byte	0x21
+ 1116 046d 13010000 		.4byte	0x113
+ 1117 0471 42010000 		.4byte	.LLST5
+ 1118 0475 11       		.uleb128 0x11
+ 1119 0476 647800   		.ascii	"dx\000"
+ 1120 0479 01       		.byte	0x1
+ 1121 047a 21       		.byte	0x21
+ 1122 047b 13010000 		.4byte	0x113
+ 1123 047f 98010000 		.4byte	.LLST6
+ 1124 0483 11       		.uleb128 0x11
+ 1125 0484 647900   		.ascii	"dy\000"
+ 1126 0487 01       		.byte	0x1
+ 1127 0488 21       		.byte	0x21
+ 1128 0489 13010000 		.4byte	0x113
+ 1129 048d F4010000 		.4byte	.LLST7
+ 1130 0491 11       		.uleb128 0x11
+ 1131 0492 626700   		.ascii	"bg\000"
+ 1132 0495 01       		.byte	0x1
+ 1133 0496 22       		.byte	0x22
+ 1134 0497 4B010000 		.4byte	0x14b
+ 1135 049b 37020000 		.4byte	.LLST8
+ 1136 049f 12       		.uleb128 0x12
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 21
+
+
+ 1137 04a0 1C000000 		.4byte	.LVL5
+ 1138 04a4 C5070000 		.4byte	0x7c5
+ 1139 04a8 13       		.uleb128 0x13
+ 1140 04a9 24000000 		.4byte	.LVL8
+ 1141 04ad D3070000 		.4byte	0x7d3
+ 1142 04b1 BC040000 		.4byte	0x4bc
+ 1143 04b5 14       		.uleb128 0x14
+ 1144 04b6 01       		.byte	0x1
+ 1145 04b7 50       		.byte	0x50
+ 1146 04b8 02       		.byte	0x2
+ 1147 04b9 75       		.byte	0x75
+ 1148 04ba 00       		.sleb128 0
+ 1149 04bb 00       		.byte	0
+ 1150 04bc 13       		.uleb128 0x13
+ 1151 04bd 98000000 		.4byte	.LVL16
+ 1152 04c1 F1070000 		.4byte	0x7f1
+ 1153 04c5 E4040000 		.4byte	0x4e4
+ 1154 04c9 14       		.uleb128 0x14
+ 1155 04ca 01       		.byte	0x1
+ 1156 04cb 53       		.byte	0x53
+ 1157 04cc 02       		.byte	0x2
+ 1158 04cd 77       		.byte	0x77
+ 1159 04ce 00       		.sleb128 0
+ 1160 04cf 14       		.uleb128 0x14
+ 1161 04d0 01       		.byte	0x1
+ 1162 04d1 51       		.byte	0x51
+ 1163 04d2 02       		.byte	0x2
+ 1164 04d3 7A       		.byte	0x7a
+ 1165 04d4 00       		.sleb128 0
+ 1166 04d5 14       		.uleb128 0x14
+ 1167 04d6 02       		.byte	0x2
+ 1168 04d7 7D       		.byte	0x7d
+ 1169 04d8 04       		.sleb128 4
+ 1170 04d9 02       		.byte	0x2
+ 1171 04da 79       		.byte	0x79
+ 1172 04db 00       		.sleb128 0
+ 1173 04dc 14       		.uleb128 0x14
+ 1174 04dd 02       		.byte	0x2
+ 1175 04de 7D       		.byte	0x7d
+ 1176 04df 00       		.sleb128 0
+ 1177 04e0 02       		.byte	0x2
+ 1178 04e1 76       		.byte	0x76
+ 1179 04e2 00       		.sleb128 0
+ 1180 04e3 00       		.byte	0
+ 1181 04e4 13       		.uleb128 0x13
+ 1182 04e5 A8000000 		.4byte	.LVL18
+ 1183 04e9 1F080000 		.4byte	0x81f
+ 1184 04ed FE040000 		.4byte	0x4fe
+ 1185 04f1 14       		.uleb128 0x14
+ 1186 04f2 01       		.byte	0x1
+ 1187 04f3 51       		.byte	0x51
+ 1188 04f4 02       		.byte	0x2
+ 1189 04f5 79       		.byte	0x79
+ 1190 04f6 00       		.sleb128 0
+ 1191 04f7 14       		.uleb128 0x14
+ 1192 04f8 01       		.byte	0x1
+ 1193 04f9 50       		.byte	0x50
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 22
+
+
+ 1194 04fa 02       		.byte	0x2
+ 1195 04fb 75       		.byte	0x75
+ 1196 04fc 00       		.sleb128 0
+ 1197 04fd 00       		.byte	0
+ 1198 04fe 13       		.uleb128 0x13
+ 1199 04ff C6000000 		.4byte	.LVL19
+ 1200 0503 38080000 		.4byte	0x838
+ 1201 0507 35050000 		.4byte	0x535
+ 1202 050b 14       		.uleb128 0x14
+ 1203 050c 01       		.byte	0x1
+ 1204 050d 53       		.byte	0x53
+ 1205 050e 02       		.byte	0x2
+ 1206 050f 78       		.byte	0x78
+ 1207 0510 00       		.sleb128 0
+ 1208 0511 14       		.uleb128 0x14
+ 1209 0512 01       		.byte	0x1
+ 1210 0513 52       		.byte	0x52
+ 1211 0514 02       		.byte	0x2
+ 1212 0515 7A       		.byte	0x7a
+ 1213 0516 00       		.sleb128 0
+ 1214 0517 14       		.uleb128 0x14
+ 1215 0518 01       		.byte	0x1
+ 1216 0519 51       		.byte	0x51
+ 1217 051a 02       		.byte	0x2
+ 1218 051b 75       		.byte	0x75
+ 1219 051c 00       		.sleb128 0
+ 1220 051d 14       		.uleb128 0x14
+ 1221 051e 02       		.byte	0x2
+ 1222 051f 7D       		.byte	0x7d
+ 1223 0520 08       		.sleb128 8
+ 1224 0521 04       		.byte	0x4
+ 1225 0522 91       		.byte	0x91
+ 1226 0523 54       		.sleb128 -44
+ 1227 0524 94       		.byte	0x94
+ 1228 0525 02       		.byte	0x2
+ 1229 0526 14       		.uleb128 0x14
+ 1230 0527 02       		.byte	0x2
+ 1231 0528 7D       		.byte	0x7d
+ 1232 0529 04       		.sleb128 4
+ 1233 052a 02       		.byte	0x2
+ 1234 052b 76       		.byte	0x76
+ 1235 052c 00       		.sleb128 0
+ 1236 052d 14       		.uleb128 0x14
+ 1237 052e 02       		.byte	0x2
+ 1238 052f 7D       		.byte	0x7d
+ 1239 0530 00       		.sleb128 0
+ 1240 0531 02       		.byte	0x2
+ 1241 0532 77       		.byte	0x77
+ 1242 0533 00       		.sleb128 0
+ 1243 0534 00       		.byte	0
+ 1244 0535 13       		.uleb128 0x13
+ 1245 0536 0E010000 		.4byte	.LVL25
+ 1246 053a F1070000 		.4byte	0x7f1
+ 1247 053e 66050000 		.4byte	0x566
+ 1248 0542 14       		.uleb128 0x14
+ 1249 0543 01       		.byte	0x1
+ 1250 0544 53       		.byte	0x53
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 23
+
+
+ 1251 0545 09       		.byte	0x9
+ 1252 0546 77       		.byte	0x77
+ 1253 0547 00       		.sleb128 0
+ 1254 0548 7B       		.byte	0x7b
+ 1255 0549 00       		.sleb128 0
+ 1256 054a 0A       		.byte	0xa
+ 1257 054b FFFF     		.2byte	0xffff
+ 1258 054d 1A       		.byte	0x1a
+ 1259 054e 1C       		.byte	0x1c
+ 1260 054f 14       		.uleb128 0x14
+ 1261 0550 01       		.byte	0x1
+ 1262 0551 52       		.byte	0x52
+ 1263 0552 04       		.byte	0x4
+ 1264 0553 91       		.byte	0x91
+ 1265 0554 54       		.sleb128 -44
+ 1266 0555 94       		.byte	0x94
+ 1267 0556 02       		.byte	0x2
+ 1268 0557 14       		.uleb128 0x14
+ 1269 0558 02       		.byte	0x2
+ 1270 0559 7D       		.byte	0x7d
+ 1271 055a 04       		.sleb128 4
+ 1272 055b 02       		.byte	0x2
+ 1273 055c 79       		.byte	0x79
+ 1274 055d 00       		.sleb128 0
+ 1275 055e 14       		.uleb128 0x14
+ 1276 055f 02       		.byte	0x2
+ 1277 0560 7D       		.byte	0x7d
+ 1278 0561 00       		.sleb128 0
+ 1279 0562 02       		.byte	0x2
+ 1280 0563 76       		.byte	0x76
+ 1281 0564 00       		.sleb128 0
+ 1282 0565 00       		.byte	0
+ 1283 0566 13       		.uleb128 0x13
+ 1284 0567 52010000 		.4byte	.LVL30
+ 1285 056b F1070000 		.4byte	0x7f1
+ 1286 056f 94050000 		.4byte	0x594
+ 1287 0573 14       		.uleb128 0x14
+ 1288 0574 01       		.byte	0x1
+ 1289 0575 53       		.byte	0x53
+ 1290 0576 02       		.byte	0x2
+ 1291 0577 77       		.byte	0x77
+ 1292 0578 00       		.sleb128 0
+ 1293 0579 14       		.uleb128 0x14
+ 1294 057a 01       		.byte	0x1
+ 1295 057b 52       		.byte	0x52
+ 1296 057c 02       		.byte	0x2
+ 1297 057d 78       		.byte	0x78
+ 1298 057e 00       		.sleb128 0
+ 1299 057f 14       		.uleb128 0x14
+ 1300 0580 01       		.byte	0x1
+ 1301 0581 51       		.byte	0x51
+ 1302 0582 02       		.byte	0x2
+ 1303 0583 7A       		.byte	0x7a
+ 1304 0584 00       		.sleb128 0
+ 1305 0585 14       		.uleb128 0x14
+ 1306 0586 02       		.byte	0x2
+ 1307 0587 7D       		.byte	0x7d
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 24
+
+
+ 1308 0588 04       		.sleb128 4
+ 1309 0589 02       		.byte	0x2
+ 1310 058a 79       		.byte	0x79
+ 1311 058b 00       		.sleb128 0
+ 1312 058c 14       		.uleb128 0x14
+ 1313 058d 02       		.byte	0x2
+ 1314 058e 7D       		.byte	0x7d
+ 1315 058f 00       		.sleb128 0
+ 1316 0590 02       		.byte	0x2
+ 1317 0591 76       		.byte	0x76
+ 1318 0592 00       		.sleb128 0
+ 1319 0593 00       		.byte	0
+ 1320 0594 13       		.uleb128 0x13
+ 1321 0595 72010000 		.4byte	.LVL32
+ 1322 0599 F1070000 		.4byte	0x7f1
+ 1323 059d BC050000 		.4byte	0x5bc
+ 1324 05a1 14       		.uleb128 0x14
+ 1325 05a2 01       		.byte	0x1
+ 1326 05a3 53       		.byte	0x53
+ 1327 05a4 02       		.byte	0x2
+ 1328 05a5 77       		.byte	0x77
+ 1329 05a6 00       		.sleb128 0
+ 1330 05a7 14       		.uleb128 0x14
+ 1331 05a8 01       		.byte	0x1
+ 1332 05a9 51       		.byte	0x51
+ 1333 05aa 02       		.byte	0x2
+ 1334 05ab 7A       		.byte	0x7a
+ 1335 05ac 00       		.sleb128 0
+ 1336 05ad 14       		.uleb128 0x14
+ 1337 05ae 02       		.byte	0x2
+ 1338 05af 7D       		.byte	0x7d
+ 1339 05b0 04       		.sleb128 4
+ 1340 05b1 02       		.byte	0x2
+ 1341 05b2 79       		.byte	0x79
+ 1342 05b3 00       		.sleb128 0
+ 1343 05b4 14       		.uleb128 0x14
+ 1344 05b5 02       		.byte	0x2
+ 1345 05b6 7D       		.byte	0x7d
+ 1346 05b7 00       		.sleb128 0
+ 1347 05b8 02       		.byte	0x2
+ 1348 05b9 76       		.byte	0x76
+ 1349 05ba 00       		.sleb128 0
+ 1350 05bb 00       		.byte	0
+ 1351 05bc 15       		.uleb128 0x15
+ 1352 05bd 98010000 		.4byte	.LVL35
+ 1353 05c1 F1070000 		.4byte	0x7f1
+ 1354 05c5 14       		.uleb128 0x14
+ 1355 05c6 01       		.byte	0x1
+ 1356 05c7 53       		.byte	0x53
+ 1357 05c8 02       		.byte	0x2
+ 1358 05c9 77       		.byte	0x77
+ 1359 05ca 00       		.sleb128 0
+ 1360 05cb 14       		.uleb128 0x14
+ 1361 05cc 01       		.byte	0x1
+ 1362 05cd 52       		.byte	0x52
+ 1363 05ce 04       		.byte	0x4
+ 1364 05cf 91       		.byte	0x91
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 25
+
+
+ 1365 05d0 54       		.sleb128 -44
+ 1366 05d1 94       		.byte	0x94
+ 1367 05d2 02       		.byte	0x2
+ 1368 05d3 14       		.uleb128 0x14
+ 1369 05d4 02       		.byte	0x2
+ 1370 05d5 7D       		.byte	0x7d
+ 1371 05d6 04       		.sleb128 4
+ 1372 05d7 02       		.byte	0x2
+ 1373 05d8 79       		.byte	0x79
+ 1374 05d9 00       		.sleb128 0
+ 1375 05da 14       		.uleb128 0x14
+ 1376 05db 02       		.byte	0x2
+ 1377 05dc 7D       		.byte	0x7d
+ 1378 05dd 00       		.sleb128 0
+ 1379 05de 02       		.byte	0x2
+ 1380 05df 76       		.byte	0x76
+ 1381 05e0 00       		.sleb128 0
+ 1382 05e1 00       		.byte	0
+ 1383 05e2 00       		.byte	0
+ 1384 05e3 0F       		.uleb128 0xf
+ 1385 05e4 1B010000 		.4byte	.LASF55
+ 1386 05e8 01       		.byte	0x1
+ 1387 05e9 15       		.byte	0x15
+ 1388 05ea 01       		.byte	0x1
+ 1389 05eb 00000000 		.4byte	.LFB118
+ 1390 05ef 1A000000 		.4byte	.LFE118
+ 1391 05f3 55020000 		.4byte	.LLST9
+ 1392 05f7 01       		.byte	0x1
+ 1393 05f8 30060000 		.4byte	0x630
+ 1394 05fc 10       		.uleb128 0x10
+ 1395 05fd 676800   		.ascii	"gh\000"
+ 1396 0600 01       		.byte	0x1
+ 1397 0601 15       		.byte	0x15
+ 1398 0602 F8030000 		.4byte	0x3f8
+ 1399 0606 75020000 		.4byte	.LLST10
+ 1400 060a 13       		.uleb128 0x13
+ 1401 060b 0C000000 		.4byte	.LVL38
+ 1402 060f D3070000 		.4byte	0x7d3
+ 1403 0613 1E060000 		.4byte	0x61e
+ 1404 0617 14       		.uleb128 0x14
+ 1405 0618 01       		.byte	0x1
+ 1406 0619 50       		.byte	0x50
+ 1407 061a 02       		.byte	0x2
+ 1408 061b 74       		.byte	0x74
+ 1409 061c 00       		.sleb128 0
+ 1410 061d 00       		.byte	0
+ 1411 061e 16       		.uleb128 0x16
+ 1412 061f 1A000000 		.4byte	.LVL39
+ 1413 0623 01       		.byte	0x1
+ 1414 0624 74080000 		.4byte	0x874
+ 1415 0628 14       		.uleb128 0x14
+ 1416 0629 01       		.byte	0x1
+ 1417 062a 50       		.byte	0x50
+ 1418 062b 02       		.byte	0x2
+ 1419 062c 74       		.byte	0x74
+ 1420 062d 00       		.sleb128 0
+ 1421 062e 00       		.byte	0
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 26
+
+
+ 1422 062f 00       		.byte	0
+ 1423 0630 17       		.uleb128 0x17
+ 1424 0631 01       		.byte	0x1
+ 1425 0632 0E030000 		.4byte	.LASF58
+ 1426 0636 01       		.byte	0x1
+ 1427 0637 79       		.byte	0x79
+ 1428 0638 01       		.byte	0x1
+ 1429 0639 2C020000 		.4byte	0x22c
+ 1430 063d 00000000 		.4byte	.LFB120
+ 1431 0641 30000000 		.4byte	.LFE120
+ 1432 0645 A2020000 		.4byte	.LLST11
+ 1433 0649 01       		.byte	0x1
+ 1434 064a CF060000 		.4byte	0x6cf
+ 1435 064e 10       		.uleb128 0x10
+ 1436 064f 6700     		.ascii	"g\000"
+ 1437 0651 01       		.byte	0x1
+ 1438 0652 79       		.byte	0x79
+ 1439 0653 41030000 		.4byte	0x341
+ 1440 0657 CE020000 		.4byte	.LLST12
+ 1441 065b 18       		.uleb128 0x18
+ 1442 065c 97010000 		.4byte	.LASF56
+ 1443 0660 01       		.byte	0x1
+ 1444 0661 79       		.byte	0x79
+ 1445 0662 CF060000 		.4byte	0x6cf
+ 1446 0666 EF020000 		.4byte	.LLST13
+ 1447 066a 18       		.uleb128 0x18
+ 1448 066b 05000000 		.4byte	.LASF57
+ 1449 066f 01       		.byte	0x1
+ 1450 0670 79       		.byte	0x79
+ 1451 0671 D5060000 		.4byte	0x6d5
+ 1452 0675 26030000 		.4byte	.LLST14
+ 1453 0679 13       		.uleb128 0x13
+ 1454 067a 10000000 		.4byte	.LVL41
+ 1455 067e 88080000 		.4byte	0x888
+ 1456 0682 AA060000 		.4byte	0x6aa
+ 1457 0686 14       		.uleb128 0x14
+ 1458 0687 01       		.byte	0x1
+ 1459 0688 53       		.byte	0x53
+ 1460 0689 05       		.byte	0x5
+ 1461 068a 03       		.byte	0x3
+ 1462 068b 00000000 		.4byte	.LANCHOR0
+ 1463 068f 14       		.uleb128 0x14
+ 1464 0690 01       		.byte	0x1
+ 1465 0691 52       		.byte	0x52
+ 1466 0692 02       		.byte	0x2
+ 1467 0693 75       		.byte	0x75
+ 1468 0694 00       		.sleb128 0
+ 1469 0695 14       		.uleb128 0x14
+ 1470 0696 01       		.byte	0x1
+ 1471 0697 51       		.byte	0x51
+ 1472 0698 03       		.byte	0x3
+ 1473 0699 F3       		.byte	0xf3
+ 1474 069a 01       		.uleb128 0x1
+ 1475 069b 51       		.byte	0x51
+ 1476 069c 14       		.uleb128 0x14
+ 1477 069d 01       		.byte	0x1
+ 1478 069e 50       		.byte	0x50
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 27
+
+
+ 1479 069f 03       		.byte	0x3
+ 1480 06a0 F3       		.byte	0xf3
+ 1481 06a1 01       		.uleb128 0x1
+ 1482 06a2 50       		.byte	0x50
+ 1483 06a3 14       		.uleb128 0x14
+ 1484 06a4 02       		.byte	0x2
+ 1485 06a5 7D       		.byte	0x7d
+ 1486 06a6 00       		.sleb128 0
+ 1487 06a7 01       		.byte	0x1
+ 1488 06a8 30       		.byte	0x30
+ 1489 06a9 00       		.byte	0
+ 1490 06aa 13       		.uleb128 0x13
+ 1491 06ab 1C000000 		.4byte	.LVL43
+ 1492 06af BA080000 		.4byte	0x8ba
+ 1493 06b3 BE060000 		.4byte	0x6be
+ 1494 06b7 14       		.uleb128 0x14
+ 1495 06b8 01       		.byte	0x1
+ 1496 06b9 50       		.byte	0x50
+ 1497 06ba 02       		.byte	0x2
+ 1498 06bb 74       		.byte	0x74
+ 1499 06bc 24       		.sleb128 36
+ 1500 06bd 00       		.byte	0
+ 1501 06be 15       		.uleb128 0x15
+ 1502 06bf 24000000 		.4byte	.LVL44
+ 1503 06c3 CE080000 		.4byte	0x8ce
+ 1504 06c7 14       		.uleb128 0x14
+ 1505 06c8 01       		.byte	0x1
+ 1506 06c9 50       		.byte	0x50
+ 1507 06ca 02       		.byte	0x2
+ 1508 06cb 74       		.byte	0x74
+ 1509 06cc 00       		.sleb128 0
+ 1510 06cd 00       		.byte	0
+ 1511 06ce 00       		.byte	0
+ 1512 06cf 05       		.uleb128 0x5
+ 1513 06d0 04       		.byte	0x4
+ 1514 06d1 E1030000 		.4byte	0x3e1
+ 1515 06d5 05       		.uleb128 0x5
+ 1516 06d6 04       		.byte	0x4
+ 1517 06d7 AF030000 		.4byte	0x3af
+ 1518 06db 17       		.uleb128 0x17
+ 1519 06dc 01       		.byte	0x1
+ 1520 06dd 8D030000 		.4byte	.LASF59
+ 1521 06e1 01       		.byte	0x1
+ 1522 06e2 8A       		.byte	0x8a
+ 1523 06e3 01       		.byte	0x1
+ 1524 06e4 A6000000 		.4byte	0xa6
+ 1525 06e8 00000000 		.4byte	.LFB121
+ 1526 06ec 48000000 		.4byte	.LFE121
+ 1527 06f0 44030000 		.4byte	.LLST15
+ 1528 06f4 01       		.byte	0x1
+ 1529 06f5 61070000 		.4byte	0x761
+ 1530 06f9 10       		.uleb128 0x10
+ 1531 06fa 676800   		.ascii	"gh\000"
+ 1532 06fd 01       		.byte	0x1
+ 1533 06fe 8A       		.byte	0x8a
+ 1534 06ff 2C020000 		.4byte	0x22c
+ 1535 0703 70030000 		.4byte	.LLST16
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 28
+
+
+ 1536 0707 10       		.uleb128 0x10
+ 1537 0708 6600     		.ascii	"f\000"
+ 1538 070a 01       		.byte	0x1
+ 1539 070b 8A       		.byte	0x8a
+ 1540 070c F3010000 		.4byte	0x1f3
+ 1541 0710 A4030000 		.4byte	.LLST17
+ 1542 0714 13       		.uleb128 0x13
+ 1543 0715 20000000 		.4byte	.LVL49
+ 1544 0719 D3070000 		.4byte	0x7d3
+ 1545 071d 28070000 		.4byte	0x728
+ 1546 0721 14       		.uleb128 0x14
+ 1547 0722 01       		.byte	0x1
+ 1548 0723 50       		.byte	0x50
+ 1549 0724 02       		.byte	0x2
+ 1550 0725 75       		.byte	0x75
+ 1551 0726 00       		.sleb128 0
+ 1552 0727 00       		.byte	0
+ 1553 0728 13       		.uleb128 0x13
+ 1554 0729 2A000000 		.4byte	.LVL50
+ 1555 072d E8080000 		.4byte	0x8e8
+ 1556 0731 3C070000 		.4byte	0x73c
+ 1557 0735 14       		.uleb128 0x14
+ 1558 0736 01       		.byte	0x1
+ 1559 0737 50       		.byte	0x50
+ 1560 0738 02       		.byte	0x2
+ 1561 0739 75       		.byte	0x75
+ 1562 073a 00       		.sleb128 0
+ 1563 073b 00       		.byte	0
+ 1564 073c 13       		.uleb128 0x13
+ 1565 073d 34000000 		.4byte	.LVL51
+ 1566 0741 05090000 		.4byte	0x905
+ 1567 0745 50070000 		.4byte	0x750
+ 1568 0749 14       		.uleb128 0x14
+ 1569 074a 01       		.byte	0x1
+ 1570 074b 50       		.byte	0x50
+ 1571 074c 02       		.byte	0x2
+ 1572 074d 74       		.byte	0x74
+ 1573 074e 00       		.sleb128 0
+ 1574 074f 00       		.byte	0
+ 1575 0750 15       		.uleb128 0x15
+ 1576 0751 3E000000 		.4byte	.LVL52
+ 1577 0755 74080000 		.4byte	0x874
+ 1578 0759 14       		.uleb128 0x14
+ 1579 075a 01       		.byte	0x1
+ 1580 075b 50       		.byte	0x50
+ 1581 075c 02       		.byte	0x2
+ 1582 075d 75       		.byte	0x75
+ 1583 075e 00       		.sleb128 0
+ 1584 075f 00       		.byte	0
+ 1585 0760 00       		.byte	0
+ 1586 0761 19       		.uleb128 0x19
+ 1587 0762 01       		.byte	0x1
+ 1588 0763 60010000 		.4byte	.LASF60
+ 1589 0767 01       		.byte	0x1
+ 1590 0768 9A       		.byte	0x9a
+ 1591 0769 01       		.byte	0x1
+ 1592 076a 62010000 		.4byte	0x162
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 29
+
+
+ 1593 076e 00000000 		.4byte	.LFB122
+ 1594 0772 18000000 		.4byte	.LFE122
+ 1595 0776 02       		.byte	0x2
+ 1596 0777 7D       		.byte	0x7d
+ 1597 0778 00       		.sleb128 0
+ 1598 0779 01       		.byte	0x1
+ 1599 077a A1070000 		.4byte	0x7a1
+ 1600 077e 10       		.uleb128 0x10
+ 1601 077f 676800   		.ascii	"gh\000"
+ 1602 0782 01       		.byte	0x1
+ 1603 0783 9A       		.byte	0x9a
+ 1604 0784 2C020000 		.4byte	0x22c
+ 1605 0788 DE030000 		.4byte	.LLST18
+ 1606 078c 16       		.uleb128 0x16
+ 1607 078d 14000000 		.4byte	.LVL57
+ 1608 0791 01       		.byte	0x1
+ 1609 0792 19090000 		.4byte	0x919
+ 1610 0796 14       		.uleb128 0x14
+ 1611 0797 01       		.byte	0x1
+ 1612 0798 50       		.byte	0x50
+ 1613 0799 05       		.byte	0x5
+ 1614 079a F3       		.byte	0xf3
+ 1615 079b 01       		.uleb128 0x1
+ 1616 079c 50       		.byte	0x50
+ 1617 079d 23       		.byte	0x23
+ 1618 079e 24       		.uleb128 0x24
+ 1619 079f 00       		.byte	0
+ 1620 07a0 00       		.byte	0
+ 1621 07a1 1A       		.uleb128 0x1a
+ 1622 07a2 8E010000 		.4byte	.LASF61
+ 1623 07a6 01       		.byte	0x1
+ 1624 07a7 71       		.byte	0x71
+ 1625 07a8 B2070000 		.4byte	0x7b2
+ 1626 07ac 05       		.byte	0x5
+ 1627 07ad 03       		.byte	0x3
+ 1628 07ae 00000000 		.4byte	imageVMT
+ 1629 07b2 06       		.uleb128 0x6
+ 1630 07b3 04040000 		.4byte	0x404
+ 1631 07b7 1B       		.uleb128 0x1b
+ 1632 07b8 6F030000 		.4byte	.LASF76
+ 1633 07bc 0D       		.byte	0xd
+ 1634 07bd 9806     		.2byte	0x698
+ 1635 07bf D1000000 		.4byte	0xd1
+ 1636 07c3 01       		.byte	0x1
+ 1637 07c4 01       		.byte	0x1
+ 1638 07c5 1C       		.uleb128 0x1c
+ 1639 07c6 01       		.byte	0x1
+ 1640 07c7 70020000 		.4byte	.LASF77
+ 1641 07cb 0A       		.byte	0xa
+ 1642 07cc A4       		.byte	0xa4
+ 1643 07cd 01       		.byte	0x1
+ 1644 07ce 4B010000 		.4byte	0x14b
+ 1645 07d2 01       		.byte	0x1
+ 1646 07d3 1D       		.uleb128 0x1d
+ 1647 07d4 01       		.byte	0x1
+ 1648 07d5 7C030000 		.4byte	.LASF64
+ 1649 07d9 09       		.byte	0x9
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 30
+
+
+ 1650 07da E8       		.byte	0xe8
+ 1651 07db 01       		.byte	0x1
+ 1652 07dc A6000000 		.4byte	0xa6
+ 1653 07e0 01       		.byte	0x1
+ 1654 07e1 EB070000 		.4byte	0x7eb
+ 1655 07e5 0E       		.uleb128 0xe
+ 1656 07e6 EB070000 		.4byte	0x7eb
+ 1657 07ea 00       		.byte	0
+ 1658 07eb 05       		.uleb128 0x5
+ 1659 07ec 04       		.byte	0x4
+ 1660 07ed 16020000 		.4byte	0x216
+ 1661 07f1 1E       		.uleb128 0x1e
+ 1662 07f2 01       		.byte	0x1
+ 1663 07f3 7F010000 		.4byte	.LASF62
+ 1664 07f7 07       		.byte	0x7
+ 1665 07f8 8501     		.2byte	0x185
+ 1666 07fa 01       		.byte	0x1
+ 1667 07fb 01       		.byte	0x1
+ 1668 07fc 1F080000 		.4byte	0x81f
+ 1669 0800 0E       		.uleb128 0xe
+ 1670 0801 41030000 		.4byte	0x341
+ 1671 0805 0E       		.uleb128 0xe
+ 1672 0806 13010000 		.4byte	0x113
+ 1673 080a 0E       		.uleb128 0xe
+ 1674 080b 13010000 		.4byte	0x113
+ 1675 080f 0E       		.uleb128 0xe
+ 1676 0810 13010000 		.4byte	0x113
+ 1677 0814 0E       		.uleb128 0xe
+ 1678 0815 13010000 		.4byte	0x113
+ 1679 0819 0E       		.uleb128 0xe
+ 1680 081a 4B010000 		.4byte	0x14b
+ 1681 081e 00       		.byte	0
+ 1682 081f 1F       		.uleb128 0x1f
+ 1683 0820 01       		.byte	0x1
+ 1684 0821 9A020000 		.4byte	.LASF63
+ 1685 0825 09       		.byte	0x9
+ 1686 0826 F5       		.byte	0xf5
+ 1687 0827 01       		.byte	0x1
+ 1688 0828 01       		.byte	0x1
+ 1689 0829 38080000 		.4byte	0x838
+ 1690 082d 0E       		.uleb128 0xe
+ 1691 082e EB070000 		.4byte	0x7eb
+ 1692 0832 0E       		.uleb128 0xe
+ 1693 0833 4B010000 		.4byte	0x14b
+ 1694 0837 00       		.byte	0
+ 1695 0838 20       		.uleb128 0x20
+ 1696 0839 01       		.byte	0x1
+ 1697 083a 47010000 		.4byte	.LASF65
+ 1698 083e 09       		.byte	0x9
+ 1699 083f 1C01     		.2byte	0x11c
+ 1700 0841 01       		.byte	0x1
+ 1701 0842 62010000 		.4byte	0x162
+ 1702 0846 01       		.byte	0x1
+ 1703 0847 74080000 		.4byte	0x874
+ 1704 084b 0E       		.uleb128 0xe
+ 1705 084c 41030000 		.4byte	0x341
+ 1706 0850 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 31
+
+
+ 1707 0851 EB070000 		.4byte	0x7eb
+ 1708 0855 0E       		.uleb128 0xe
+ 1709 0856 13010000 		.4byte	0x113
+ 1710 085a 0E       		.uleb128 0xe
+ 1711 085b 13010000 		.4byte	0x113
+ 1712 085f 0E       		.uleb128 0xe
+ 1713 0860 13010000 		.4byte	0x113
+ 1714 0864 0E       		.uleb128 0xe
+ 1715 0865 13010000 		.4byte	0x113
+ 1716 0869 0E       		.uleb128 0xe
+ 1717 086a 13010000 		.4byte	0x113
+ 1718 086e 0E       		.uleb128 0xe
+ 1719 086f 13010000 		.4byte	0x113
+ 1720 0873 00       		.byte	0
+ 1721 0874 1F       		.uleb128 0x1f
+ 1722 0875 01       		.byte	0x1
+ 1723 0876 6B000000 		.4byte	.LASF66
+ 1724 087a 09       		.byte	0x9
+ 1725 087b DB       		.byte	0xdb
+ 1726 087c 01       		.byte	0x1
+ 1727 087d 01       		.byte	0x1
+ 1728 087e 88080000 		.4byte	0x888
+ 1729 0882 0E       		.uleb128 0xe
+ 1730 0883 EB070000 		.4byte	0x7eb
+ 1731 0887 00       		.byte	0
+ 1732 0888 1D       		.uleb128 0x1d
+ 1733 0889 01       		.byte	0x1
+ 1734 088a C8030000 		.4byte	.LASF67
+ 1735 088e 0B       		.byte	0xb
+ 1736 088f BF       		.byte	0xbf
+ 1737 0890 01       		.byte	0x1
+ 1738 0891 2C020000 		.4byte	0x22c
+ 1739 0895 01       		.byte	0x1
+ 1740 0896 B4080000 		.4byte	0x8b4
+ 1741 089a 0E       		.uleb128 0xe
+ 1742 089b 41030000 		.4byte	0x341
+ 1743 089f 0E       		.uleb128 0xe
+ 1744 08a0 F8030000 		.4byte	0x3f8
+ 1745 08a4 0E       		.uleb128 0xe
+ 1746 08a5 0F040000 		.4byte	0x40f
+ 1747 08a9 0E       		.uleb128 0xe
+ 1748 08aa B4080000 		.4byte	0x8b4
+ 1749 08ae 0E       		.uleb128 0xe
+ 1750 08af 86000000 		.4byte	0x86
+ 1751 08b3 00       		.byte	0
+ 1752 08b4 05       		.uleb128 0x5
+ 1753 08b5 04       		.byte	0x4
+ 1754 08b6 B2070000 		.4byte	0x7b2
+ 1755 08ba 1F       		.uleb128 0x1f
+ 1756 08bb 01       		.byte	0x1
+ 1757 08bc 41030000 		.4byte	.LASF68
+ 1758 08c0 09       		.byte	0x9
+ 1759 08c1 8B       		.byte	0x8b
+ 1760 08c2 01       		.byte	0x1
+ 1761 08c3 01       		.byte	0x1
+ 1762 08c4 CE080000 		.4byte	0x8ce
+ 1763 08c8 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 32
+
+
+ 1764 08c9 EB070000 		.4byte	0x7eb
+ 1765 08cd 00       		.byte	0
+ 1766 08ce 1E       		.uleb128 0x1e
+ 1767 08cf 01       		.byte	0x1
+ 1768 08d0 B3010000 		.4byte	.LASF69
+ 1769 08d4 0A       		.byte	0xa
+ 1770 08d5 5601     		.2byte	0x156
+ 1771 08d7 01       		.byte	0x1
+ 1772 08d8 01       		.byte	0x1
+ 1773 08d9 E8080000 		.4byte	0x8e8
+ 1774 08dd 0E       		.uleb128 0xe
+ 1775 08de 2C020000 		.4byte	0x22c
+ 1776 08e2 0E       		.uleb128 0xe
+ 1777 08e3 A6000000 		.4byte	0xa6
+ 1778 08e7 00       		.byte	0
+ 1779 08e8 1D       		.uleb128 0x1d
+ 1780 08e9 01       		.byte	0x1
+ 1781 08ea 57000000 		.4byte	.LASF70
+ 1782 08ee 09       		.byte	0x9
+ 1783 08ef A5       		.byte	0xa5
+ 1784 08f0 01       		.byte	0x1
+ 1785 08f1 62010000 		.4byte	0x162
+ 1786 08f5 01       		.byte	0x1
+ 1787 08f6 05090000 		.4byte	0x905
+ 1788 08fa 0E       		.uleb128 0xe
+ 1789 08fb EB070000 		.4byte	0x7eb
+ 1790 08ff 0E       		.uleb128 0xe
+ 1791 0900 F3010000 		.4byte	0x1f3
+ 1792 0904 00       		.byte	0
+ 1793 0905 1F       		.uleb128 0x1f
+ 1794 0906 01       		.byte	0x1
+ 1795 0907 D5000000 		.4byte	.LASF71
+ 1796 090b 0B       		.byte	0xb
+ 1797 090c CC       		.byte	0xcc
+ 1798 090d 01       		.byte	0x1
+ 1799 090e 01       		.byte	0x1
+ 1800 090f 19090000 		.4byte	0x919
+ 1801 0913 0E       		.uleb128 0xe
+ 1802 0914 2C020000 		.4byte	0x22c
+ 1803 0918 00       		.byte	0
+ 1804 0919 21       		.uleb128 0x21
+ 1805 091a 01       		.byte	0x1
+ 1806 091b C5020000 		.4byte	.LASF72
+ 1807 091f 09       		.byte	0x9
+ 1808 0920 0701     		.2byte	0x107
+ 1809 0922 01       		.byte	0x1
+ 1810 0923 62010000 		.4byte	0x162
+ 1811 0927 01       		.byte	0x1
+ 1812 0928 0E       		.uleb128 0xe
+ 1813 0929 EB070000 		.4byte	0x7eb
+ 1814 092d 00       		.byte	0
+ 1815 092e 00       		.byte	0
+ 1816              		.section	.debug_abbrev,"",%progbits
+ 1817              	.Ldebug_abbrev0:
+ 1818 0000 01       		.uleb128 0x1
+ 1819 0001 11       		.uleb128 0x11
+ 1820 0002 01       		.byte	0x1
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 33
+
+
+ 1821 0003 25       		.uleb128 0x25
+ 1822 0004 0E       		.uleb128 0xe
+ 1823 0005 13       		.uleb128 0x13
+ 1824 0006 0B       		.uleb128 0xb
+ 1825 0007 03       		.uleb128 0x3
+ 1826 0008 0E       		.uleb128 0xe
+ 1827 0009 1B       		.uleb128 0x1b
+ 1828 000a 0E       		.uleb128 0xe
+ 1829 000b 55       		.uleb128 0x55
+ 1830 000c 06       		.uleb128 0x6
+ 1831 000d 11       		.uleb128 0x11
+ 1832 000e 01       		.uleb128 0x1
+ 1833 000f 52       		.uleb128 0x52
+ 1834 0010 01       		.uleb128 0x1
+ 1835 0011 10       		.uleb128 0x10
+ 1836 0012 06       		.uleb128 0x6
+ 1837 0013 00       		.byte	0
+ 1838 0014 00       		.byte	0
+ 1839 0015 02       		.uleb128 0x2
+ 1840 0016 24       		.uleb128 0x24
+ 1841 0017 00       		.byte	0
+ 1842 0018 0B       		.uleb128 0xb
+ 1843 0019 0B       		.uleb128 0xb
+ 1844 001a 3E       		.uleb128 0x3e
+ 1845 001b 0B       		.uleb128 0xb
+ 1846 001c 03       		.uleb128 0x3
+ 1847 001d 08       		.uleb128 0x8
+ 1848 001e 00       		.byte	0
+ 1849 001f 00       		.byte	0
+ 1850 0020 03       		.uleb128 0x3
+ 1851 0021 16       		.uleb128 0x16
+ 1852 0022 00       		.byte	0
+ 1853 0023 03       		.uleb128 0x3
+ 1854 0024 0E       		.uleb128 0xe
+ 1855 0025 3A       		.uleb128 0x3a
+ 1856 0026 0B       		.uleb128 0xb
+ 1857 0027 3B       		.uleb128 0x3b
+ 1858 0028 0B       		.uleb128 0xb
+ 1859 0029 49       		.uleb128 0x49
+ 1860 002a 13       		.uleb128 0x13
+ 1861 002b 00       		.byte	0
+ 1862 002c 00       		.byte	0
+ 1863 002d 04       		.uleb128 0x4
+ 1864 002e 24       		.uleb128 0x24
+ 1865 002f 00       		.byte	0
+ 1866 0030 0B       		.uleb128 0xb
+ 1867 0031 0B       		.uleb128 0xb
+ 1868 0032 3E       		.uleb128 0x3e
+ 1869 0033 0B       		.uleb128 0xb
+ 1870 0034 03       		.uleb128 0x3
+ 1871 0035 0E       		.uleb128 0xe
+ 1872 0036 00       		.byte	0
+ 1873 0037 00       		.byte	0
+ 1874 0038 05       		.uleb128 0x5
+ 1875 0039 0F       		.uleb128 0xf
+ 1876 003a 00       		.byte	0
+ 1877 003b 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 34
+
+
+ 1878 003c 0B       		.uleb128 0xb
+ 1879 003d 49       		.uleb128 0x49
+ 1880 003e 13       		.uleb128 0x13
+ 1881 003f 00       		.byte	0
+ 1882 0040 00       		.byte	0
+ 1883 0041 06       		.uleb128 0x6
+ 1884 0042 26       		.uleb128 0x26
+ 1885 0043 00       		.byte	0
+ 1886 0044 49       		.uleb128 0x49
+ 1887 0045 13       		.uleb128 0x13
+ 1888 0046 00       		.byte	0
+ 1889 0047 00       		.byte	0
+ 1890 0048 07       		.uleb128 0x7
+ 1891 0049 35       		.uleb128 0x35
+ 1892 004a 00       		.byte	0
+ 1893 004b 49       		.uleb128 0x49
+ 1894 004c 13       		.uleb128 0x13
+ 1895 004d 00       		.byte	0
+ 1896 004e 00       		.byte	0
+ 1897 004f 08       		.uleb128 0x8
+ 1898 0050 13       		.uleb128 0x13
+ 1899 0051 00       		.byte	0
+ 1900 0052 03       		.uleb128 0x3
+ 1901 0053 0E       		.uleb128 0xe
+ 1902 0054 3C       		.uleb128 0x3c
+ 1903 0055 0C       		.uleb128 0xc
+ 1904 0056 00       		.byte	0
+ 1905 0057 00       		.byte	0
+ 1906 0058 09       		.uleb128 0x9
+ 1907 0059 13       		.uleb128 0x13
+ 1908 005a 01       		.byte	0x1
+ 1909 005b 03       		.uleb128 0x3
+ 1910 005c 0E       		.uleb128 0xe
+ 1911 005d 0B       		.uleb128 0xb
+ 1912 005e 0B       		.uleb128 0xb
+ 1913 005f 3A       		.uleb128 0x3a
+ 1914 0060 0B       		.uleb128 0xb
+ 1915 0061 3B       		.uleb128 0x3b
+ 1916 0062 0B       		.uleb128 0xb
+ 1917 0063 01       		.uleb128 0x1
+ 1918 0064 13       		.uleb128 0x13
+ 1919 0065 00       		.byte	0
+ 1920 0066 00       		.byte	0
+ 1921 0067 0A       		.uleb128 0xa
+ 1922 0068 0D       		.uleb128 0xd
+ 1923 0069 00       		.byte	0
+ 1924 006a 03       		.uleb128 0x3
+ 1925 006b 0E       		.uleb128 0xe
+ 1926 006c 3A       		.uleb128 0x3a
+ 1927 006d 0B       		.uleb128 0xb
+ 1928 006e 3B       		.uleb128 0x3b
+ 1929 006f 0B       		.uleb128 0xb
+ 1930 0070 49       		.uleb128 0x49
+ 1931 0071 13       		.uleb128 0x13
+ 1932 0072 38       		.uleb128 0x38
+ 1933 0073 0A       		.uleb128 0xa
+ 1934 0074 00       		.byte	0
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 35
+
+
+ 1935 0075 00       		.byte	0
+ 1936 0076 0B       		.uleb128 0xb
+ 1937 0077 16       		.uleb128 0x16
+ 1938 0078 00       		.byte	0
+ 1939 0079 03       		.uleb128 0x3
+ 1940 007a 0E       		.uleb128 0xe
+ 1941 007b 3A       		.uleb128 0x3a
+ 1942 007c 0B       		.uleb128 0xb
+ 1943 007d 3B       		.uleb128 0x3b
+ 1944 007e 05       		.uleb128 0x5
+ 1945 007f 49       		.uleb128 0x49
+ 1946 0080 13       		.uleb128 0x13
+ 1947 0081 00       		.byte	0
+ 1948 0082 00       		.byte	0
+ 1949 0083 0C       		.uleb128 0xc
+ 1950 0084 0D       		.uleb128 0xd
+ 1951 0085 00       		.byte	0
+ 1952 0086 03       		.uleb128 0x3
+ 1953 0087 08       		.uleb128 0x8
+ 1954 0088 3A       		.uleb128 0x3a
+ 1955 0089 0B       		.uleb128 0xb
+ 1956 008a 3B       		.uleb128 0x3b
+ 1957 008b 0B       		.uleb128 0xb
+ 1958 008c 49       		.uleb128 0x49
+ 1959 008d 13       		.uleb128 0x13
+ 1960 008e 38       		.uleb128 0x38
+ 1961 008f 0A       		.uleb128 0xa
+ 1962 0090 00       		.byte	0
+ 1963 0091 00       		.byte	0
+ 1964 0092 0D       		.uleb128 0xd
+ 1965 0093 15       		.uleb128 0x15
+ 1966 0094 01       		.byte	0x1
+ 1967 0095 27       		.uleb128 0x27
+ 1968 0096 0C       		.uleb128 0xc
+ 1969 0097 01       		.uleb128 0x1
+ 1970 0098 13       		.uleb128 0x13
+ 1971 0099 00       		.byte	0
+ 1972 009a 00       		.byte	0
+ 1973 009b 0E       		.uleb128 0xe
+ 1974 009c 05       		.uleb128 0x5
+ 1975 009d 00       		.byte	0
+ 1976 009e 49       		.uleb128 0x49
+ 1977 009f 13       		.uleb128 0x13
+ 1978 00a0 00       		.byte	0
+ 1979 00a1 00       		.byte	0
+ 1980 00a2 0F       		.uleb128 0xf
+ 1981 00a3 2E       		.uleb128 0x2e
+ 1982 00a4 01       		.byte	0x1
+ 1983 00a5 03       		.uleb128 0x3
+ 1984 00a6 0E       		.uleb128 0xe
+ 1985 00a7 3A       		.uleb128 0x3a
+ 1986 00a8 0B       		.uleb128 0xb
+ 1987 00a9 3B       		.uleb128 0x3b
+ 1988 00aa 0B       		.uleb128 0xb
+ 1989 00ab 27       		.uleb128 0x27
+ 1990 00ac 0C       		.uleb128 0xc
+ 1991 00ad 11       		.uleb128 0x11
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 36
+
+
+ 1992 00ae 01       		.uleb128 0x1
+ 1993 00af 12       		.uleb128 0x12
+ 1994 00b0 01       		.uleb128 0x1
+ 1995 00b1 40       		.uleb128 0x40
+ 1996 00b2 06       		.uleb128 0x6
+ 1997 00b3 9742     		.uleb128 0x2117
+ 1998 00b5 0C       		.uleb128 0xc
+ 1999 00b6 01       		.uleb128 0x1
+ 2000 00b7 13       		.uleb128 0x13
+ 2001 00b8 00       		.byte	0
+ 2002 00b9 00       		.byte	0
+ 2003 00ba 10       		.uleb128 0x10
+ 2004 00bb 05       		.uleb128 0x5
+ 2005 00bc 00       		.byte	0
+ 2006 00bd 03       		.uleb128 0x3
+ 2007 00be 08       		.uleb128 0x8
+ 2008 00bf 3A       		.uleb128 0x3a
+ 2009 00c0 0B       		.uleb128 0xb
+ 2010 00c1 3B       		.uleb128 0x3b
+ 2011 00c2 0B       		.uleb128 0xb
+ 2012 00c3 49       		.uleb128 0x49
+ 2013 00c4 13       		.uleb128 0x13
+ 2014 00c5 02       		.uleb128 0x2
+ 2015 00c6 06       		.uleb128 0x6
+ 2016 00c7 00       		.byte	0
+ 2017 00c8 00       		.byte	0
+ 2018 00c9 11       		.uleb128 0x11
+ 2019 00ca 34       		.uleb128 0x34
+ 2020 00cb 00       		.byte	0
+ 2021 00cc 03       		.uleb128 0x3
+ 2022 00cd 08       		.uleb128 0x8
+ 2023 00ce 3A       		.uleb128 0x3a
+ 2024 00cf 0B       		.uleb128 0xb
+ 2025 00d0 3B       		.uleb128 0x3b
+ 2026 00d1 0B       		.uleb128 0xb
+ 2027 00d2 49       		.uleb128 0x49
+ 2028 00d3 13       		.uleb128 0x13
+ 2029 00d4 02       		.uleb128 0x2
+ 2030 00d5 06       		.uleb128 0x6
+ 2031 00d6 00       		.byte	0
+ 2032 00d7 00       		.byte	0
+ 2033 00d8 12       		.uleb128 0x12
+ 2034 00d9 898201   		.uleb128 0x4109
+ 2035 00dc 00       		.byte	0
+ 2036 00dd 11       		.uleb128 0x11
+ 2037 00de 01       		.uleb128 0x1
+ 2038 00df 31       		.uleb128 0x31
+ 2039 00e0 13       		.uleb128 0x13
+ 2040 00e1 00       		.byte	0
+ 2041 00e2 00       		.byte	0
+ 2042 00e3 13       		.uleb128 0x13
+ 2043 00e4 898201   		.uleb128 0x4109
+ 2044 00e7 01       		.byte	0x1
+ 2045 00e8 11       		.uleb128 0x11
+ 2046 00e9 01       		.uleb128 0x1
+ 2047 00ea 31       		.uleb128 0x31
+ 2048 00eb 13       		.uleb128 0x13
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 37
+
+
+ 2049 00ec 01       		.uleb128 0x1
+ 2050 00ed 13       		.uleb128 0x13
+ 2051 00ee 00       		.byte	0
+ 2052 00ef 00       		.byte	0
+ 2053 00f0 14       		.uleb128 0x14
+ 2054 00f1 8A8201   		.uleb128 0x410a
+ 2055 00f4 00       		.byte	0
+ 2056 00f5 02       		.uleb128 0x2
+ 2057 00f6 0A       		.uleb128 0xa
+ 2058 00f7 9142     		.uleb128 0x2111
+ 2059 00f9 0A       		.uleb128 0xa
+ 2060 00fa 00       		.byte	0
+ 2061 00fb 00       		.byte	0
+ 2062 00fc 15       		.uleb128 0x15
+ 2063 00fd 898201   		.uleb128 0x4109
+ 2064 0100 01       		.byte	0x1
+ 2065 0101 11       		.uleb128 0x11
+ 2066 0102 01       		.uleb128 0x1
+ 2067 0103 31       		.uleb128 0x31
+ 2068 0104 13       		.uleb128 0x13
+ 2069 0105 00       		.byte	0
+ 2070 0106 00       		.byte	0
+ 2071 0107 16       		.uleb128 0x16
+ 2072 0108 898201   		.uleb128 0x4109
+ 2073 010b 01       		.byte	0x1
+ 2074 010c 11       		.uleb128 0x11
+ 2075 010d 01       		.uleb128 0x1
+ 2076 010e 9542     		.uleb128 0x2115
+ 2077 0110 0C       		.uleb128 0xc
+ 2078 0111 31       		.uleb128 0x31
+ 2079 0112 13       		.uleb128 0x13
+ 2080 0113 00       		.byte	0
+ 2081 0114 00       		.byte	0
+ 2082 0115 17       		.uleb128 0x17
+ 2083 0116 2E       		.uleb128 0x2e
+ 2084 0117 01       		.byte	0x1
+ 2085 0118 3F       		.uleb128 0x3f
+ 2086 0119 0C       		.uleb128 0xc
+ 2087 011a 03       		.uleb128 0x3
+ 2088 011b 0E       		.uleb128 0xe
+ 2089 011c 3A       		.uleb128 0x3a
+ 2090 011d 0B       		.uleb128 0xb
+ 2091 011e 3B       		.uleb128 0x3b
+ 2092 011f 0B       		.uleb128 0xb
+ 2093 0120 27       		.uleb128 0x27
+ 2094 0121 0C       		.uleb128 0xc
+ 2095 0122 49       		.uleb128 0x49
+ 2096 0123 13       		.uleb128 0x13
+ 2097 0124 11       		.uleb128 0x11
+ 2098 0125 01       		.uleb128 0x1
+ 2099 0126 12       		.uleb128 0x12
+ 2100 0127 01       		.uleb128 0x1
+ 2101 0128 40       		.uleb128 0x40
+ 2102 0129 06       		.uleb128 0x6
+ 2103 012a 9742     		.uleb128 0x2117
+ 2104 012c 0C       		.uleb128 0xc
+ 2105 012d 01       		.uleb128 0x1
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 38
+
+
+ 2106 012e 13       		.uleb128 0x13
+ 2107 012f 00       		.byte	0
+ 2108 0130 00       		.byte	0
+ 2109 0131 18       		.uleb128 0x18
+ 2110 0132 05       		.uleb128 0x5
+ 2111 0133 00       		.byte	0
+ 2112 0134 03       		.uleb128 0x3
+ 2113 0135 0E       		.uleb128 0xe
+ 2114 0136 3A       		.uleb128 0x3a
+ 2115 0137 0B       		.uleb128 0xb
+ 2116 0138 3B       		.uleb128 0x3b
+ 2117 0139 0B       		.uleb128 0xb
+ 2118 013a 49       		.uleb128 0x49
+ 2119 013b 13       		.uleb128 0x13
+ 2120 013c 02       		.uleb128 0x2
+ 2121 013d 06       		.uleb128 0x6
+ 2122 013e 00       		.byte	0
+ 2123 013f 00       		.byte	0
+ 2124 0140 19       		.uleb128 0x19
+ 2125 0141 2E       		.uleb128 0x2e
+ 2126 0142 01       		.byte	0x1
+ 2127 0143 3F       		.uleb128 0x3f
+ 2128 0144 0C       		.uleb128 0xc
+ 2129 0145 03       		.uleb128 0x3
+ 2130 0146 0E       		.uleb128 0xe
+ 2131 0147 3A       		.uleb128 0x3a
+ 2132 0148 0B       		.uleb128 0xb
+ 2133 0149 3B       		.uleb128 0x3b
+ 2134 014a 0B       		.uleb128 0xb
+ 2135 014b 27       		.uleb128 0x27
+ 2136 014c 0C       		.uleb128 0xc
+ 2137 014d 49       		.uleb128 0x49
+ 2138 014e 13       		.uleb128 0x13
+ 2139 014f 11       		.uleb128 0x11
+ 2140 0150 01       		.uleb128 0x1
+ 2141 0151 12       		.uleb128 0x12
+ 2142 0152 01       		.uleb128 0x1
+ 2143 0153 40       		.uleb128 0x40
+ 2144 0154 0A       		.uleb128 0xa
+ 2145 0155 9742     		.uleb128 0x2117
+ 2146 0157 0C       		.uleb128 0xc
+ 2147 0158 01       		.uleb128 0x1
+ 2148 0159 13       		.uleb128 0x13
+ 2149 015a 00       		.byte	0
+ 2150 015b 00       		.byte	0
+ 2151 015c 1A       		.uleb128 0x1a
+ 2152 015d 34       		.uleb128 0x34
+ 2153 015e 00       		.byte	0
+ 2154 015f 03       		.uleb128 0x3
+ 2155 0160 0E       		.uleb128 0xe
+ 2156 0161 3A       		.uleb128 0x3a
+ 2157 0162 0B       		.uleb128 0xb
+ 2158 0163 3B       		.uleb128 0x3b
+ 2159 0164 0B       		.uleb128 0xb
+ 2160 0165 49       		.uleb128 0x49
+ 2161 0166 13       		.uleb128 0x13
+ 2162 0167 02       		.uleb128 0x2
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 39
+
+
+ 2163 0168 0A       		.uleb128 0xa
+ 2164 0169 00       		.byte	0
+ 2165 016a 00       		.byte	0
+ 2166 016b 1B       		.uleb128 0x1b
+ 2167 016c 34       		.uleb128 0x34
+ 2168 016d 00       		.byte	0
+ 2169 016e 03       		.uleb128 0x3
+ 2170 016f 0E       		.uleb128 0xe
+ 2171 0170 3A       		.uleb128 0x3a
+ 2172 0171 0B       		.uleb128 0xb
+ 2173 0172 3B       		.uleb128 0x3b
+ 2174 0173 05       		.uleb128 0x5
+ 2175 0174 49       		.uleb128 0x49
+ 2176 0175 13       		.uleb128 0x13
+ 2177 0176 3F       		.uleb128 0x3f
+ 2178 0177 0C       		.uleb128 0xc
+ 2179 0178 3C       		.uleb128 0x3c
+ 2180 0179 0C       		.uleb128 0xc
+ 2181 017a 00       		.byte	0
+ 2182 017b 00       		.byte	0
+ 2183 017c 1C       		.uleb128 0x1c
+ 2184 017d 2E       		.uleb128 0x2e
+ 2185 017e 00       		.byte	0
+ 2186 017f 3F       		.uleb128 0x3f
+ 2187 0180 0C       		.uleb128 0xc
+ 2188 0181 03       		.uleb128 0x3
+ 2189 0182 0E       		.uleb128 0xe
+ 2190 0183 3A       		.uleb128 0x3a
+ 2191 0184 0B       		.uleb128 0xb
+ 2192 0185 3B       		.uleb128 0x3b
+ 2193 0186 0B       		.uleb128 0xb
+ 2194 0187 27       		.uleb128 0x27
+ 2195 0188 0C       		.uleb128 0xc
+ 2196 0189 49       		.uleb128 0x49
+ 2197 018a 13       		.uleb128 0x13
+ 2198 018b 3C       		.uleb128 0x3c
+ 2199 018c 0C       		.uleb128 0xc
+ 2200 018d 00       		.byte	0
+ 2201 018e 00       		.byte	0
+ 2202 018f 1D       		.uleb128 0x1d
+ 2203 0190 2E       		.uleb128 0x2e
+ 2204 0191 01       		.byte	0x1
+ 2205 0192 3F       		.uleb128 0x3f
+ 2206 0193 0C       		.uleb128 0xc
+ 2207 0194 03       		.uleb128 0x3
+ 2208 0195 0E       		.uleb128 0xe
+ 2209 0196 3A       		.uleb128 0x3a
+ 2210 0197 0B       		.uleb128 0xb
+ 2211 0198 3B       		.uleb128 0x3b
+ 2212 0199 0B       		.uleb128 0xb
+ 2213 019a 27       		.uleb128 0x27
+ 2214 019b 0C       		.uleb128 0xc
+ 2215 019c 49       		.uleb128 0x49
+ 2216 019d 13       		.uleb128 0x13
+ 2217 019e 3C       		.uleb128 0x3c
+ 2218 019f 0C       		.uleb128 0xc
+ 2219 01a0 01       		.uleb128 0x1
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 40
+
+
+ 2220 01a1 13       		.uleb128 0x13
+ 2221 01a2 00       		.byte	0
+ 2222 01a3 00       		.byte	0
+ 2223 01a4 1E       		.uleb128 0x1e
+ 2224 01a5 2E       		.uleb128 0x2e
+ 2225 01a6 01       		.byte	0x1
+ 2226 01a7 3F       		.uleb128 0x3f
+ 2227 01a8 0C       		.uleb128 0xc
+ 2228 01a9 03       		.uleb128 0x3
+ 2229 01aa 0E       		.uleb128 0xe
+ 2230 01ab 3A       		.uleb128 0x3a
+ 2231 01ac 0B       		.uleb128 0xb
+ 2232 01ad 3B       		.uleb128 0x3b
+ 2233 01ae 05       		.uleb128 0x5
+ 2234 01af 27       		.uleb128 0x27
+ 2235 01b0 0C       		.uleb128 0xc
+ 2236 01b1 3C       		.uleb128 0x3c
+ 2237 01b2 0C       		.uleb128 0xc
+ 2238 01b3 01       		.uleb128 0x1
+ 2239 01b4 13       		.uleb128 0x13
+ 2240 01b5 00       		.byte	0
+ 2241 01b6 00       		.byte	0
+ 2242 01b7 1F       		.uleb128 0x1f
+ 2243 01b8 2E       		.uleb128 0x2e
+ 2244 01b9 01       		.byte	0x1
+ 2245 01ba 3F       		.uleb128 0x3f
+ 2246 01bb 0C       		.uleb128 0xc
+ 2247 01bc 03       		.uleb128 0x3
+ 2248 01bd 0E       		.uleb128 0xe
+ 2249 01be 3A       		.uleb128 0x3a
+ 2250 01bf 0B       		.uleb128 0xb
+ 2251 01c0 3B       		.uleb128 0x3b
+ 2252 01c1 0B       		.uleb128 0xb
+ 2253 01c2 27       		.uleb128 0x27
+ 2254 01c3 0C       		.uleb128 0xc
+ 2255 01c4 3C       		.uleb128 0x3c
+ 2256 01c5 0C       		.uleb128 0xc
+ 2257 01c6 01       		.uleb128 0x1
+ 2258 01c7 13       		.uleb128 0x13
+ 2259 01c8 00       		.byte	0
+ 2260 01c9 00       		.byte	0
+ 2261 01ca 20       		.uleb128 0x20
+ 2262 01cb 2E       		.uleb128 0x2e
+ 2263 01cc 01       		.byte	0x1
+ 2264 01cd 3F       		.uleb128 0x3f
+ 2265 01ce 0C       		.uleb128 0xc
+ 2266 01cf 03       		.uleb128 0x3
+ 2267 01d0 0E       		.uleb128 0xe
+ 2268 01d1 3A       		.uleb128 0x3a
+ 2269 01d2 0B       		.uleb128 0xb
+ 2270 01d3 3B       		.uleb128 0x3b
+ 2271 01d4 05       		.uleb128 0x5
+ 2272 01d5 27       		.uleb128 0x27
+ 2273 01d6 0C       		.uleb128 0xc
+ 2274 01d7 49       		.uleb128 0x49
+ 2275 01d8 13       		.uleb128 0x13
+ 2276 01d9 3C       		.uleb128 0x3c
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 41
+
+
+ 2277 01da 0C       		.uleb128 0xc
+ 2278 01db 01       		.uleb128 0x1
+ 2279 01dc 13       		.uleb128 0x13
+ 2280 01dd 00       		.byte	0
+ 2281 01de 00       		.byte	0
+ 2282 01df 21       		.uleb128 0x21
+ 2283 01e0 2E       		.uleb128 0x2e
+ 2284 01e1 01       		.byte	0x1
+ 2285 01e2 3F       		.uleb128 0x3f
+ 2286 01e3 0C       		.uleb128 0xc
+ 2287 01e4 03       		.uleb128 0x3
+ 2288 01e5 0E       		.uleb128 0xe
+ 2289 01e6 3A       		.uleb128 0x3a
+ 2290 01e7 0B       		.uleb128 0xb
+ 2291 01e8 3B       		.uleb128 0x3b
+ 2292 01e9 05       		.uleb128 0x5
+ 2293 01ea 27       		.uleb128 0x27
+ 2294 01eb 0C       		.uleb128 0xc
+ 2295 01ec 49       		.uleb128 0x49
+ 2296 01ed 13       		.uleb128 0x13
+ 2297 01ee 3C       		.uleb128 0x3c
+ 2298 01ef 0C       		.uleb128 0xc
+ 2299 01f0 00       		.byte	0
+ 2300 01f1 00       		.byte	0
+ 2301 01f2 00       		.byte	0
+ 2302              		.section	.debug_loc,"",%progbits
+ 2303              	.Ldebug_loc0:
+ 2304              	.LLST0:
+ 2305 0000 00000000 		.4byte	.LFB119
+ 2306 0004 04000000 		.4byte	.LCFI0
+ 2307 0008 0200     		.2byte	0x2
+ 2308 000a 7D       		.byte	0x7d
+ 2309 000b 00       		.sleb128 0
+ 2310 000c 04000000 		.4byte	.LCFI0
+ 2311 0010 06000000 		.4byte	.LCFI1
+ 2312 0014 0200     		.2byte	0x2
+ 2313 0016 7D       		.byte	0x7d
+ 2314 0017 24       		.sleb128 36
+ 2315 0018 06000000 		.4byte	.LCFI1
+ 2316 001c A0010000 		.4byte	.LFE119
+ 2317 0020 0300     		.2byte	0x3
+ 2318 0022 7D       		.byte	0x7d
+ 2319 0023 C000     		.sleb128 64
+ 2320 0025 00000000 		.4byte	0
+ 2321 0029 00000000 		.4byte	0
+ 2322              	.LLST1:
+ 2323 002d 00000000 		.4byte	.LVL0
+ 2324 0031 1B000000 		.4byte	.LVL5-1
+ 2325 0035 0100     		.2byte	0x1
+ 2326 0037 50       		.byte	0x50
+ 2327 0038 1B000000 		.4byte	.LVL5-1
+ 2328 003c A0010000 		.4byte	.LFE119
+ 2329 0040 0100     		.2byte	0x1
+ 2330 0042 54       		.byte	0x54
+ 2331 0043 00000000 		.4byte	0
+ 2332 0047 00000000 		.4byte	0
+ 2333              	.LLST2:
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 42
+
+
+ 2334 004b 10000000 		.4byte	.LVL1
+ 2335 004f 1B000000 		.4byte	.LVL5-1
+ 2336 0053 0200     		.2byte	0x2
+ 2337 0055 70       		.byte	0x70
+ 2338 0056 0C       		.sleb128 12
+ 2339 0057 1B000000 		.4byte	.LVL5-1
+ 2340 005b 5A000000 		.4byte	.LVL11
+ 2341 005f 0100     		.2byte	0x1
+ 2342 0061 5A       		.byte	0x5a
+ 2343 0062 CC000000 		.4byte	.LVL20
+ 2344 0066 DC000000 		.4byte	.LVL22
+ 2345 006a 0100     		.2byte	0x1
+ 2346 006c 5A       		.byte	0x5a
+ 2347 006d E4000000 		.4byte	.LVL23
+ 2348 0071 F0000000 		.4byte	.LVL24
+ 2349 0075 0100     		.2byte	0x1
+ 2350 0077 5C       		.byte	0x5c
+ 2351 0078 F0000000 		.4byte	.LVL24
+ 2352 007c 22010000 		.4byte	.LVL27
+ 2353 0080 0100     		.2byte	0x1
+ 2354 0082 5A       		.byte	0x5a
+ 2355 0083 3A010000 		.4byte	.LVL28
+ 2356 0087 54010000 		.4byte	.LVL31
+ 2357 008b 0100     		.2byte	0x1
+ 2358 008d 5A       		.byte	0x5a
+ 2359 008e 7A010000 		.4byte	.LVL33
+ 2360 0092 97010000 		.4byte	.LVL35-1
+ 2361 0096 0100     		.2byte	0x1
+ 2362 0098 5C       		.byte	0x5c
+ 2363 0099 97010000 		.4byte	.LVL35-1
+ 2364 009d A0010000 		.4byte	.LFE119
+ 2365 00a1 0100     		.2byte	0x1
+ 2366 00a3 5A       		.byte	0x5a
+ 2367 00a4 00000000 		.4byte	0
+ 2368 00a8 00000000 		.4byte	0
+ 2369              	.LLST3:
+ 2370 00ac 14000000 		.4byte	.LVL2
+ 2371 00b0 1B000000 		.4byte	.LVL5-1
+ 2372 00b4 0200     		.2byte	0x2
+ 2373 00b6 70       		.byte	0x70
+ 2374 00b7 0E       		.sleb128 14
+ 2375 00b8 1B000000 		.4byte	.LVL5-1
+ 2376 00bc 6A000000 		.4byte	.LVL13
+ 2377 00c0 0100     		.2byte	0x1
+ 2378 00c2 58       		.byte	0x58
+ 2379 00c3 72000000 		.4byte	.LVL14
+ 2380 00c7 7A000000 		.4byte	.LVL15
+ 2381 00cb 0100     		.2byte	0x1
+ 2382 00cd 5C       		.byte	0x5c
+ 2383 00ce 7A000000 		.4byte	.LVL15
+ 2384 00d2 C6000000 		.4byte	.LVL19
+ 2385 00d6 0100     		.2byte	0x1
+ 2386 00d8 58       		.byte	0x58
+ 2387 00d9 CC000000 		.4byte	.LVL20
+ 2388 00dd 54010000 		.4byte	.LVL31
+ 2389 00e1 0100     		.2byte	0x1
+ 2390 00e3 58       		.byte	0x58
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 43
+
+
+ 2391 00e4 54010000 		.4byte	.LVL31
+ 2392 00e8 71010000 		.4byte	.LVL32-1
+ 2393 00ec 0100     		.2byte	0x1
+ 2394 00ee 5C       		.byte	0x5c
+ 2395 00ef 71010000 		.4byte	.LVL32-1
+ 2396 00f3 A0010000 		.4byte	.LFE119
+ 2397 00f7 0100     		.2byte	0x1
+ 2398 00f9 58       		.byte	0x58
+ 2399 00fa 00000000 		.4byte	0
+ 2400 00fe 00000000 		.4byte	0
+ 2401              	.LLST4:
+ 2402 0102 16000000 		.4byte	.LVL3
+ 2403 0106 1B000000 		.4byte	.LVL5-1
+ 2404 010a 0200     		.2byte	0x2
+ 2405 010c 70       		.byte	0x70
+ 2406 010d 10       		.sleb128 16
+ 2407 010e 1B000000 		.4byte	.LVL5-1
+ 2408 0112 30000000 		.4byte	.LVL9
+ 2409 0116 0100     		.2byte	0x1
+ 2410 0118 57       		.byte	0x57
+ 2411 0119 CC000000 		.4byte	.LVL20
+ 2412 011d 12010000 		.4byte	.LVL26
+ 2413 0121 0100     		.2byte	0x1
+ 2414 0123 5B       		.byte	0x5b
+ 2415 0124 3A010000 		.4byte	.LVL28
+ 2416 0128 54010000 		.4byte	.LVL31
+ 2417 012c 0100     		.2byte	0x1
+ 2418 012e 57       		.byte	0x57
+ 2419 012f 7A010000 		.4byte	.LVL33
+ 2420 0133 A0010000 		.4byte	.LFE119
+ 2421 0137 0100     		.2byte	0x1
+ 2422 0139 5B       		.byte	0x5b
+ 2423 013a 00000000 		.4byte	0
+ 2424 013e 00000000 		.4byte	0
+ 2425              	.LLST5:
+ 2426 0142 18000000 		.4byte	.LVL4
+ 2427 0146 1B000000 		.4byte	.LVL5-1
+ 2428 014a 0200     		.2byte	0x2
+ 2429 014c 70       		.byte	0x70
+ 2430 014d 12       		.sleb128 18
+ 2431 014e 1B000000 		.4byte	.LVL5-1
+ 2432 0152 48000000 		.4byte	.LVL10
+ 2433 0156 0100     		.2byte	0x1
+ 2434 0158 56       		.byte	0x56
+ 2435 0159 5A000000 		.4byte	.LVL11
+ 2436 015d 9E000000 		.4byte	.LVL17
+ 2437 0161 0100     		.2byte	0x1
+ 2438 0163 5B       		.byte	0x5b
+ 2439 0164 CC000000 		.4byte	.LVL20
+ 2440 0168 F0000000 		.4byte	.LVL24
+ 2441 016c 0100     		.2byte	0x1
+ 2442 016e 56       		.byte	0x56
+ 2443 016f 3A010000 		.4byte	.LVL28
+ 2444 0173 3C010000 		.4byte	.LVL29
+ 2445 0177 0100     		.2byte	0x1
+ 2446 0179 56       		.byte	0x56
+ 2447 017a 54010000 		.4byte	.LVL31
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 44
+
+
+ 2448 017e 7A010000 		.4byte	.LVL33
+ 2449 0182 0100     		.2byte	0x1
+ 2450 0184 5B       		.byte	0x5b
+ 2451 0185 7A010000 		.4byte	.LVL33
+ 2452 0189 7C010000 		.4byte	.LVL34
+ 2453 018d 0100     		.2byte	0x1
+ 2454 018f 56       		.byte	0x56
+ 2455 0190 00000000 		.4byte	0
+ 2456 0194 00000000 		.4byte	0
+ 2457              	.LLST6:
+ 2458 0198 00000000 		.4byte	.LVL0
+ 2459 019c 48000000 		.4byte	.LVL10
+ 2460 01a0 0200     		.2byte	0x2
+ 2461 01a2 30       		.byte	0x30
+ 2462 01a3 9F       		.byte	0x9f
+ 2463 01a4 48000000 		.4byte	.LVL10
+ 2464 01a8 C6000000 		.4byte	.LVL19
+ 2465 01ac 0200     		.2byte	0x2
+ 2466 01ae 91       		.byte	0x91
+ 2467 01af 54       		.sleb128 -44
+ 2468 01b0 CC000000 		.4byte	.LVL20
+ 2469 01b4 DA000000 		.4byte	.LVL21
+ 2470 01b8 0200     		.2byte	0x2
+ 2471 01ba 30       		.byte	0x30
+ 2472 01bb 9F       		.byte	0x9f
+ 2473 01bc 0E010000 		.4byte	.LVL25
+ 2474 01c0 12010000 		.4byte	.LVL26
+ 2475 01c4 0200     		.2byte	0x2
+ 2476 01c6 30       		.byte	0x30
+ 2477 01c7 9F       		.byte	0x9f
+ 2478 01c8 12010000 		.4byte	.LVL26
+ 2479 01cc 3A010000 		.4byte	.LVL28
+ 2480 01d0 0200     		.2byte	0x2
+ 2481 01d2 91       		.byte	0x91
+ 2482 01d3 54       		.sleb128 -44
+ 2483 01d4 3A010000 		.4byte	.LVL28
+ 2484 01d8 54010000 		.4byte	.LVL31
+ 2485 01dc 0200     		.2byte	0x2
+ 2486 01de 30       		.byte	0x30
+ 2487 01df 9F       		.byte	0x9f
+ 2488 01e0 54010000 		.4byte	.LVL31
+ 2489 01e4 7A010000 		.4byte	.LVL33
+ 2490 01e8 0200     		.2byte	0x2
+ 2491 01ea 91       		.byte	0x91
+ 2492 01eb 54       		.sleb128 -44
+ 2493 01ec 00000000 		.4byte	0
+ 2494 01f0 00000000 		.4byte	0
+ 2495              	.LLST7:
+ 2496 01f4 00000000 		.4byte	.LVL0
+ 2497 01f8 68000000 		.4byte	.LVL12
+ 2498 01fc 0200     		.2byte	0x2
+ 2499 01fe 30       		.byte	0x30
+ 2500 01ff 9F       		.byte	0x9f
+ 2501 0200 98000000 		.4byte	.LVL16
+ 2502 0204 9E000000 		.4byte	.LVL17
+ 2503 0208 0200     		.2byte	0x2
+ 2504 020a 30       		.byte	0x30
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 45
+
+
+ 2505 020b 9F       		.byte	0x9f
+ 2506 020c 9E000000 		.4byte	.LVL17
+ 2507 0210 A7000000 		.4byte	.LVL18-1
+ 2508 0214 0100     		.2byte	0x1
+ 2509 0216 52       		.byte	0x52
+ 2510 0217 CC000000 		.4byte	.LVL20
+ 2511 021b 54010000 		.4byte	.LVL31
+ 2512 021f 0200     		.2byte	0x2
+ 2513 0221 30       		.byte	0x30
+ 2514 0222 9F       		.byte	0x9f
+ 2515 0223 7A010000 		.4byte	.LVL33
+ 2516 0227 A0010000 		.4byte	.LFE119
+ 2517 022b 0200     		.2byte	0x2
+ 2518 022d 30       		.byte	0x30
+ 2519 022e 9F       		.byte	0x9f
+ 2520 022f 00000000 		.4byte	0
+ 2521 0233 00000000 		.4byte	0
+ 2522              	.LLST8:
+ 2523 0237 1E000000 		.4byte	.LVL6
+ 2524 023b 20000000 		.4byte	.LVL7
+ 2525 023f 0100     		.2byte	0x1
+ 2526 0241 50       		.byte	0x50
+ 2527 0242 20000000 		.4byte	.LVL7
+ 2528 0246 A0010000 		.4byte	.LFE119
+ 2529 024a 0100     		.2byte	0x1
+ 2530 024c 59       		.byte	0x59
+ 2531 024d 00000000 		.4byte	0
+ 2532 0251 00000000 		.4byte	0
+ 2533              	.LLST9:
+ 2534 0255 00000000 		.4byte	.LFB118
+ 2535 0259 02000000 		.4byte	.LCFI2
+ 2536 025d 0200     		.2byte	0x2
+ 2537 025f 7D       		.byte	0x7d
+ 2538 0260 00       		.sleb128 0
+ 2539 0261 02000000 		.4byte	.LCFI2
+ 2540 0265 1A000000 		.4byte	.LFE118
+ 2541 0269 0200     		.2byte	0x2
+ 2542 026b 7D       		.byte	0x7d
+ 2543 026c 08       		.sleb128 8
+ 2544 026d 00000000 		.4byte	0
+ 2545 0271 00000000 		.4byte	0
+ 2546              	.LLST10:
+ 2547 0275 00000000 		.4byte	.LVL36
+ 2548 0279 08000000 		.4byte	.LVL37
+ 2549 027d 0100     		.2byte	0x1
+ 2550 027f 50       		.byte	0x50
+ 2551 0280 08000000 		.4byte	.LVL37
+ 2552 0284 0B000000 		.4byte	.LVL38-1
+ 2553 0288 0300     		.2byte	0x3
+ 2554 028a 70       		.byte	0x70
+ 2555 028b 5C       		.sleb128 -36
+ 2556 028c 9F       		.byte	0x9f
+ 2557 028d 0B000000 		.4byte	.LVL38-1
+ 2558 0291 1A000000 		.4byte	.LFE118
+ 2559 0295 0300     		.2byte	0x3
+ 2560 0297 74       		.byte	0x74
+ 2561 0298 5C       		.sleb128 -36
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 46
+
+
+ 2562 0299 9F       		.byte	0x9f
+ 2563 029a 00000000 		.4byte	0
+ 2564 029e 00000000 		.4byte	0
+ 2565              	.LLST11:
+ 2566 02a2 00000000 		.4byte	.LFB120
+ 2567 02a6 02000000 		.4byte	.LCFI3
+ 2568 02aa 0200     		.2byte	0x2
+ 2569 02ac 7D       		.byte	0x7d
+ 2570 02ad 00       		.sleb128 0
+ 2571 02ae 02000000 		.4byte	.LCFI3
+ 2572 02b2 04000000 		.4byte	.LCFI4
+ 2573 02b6 0200     		.2byte	0x2
+ 2574 02b8 7D       		.byte	0x7d
+ 2575 02b9 0C       		.sleb128 12
+ 2576 02ba 04000000 		.4byte	.LCFI4
+ 2577 02be 30000000 		.4byte	.LFE120
+ 2578 02c2 0200     		.2byte	0x2
+ 2579 02c4 7D       		.byte	0x7d
+ 2580 02c5 18       		.sleb128 24
+ 2581 02c6 00000000 		.4byte	0
+ 2582 02ca 00000000 		.4byte	0
+ 2583              	.LLST12:
+ 2584 02ce 00000000 		.4byte	.LVL40
+ 2585 02d2 0F000000 		.4byte	.LVL41-1
+ 2586 02d6 0100     		.2byte	0x1
+ 2587 02d8 50       		.byte	0x50
+ 2588 02d9 0F000000 		.4byte	.LVL41-1
+ 2589 02dd 30000000 		.4byte	.LFE120
+ 2590 02e1 0400     		.2byte	0x4
+ 2591 02e3 F3       		.byte	0xf3
+ 2592 02e4 01       		.uleb128 0x1
+ 2593 02e5 50       		.byte	0x50
+ 2594 02e6 9F       		.byte	0x9f
+ 2595 02e7 00000000 		.4byte	0
+ 2596 02eb 00000000 		.4byte	0
+ 2597              	.LLST13:
+ 2598 02ef 00000000 		.4byte	.LVL40
+ 2599 02f3 0F000000 		.4byte	.LVL41-1
+ 2600 02f7 0100     		.2byte	0x1
+ 2601 02f9 51       		.byte	0x51
+ 2602 02fa 0F000000 		.4byte	.LVL41-1
+ 2603 02fe 10000000 		.4byte	.LVL41
+ 2604 0302 0400     		.2byte	0x4
+ 2605 0304 F3       		.byte	0xf3
+ 2606 0305 01       		.uleb128 0x1
+ 2607 0306 51       		.byte	0x51
+ 2608 0307 9F       		.byte	0x9f
+ 2609 0308 10000000 		.4byte	.LVL41
+ 2610 030c 18000000 		.4byte	.LVL42
+ 2611 0310 0100     		.2byte	0x1
+ 2612 0312 50       		.byte	0x50
+ 2613 0313 18000000 		.4byte	.LVL42
+ 2614 0317 30000000 		.4byte	.LFE120
+ 2615 031b 0100     		.2byte	0x1
+ 2616 031d 54       		.byte	0x54
+ 2617 031e 00000000 		.4byte	0
+ 2618 0322 00000000 		.4byte	0
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 47
+
+
+ 2619              	.LLST14:
+ 2620 0326 00000000 		.4byte	.LVL40
+ 2621 032a 0F000000 		.4byte	.LVL41-1
+ 2622 032e 0100     		.2byte	0x1
+ 2623 0330 52       		.byte	0x52
+ 2624 0331 0F000000 		.4byte	.LVL41-1
+ 2625 0335 30000000 		.4byte	.LFE120
+ 2626 0339 0100     		.2byte	0x1
+ 2627 033b 55       		.byte	0x55
+ 2628 033c 00000000 		.4byte	0
+ 2629 0340 00000000 		.4byte	0
+ 2630              	.LLST15:
+ 2631 0344 00000000 		.4byte	.LFB121
+ 2632 0348 02000000 		.4byte	.LCFI5
+ 2633 034c 0200     		.2byte	0x2
+ 2634 034e 7D       		.byte	0x7d
+ 2635 034f 00       		.sleb128 0
+ 2636 0350 02000000 		.4byte	.LCFI5
+ 2637 0354 0A000000 		.4byte	.LCFI6
+ 2638 0358 0200     		.2byte	0x2
+ 2639 035a 7D       		.byte	0x7d
+ 2640 035b 0C       		.sleb128 12
+ 2641 035c 0A000000 		.4byte	.LCFI6
+ 2642 0360 48000000 		.4byte	.LFE121
+ 2643 0364 0200     		.2byte	0x2
+ 2644 0366 7D       		.byte	0x7d
+ 2645 0367 18       		.sleb128 24
+ 2646 0368 00000000 		.4byte	0
+ 2647 036c 00000000 		.4byte	0
+ 2648              	.LLST16:
+ 2649 0370 00000000 		.4byte	.LVL45
+ 2650 0374 0E000000 		.4byte	.LVL46
+ 2651 0378 0100     		.2byte	0x1
+ 2652 037a 50       		.byte	0x50
+ 2653 037b 0E000000 		.4byte	.LVL46
+ 2654 037f 14000000 		.4byte	.LVL47
+ 2655 0383 0100     		.2byte	0x1
+ 2656 0385 54       		.byte	0x54
+ 2657 0386 14000000 		.4byte	.LVL47
+ 2658 038a 1A000000 		.4byte	.LVL48
+ 2659 038e 0100     		.2byte	0x1
+ 2660 0390 50       		.byte	0x50
+ 2661 0391 1A000000 		.4byte	.LVL48
+ 2662 0395 48000000 		.4byte	.LFE121
+ 2663 0399 0100     		.2byte	0x1
+ 2664 039b 54       		.byte	0x54
+ 2665 039c 00000000 		.4byte	0
+ 2666 03a0 00000000 		.4byte	0
+ 2667              	.LLST17:
+ 2668 03a4 00000000 		.4byte	.LVL45
+ 2669 03a8 0E000000 		.4byte	.LVL46
+ 2670 03ac 0100     		.2byte	0x1
+ 2671 03ae 51       		.byte	0x51
+ 2672 03af 0E000000 		.4byte	.LVL46
+ 2673 03b3 14000000 		.4byte	.LVL47
+ 2674 03b7 0400     		.2byte	0x4
+ 2675 03b9 F3       		.byte	0xf3
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 48
+
+
+ 2676 03ba 01       		.uleb128 0x1
+ 2677 03bb 51       		.byte	0x51
+ 2678 03bc 9F       		.byte	0x9f
+ 2679 03bd 14000000 		.4byte	.LVL47
+ 2680 03c1 1F000000 		.4byte	.LVL49-1
+ 2681 03c5 0100     		.2byte	0x1
+ 2682 03c7 51       		.byte	0x51
+ 2683 03c8 1F000000 		.4byte	.LVL49-1
+ 2684 03cc 48000000 		.4byte	.LFE121
+ 2685 03d0 0400     		.2byte	0x4
+ 2686 03d2 F3       		.byte	0xf3
+ 2687 03d3 01       		.uleb128 0x1
+ 2688 03d4 51       		.byte	0x51
+ 2689 03d5 9F       		.byte	0x9f
+ 2690 03d6 00000000 		.4byte	0
+ 2691 03da 00000000 		.4byte	0
+ 2692              	.LLST18:
+ 2693 03de 00000000 		.4byte	.LVL53
+ 2694 03e2 0C000000 		.4byte	.LVL54
+ 2695 03e6 0100     		.2byte	0x1
+ 2696 03e8 50       		.byte	0x50
+ 2697 03e9 0C000000 		.4byte	.LVL54
+ 2698 03ed 0E000000 		.4byte	.LVL55
+ 2699 03f1 0400     		.2byte	0x4
+ 2700 03f3 F3       		.byte	0xf3
+ 2701 03f4 01       		.uleb128 0x1
+ 2702 03f5 50       		.byte	0x50
+ 2703 03f6 9F       		.byte	0x9f
+ 2704 03f7 0E000000 		.4byte	.LVL55
+ 2705 03fb 10000000 		.4byte	.LVL56
+ 2706 03ff 0100     		.2byte	0x1
+ 2707 0401 50       		.byte	0x50
+ 2708 0402 10000000 		.4byte	.LVL56
+ 2709 0406 13000000 		.4byte	.LVL57-1
+ 2710 040a 0300     		.2byte	0x3
+ 2711 040c 70       		.byte	0x70
+ 2712 040d 5C       		.sleb128 -36
+ 2713 040e 9F       		.byte	0x9f
+ 2714 040f 13000000 		.4byte	.LVL57-1
+ 2715 0413 18000000 		.4byte	.LFE122
+ 2716 0417 0400     		.2byte	0x4
+ 2717 0419 F3       		.byte	0xf3
+ 2718 041a 01       		.uleb128 0x1
+ 2719 041b 50       		.byte	0x50
+ 2720 041c 9F       		.byte	0x9f
+ 2721 041d 00000000 		.4byte	0
+ 2722 0421 00000000 		.4byte	0
+ 2723              		.section	.debug_aranges,"",%progbits
+ 2724 0000 3C000000 		.4byte	0x3c
+ 2725 0004 0200     		.2byte	0x2
+ 2726 0006 00000000 		.4byte	.Ldebug_info0
+ 2727 000a 04       		.byte	0x4
+ 2728 000b 00       		.byte	0
+ 2729 000c 0000     		.2byte	0
+ 2730 000e 0000     		.2byte	0
+ 2731 0010 00000000 		.4byte	.LFB119
+ 2732 0014 A0010000 		.4byte	.LFE119-.LFB119
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 49
+
+
+ 2733 0018 00000000 		.4byte	.LFB118
+ 2734 001c 1A000000 		.4byte	.LFE118-.LFB118
+ 2735 0020 00000000 		.4byte	.LFB120
+ 2736 0024 30000000 		.4byte	.LFE120-.LFB120
+ 2737 0028 00000000 		.4byte	.LFB121
+ 2738 002c 48000000 		.4byte	.LFE121-.LFB121
+ 2739 0030 00000000 		.4byte	.LFB122
+ 2740 0034 18000000 		.4byte	.LFE122-.LFB122
+ 2741 0038 00000000 		.4byte	0
+ 2742 003c 00000000 		.4byte	0
+ 2743              		.section	.debug_ranges,"",%progbits
+ 2744              	.Ldebug_ranges0:
+ 2745 0000 00000000 		.4byte	.LFB119
+ 2746 0004 A0010000 		.4byte	.LFE119
+ 2747 0008 00000000 		.4byte	.LFB118
+ 2748 000c 1A000000 		.4byte	.LFE118
+ 2749 0010 00000000 		.4byte	.LFB120
+ 2750 0014 30000000 		.4byte	.LFE120
+ 2751 0018 00000000 		.4byte	.LFB121
+ 2752 001c 48000000 		.4byte	.LFE121
+ 2753 0020 00000000 		.4byte	.LFB122
+ 2754 0024 18000000 		.4byte	.LFE122
+ 2755 0028 00000000 		.4byte	0
+ 2756 002c 00000000 		.4byte	0
+ 2757              		.section	.debug_line,"",%progbits
+ 2758              	.Ldebug_line0:
+ 2759 0000 15030000 		.section	.debug_str,"MS",%progbits,1
+ 2759      02004C02 
+ 2759      00000201 
+ 2759      FB0E0D00 
+ 2759      01010101 
+ 2760              	.LASF35:
+ 2761 0000 70726976 		.ascii	"priv\000"
+ 2761      00
+ 2762              	.LASF57:
+ 2763 0005 70496E69 		.ascii	"pInit\000"
+ 2763      7400
+ 2764              	.LASF19:
+ 2765 000b 67667851 		.ascii	"gfxQueueASyncItem\000"
+ 2765      75657565 
+ 2765      4153796E 
+ 2765      63497465 
+ 2765      6D00
+ 2766              	.LASF32:
+ 2767 001d 6267636F 		.ascii	"bgcolor\000"
+ 2767      6C6F7200 
+ 2768              	.LASF51:
+ 2769 0025 73686F77 		.ascii	"show\000"
+ 2769      00
+ 2770              	.LASF29:
+ 2771 002a 6E657874 		.ascii	"next\000"
+ 2771      00
+ 2772              	.LASF42:
+ 2773 002f 666F6E74 		.ascii	"font\000"
+ 2773      00
+ 2774              	.LASF37:
+ 2775 0034 67646973 		.ascii	"gdispImagePrivate\000"
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 50
+
+
+ 2775      70496D61 
+ 2775      67655072 
+ 2775      69766174 
+ 2775      6500
+ 2776              	.LASF5:
+ 2777 0046 73686F72 		.ascii	"short int\000"
+ 2777      7420696E 
+ 2777      7400
+ 2778              	.LASF3:
+ 2779 0050 73697A65 		.ascii	"size_t\000"
+ 2779      5F7400
+ 2780              	.LASF70:
+ 2781 0057 67646973 		.ascii	"gdispImageOpenGFile\000"
+ 2781      70496D61 
+ 2781      67654F70 
+ 2781      656E4746 
+ 2781      696C6500 
+ 2782              	.LASF66:
+ 2783 006b 67646973 		.ascii	"gdispImageClose\000"
+ 2783      70496D61 
+ 2783      6765436C 
+ 2783      6F736500 
+ 2784              	.LASF16:
+ 2785 007b 73697A65 		.ascii	"sizetype\000"
+ 2785      74797065 
+ 2785      00
+ 2786              	.LASF73:
+ 2787 0084 474E5520 		.ascii	"GNU C 4.7.4 20140401 (release) [ARM/embedded-4_7-br"
+ 2787      4320342E 
+ 2787      372E3420 
+ 2787      32303134 
+ 2787      30343031 
+ 2788 00b7 616E6368 		.ascii	"anch revision 209195]\000"
+ 2788      20726576 
+ 2788      6973696F 
+ 2788      6E203230 
+ 2788      39313935 
+ 2789              	.LASF47:
+ 2790 00cd 44657374 		.ascii	"Destroy\000"
+ 2790      726F7900 
+ 2791              	.LASF71:
+ 2792 00d5 5F677769 		.ascii	"_gwinUpdate\000"
+ 2792      6E557064 
+ 2792      61746500 
+ 2793              	.LASF18:
+ 2794 00e1 4746494C 		.ascii	"GFILE\000"
+ 2794      4500
+ 2795              	.LASF24:
+ 2796 00e7 636F6C6F 		.ascii	"color_t\000"
+ 2796      725F7400 
+ 2797              	.LASF45:
+ 2798 00ef 636C6173 		.ascii	"classname\000"
+ 2798      736E616D 
+ 2798      6500
+ 2799              	.LASF25:
+ 2800 00f9 67646973 		.ascii	"gdispImageType\000"
+ 2800      70496D61 
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 51
+
+
+ 2800      67655479 
+ 2800      706500
+ 2801              	.LASF22:
+ 2802 0108 6D665F66 		.ascii	"mf_font_s\000"
+ 2802      6F6E745F 
+ 2802      7300
+ 2803              	.LASF10:
+ 2804 0112 75696E74 		.ascii	"uint32_t\000"
+ 2804      33325F74 
+ 2804      00
+ 2805              	.LASF55:
+ 2806 011b 5F646573 		.ascii	"_destroy\000"
+ 2806      74726F79 
+ 2806      00
+ 2807              	.LASF54:
+ 2808 0124 5F726564 		.ascii	"_redraw\000"
+ 2808      72617700 
+ 2809              	.LASF33:
+ 2810 012c 77696474 		.ascii	"width\000"
+ 2810      6800
+ 2811              	.LASF43:
+ 2812 0132 70617265 		.ascii	"parent\000"
+ 2812      6E7400
+ 2813              	.LASF12:
+ 2814 0139 6C6F6E67 		.ascii	"long long int\000"
+ 2814      206C6F6E 
+ 2814      6720696E 
+ 2814      7400
+ 2815              	.LASF65:
+ 2816 0147 67646973 		.ascii	"gdispGImageDraw\000"
+ 2816      7047496D 
+ 2816      61676544 
+ 2816      72617700 
+ 2817              	.LASF9:
+ 2818 0157 6C6F6E67 		.ascii	"long int\000"
+ 2818      20696E74 
+ 2818      00
+ 2819              	.LASF60:
+ 2820 0160 6777696E 		.ascii	"gwinImageCache\000"
+ 2820      496D6167 
+ 2820      65436163 
+ 2820      686500
+ 2821              	.LASF26:
+ 2822 016f 67646973 		.ascii	"gdispImageError\000"
+ 2822      70496D61 
+ 2822      67654572 
+ 2822      726F7200 
+ 2823              	.LASF62:
+ 2824 017f 67646973 		.ascii	"gdispGFillArea\000"
+ 2824      70474669 
+ 2824      6C6C4172 
+ 2824      656100
+ 2825              	.LASF61:
+ 2826 018e 696D6167 		.ascii	"imageVMT\000"
+ 2826      65564D54 
+ 2826      00
+ 2827              	.LASF56:
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 52
+
+
+ 2828 0197 676F626A 		.ascii	"gobj\000"
+ 2828      00
+ 2829              	.LASF23:
+ 2830 019c 47446973 		.ascii	"GDisplay\000"
+ 2830      706C6179 
+ 2830      00
+ 2831              	.LASF2:
+ 2832 01a5 756E7369 		.ascii	"unsigned char\000"
+ 2832      676E6564 
+ 2832      20636861 
+ 2832      7200
+ 2833              	.LASF69:
+ 2834 01b3 6777696E 		.ascii	"gwinSetVisible\000"
+ 2834      53657456 
+ 2834      69736962 
+ 2834      6C6500
+ 2835              	.LASF75:
+ 2836 01c2 433A5C43 		.ascii	"C:\\ChibiStudio\\workspace26\\Mobile_phone\000"
+ 2836      68696269 
+ 2836      53747564 
+ 2836      696F5C77 
+ 2836      6F726B73 
+ 2837              	.LASF1:
+ 2838 01ea 7369676E 		.ascii	"signed char\000"
+ 2838      65642063 
+ 2838      68617200 
+ 2839              	.LASF31:
+ 2840 01f6 666C6167 		.ascii	"flags\000"
+ 2840      7300
+ 2841              	.LASF13:
+ 2842 01fc 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2842      206C6F6E 
+ 2842      6720756E 
+ 2842      7369676E 
+ 2842      65642069 
+ 2843              	.LASF49:
+ 2844 0213 41667465 		.ascii	"AfterClear\000"
+ 2844      72436C65 
+ 2844      617200
+ 2845              	.LASF30:
+ 2846 021e 74797065 		.ascii	"type\000"
+ 2846      00
+ 2847              	.LASF34:
+ 2848 0223 68656967 		.ascii	"height\000"
+ 2848      687400
+ 2849              	.LASF0:
+ 2850 022a 756E7369 		.ascii	"unsigned int\000"
+ 2850      676E6564 
+ 2850      20696E74 
+ 2850      00
+ 2851              	.LASF6:
+ 2852 0237 75696E74 		.ascii	"uint16_t\000"
+ 2852      31365F74 
+ 2852      00
+ 2853              	.LASF7:
+ 2854 0240 73686F72 		.ascii	"short unsigned int\000"
+ 2854      7420756E 
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 53
+
+
+ 2854      7369676E 
+ 2854      65642069 
+ 2854      6E7400
+ 2855              	.LASF52:
+ 2856 0253 47496D61 		.ascii	"GImageObject\000"
+ 2856      67654F62 
+ 2856      6A656374 
+ 2856      00
+ 2857              	.LASF27:
+ 2858 0260 67646973 		.ascii	"gdispImageFlags\000"
+ 2858      70496D61 
+ 2858      6765466C 
+ 2858      61677300 
+ 2859              	.LASF77:
+ 2860 0270 6777696E 		.ascii	"gwinGetDefaultBgColor\000"
+ 2860      47657444 
+ 2860      65666175 
+ 2860      6C744267 
+ 2860      436F6C6F 
+ 2861              	.LASF17:
+ 2862 0286 63686172 		.ascii	"char\000"
+ 2862      00
+ 2863              	.LASF8:
+ 2864 028b 696E7433 		.ascii	"int32_t\000"
+ 2864      325F7400 
+ 2865              	.LASF14:
+ 2866 0293 626F6F6C 		.ascii	"bool_t\000"
+ 2866      5F7400
+ 2867              	.LASF63:
+ 2868 029a 67646973 		.ascii	"gdispImageSetBgColor\000"
+ 2868      70496D61 
+ 2868      67655365 
+ 2868      74426743 
+ 2868      6F6C6F72 
+ 2869              	.LASF4:
+ 2870 02af 696E7431 		.ascii	"int16_t\000"
+ 2870      365F7400 
+ 2871              	.LASF20:
+ 2872 02b7 636F6F72 		.ascii	"coord_t\000"
+ 2872      645F7400 
+ 2873              	.LASF15:
+ 2874 02bf 5F426F6F 		.ascii	"_Bool\000"
+ 2874      6C00
+ 2875              	.LASF72:
+ 2876 02c5 67646973 		.ascii	"gdispImageCache\000"
+ 2876      70496D61 
+ 2876      67654361 
+ 2876      63686500 
+ 2877              	.LASF36:
+ 2878 02d5 67646973 		.ascii	"gdispImageHandlers\000"
+ 2878      70496D61 
+ 2878      67654861 
+ 2878      6E646C65 
+ 2878      727300
+ 2879              	.LASF50:
+ 2880 02e8 4757696E 		.ascii	"GWindowInit\000"
+ 2880      646F7749 
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 54
+
+
+ 2880      6E697400 
+ 2881              	.LASF38:
+ 2882 02f4 4748616E 		.ascii	"GHandle\000"
+ 2882      646C6500 
+ 2883              	.LASF11:
+ 2884 02fc 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2884      20756E73 
+ 2884      69676E65 
+ 2884      6420696E 
+ 2884      7400
+ 2885              	.LASF58:
+ 2886 030e 6777696E 		.ascii	"gwinGImageCreate\000"
+ 2886      47496D61 
+ 2886      67654372 
+ 2886      65617465 
+ 2886      00
+ 2887              	.LASF48:
+ 2888 031f 52656472 		.ascii	"Redraw\000"
+ 2888      617700
+ 2889              	.LASF40:
+ 2890 0326 64697370 		.ascii	"display\000"
+ 2890      6C617900 
+ 2891              	.LASF53:
+ 2892 032e 696D6167 		.ascii	"image\000"
+ 2892      6500
+ 2893              	.LASF46:
+ 2894 0334 73697A65 		.ascii	"size\000"
+ 2894      00
+ 2895              	.LASF44:
+ 2896 0339 6777696E 		.ascii	"gwinVMT\000"
+ 2896      564D5400 
+ 2897              	.LASF68:
+ 2898 0341 67646973 		.ascii	"gdispImageInit\000"
+ 2898      70496D61 
+ 2898      6765496E 
+ 2898      697400
+ 2899              	.LASF41:
+ 2900 0350 636F6C6F 		.ascii	"color\000"
+ 2900      7200
+ 2901              	.LASF39:
+ 2902 0356 4757696E 		.ascii	"GWindowObject\000"
+ 2902      646F774F 
+ 2902      626A6563 
+ 2902      7400
+ 2903              	.LASF28:
+ 2904 0364 67646973 		.ascii	"gdispImage\000"
+ 2904      70496D61 
+ 2904      676500
+ 2905              	.LASF76:
+ 2906 036f 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 2906      52784275 
+ 2906      66666572 
+ 2906      00
+ 2907              	.LASF64:
+ 2908 037c 67646973 		.ascii	"gdispImageIsOpen\000"
+ 2908      70496D61 
+ 2908      67654973 
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 55
+
+
+ 2908      4F70656E 
+ 2908      00
+ 2909              	.LASF59:
+ 2910 038d 6777696E 		.ascii	"gwinImageOpenGFile\000"
+ 2910      496D6167 
+ 2910      654F7065 
+ 2910      6E474669 
+ 2910      6C6500
+ 2911              	.LASF21:
+ 2912 03a0 666F6E74 		.ascii	"font_t\000"
+ 2912      5F7400
+ 2913              	.LASF74:
+ 2914 03a7 2E2E2F2E 		.ascii	"../../ugfx/src/gwin/gwin_image.c\000"
+ 2914      2E2F7567 
+ 2914      66782F73 
+ 2914      72632F67 
+ 2914      77696E2F 
+ 2915              	.LASF67:
+ 2916 03c8 5F677769 		.ascii	"_gwindowCreate\000"
+ 2916      6E646F77 
+ 2916      43726561 
+ 2916      746500
+ 2917              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.4 20140401 (release) [ARM/embedded-4_7-br
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s 			page 56
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 gwin_image.c
+C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s:19     .text._redraw:00000000 $t
+C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s:24     .text._redraw:00000000 _redraw
+C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s:283    .text._destroy:00000000 $t
+C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s:288    .text._destroy:00000000 _destroy
+C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s:320    .text.gwinGImageCreate:00000000 $t
+C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s:326    .text.gwinGImageCreate:00000000 gwinGImageCreate
+C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s:371    .text.gwinGImageCreate:0000002c $d
+C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s:376    .text.gwinImageOpenGFile:00000000 $t
+C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s:382    .text.gwinImageOpenGFile:00000000 gwinImageOpenGFile
+C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s:450    .text.gwinImageOpenGFile:00000044 $d
+C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s:455    .text.gwinImageCache:00000000 $t
+C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s:461    .text.gwinImageCache:00000000 gwinImageCache
+C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s:490    .text.gwinImageCache:00000014 $d
+C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s:495    .rodata.imageVMT:00000000 $d
+C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s:499    .rodata.imageVMT:00000000 imageVMT
+C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s:506    .rodata.str1.4:00000000 $d
+                     .debug_frame:00000010 $d
+C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s:454    .text.gwinImageOpenGFile:00000048 $t
+C:\Users\Elis\AppData\Local\Temp\cc0P2Oog.s:494    .text.gwinImageCache:00000018 $t
+
+UNDEFINED SYMBOLS
+gwinGetDefaultBgColor
+gdispImageIsOpen
+gdispGFillArea
+gdispImageSetBgColor
+gdispGImageDraw
+gdispImageClose
+_gwindowCreate
+gdispImageInit
+gwinSetVisible
+gdispImageOpenGFile
+_gwinUpdate
+gdispImageCache

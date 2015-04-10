@@ -1,0 +1,4697 @@
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m4
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 2
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"chsem.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.chSemInit,"ax",%progbits
+  19              		.align	2
+  20              		.p2align 4,,15
+  21              		.global	chSemInit
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	chSemInit, %function
+  25              	chSemInit:
+  26              	.LFB7:
+  27              		.file 1 "../../chibios/os/kernel/src/chsem.c"
+  28              		.loc 1 86 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  33              	.LVL0:
+  34              		.loc 1 90 0
+  35 0000 4060     		str	r0, [r0, #4]
+  36 0002 0060     		str	r0, [r0, #0]
+  37              		.loc 1 91 0
+  38 0004 8160     		str	r1, [r0, #8]
+  39 0006 7047     		bx	lr
+  40              		.cfi_endproc
+  41              	.LFE7:
+  42              		.size	chSemInit, .-chSemInit
+  43 0008 AFF30080 		.section	.text.chSemResetI,"ax",%progbits
+  43      AFF30080 
+  44              		.align	2
+  45              		.p2align 4,,15
+  46              		.global	chSemResetI
+  47              		.thumb
+  48              		.thumb_func
+  49              		.type	chSemResetI, %function
+  50              	chSemResetI:
+  51              	.LFB9:
+  52              		.loc 1 136 0
+  53              		.cfi_startproc
+  54              		@ args = 0, pretend = 0, frame = 0
+  55              		@ frame_needed = 0, uses_anonymous_args = 0
+  56              	.LVL1:
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 2
+
+
+  57 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+  58              	.LCFI0:
+  59              		.cfi_def_cfa_offset 24
+  60              		.cfi_offset 3, -24
+  61              		.cfi_offset 4, -20
+  62              		.cfi_offset 5, -16
+  63              		.cfi_offset 6, -12
+  64              		.cfi_offset 7, -8
+  65              		.cfi_offset 14, -4
+  66              		.loc 1 136 0
+  67 0002 0446     		mov	r4, r0
+  68 0004 0D46     		mov	r5, r1
+  69              		.loc 1 139 0
+  70 0006 FFF7FEFF 		bl	chDbgCheckClassI
+  71              	.LVL2:
+  72              		.loc 1 141 0
+  73 000a A768     		ldr	r7, [r4, #8]
+  74              	.LVL3:
+  75              		.loc 1 147 0
+  76 000c A560     		str	r5, [r4, #8]
+  77              		.loc 1 148 0
+  78 000e 0137     		adds	r7, r7, #1
+  79              	.LVL4:
+  80 0010 002F     		cmp	r7, #0
+  81 0012 29DC     		bgt	.L2
+  82              	.LBB24:
+  83              	.LBB25:
+  84              		.file 2 "../../chibios/os/kernel/include/chinline.h"
+  85              		.loc 2 67 0
+  86 0014 6068     		ldr	r0, [r4, #4]
+  87              		.loc 2 69 0
+  88 0016 4368     		ldr	r3, [r0, #4]
+  89 0018 6360     		str	r3, [r4, #4]
+  90 001a 1C60     		str	r4, [r3, #0]
+  91              	.LBE25:
+  92              	.LBE24:
+  93              		.loc 1 149 0
+  94 001c FFF7FEFF 		bl	chSchReadyI
+  95              	.LVL5:
+  96 0020 6FF00106 		mvn	r6, #1
+  97 0024 07F00101 		and	r1, r7, #1
+  98              	.LVL6:
+  99 0028 4662     		str	r6, [r0, #36]
+ 100              		.loc 1 148 0
+ 101 002a 7D1C     		adds	r5, r7, #1
+ 102              	.LVL7:
+ 103 002c EFB1     		cbz	r7, .L15
+ 104 002e 49B1     		cbz	r1, .L6
+ 105              	.LBB29:
+ 106              	.LBB26:
+ 107              		.loc 2 67 0
+ 108 0030 6068     		ldr	r0, [r4, #4]
+ 109              		.loc 2 69 0
+ 110 0032 4268     		ldr	r2, [r0, #4]
+ 111 0034 6260     		str	r2, [r4, #4]
+ 112 0036 1460     		str	r4, [r2, #0]
+ 113              	.LBE26:
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 3
+
+
+ 114              	.LBE29:
+ 115              		.loc 1 149 0
+ 116 0038 FFF7FEFF 		bl	chSchReadyI
+ 117              	.LVL8:
+ 118              		.loc 1 148 0
+ 119 003c 0135     		adds	r5, r5, #1
+ 120 003e 012D     		cmp	r5, #1
+ 121              		.loc 1 149 0
+ 122 0040 4662     		str	r6, [r0, #36]
+ 123              	.LVL9:
+ 124              		.loc 1 148 0
+ 125 0042 13D0     		beq	.L16
+ 126              	.L6:
+ 127              	.LBB30:
+ 128              	.LBB27:
+ 129              		.loc 2 67 0
+ 130 0044 6068     		ldr	r0, [r4, #4]
+ 131              		.loc 2 69 0
+ 132 0046 4368     		ldr	r3, [r0, #4]
+ 133 0048 6360     		str	r3, [r4, #4]
+ 134 004a 1C60     		str	r4, [r3, #0]
+ 135              	.LBE27:
+ 136              	.LBE30:
+ 137              		.loc 1 149 0
+ 138 004c FFF7FEFF 		bl	chSchReadyI
+ 139              	.LVL10:
+ 140 0050 4662     		str	r6, [r0, #36]
+ 141              	.LBB31:
+ 142              	.LBB28:
+ 143              		.loc 2 67 0
+ 144 0052 6068     		ldr	r0, [r4, #4]
+ 145              		.loc 2 69 0
+ 146 0054 4168     		ldr	r1, [r0, #4]
+ 147 0056 6160     		str	r1, [r4, #4]
+ 148 0058 0C60     		str	r4, [r1, #0]
+ 149              	.LBE28:
+ 150              	.LBE31:
+ 151              		.loc 1 149 0
+ 152 005a FFF7FEFF 		bl	chSchReadyI
+ 153              	.LVL11:
+ 154              		.loc 1 148 0
+ 155 005e 6A1C     		adds	r2, r5, #1
+ 156              		.loc 1 149 0
+ 157 0060 4662     		str	r6, [r0, #36]
+ 158              		.loc 1 148 0
+ 159 0062 0235     		adds	r5, r5, #2
+ 160 0064 002A     		cmp	r2, #0
+ 161 0066 EDD1     		bne	.L6
+ 162              	.LVL12:
+ 163              	.L2:
+ 164 0068 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 165              	.LVL13:
+ 166              	.L15:
+ 167 006a F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 168              	.LVL14:
+ 169              	.L16:
+ 170 006c F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 4
+
+
+ 171              		.cfi_endproc
+ 172              	.LFE9:
+ 173              		.size	chSemResetI, .-chSemResetI
+ 174 006e 00BF     		.section	.text.chSemReset,"ax",%progbits
+ 175              		.align	2
+ 176              		.p2align 4,,15
+ 177              		.global	chSemReset
+ 178              		.thumb
+ 179              		.thumb_func
+ 180              		.type	chSemReset, %function
+ 181              	chSemReset:
+ 182              	.LFB8:
+ 183              		.loc 1 109 0
+ 184              		.cfi_startproc
+ 185              		@ args = 0, pretend = 0, frame = 0
+ 186              		@ frame_needed = 0, uses_anonymous_args = 0
+ 187              	.LVL15:
+ 188 0000 38B5     		push	{r3, r4, r5, lr}
+ 189              	.LCFI1:
+ 190              		.cfi_def_cfa_offset 16
+ 191              		.cfi_offset 3, -16
+ 192              		.cfi_offset 4, -12
+ 193              		.cfi_offset 5, -8
+ 194              		.cfi_offset 14, -4
+ 195              		.loc 1 109 0
+ 196 0002 0546     		mov	r5, r0
+ 197 0004 0C46     		mov	r4, r1
+ 198              	.LBB32:
+ 199              		.loc 1 111 0
+ 200 0006 2023     		movs	r3, #32
+ 201              	.LVL16:
+ 202              	@ 111 "../../chibios/os/kernel/src/chsem.c" 1
+ 203 0008 83F31188 		msr     BASEPRI, r3
+ 204              	@ 0 "" 2
+ 205              	.LVL17:
+ 206              		.thumb
+ 207              	.LBE32:
+ 208 000c FFF7FEFF 		bl	dbg_check_lock
+ 209              	.LVL18:
+ 210              		.loc 1 112 0
+ 211 0010 2846     		mov	r0, r5
+ 212 0012 2146     		mov	r1, r4
+ 213 0014 FFF7FEFF 		bl	chSemResetI
+ 214              	.LVL19:
+ 215              		.loc 1 113 0
+ 216 0018 FFF7FEFF 		bl	chSchRescheduleS
+ 217              	.LVL20:
+ 218              		.loc 1 114 0
+ 219 001c FFF7FEFF 		bl	dbg_check_unlock
+ 220              	.LVL21:
+ 221              	.LBB33:
+ 222 0020 0023     		movs	r3, #0
+ 223              	.LVL22:
+ 224              	@ 114 "../../chibios/os/kernel/src/chsem.c" 1
+ 225 0022 83F31188 		msr     BASEPRI, r3
+ 226              	@ 0 "" 2
+ 227              	.LVL23:
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 5
+
+
+ 228              		.thumb
+ 229 0026 38BD     		pop	{r3, r4, r5, pc}
+ 230              	.LBE33:
+ 231              		.cfi_endproc
+ 232              	.LFE8:
+ 233              		.size	chSemReset, .-chSemReset
+ 234 0028 AFF30080 		.section	.text.chSemWaitS,"ax",%progbits
+ 234      AFF30080 
+ 235              		.align	2
+ 236              		.p2align 4,,15
+ 237              		.global	chSemWaitS
+ 238              		.thumb
+ 239              		.thumb_func
+ 240              		.type	chSemWaitS, %function
+ 241              	chSemWaitS:
+ 242              	.LFB11:
+ 243              		.loc 1 185 0
+ 244              		.cfi_startproc
+ 245              		@ args = 0, pretend = 0, frame = 0
+ 246              		@ frame_needed = 0, uses_anonymous_args = 0
+ 247              	.LVL24:
+ 248 0000 38B5     		push	{r3, r4, r5, lr}
+ 249              	.LCFI2:
+ 250              		.cfi_def_cfa_offset 16
+ 251              		.cfi_offset 3, -16
+ 252              		.cfi_offset 4, -12
+ 253              		.cfi_offset 5, -8
+ 254              		.cfi_offset 14, -4
+ 255              		.loc 1 185 0
+ 256 0002 0446     		mov	r4, r0
+ 257              		.loc 1 187 0
+ 258 0004 FFF7FEFF 		bl	chDbgCheckClassS
+ 259              	.LVL25:
+ 260              		.loc 1 194 0
+ 261 0008 A368     		ldr	r3, [r4, #8]
+ 262 000a 581E     		subs	r0, r3, #1
+ 263 000c 0028     		cmp	r0, #0
+ 264 000e A060     		str	r0, [r4, #8]
+ 265 0010 01DB     		blt	.L21
+ 266              		.loc 1 200 0
+ 267 0012 0020     		movs	r0, #0
+ 268              		.loc 1 201 0
+ 269 0014 38BD     		pop	{r3, r4, r5, pc}
+ 270              	.L21:
+ 271              		.loc 1 195 0
+ 272 0016 074D     		ldr	r5, .L22
+ 273 0018 A969     		ldr	r1, [r5, #24]
+ 274 001a 4C62     		str	r4, [r1, #36]
+ 275              	.LVL26:
+ 276              	.LBB34:
+ 277              	.LBB35:
+ 278              		.loc 2 55 0
+ 279 001c 6268     		ldr	r2, [r4, #4]
+ 280              		.loc 2 54 0
+ 281 001e 0C60     		str	r4, [r1, #0]
+ 282              		.loc 2 55 0
+ 283 0020 4A60     		str	r2, [r1, #4]
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 6
+
+
+ 284              	.LBE35:
+ 285              	.LBE34:
+ 286              		.loc 1 197 0
+ 287 0022 0320     		movs	r0, #3
+ 288              	.LBB37:
+ 289              	.LBB36:
+ 290              		.loc 2 56 0
+ 291 0024 6160     		str	r1, [r4, #4]
+ 292 0026 1160     		str	r1, [r2, #0]
+ 293              	.LBE36:
+ 294              	.LBE37:
+ 295              		.loc 1 197 0
+ 296 0028 FFF7FEFF 		bl	chSchGoSleepS
+ 297              	.LVL27:
+ 298              		.loc 1 198 0
+ 299 002c AB69     		ldr	r3, [r5, #24]
+ 300 002e 586A     		ldr	r0, [r3, #36]
+ 301 0030 38BD     		pop	{r3, r4, r5, pc}
+ 302              	.L23:
+ 303 0032 00BF     		.align	2
+ 304              	.L22:
+ 305 0034 00000000 		.word	rlist
+ 306              		.cfi_endproc
+ 307              	.LFE11:
+ 308              		.size	chSemWaitS, .-chSemWaitS
+ 309 0038 AFF30080 		.section	.text.chSemWait,"ax",%progbits
+ 309      AFF30080 
+ 310              		.align	2
+ 311              		.p2align 4,,15
+ 312              		.global	chSemWait
+ 313              		.thumb
+ 314              		.thumb_func
+ 315              		.type	chSemWait, %function
+ 316              	chSemWait:
+ 317              	.LFB10:
+ 318              		.loc 1 164 0
+ 319              		.cfi_startproc
+ 320              		@ args = 0, pretend = 0, frame = 0
+ 321              		@ frame_needed = 0, uses_anonymous_args = 0
+ 322              	.LVL28:
+ 323 0000 10B5     		push	{r4, lr}
+ 324              	.LCFI3:
+ 325              		.cfi_def_cfa_offset 8
+ 326              		.cfi_offset 4, -8
+ 327              		.cfi_offset 14, -4
+ 328              	.LBB38:
+ 329              		.loc 1 167 0
+ 330 0002 2023     		movs	r3, #32
+ 331              	.LVL29:
+ 332              	.LBE38:
+ 333              		.loc 1 164 0
+ 334 0004 0446     		mov	r4, r0
+ 335              	.LBB39:
+ 336              		.loc 1 167 0
+ 337              	@ 167 "../../chibios/os/kernel/src/chsem.c" 1
+ 338 0006 83F31188 		msr     BASEPRI, r3
+ 339              	@ 0 "" 2
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 7
+
+
+ 340              	.LVL30:
+ 341              		.thumb
+ 342              	.LBE39:
+ 343 000a FFF7FEFF 		bl	dbg_check_lock
+ 344              	.LVL31:
+ 345              		.loc 1 168 0
+ 346 000e 2046     		mov	r0, r4
+ 347 0010 FFF7FEFF 		bl	chSemWaitS
+ 348              	.LVL32:
+ 349 0014 0446     		mov	r4, r0
+ 350              	.LVL33:
+ 351              		.loc 1 169 0
+ 352 0016 FFF7FEFF 		bl	dbg_check_unlock
+ 353              	.LVL34:
+ 354              	.LBB40:
+ 355 001a 0023     		movs	r3, #0
+ 356              	.LVL35:
+ 357              	@ 169 "../../chibios/os/kernel/src/chsem.c" 1
+ 358 001c 83F31188 		msr     BASEPRI, r3
+ 359              	@ 0 "" 2
+ 360              	.LVL36:
+ 361              		.thumb
+ 362              	.LBE40:
+ 363              		.loc 1 171 0
+ 364 0020 2046     		mov	r0, r4
+ 365 0022 10BD     		pop	{r4, pc}
+ 366              		.cfi_endproc
+ 367              	.LFE10:
+ 368              		.size	chSemWait, .-chSemWait
+ 369 0024 AFF30080 		.section	.text.chSemWaitTimeoutS,"ax",%progbits
+ 369      AFF30080 
+ 369      AFF30080 
+ 370              		.align	2
+ 371              		.p2align 4,,15
+ 372              		.global	chSemWaitTimeoutS
+ 373              		.thumb
+ 374              		.thumb_func
+ 375              		.type	chSemWaitTimeoutS, %function
+ 376              	chSemWaitTimeoutS:
+ 377              	.LFB13:
+ 378              		.loc 1 250 0
+ 379              		.cfi_startproc
+ 380              		@ args = 0, pretend = 0, frame = 0
+ 381              		@ frame_needed = 0, uses_anonymous_args = 0
+ 382              	.LVL37:
+ 383 0000 38B5     		push	{r3, r4, r5, lr}
+ 384              	.LCFI4:
+ 385              		.cfi_def_cfa_offset 16
+ 386              		.cfi_offset 3, -16
+ 387              		.cfi_offset 4, -12
+ 388              		.cfi_offset 5, -8
+ 389              		.cfi_offset 14, -4
+ 390              		.loc 1 250 0
+ 391 0002 0446     		mov	r4, r0
+ 392 0004 0D46     		mov	r5, r1
+ 393              		.loc 1 252 0
+ 394 0006 FFF7FEFF 		bl	chDbgCheckClassS
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 8
+
+
+ 395              	.LVL38:
+ 396              		.loc 1 254 0
+ 397 000a A268     		ldr	r2, [r4, #8]
+ 398              		.loc 1 259 0
+ 399 000c 531E     		subs	r3, r2, #1
+ 400 000e 002B     		cmp	r3, #0
+ 401 0010 A360     		str	r3, [r4, #8]
+ 402 0012 01DB     		blt	.L29
+ 403              		.loc 1 268 0
+ 404 0014 0020     		movs	r0, #0
+ 405              		.loc 1 269 0
+ 406 0016 38BD     		pop	{r3, r4, r5, pc}
+ 407              	.L29:
+ 408              		.loc 1 260 0
+ 409 0018 6DB1     		cbz	r5, .L30
+ 410              		.loc 1 264 0
+ 411 001a 0948     		ldr	r0, .L31
+ 412 001c 8369     		ldr	r3, [r0, #24]
+ 413 001e 5C62     		str	r4, [r3, #36]
+ 414              	.LVL39:
+ 415              	.LBB41:
+ 416              	.LBB42:
+ 417              		.loc 2 55 0
+ 418 0020 6268     		ldr	r2, [r4, #4]
+ 419              		.loc 2 54 0
+ 420 0022 1C60     		str	r4, [r3, #0]
+ 421              	.LBE42:
+ 422              	.LBE41:
+ 423              		.loc 1 266 0
+ 424 0024 0320     		movs	r0, #3
+ 425 0026 2946     		mov	r1, r5
+ 426              	.LBB44:
+ 427              	.LBB43:
+ 428              		.loc 2 55 0
+ 429 0028 5A60     		str	r2, [r3, #4]
+ 430              		.loc 2 56 0
+ 431 002a 6360     		str	r3, [r4, #4]
+ 432 002c 1360     		str	r3, [r2, #0]
+ 433              	.LBE43:
+ 434              	.LBE44:
+ 435              		.loc 1 269 0
+ 436 002e BDE83840 		pop	{r3, r4, r5, lr}
+ 437              		.loc 1 266 0
+ 438 0032 FFF7FEBF 		b	chSchGoSleepTimeoutS
+ 439              	.LVL40:
+ 440              	.L30:
+ 441              		.loc 1 261 0
+ 442 0036 A260     		str	r2, [r4, #8]
+ 443              		.loc 1 262 0
+ 444 0038 4FF0FF30 		mov	r0, #-1
+ 445 003c 38BD     		pop	{r3, r4, r5, pc}
+ 446              	.L32:
+ 447 003e 00BF     		.align	2
+ 448              	.L31:
+ 449 0040 00000000 		.word	rlist
+ 450              		.cfi_endproc
+ 451              	.LFE13:
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 9
+
+
+ 452              		.size	chSemWaitTimeoutS, .-chSemWaitTimeoutS
+ 453 0044 AFF30080 		.section	.text.chSemWaitTimeout,"ax",%progbits
+ 453      AFF30080 
+ 453      AFF30080 
+ 454              		.align	2
+ 455              		.p2align 4,,15
+ 456              		.global	chSemWaitTimeout
+ 457              		.thumb
+ 458              		.thumb_func
+ 459              		.type	chSemWaitTimeout, %function
+ 460              	chSemWaitTimeout:
+ 461              	.LFB12:
+ 462              		.loc 1 222 0
+ 463              		.cfi_startproc
+ 464              		@ args = 0, pretend = 0, frame = 0
+ 465              		@ frame_needed = 0, uses_anonymous_args = 0
+ 466              	.LVL41:
+ 467 0000 38B5     		push	{r3, r4, r5, lr}
+ 468              	.LCFI5:
+ 469              		.cfi_def_cfa_offset 16
+ 470              		.cfi_offset 3, -16
+ 471              		.cfi_offset 4, -12
+ 472              		.cfi_offset 5, -8
+ 473              		.cfi_offset 14, -4
+ 474              		.loc 1 222 0
+ 475 0002 0546     		mov	r5, r0
+ 476 0004 0C46     		mov	r4, r1
+ 477              	.LBB45:
+ 478              		.loc 1 225 0
+ 479 0006 2023     		movs	r3, #32
+ 480              	.LVL42:
+ 481              	@ 225 "../../chibios/os/kernel/src/chsem.c" 1
+ 482 0008 83F31188 		msr     BASEPRI, r3
+ 483              	@ 0 "" 2
+ 484              	.LVL43:
+ 485              		.thumb
+ 486              	.LBE45:
+ 487 000c FFF7FEFF 		bl	dbg_check_lock
+ 488              	.LVL44:
+ 489              		.loc 1 226 0
+ 490 0010 2146     		mov	r1, r4
+ 491 0012 2846     		mov	r0, r5
+ 492 0014 FFF7FEFF 		bl	chSemWaitTimeoutS
+ 493              	.LVL45:
+ 494 0018 0446     		mov	r4, r0
+ 495              	.LVL46:
+ 496              		.loc 1 227 0
+ 497 001a FFF7FEFF 		bl	dbg_check_unlock
+ 498              	.LVL47:
+ 499              	.LBB46:
+ 500 001e 0023     		movs	r3, #0
+ 501              	.LVL48:
+ 502              	@ 227 "../../chibios/os/kernel/src/chsem.c" 1
+ 503 0020 83F31188 		msr     BASEPRI, r3
+ 504              	@ 0 "" 2
+ 505              	.LVL49:
+ 506              		.thumb
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 10
+
+
+ 507              	.LBE46:
+ 508              		.loc 1 229 0
+ 509 0024 2046     		mov	r0, r4
+ 510 0026 38BD     		pop	{r3, r4, r5, pc}
+ 511              		.cfi_endproc
+ 512              	.LFE12:
+ 513              		.size	chSemWaitTimeout, .-chSemWaitTimeout
+ 514 0028 AFF30080 		.section	.text.chSemSignal,"ax",%progbits
+ 514      AFF30080 
+ 515              		.align	2
+ 516              		.p2align 4,,15
+ 517              		.global	chSemSignal
+ 518              		.thumb
+ 519              		.thumb_func
+ 520              		.type	chSemSignal, %function
+ 521              	chSemSignal:
+ 522              	.LFB14:
+ 523              		.loc 1 278 0
+ 524              		.cfi_startproc
+ 525              		@ args = 0, pretend = 0, frame = 0
+ 526              		@ frame_needed = 0, uses_anonymous_args = 0
+ 527              	.LVL50:
+ 528 0000 10B5     		push	{r4, lr}
+ 529              	.LCFI6:
+ 530              		.cfi_def_cfa_offset 8
+ 531              		.cfi_offset 4, -8
+ 532              		.cfi_offset 14, -4
+ 533              	.LBB47:
+ 534              		.loc 1 286 0
+ 535 0002 2023     		movs	r3, #32
+ 536              	.LVL51:
+ 537              	.LBE47:
+ 538              		.loc 1 278 0
+ 539 0004 0446     		mov	r4, r0
+ 540              	.LBB48:
+ 541              		.loc 1 286 0
+ 542              	@ 286 "../../chibios/os/kernel/src/chsem.c" 1
+ 543 0006 83F31188 		msr     BASEPRI, r3
+ 544              	@ 0 "" 2
+ 545              	.LVL52:
+ 546              		.thumb
+ 547              	.LBE48:
+ 548 000a FFF7FEFF 		bl	dbg_check_lock
+ 549              	.LVL53:
+ 550              		.loc 1 287 0
+ 551 000e A368     		ldr	r3, [r4, #8]
+ 552 0010 581C     		adds	r0, r3, #1
+ 553 0012 0028     		cmp	r0, #0
+ 554 0014 A060     		str	r0, [r4, #8]
+ 555 0016 05DD     		ble	.L36
+ 556              	.L35:
+ 557              		.loc 1 289 0
+ 558 0018 FFF7FEFF 		bl	dbg_check_unlock
+ 559              	.LVL54:
+ 560              	.LBB49:
+ 561 001c 0023     		movs	r3, #0
+ 562              	.LVL55:
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 11
+
+
+ 563              	@ 289 "../../chibios/os/kernel/src/chsem.c" 1
+ 564 001e 83F31188 		msr     BASEPRI, r3
+ 565              	@ 0 "" 2
+ 566              	.LVL56:
+ 567              		.thumb
+ 568 0022 10BD     		pop	{r4, pc}
+ 569              	.LVL57:
+ 570              	.L36:
+ 571              	.LBE49:
+ 572              	.LBB50:
+ 573              	.LBB51:
+ 574              		.loc 2 60 0
+ 575 0024 2068     		ldr	r0, [r4, #0]
+ 576              	.LVL58:
+ 577              		.loc 2 62 0
+ 578 0026 0268     		ldr	r2, [r0, #0]
+ 579              	.LBE51:
+ 580              	.LBE50:
+ 581              		.loc 1 288 0
+ 582 0028 0021     		movs	r1, #0
+ 583              	.LBB53:
+ 584              	.LBB52:
+ 585              		.loc 2 62 0
+ 586 002a 2260     		str	r2, [r4, #0]
+ 587 002c 5460     		str	r4, [r2, #4]
+ 588              	.LBE52:
+ 589              	.LBE53:
+ 590              		.loc 1 288 0
+ 591 002e FFF7FEFF 		bl	chSchWakeupS
+ 592              	.LVL59:
+ 593 0032 F1E7     		b	.L35
+ 594              		.cfi_endproc
+ 595              	.LFE14:
+ 596              		.size	chSemSignal, .-chSemSignal
+ 597 0034 AFF30080 		.section	.text.chSemSignalI,"ax",%progbits
+ 597      AFF30080 
+ 597      AFF30080 
+ 598              		.align	2
+ 599              		.p2align 4,,15
+ 600              		.global	chSemSignalI
+ 601              		.thumb
+ 602              		.thumb_func
+ 603              		.type	chSemSignalI, %function
+ 604              	chSemSignalI:
+ 605              	.LFB15:
+ 606              		.loc 1 303 0
+ 607              		.cfi_startproc
+ 608              		@ args = 0, pretend = 0, frame = 0
+ 609              		@ frame_needed = 0, uses_anonymous_args = 0
+ 610              	.LVL60:
+ 611 0000 10B5     		push	{r4, lr}
+ 612              	.LCFI7:
+ 613              		.cfi_def_cfa_offset 8
+ 614              		.cfi_offset 4, -8
+ 615              		.cfi_offset 14, -4
+ 616              		.loc 1 303 0
+ 617 0002 0446     		mov	r4, r0
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 12
+
+
+ 618              		.loc 1 305 0
+ 619 0004 FFF7FEFF 		bl	chDbgCheckClassI
+ 620              	.LVL61:
+ 621              		.loc 1 312 0
+ 622 0008 A368     		ldr	r3, [r4, #8]
+ 623 000a 581C     		adds	r0, r3, #1
+ 624 000c 0028     		cmp	r0, #0
+ 625 000e A060     		str	r0, [r4, #8]
+ 626 0010 00DD     		ble	.L39
+ 627 0012 10BD     		pop	{r4, pc}
+ 628              	.L39:
+ 629              	.LVL62:
+ 630              	.LBB54:
+ 631              	.LBB55:
+ 632              	.LBB56:
+ 633              		.loc 2 60 0
+ 634 0014 2168     		ldr	r1, [r4, #0]
+ 635              	.LVL63:
+ 636              		.loc 2 62 0
+ 637 0016 0A68     		ldr	r2, [r1, #0]
+ 638              	.LBE56:
+ 639              	.LBE55:
+ 640              		.loc 1 316 0
+ 641 0018 0023     		movs	r3, #0
+ 642              		.loc 1 317 0
+ 643 001a 0846     		mov	r0, r1
+ 644              	.LBB58:
+ 645              	.LBB57:
+ 646              		.loc 2 62 0
+ 647 001c 2260     		str	r2, [r4, #0]
+ 648 001e 5460     		str	r4, [r2, #4]
+ 649              	.LBE57:
+ 650              	.LBE58:
+ 651              		.loc 1 316 0
+ 652 0020 4B62     		str	r3, [r1, #36]
+ 653              	.LBE54:
+ 654              		.loc 1 319 0
+ 655 0022 BDE81040 		pop	{r4, lr}
+ 656              	.LBB59:
+ 657              		.loc 1 317 0
+ 658 0026 FFF7FEBF 		b	chSchReadyI
+ 659              	.LVL64:
+ 660              	.LBE59:
+ 661              		.cfi_endproc
+ 662              	.LFE15:
+ 663              		.size	chSemSignalI, .-chSemSignalI
+ 664 002a 00BFAFF3 		.section	.text.chSemAddCounterI,"ax",%progbits
+ 664      0080
+ 665              		.align	2
+ 666              		.p2align 4,,15
+ 667              		.global	chSemAddCounterI
+ 668              		.thumb
+ 669              		.thumb_func
+ 670              		.type	chSemAddCounterI, %function
+ 671              	chSemAddCounterI:
+ 672              	.LFB16:
+ 673              		.loc 1 334 0
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 13
+
+
+ 674              		.cfi_startproc
+ 675              		@ args = 0, pretend = 0, frame = 0
+ 676              		@ frame_needed = 0, uses_anonymous_args = 0
+ 677              	.LVL65:
+ 678 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 679              	.LCFI8:
+ 680              		.cfi_def_cfa_offset 24
+ 681              		.cfi_offset 3, -24
+ 682              		.cfi_offset 4, -20
+ 683              		.cfi_offset 5, -16
+ 684              		.cfi_offset 6, -12
+ 685              		.cfi_offset 7, -8
+ 686              		.cfi_offset 14, -4
+ 687              		.loc 1 334 0
+ 688 0002 0D46     		mov	r5, r1
+ 689 0004 0446     		mov	r4, r0
+ 690              		.loc 1 336 0
+ 691 0006 FFF7FEFF 		bl	chDbgCheckClassI
+ 692              	.LVL66:
+ 693              		.loc 1 343 0
+ 694 000a 002D     		cmp	r5, #0
+ 695 000c 37DD     		ble	.L40
+ 696              		.loc 1 344 0
+ 697 000e A368     		ldr	r3, [r4, #8]
+ 698              		.loc 1 345 0
+ 699 0010 0026     		movs	r6, #0
+ 700              		.loc 1 344 0
+ 701 0012 581C     		adds	r0, r3, #1
+ 702 0014 6A1E     		subs	r2, r5, #1
+ 703 0016 B042     		cmp	r0, r6
+ 704 0018 A060     		str	r0, [r4, #8]
+ 705 001a 02F00107 		and	r7, r2, #1
+ 706 001e 2FDD     		ble	.L58
+ 707              	.L47:
+ 708              		.loc 1 343 0
+ 709 0020 013D     		subs	r5, r5, #1
+ 710              	.LVL67:
+ 711 0022 2CD0     		beq	.L40
+ 712 0024 77B1     		cbz	r7, .L45
+ 713              		.loc 1 344 0
+ 714 0026 A368     		ldr	r3, [r4, #8]
+ 715 0028 5A1C     		adds	r2, r3, #1
+ 716 002a 002A     		cmp	r2, #0
+ 717 002c A260     		str	r2, [r4, #8]
+ 718 002e 2FDD     		ble	.L59
+ 719              	.L49:
+ 720              	.LVL68:
+ 721              		.loc 1 343 0
+ 722 0030 013D     		subs	r5, r5, #1
+ 723 0032 07D1     		bne	.L45
+ 724 0034 34E0     		b	.L63
+ 725              	.L42:
+ 726              		.loc 1 344 0
+ 727 0036 A168     		ldr	r1, [r4, #8]
+ 728 0038 481C     		adds	r0, r1, #1
+ 729 003a 0028     		cmp	r0, #0
+ 730 003c A060     		str	r0, [r4, #8]
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 14
+
+
+ 731 003e 14DD     		ble	.L61
+ 732              	.L52:
+ 733              		.loc 1 343 0
+ 734 0040 013D     		subs	r5, r5, #1
+ 735 0042 1BD0     		beq	.L62
+ 736              	.L45:
+ 737              		.loc 1 344 0
+ 738 0044 A068     		ldr	r0, [r4, #8]
+ 739 0046 431C     		adds	r3, r0, #1
+ 740 0048 002B     		cmp	r3, #0
+ 741 004a A360     		str	r3, [r4, #8]
+ 742              		.loc 1 346 0
+ 743 004c 05F1FF35 		add	r5, r5, #-1
+ 744              		.loc 1 344 0
+ 745 0050 F1DC     		bgt	.L42
+ 746              	.LVL69:
+ 747              	.LBB60:
+ 748              	.LBB61:
+ 749              		.loc 2 60 0
+ 750 0052 2068     		ldr	r0, [r4, #0]
+ 751              	.LVL70:
+ 752              		.loc 2 62 0
+ 753 0054 0268     		ldr	r2, [r0, #0]
+ 754 0056 2260     		str	r2, [r4, #0]
+ 755 0058 5460     		str	r4, [r2, #4]
+ 756              	.LBE61:
+ 757              	.LBE60:
+ 758              		.loc 1 345 0
+ 759 005a FFF7FEFF 		bl	chSchReadyI
+ 760              	.LVL71:
+ 761 005e 4662     		str	r6, [r0, #36]
+ 762              		.loc 1 344 0
+ 763 0060 A168     		ldr	r1, [r4, #8]
+ 764 0062 481C     		adds	r0, r1, #1
+ 765 0064 0028     		cmp	r0, #0
+ 766 0066 A060     		str	r0, [r4, #8]
+ 767 0068 EADC     		bgt	.L52
+ 768              	.LVL72:
+ 769              	.L61:
+ 770              	.LBB65:
+ 771              	.LBB62:
+ 772              		.loc 2 60 0
+ 773 006a 2068     		ldr	r0, [r4, #0]
+ 774              		.loc 2 62 0
+ 775 006c 0368     		ldr	r3, [r0, #0]
+ 776 006e 2360     		str	r3, [r4, #0]
+ 777 0070 5C60     		str	r4, [r3, #4]
+ 778              	.LBE62:
+ 779              	.LBE65:
+ 780              		.loc 1 345 0
+ 781 0072 FFF7FEFF 		bl	chSchReadyI
+ 782              	.LVL73:
+ 783              		.loc 1 343 0
+ 784 0076 013D     		subs	r5, r5, #1
+ 785              		.loc 1 345 0
+ 786 0078 4662     		str	r6, [r0, #36]
+ 787              		.loc 1 343 0
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 15
+
+
+ 788 007a E3D1     		bne	.L45
+ 789              	.LVL74:
+ 790              	.L62:
+ 791 007c F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 792              	.L40:
+ 793 007e F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 794              	.LVL75:
+ 795              	.L58:
+ 796              	.LBB66:
+ 797              	.LBB63:
+ 798              		.loc 2 60 0
+ 799 0080 2068     		ldr	r0, [r4, #0]
+ 800              		.loc 2 62 0
+ 801 0082 0168     		ldr	r1, [r0, #0]
+ 802 0084 2160     		str	r1, [r4, #0]
+ 803 0086 4C60     		str	r4, [r1, #4]
+ 804              	.LBE63:
+ 805              	.LBE66:
+ 806              		.loc 1 345 0
+ 807 0088 FFF7FEFF 		bl	chSchReadyI
+ 808              	.LVL76:
+ 809 008c 4662     		str	r6, [r0, #36]
+ 810 008e C7E7     		b	.L47
+ 811              	.LVL77:
+ 812              	.L59:
+ 813              	.LBB67:
+ 814              	.LBB64:
+ 815              		.loc 2 60 0
+ 816 0090 2068     		ldr	r0, [r4, #0]
+ 817              		.loc 2 62 0
+ 818 0092 0168     		ldr	r1, [r0, #0]
+ 819 0094 2160     		str	r1, [r4, #0]
+ 820 0096 4C60     		str	r4, [r1, #4]
+ 821              	.LBE64:
+ 822              	.LBE67:
+ 823              		.loc 1 345 0
+ 824 0098 FFF7FEFF 		bl	chSchReadyI
+ 825              	.LVL78:
+ 826 009c 4662     		str	r6, [r0, #36]
+ 827 009e C7E7     		b	.L49
+ 828              	.LVL79:
+ 829              	.L63:
+ 830 00a0 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 831              		.cfi_endproc
+ 832              	.LFE16:
+ 833              		.size	chSemAddCounterI, .-chSemAddCounterI
+ 834 00a2 00BFAFF3 		.section	.text.chSemSignalWait,"ax",%progbits
+ 834      0080AFF3 
+ 834      0080AFF3 
+ 834      0080
+ 835              		.align	2
+ 836              		.p2align 4,,15
+ 837              		.global	chSemSignalWait
+ 838              		.thumb
+ 839              		.thumb_func
+ 840              		.type	chSemSignalWait, %function
+ 841              	chSemSignalWait:
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 16
+
+
+ 842              	.LFB17:
+ 843              		.loc 1 366 0
+ 844              		.cfi_startproc
+ 845              		@ args = 0, pretend = 0, frame = 0
+ 846              		@ frame_needed = 0, uses_anonymous_args = 0
+ 847              	.LVL80:
+ 848 0000 38B5     		push	{r3, r4, r5, lr}
+ 849              	.LCFI9:
+ 850              		.cfi_def_cfa_offset 16
+ 851              		.cfi_offset 3, -16
+ 852              		.cfi_offset 4, -12
+ 853              		.cfi_offset 5, -8
+ 854              		.cfi_offset 14, -4
+ 855              		.loc 1 366 0
+ 856 0002 0546     		mov	r5, r0
+ 857 0004 0C46     		mov	r4, r1
+ 858              	.LBB68:
+ 859              		.loc 1 379 0
+ 860 0006 2023     		movs	r3, #32
+ 861              	.LVL81:
+ 862              	@ 379 "../../chibios/os/kernel/src/chsem.c" 1
+ 863 0008 83F31188 		msr     BASEPRI, r3
+ 864              	@ 0 "" 2
+ 865              	.LVL82:
+ 866              		.thumb
+ 867              	.LBE68:
+ 868 000c FFF7FEFF 		bl	dbg_check_lock
+ 869              	.LVL83:
+ 870              		.loc 1 380 0
+ 871 0010 AB68     		ldr	r3, [r5, #8]
+ 872 0012 581C     		adds	r0, r3, #1
+ 873 0014 0028     		cmp	r0, #0
+ 874 0016 A860     		str	r0, [r5, #8]
+ 875 0018 1BDD     		ble	.L68
+ 876              	.L65:
+ 877              		.loc 1 382 0
+ 878 001a A368     		ldr	r3, [r4, #8]
+ 879 001c 581E     		subs	r0, r3, #1
+ 880 001e 0028     		cmp	r0, #0
+ 881 0020 A060     		str	r0, [r4, #8]
+ 882 0022 09DB     		blt	.L69
+ 883              		.loc 1 390 0
+ 884 0024 FFF7FEFF 		bl	chSchRescheduleS
+ 885              	.LVL84:
+ 886              		.loc 1 391 0
+ 887 0028 0024     		movs	r4, #0
+ 888              	.LVL85:
+ 889              	.L67:
+ 890              		.loc 1 393 0
+ 891 002a FFF7FEFF 		bl	dbg_check_unlock
+ 892              	.LVL86:
+ 893              	.LBB69:
+ 894 002e 0023     		movs	r3, #0
+ 895              	.LVL87:
+ 896              	@ 393 "../../chibios/os/kernel/src/chsem.c" 1
+ 897 0030 83F31188 		msr     BASEPRI, r3
+ 898              	@ 0 "" 2
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 17
+
+
+ 899              	.LVL88:
+ 900              		.thumb
+ 901              	.LBE69:
+ 902              		.loc 1 395 0
+ 903 0034 2046     		mov	r0, r4
+ 904 0036 38BD     		pop	{r3, r4, r5, pc}
+ 905              	.LVL89:
+ 906              	.L69:
+ 907              	.LBB70:
+ 908              		.loc 1 383 0
+ 909 0038 0A4D     		ldr	r5, .L70
+ 910              	.LVL90:
+ 911              	.LBB71:
+ 912              	.LBB72:
+ 913              		.loc 2 55 0
+ 914 003a 6168     		ldr	r1, [r4, #4]
+ 915              	.LBE72:
+ 916              	.LBE71:
+ 917              		.loc 1 383 0
+ 918 003c AD69     		ldr	r5, [r5, #24]
+ 919              	.LVL91:
+ 920              		.loc 1 386 0
+ 921 003e 0320     		movs	r0, #3
+ 922              	.LBB75:
+ 923              	.LBB73:
+ 924              		.loc 2 54 0
+ 925 0040 2C60     		str	r4, [r5, #0]
+ 926              		.loc 2 55 0
+ 927 0042 6960     		str	r1, [r5, #4]
+ 928              		.loc 2 56 0
+ 929 0044 6560     		str	r5, [r4, #4]
+ 930              	.LBE73:
+ 931              	.LBE75:
+ 932              		.loc 1 385 0
+ 933 0046 6C62     		str	r4, [r5, #36]
+ 934              	.LBB76:
+ 935              	.LBB74:
+ 936              		.loc 2 56 0
+ 937 0048 0D60     		str	r5, [r1, #0]
+ 938              	.LBE74:
+ 939              	.LBE76:
+ 940              		.loc 1 386 0
+ 941 004a FFF7FEFF 		bl	chSchGoSleepS
+ 942              	.LVL92:
+ 943              		.loc 1 387 0
+ 944 004e 6C6A     		ldr	r4, [r5, #36]
+ 945              	.LVL93:
+ 946 0050 EBE7     		b	.L67
+ 947              	.LVL94:
+ 948              	.L68:
+ 949              	.LBE70:
+ 950              	.LBB77:
+ 951              	.LBB78:
+ 952              		.loc 2 60 0
+ 953 0052 2868     		ldr	r0, [r5, #0]
+ 954              	.LVL95:
+ 955              		.loc 2 62 0
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 18
+
+
+ 956 0054 0168     		ldr	r1, [r0, #0]
+ 957 0056 2960     		str	r1, [r5, #0]
+ 958 0058 4D60     		str	r5, [r1, #4]
+ 959              	.LBE78:
+ 960              	.LBE77:
+ 961              		.loc 1 381 0
+ 962 005a FFF7FEFF 		bl	chSchReadyI
+ 963              	.LVL96:
+ 964 005e 0022     		movs	r2, #0
+ 965 0060 4262     		str	r2, [r0, #36]
+ 966 0062 DAE7     		b	.L65
+ 967              	.L71:
+ 968              		.align	2
+ 969              	.L70:
+ 970 0064 00000000 		.word	rlist
+ 971              		.cfi_endproc
+ 972              	.LFE17:
+ 973              		.size	chSemSignalWait, .-chSemSignalWait
+ 974 0068 AFF30080 		.text
+ 974      AFF30080 
+ 975              	.Letext0:
+ 976              		.file 3 "c:\\chibistudio\\tools\\gnu tools arm embedded\\4.7 2014q2\\bin\\../lib/gcc/arm-none-eabi
+ 977              		.file 4 "../../chibios/os/ports/GCC/ARMCMx/chtypes.h"
+ 978              		.file 5 "../../chibios/os/kernel/include/chlists.h"
+ 979              		.file 6 "../../chibios/os/kernel/include/chthreads.h"
+ 980              		.file 7 "../../chibios/os/ports/GCC/ARMCMx/chcore_v7m.h"
+ 981              		.file 8 "../../chibios/os/kernel/include/chschd.h"
+ 982              		.file 9 "../../chibios/os/kernel/include/chsem.h"
+ 983              		.file 10 "../../chibios/os/kernel/include/chmtx.h"
+ 984              		.file 11 "../../chibios/os/kernel/include/chdebug.h"
+ 985              		.section	.debug_info,"",%progbits
+ 986              	.Ldebug_info0:
+ 987 0000 2F0C0000 		.4byte	0xc2f
+ 988 0004 0200     		.2byte	0x2
+ 989 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 990 000a 04       		.byte	0x4
+ 991 000b 01       		.uleb128 0x1
+ 992 000c F4010000 		.4byte	.LASF88
+ 993 0010 01       		.byte	0x1
+ 994 0011 DD030000 		.4byte	.LASF89
+ 995 0015 A8000000 		.4byte	.LASF90
+ 996 0019 98010000 		.4byte	.Ldebug_ranges0+0x198
+ 997 001d 00000000 		.4byte	0
+ 998 0021 00000000 		.4byte	0
+ 999 0025 00000000 		.4byte	.Ldebug_line0
+ 1000 0029 02       		.uleb128 0x2
+ 1001 002a 04       		.byte	0x4
+ 1002 002b 05       		.byte	0x5
+ 1003 002c 696E7400 		.ascii	"int\000"
+ 1004 0030 03       		.uleb128 0x3
+ 1005 0031 04       		.byte	0x4
+ 1006 0032 07       		.byte	0x7
+ 1007 0033 30010000 		.4byte	.LASF0
+ 1008 0037 03       		.uleb128 0x3
+ 1009 0038 01       		.byte	0x1
+ 1010 0039 06       		.byte	0x6
+ 1011 003a 7C000000 		.4byte	.LASF1
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 19
+
+
+ 1012 003e 04       		.uleb128 0x4
+ 1013 003f D5030000 		.4byte	.LASF5
+ 1014 0043 03       		.byte	0x3
+ 1015 0044 2A       		.byte	0x2a
+ 1016 0045 49000000 		.4byte	0x49
+ 1017 0049 03       		.uleb128 0x3
+ 1018 004a 01       		.byte	0x1
+ 1019 004b 08       		.byte	0x8
+ 1020 004c 94020000 		.4byte	.LASF2
+ 1021 0050 03       		.uleb128 0x3
+ 1022 0051 02       		.byte	0x2
+ 1023 0052 05       		.byte	0x5
+ 1024 0053 AC020000 		.4byte	.LASF3
+ 1025 0057 03       		.uleb128 0x3
+ 1026 0058 02       		.byte	0x2
+ 1027 0059 07       		.byte	0x7
+ 1028 005a 6E010000 		.4byte	.LASF4
+ 1029 005e 04       		.uleb128 0x4
+ 1030 005f 8C020000 		.4byte	.LASF6
+ 1031 0063 03       		.byte	0x3
+ 1032 0064 4F       		.byte	0x4f
+ 1033 0065 69000000 		.4byte	0x69
+ 1034 0069 03       		.uleb128 0x3
+ 1035 006a 04       		.byte	0x4
+ 1036 006b 05       		.byte	0x5
+ 1037 006c DA000000 		.4byte	.LASF7
+ 1038 0070 04       		.uleb128 0x4
+ 1039 0071 10030000 		.4byte	.LASF8
+ 1040 0075 03       		.byte	0x3
+ 1041 0076 50       		.byte	0x50
+ 1042 0077 7B000000 		.4byte	0x7b
+ 1043 007b 03       		.uleb128 0x3
+ 1044 007c 04       		.byte	0x4
+ 1045 007d 07       		.byte	0x7
+ 1046 007e 4E010000 		.4byte	.LASF9
+ 1047 0082 03       		.uleb128 0x3
+ 1048 0083 08       		.byte	0x8
+ 1049 0084 05       		.byte	0x5
+ 1050 0085 6E000000 		.4byte	.LASF10
+ 1051 0089 03       		.uleb128 0x3
+ 1052 008a 08       		.byte	0x8
+ 1053 008b 07       		.byte	0x7
+ 1054 008c 36000000 		.4byte	.LASF11
+ 1055 0090 03       		.uleb128 0x3
+ 1056 0091 01       		.byte	0x1
+ 1057 0092 02       		.byte	0x2
+ 1058 0093 86020000 		.4byte	.LASF12
+ 1059 0097 04       		.uleb128 0x4
+ 1060 0098 A3010000 		.4byte	.LASF13
+ 1061 009c 04       		.byte	0x4
+ 1062 009d 2C       		.byte	0x2c
+ 1063 009e 3E000000 		.4byte	0x3e
+ 1064 00a2 04       		.uleb128 0x4
+ 1065 00a3 E3000000 		.4byte	.LASF14
+ 1066 00a7 04       		.byte	0x4
+ 1067 00a8 2D       		.byte	0x2d
+ 1068 00a9 3E000000 		.4byte	0x3e
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 20
+
+
+ 1069 00ad 04       		.uleb128 0x4
+ 1070 00ae 6F020000 		.4byte	.LASF15
+ 1071 00b2 04       		.byte	0x4
+ 1072 00b3 2E       		.byte	0x2e
+ 1073 00b4 3E000000 		.4byte	0x3e
+ 1074 00b8 04       		.uleb128 0x4
+ 1075 00b9 D0000000 		.4byte	.LASF16
+ 1076 00bd 04       		.byte	0x4
+ 1077 00be 2F       		.byte	0x2f
+ 1078 00bf 3E000000 		.4byte	0x3e
+ 1079 00c3 04       		.uleb128 0x4
+ 1080 00c4 7E020000 		.4byte	.LASF17
+ 1081 00c8 04       		.byte	0x4
+ 1082 00c9 30       		.byte	0x30
+ 1083 00ca 70000000 		.4byte	0x70
+ 1084 00ce 04       		.uleb128 0x4
+ 1085 00cf 8C010000 		.4byte	.LASF18
+ 1086 00d3 04       		.byte	0x4
+ 1087 00d4 31       		.byte	0x31
+ 1088 00d5 5E000000 		.4byte	0x5e
+ 1089 00d9 04       		.uleb128 0x4
+ 1090 00da C8010000 		.4byte	.LASF19
+ 1091 00de 04       		.byte	0x4
+ 1092 00df 33       		.byte	0x33
+ 1093 00e0 70000000 		.4byte	0x70
+ 1094 00e4 04       		.uleb128 0x4
+ 1095 00e5 57030000 		.4byte	.LASF20
+ 1096 00e9 04       		.byte	0x4
+ 1097 00ea 35       		.byte	0x35
+ 1098 00eb 70000000 		.4byte	0x70
+ 1099 00ef 04       		.uleb128 0x4
+ 1100 00f0 2A010000 		.4byte	.LASF21
+ 1101 00f4 04       		.byte	0x4
+ 1102 00f5 36       		.byte	0x36
+ 1103 00f6 5E000000 		.4byte	0x5e
+ 1104 00fa 04       		.uleb128 0x4
+ 1105 00fb F0020000 		.4byte	.LASF22
+ 1106 00ff 05       		.byte	0x5
+ 1107 0100 2A       		.byte	0x2a
+ 1108 0101 05010000 		.4byte	0x105
+ 1109 0105 05       		.uleb128 0x5
+ 1110 0106 F0020000 		.4byte	.LASF22
+ 1111 010a 48       		.byte	0x48
+ 1112 010b 06       		.byte	0x6
+ 1113 010c 5E       		.byte	0x5e
+ 1114 010d 2A020000 		.4byte	0x22a
+ 1115 0111 06       		.uleb128 0x6
+ 1116 0112 D6020000 		.4byte	.LASF23
+ 1117 0116 06       		.byte	0x6
+ 1118 0117 5F       		.byte	0x5f
+ 1119 0118 4F020000 		.4byte	0x24f
+ 1120 011c 02       		.byte	0x2
+ 1121 011d 23       		.byte	0x23
+ 1122 011e 00       		.uleb128 0
+ 1123 011f 06       		.uleb128 0x6
+ 1124 0120 77020000 		.4byte	.LASF24
+ 1125 0124 06       		.byte	0x6
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 21
+
+
+ 1126 0125 61       		.byte	0x61
+ 1127 0126 4F020000 		.4byte	0x24f
+ 1128 012a 02       		.byte	0x2
+ 1129 012b 23       		.byte	0x23
+ 1130 012c 04       		.uleb128 0x4
+ 1131 012d 06       		.uleb128 0x6
+ 1132 012e 67000000 		.4byte	.LASF25
+ 1133 0132 06       		.byte	0x6
+ 1134 0133 63       		.byte	0x63
+ 1135 0134 C3000000 		.4byte	0xc3
+ 1136 0138 02       		.byte	0x2
+ 1137 0139 23       		.byte	0x23
+ 1138 013a 08       		.uleb128 0x8
+ 1139 013b 06       		.uleb128 0x6
+ 1140 013c 2C040000 		.4byte	.LASF26
+ 1141 0140 06       		.byte	0x6
+ 1142 0141 64       		.byte	0x64
+ 1143 0142 1D030000 		.4byte	0x31d
+ 1144 0146 02       		.byte	0x2
+ 1145 0147 23       		.byte	0x23
+ 1146 0148 0C       		.uleb128 0xc
+ 1147 0149 06       		.uleb128 0x6
+ 1148 014a F8000000 		.4byte	.LASF27
+ 1149 014e 06       		.byte	0x6
+ 1150 014f 66       		.byte	0x66
+ 1151 0150 4F020000 		.4byte	0x24f
+ 1152 0154 02       		.byte	0x2
+ 1153 0155 23       		.byte	0x23
+ 1154 0156 10       		.uleb128 0x10
+ 1155 0157 06       		.uleb128 0x6
+ 1156 0158 3D020000 		.4byte	.LASF28
+ 1157 015c 06       		.byte	0x6
+ 1158 015d 67       		.byte	0x67
+ 1159 015e 4F020000 		.4byte	0x24f
+ 1160 0162 02       		.byte	0x2
+ 1161 0163 23       		.byte	0x23
+ 1162 0164 14       		.uleb128 0x14
+ 1163 0165 06       		.uleb128 0x6
+ 1164 0166 08040000 		.4byte	.LASF29
+ 1165 016a 06       		.byte	0x6
+ 1166 016b 6E       		.byte	0x6e
+ 1167 016c 65040000 		.4byte	0x465
+ 1168 0170 02       		.byte	0x2
+ 1169 0171 23       		.byte	0x23
+ 1170 0172 18       		.uleb128 0x18
+ 1171 0173 06       		.uleb128 0x6
+ 1172 0174 B6020000 		.4byte	.LASF30
+ 1173 0178 06       		.byte	0x6
+ 1174 0179 79       		.byte	0x79
+ 1175 017a A2000000 		.4byte	0xa2
+ 1176 017e 02       		.byte	0x2
+ 1177 017f 23       		.byte	0x23
+ 1178 0180 1C       		.uleb128 0x1c
+ 1179 0181 06       		.uleb128 0x6
+ 1180 0182 DD020000 		.4byte	.LASF31
+ 1181 0186 06       		.byte	0x6
+ 1182 0187 7D       		.byte	0x7d
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 22
+
+
+ 1183 0188 97000000 		.4byte	0x97
+ 1184 018c 02       		.byte	0x2
+ 1185 018d 23       		.byte	0x23
+ 1186 018e 1D       		.uleb128 0x1d
+ 1187 018f 06       		.uleb128 0x6
+ 1188 0190 B2030000 		.4byte	.LASF32
+ 1189 0194 06       		.byte	0x6
+ 1190 0195 82       		.byte	0x82
+ 1191 0196 AD000000 		.4byte	0xad
+ 1192 019a 02       		.byte	0x2
+ 1193 019b 23       		.byte	0x23
+ 1194 019c 1E       		.uleb128 0x1e
+ 1195 019d 06       		.uleb128 0x6
+ 1196 019e BE020000 		.4byte	.LASF33
+ 1197 01a2 06       		.byte	0x6
+ 1198 01a3 88       		.byte	0x88
+ 1199 01a4 B8000000 		.4byte	0xb8
+ 1200 01a8 02       		.byte	0x2
+ 1201 01a9 23       		.byte	0x23
+ 1202 01aa 1F       		.uleb128 0x1f
+ 1203 01ab 06       		.uleb128 0x6
+ 1204 01ac 76030000 		.4byte	.LASF34
+ 1205 01b0 06       		.byte	0x6
+ 1206 01b1 8F       		.byte	0x8f
+ 1207 01b2 47030000 		.4byte	0x347
+ 1208 01b6 02       		.byte	0x2
+ 1209 01b7 23       		.byte	0x23
+ 1210 01b8 20       		.uleb128 0x20
+ 1211 01b9 07       		.uleb128 0x7
+ 1212 01ba 705F7500 		.ascii	"p_u\000"
+ 1213 01be 06       		.byte	0x6
+ 1214 01bf B4       		.byte	0xb4
+ 1215 01c0 30040000 		.4byte	0x430
+ 1216 01c4 02       		.byte	0x2
+ 1217 01c5 23       		.byte	0x23
+ 1218 01c6 24       		.uleb128 0x24
+ 1219 01c7 06       		.uleb128 0x6
+ 1220 01c8 32040000 		.4byte	.LASF35
+ 1221 01cc 06       		.byte	0x6
+ 1222 01cd B9       		.byte	0xb9
+ 1223 01ce 77020000 		.4byte	0x277
+ 1224 01d2 02       		.byte	0x2
+ 1225 01d3 23       		.byte	0x23
+ 1226 01d4 28       		.uleb128 0x28
+ 1227 01d5 06       		.uleb128 0x6
+ 1228 01d6 90030000 		.4byte	.LASF36
+ 1229 01da 06       		.byte	0x6
+ 1230 01db BF       		.byte	0xbf
+ 1231 01dc 55020000 		.4byte	0x255
+ 1232 01e0 02       		.byte	0x2
+ 1233 01e1 23       		.byte	0x23
+ 1234 01e2 2C       		.uleb128 0x2c
+ 1235 01e3 06       		.uleb128 0x6
+ 1236 01e4 00000000 		.4byte	.LASF37
+ 1237 01e8 06       		.byte	0x6
+ 1238 01e9 C3       		.byte	0xc3
+ 1239 01ea CE000000 		.4byte	0xce
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 23
+
+
+ 1240 01ee 02       		.byte	0x2
+ 1241 01ef 23       		.byte	0x23
+ 1242 01f0 34       		.uleb128 0x34
+ 1243 01f1 06       		.uleb128 0x6
+ 1244 01f2 05030000 		.4byte	.LASF38
+ 1245 01f6 06       		.byte	0x6
+ 1246 01f7 C9       		.byte	0xc9
+ 1247 01f8 D9000000 		.4byte	0xd9
+ 1248 01fc 02       		.byte	0x2
+ 1249 01fd 23       		.byte	0x23
+ 1250 01fe 38       		.uleb128 0x38
+ 1251 01ff 06       		.uleb128 0x6
+ 1252 0200 A2020000 		.4byte	.LASF39
+ 1253 0204 06       		.byte	0x6
+ 1254 0205 D0       		.byte	0xd0
+ 1255 0206 77040000 		.4byte	0x477
+ 1256 020a 02       		.byte	0x2
+ 1257 020b 23       		.byte	0x23
+ 1258 020c 3C       		.uleb128 0x3c
+ 1259 020d 06       		.uleb128 0x6
+ 1260 020e 61030000 		.4byte	.LASF40
+ 1261 0212 06       		.byte	0x6
+ 1262 0213 D4       		.byte	0xd4
+ 1263 0214 C3000000 		.4byte	0xc3
+ 1264 0218 02       		.byte	0x2
+ 1265 0219 23       		.byte	0x23
+ 1266 021a 40       		.uleb128 0x40
+ 1267 021b 06       		.uleb128 0x6
+ 1268 021c 98000000 		.4byte	.LASF41
+ 1269 0220 06       		.byte	0x6
+ 1270 0221 DA       		.byte	0xda
+ 1271 0222 8D020000 		.4byte	0x28d
+ 1272 0226 02       		.byte	0x2
+ 1273 0227 23       		.byte	0x23
+ 1274 0228 44       		.uleb128 0x44
+ 1275 0229 00       		.byte	0
+ 1276 022a 08       		.uleb128 0x8
+ 1277 022b 08       		.byte	0x8
+ 1278 022c 05       		.byte	0x5
+ 1279 022d 61       		.byte	0x61
+ 1280 022e 4F020000 		.4byte	0x24f
+ 1281 0232 06       		.uleb128 0x6
+ 1282 0233 D6020000 		.4byte	.LASF23
+ 1283 0237 05       		.byte	0x5
+ 1284 0238 62       		.byte	0x62
+ 1285 0239 4F020000 		.4byte	0x24f
+ 1286 023d 02       		.byte	0x2
+ 1287 023e 23       		.byte	0x23
+ 1288 023f 00       		.uleb128 0
+ 1289 0240 06       		.uleb128 0x6
+ 1290 0241 77020000 		.4byte	.LASF24
+ 1291 0245 05       		.byte	0x5
+ 1292 0246 64       		.byte	0x64
+ 1293 0247 4F020000 		.4byte	0x24f
+ 1294 024b 02       		.byte	0x2
+ 1295 024c 23       		.byte	0x23
+ 1296 024d 04       		.uleb128 0x4
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 24
+
+
+ 1297 024e 00       		.byte	0
+ 1298 024f 09       		.uleb128 0x9
+ 1299 0250 04       		.byte	0x4
+ 1300 0251 FA000000 		.4byte	0xfa
+ 1301 0255 04       		.uleb128 0x4
+ 1302 0256 4B020000 		.4byte	.LASF42
+ 1303 025a 05       		.byte	0x5
+ 1304 025b 66       		.byte	0x66
+ 1305 025c 2A020000 		.4byte	0x22a
+ 1306 0260 08       		.uleb128 0x8
+ 1307 0261 04       		.byte	0x4
+ 1308 0262 05       		.byte	0x5
+ 1309 0263 6B       		.byte	0x6b
+ 1310 0264 77020000 		.4byte	0x277
+ 1311 0268 06       		.uleb128 0x6
+ 1312 0269 D6020000 		.4byte	.LASF23
+ 1313 026d 05       		.byte	0x5
+ 1314 026e 6D       		.byte	0x6d
+ 1315 026f 4F020000 		.4byte	0x24f
+ 1316 0273 02       		.byte	0x2
+ 1317 0274 23       		.byte	0x23
+ 1318 0275 00       		.uleb128 0
+ 1319 0276 00       		.byte	0
+ 1320 0277 04       		.uleb128 0x4
+ 1321 0278 BC010000 		.4byte	.LASF43
+ 1322 027c 05       		.byte	0x5
+ 1323 027d 70       		.byte	0x70
+ 1324 027e 60020000 		.4byte	0x260
+ 1325 0282 04       		.uleb128 0x4
+ 1326 0283 21010000 		.4byte	.LASF44
+ 1327 0287 07       		.byte	0x7
+ 1328 0288 E5       		.byte	0xe5
+ 1329 0289 8D020000 		.4byte	0x28d
+ 1330 028d 0A       		.uleb128 0xa
+ 1331 028e 04       		.byte	0x4
+ 1332 028f 0B       		.uleb128 0xb
+ 1333 0290 89030000 		.4byte	.LASF45
+ 1334 0294 24       		.byte	0x24
+ 1335 0295 07       		.byte	0x7
+ 1336 0296 0C01     		.2byte	0x10c
+ 1337 0298 1D030000 		.4byte	0x31d
+ 1338 029c 0C       		.uleb128 0xc
+ 1339 029d 723400   		.ascii	"r4\000"
+ 1340 02a0 07       		.byte	0x7
+ 1341 02a1 1F01     		.2byte	0x11f
+ 1342 02a3 82020000 		.4byte	0x282
+ 1343 02a7 02       		.byte	0x2
+ 1344 02a8 23       		.byte	0x23
+ 1345 02a9 00       		.uleb128 0
+ 1346 02aa 0C       		.uleb128 0xc
+ 1347 02ab 723500   		.ascii	"r5\000"
+ 1348 02ae 07       		.byte	0x7
+ 1349 02af 2001     		.2byte	0x120
+ 1350 02b1 82020000 		.4byte	0x282
+ 1351 02b5 02       		.byte	0x2
+ 1352 02b6 23       		.byte	0x23
+ 1353 02b7 04       		.uleb128 0x4
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 25
+
+
+ 1354 02b8 0C       		.uleb128 0xc
+ 1355 02b9 723600   		.ascii	"r6\000"
+ 1356 02bc 07       		.byte	0x7
+ 1357 02bd 2101     		.2byte	0x121
+ 1358 02bf 82020000 		.4byte	0x282
+ 1359 02c3 02       		.byte	0x2
+ 1360 02c4 23       		.byte	0x23
+ 1361 02c5 08       		.uleb128 0x8
+ 1362 02c6 0C       		.uleb128 0xc
+ 1363 02c7 723700   		.ascii	"r7\000"
+ 1364 02ca 07       		.byte	0x7
+ 1365 02cb 2201     		.2byte	0x122
+ 1366 02cd 82020000 		.4byte	0x282
+ 1367 02d1 02       		.byte	0x2
+ 1368 02d2 23       		.byte	0x23
+ 1369 02d3 0C       		.uleb128 0xc
+ 1370 02d4 0C       		.uleb128 0xc
+ 1371 02d5 723800   		.ascii	"r8\000"
+ 1372 02d8 07       		.byte	0x7
+ 1373 02d9 2301     		.2byte	0x123
+ 1374 02db 82020000 		.4byte	0x282
+ 1375 02df 02       		.byte	0x2
+ 1376 02e0 23       		.byte	0x23
+ 1377 02e1 10       		.uleb128 0x10
+ 1378 02e2 0C       		.uleb128 0xc
+ 1379 02e3 723900   		.ascii	"r9\000"
+ 1380 02e6 07       		.byte	0x7
+ 1381 02e7 2401     		.2byte	0x124
+ 1382 02e9 82020000 		.4byte	0x282
+ 1383 02ed 02       		.byte	0x2
+ 1384 02ee 23       		.byte	0x23
+ 1385 02ef 14       		.uleb128 0x14
+ 1386 02f0 0C       		.uleb128 0xc
+ 1387 02f1 72313000 		.ascii	"r10\000"
+ 1388 02f5 07       		.byte	0x7
+ 1389 02f6 2501     		.2byte	0x125
+ 1390 02f8 82020000 		.4byte	0x282
+ 1391 02fc 02       		.byte	0x2
+ 1392 02fd 23       		.byte	0x23
+ 1393 02fe 18       		.uleb128 0x18
+ 1394 02ff 0C       		.uleb128 0xc
+ 1395 0300 72313100 		.ascii	"r11\000"
+ 1396 0304 07       		.byte	0x7
+ 1397 0305 2601     		.2byte	0x126
+ 1398 0307 82020000 		.4byte	0x282
+ 1399 030b 02       		.byte	0x2
+ 1400 030c 23       		.byte	0x23
+ 1401 030d 1C       		.uleb128 0x1c
+ 1402 030e 0C       		.uleb128 0xc
+ 1403 030f 6C7200   		.ascii	"lr\000"
+ 1404 0312 07       		.byte	0x7
+ 1405 0313 2701     		.2byte	0x127
+ 1406 0315 82020000 		.4byte	0x282
+ 1407 0319 02       		.byte	0x2
+ 1408 031a 23       		.byte	0x23
+ 1409 031b 20       		.uleb128 0x20
+ 1410 031c 00       		.byte	0
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 26
+
+
+ 1411 031d 0B       		.uleb128 0xb
+ 1412 031e 66010000 		.4byte	.LASF46
+ 1413 0322 04       		.byte	0x4
+ 1414 0323 07       		.byte	0x7
+ 1415 0324 3101     		.2byte	0x131
+ 1416 0326 3A030000 		.4byte	0x33a
+ 1417 032a 0C       		.uleb128 0xc
+ 1418 032b 72313300 		.ascii	"r13\000"
+ 1419 032f 07       		.byte	0x7
+ 1420 0330 3201     		.2byte	0x132
+ 1421 0332 3A030000 		.4byte	0x33a
+ 1422 0336 02       		.byte	0x2
+ 1423 0337 23       		.byte	0x23
+ 1424 0338 00       		.uleb128 0
+ 1425 0339 00       		.byte	0
+ 1426 033a 09       		.uleb128 0x9
+ 1427 033b 04       		.byte	0x4
+ 1428 033c 8F020000 		.4byte	0x28f
+ 1429 0340 03       		.uleb128 0x3
+ 1430 0341 04       		.byte	0x4
+ 1431 0342 07       		.byte	0x7
+ 1432 0343 EB010000 		.4byte	.LASF47
+ 1433 0347 0D       		.uleb128 0xd
+ 1434 0348 E4000000 		.4byte	0xe4
+ 1435 034c 08       		.uleb128 0x8
+ 1436 034d 1C       		.byte	0x1c
+ 1437 034e 08       		.byte	0x8
+ 1438 034f 5E       		.byte	0x5e
+ 1439 0350 A9030000 		.4byte	0x3a9
+ 1440 0354 06       		.uleb128 0x6
+ 1441 0355 19030000 		.4byte	.LASF48
+ 1442 0359 08       		.byte	0x8
+ 1443 035a 5F       		.byte	0x5f
+ 1444 035b 55020000 		.4byte	0x255
+ 1445 035f 02       		.byte	0x2
+ 1446 0360 23       		.byte	0x23
+ 1447 0361 00       		.uleb128 0
+ 1448 0362 06       		.uleb128 0x6
+ 1449 0363 C8020000 		.4byte	.LASF49
+ 1450 0367 08       		.byte	0x8
+ 1451 0368 60       		.byte	0x60
+ 1452 0369 C3000000 		.4byte	0xc3
+ 1453 036d 02       		.byte	0x2
+ 1454 036e 23       		.byte	0x23
+ 1455 036f 08       		.uleb128 0x8
+ 1456 0370 06       		.uleb128 0x6
+ 1457 0371 45020000 		.4byte	.LASF50
+ 1458 0375 08       		.byte	0x8
+ 1459 0376 62       		.byte	0x62
+ 1460 0377 1D030000 		.4byte	0x31d
+ 1461 037b 02       		.byte	0x2
+ 1462 037c 23       		.byte	0x23
+ 1463 037d 0C       		.uleb128 0xc
+ 1464 037e 06       		.uleb128 0x6
+ 1465 037f 19010000 		.4byte	.LASF51
+ 1466 0383 08       		.byte	0x8
+ 1467 0384 65       		.byte	0x65
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 27
+
+
+ 1468 0385 4F020000 		.4byte	0x24f
+ 1469 0389 02       		.byte	0x2
+ 1470 038a 23       		.byte	0x23
+ 1471 038b 10       		.uleb128 0x10
+ 1472 038c 06       		.uleb128 0x6
+ 1473 038d 67020000 		.4byte	.LASF52
+ 1474 0391 08       		.byte	0x8
+ 1475 0392 66       		.byte	0x66
+ 1476 0393 4F020000 		.4byte	0x24f
+ 1477 0397 02       		.byte	0x2
+ 1478 0398 23       		.byte	0x23
+ 1479 0399 14       		.uleb128 0x14
+ 1480 039a 06       		.uleb128 0x6
+ 1481 039b 5D020000 		.4byte	.LASF53
+ 1482 039f 08       		.byte	0x8
+ 1483 03a0 69       		.byte	0x69
+ 1484 03a1 4F020000 		.4byte	0x24f
+ 1485 03a5 02       		.byte	0x2
+ 1486 03a6 23       		.byte	0x23
+ 1487 03a7 18       		.uleb128 0x18
+ 1488 03a8 00       		.byte	0
+ 1489 03a9 04       		.uleb128 0x4
+ 1490 03aa B9030000 		.4byte	.LASF54
+ 1491 03ae 08       		.byte	0x8
+ 1492 03af 6B       		.byte	0x6b
+ 1493 03b0 4C030000 		.4byte	0x34c
+ 1494 03b4 05       		.uleb128 0x5
+ 1495 03b5 A8030000 		.4byte	.LASF55
+ 1496 03b9 0C       		.byte	0xc
+ 1497 03ba 09       		.byte	0x9
+ 1498 03bb 2C       		.byte	0x2c
+ 1499 03bc DD030000 		.4byte	0x3dd
+ 1500 03c0 06       		.uleb128 0x6
+ 1501 03c1 00010000 		.4byte	.LASF56
+ 1502 03c5 09       		.byte	0x9
+ 1503 03c6 2D       		.byte	0x2d
+ 1504 03c7 55020000 		.4byte	0x255
+ 1505 03cb 02       		.byte	0x2
+ 1506 03cc 23       		.byte	0x23
+ 1507 03cd 00       		.uleb128 0
+ 1508 03ce 06       		.uleb128 0x6
+ 1509 03cf 60010000 		.4byte	.LASF57
+ 1510 03d3 09       		.byte	0x9
+ 1511 03d4 2F       		.byte	0x2f
+ 1512 03d5 EF000000 		.4byte	0xef
+ 1513 03d9 02       		.byte	0x2
+ 1514 03da 23       		.byte	0x23
+ 1515 03db 08       		.uleb128 0x8
+ 1516 03dc 00       		.byte	0
+ 1517 03dd 04       		.uleb128 0x4
+ 1518 03de A8030000 		.4byte	.LASF55
+ 1519 03e2 09       		.byte	0x9
+ 1520 03e3 30       		.byte	0x30
+ 1521 03e4 B4030000 		.4byte	0x3b4
+ 1522 03e8 05       		.uleb128 0x5
+ 1523 03e9 D4010000 		.4byte	.LASF58
+ 1524 03ed 10       		.byte	0x10
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 28
+
+
+ 1525 03ee 0A       		.byte	0xa
+ 1526 03ef 2C       		.byte	0x2c
+ 1527 03f0 1F040000 		.4byte	0x41f
+ 1528 03f4 06       		.uleb128 0x6
+ 1529 03f5 A0000000 		.4byte	.LASF59
+ 1530 03f9 0A       		.byte	0xa
+ 1531 03fa 2D       		.byte	0x2d
+ 1532 03fb 55020000 		.4byte	0x255
+ 1533 03ff 02       		.byte	0x2
+ 1534 0400 23       		.byte	0x23
+ 1535 0401 00       		.uleb128 0
+ 1536 0402 06       		.uleb128 0x6
+ 1537 0403 24040000 		.4byte	.LASF60
+ 1538 0407 0A       		.byte	0xa
+ 1539 0408 2F       		.byte	0x2f
+ 1540 0409 4F020000 		.4byte	0x24f
+ 1541 040d 02       		.byte	0x2
+ 1542 040e 23       		.byte	0x23
+ 1543 040f 08       		.uleb128 0x8
+ 1544 0410 06       		.uleb128 0x6
+ 1545 0411 50030000 		.4byte	.LASF61
+ 1546 0415 0A       		.byte	0xa
+ 1547 0416 31       		.byte	0x31
+ 1548 0417 1F040000 		.4byte	0x41f
+ 1549 041b 02       		.byte	0x2
+ 1550 041c 23       		.byte	0x23
+ 1551 041d 0C       		.uleb128 0xc
+ 1552 041e 00       		.byte	0
+ 1553 041f 09       		.uleb128 0x9
+ 1554 0420 04       		.byte	0x4
+ 1555 0421 E8030000 		.4byte	0x3e8
+ 1556 0425 04       		.uleb128 0x4
+ 1557 0426 D4010000 		.4byte	.LASF58
+ 1558 042a 0A       		.byte	0xa
+ 1559 042b 33       		.byte	0x33
+ 1560 042c E8030000 		.4byte	0x3e8
+ 1561 0430 0E       		.uleb128 0xe
+ 1562 0431 04       		.byte	0x4
+ 1563 0432 06       		.byte	0x6
+ 1564 0433 96       		.byte	0x96
+ 1565 0434 65040000 		.4byte	0x465
+ 1566 0438 0F       		.uleb128 0xf
+ 1567 0439 20000000 		.4byte	.LASF62
+ 1568 043d 06       		.byte	0x6
+ 1569 043e 9D       		.byte	0x9d
+ 1570 043f CE000000 		.4byte	0xce
+ 1571 0443 0F       		.uleb128 0xf
+ 1572 0444 4D000000 		.4byte	.LASF63
+ 1573 0448 06       		.byte	0x6
+ 1574 0449 A4       		.byte	0xa4
+ 1575 044a CE000000 		.4byte	0xce
+ 1576 044e 0F       		.uleb128 0xf
+ 1577 044f 01040000 		.4byte	.LASF64
+ 1578 0453 06       		.byte	0x6
+ 1579 0454 AB       		.byte	0xab
+ 1580 0455 8D020000 		.4byte	0x28d
+ 1581 0459 0F       		.uleb128 0xf
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 29
+
+
+ 1582 045a CF020000 		.4byte	.LASF65
+ 1583 045e 06       		.byte	0x6
+ 1584 045f B2       		.byte	0xb2
+ 1585 0460 D9000000 		.4byte	0xd9
+ 1586 0464 00       		.byte	0
+ 1587 0465 09       		.uleb128 0x9
+ 1588 0466 04       		.byte	0x4
+ 1589 0467 6B040000 		.4byte	0x46b
+ 1590 046b 10       		.uleb128 0x10
+ 1591 046c 70040000 		.4byte	0x470
+ 1592 0470 03       		.uleb128 0x3
+ 1593 0471 01       		.byte	0x1
+ 1594 0472 08       		.byte	0x8
+ 1595 0473 2D030000 		.4byte	.LASF66
+ 1596 0477 09       		.uleb128 0x9
+ 1597 0478 04       		.byte	0x4
+ 1598 0479 25040000 		.4byte	0x425
+ 1599 047d 11       		.uleb128 0x11
+ 1600 047e 7D030000 		.4byte	.LASF67
+ 1601 0482 02       		.byte	0x2
+ 1602 0483 42       		.byte	0x42
+ 1603 0484 01       		.byte	0x1
+ 1604 0485 4F020000 		.4byte	0x24f
+ 1605 0489 03       		.byte	0x3
+ 1606 048a A4040000 		.4byte	0x4a4
+ 1607 048e 12       		.uleb128 0x12
+ 1608 048f 74717000 		.ascii	"tqp\000"
+ 1609 0493 02       		.byte	0x2
+ 1610 0494 42       		.byte	0x42
+ 1611 0495 A4040000 		.4byte	0x4a4
+ 1612 0499 13       		.uleb128 0x13
+ 1613 049a 747000   		.ascii	"tp\000"
+ 1614 049d 02       		.byte	0x2
+ 1615 049e 43       		.byte	0x43
+ 1616 049f 4F020000 		.4byte	0x24f
+ 1617 04a3 00       		.byte	0
+ 1618 04a4 09       		.uleb128 0x9
+ 1619 04a5 04       		.byte	0x4
+ 1620 04a6 55020000 		.4byte	0x255
+ 1621 04aa 14       		.uleb128 0x14
+ 1622 04ab 06000000 		.4byte	.LASF91
+ 1623 04af 02       		.byte	0x2
+ 1624 04b0 34       		.byte	0x34
+ 1625 04b1 01       		.byte	0x1
+ 1626 04b2 03       		.byte	0x3
+ 1627 04b3 CD040000 		.4byte	0x4cd
+ 1628 04b7 12       		.uleb128 0x12
+ 1629 04b8 747000   		.ascii	"tp\000"
+ 1630 04bb 02       		.byte	0x2
+ 1631 04bc 34       		.byte	0x34
+ 1632 04bd 4F020000 		.4byte	0x24f
+ 1633 04c1 12       		.uleb128 0x12
+ 1634 04c2 74717000 		.ascii	"tqp\000"
+ 1635 04c6 02       		.byte	0x2
+ 1636 04c7 34       		.byte	0x34
+ 1637 04c8 A4040000 		.4byte	0x4a4
+ 1638 04cc 00       		.byte	0
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 30
+
+
+ 1639 04cd 11       		.uleb128 0x11
+ 1640 04ce 32030000 		.4byte	.LASF68
+ 1641 04d2 02       		.byte	0x2
+ 1642 04d3 3B       		.byte	0x3b
+ 1643 04d4 01       		.byte	0x1
+ 1644 04d5 4F020000 		.4byte	0x24f
+ 1645 04d9 03       		.byte	0x3
+ 1646 04da F4040000 		.4byte	0x4f4
+ 1647 04de 12       		.uleb128 0x12
+ 1648 04df 74717000 		.ascii	"tqp\000"
+ 1649 04e3 02       		.byte	0x2
+ 1650 04e4 3B       		.byte	0x3b
+ 1651 04e5 A4040000 		.4byte	0x4a4
+ 1652 04e9 13       		.uleb128 0x13
+ 1653 04ea 747000   		.ascii	"tp\000"
+ 1654 04ed 02       		.byte	0x2
+ 1655 04ee 3C       		.byte	0x3c
+ 1656 04ef 4F020000 		.4byte	0x24f
+ 1657 04f3 00       		.byte	0
+ 1658 04f4 15       		.uleb128 0x15
+ 1659 04f5 01       		.byte	0x1
+ 1660 04f6 3C040000 		.4byte	.LASF69
+ 1661 04fa 01       		.byte	0x1
+ 1662 04fb 56       		.byte	0x56
+ 1663 04fc 01       		.byte	0x1
+ 1664 04fd 00000000 		.4byte	.LFB7
+ 1665 0501 08000000 		.4byte	.LFE7
+ 1666 0505 02       		.byte	0x2
+ 1667 0506 7D       		.byte	0x7d
+ 1668 0507 00       		.sleb128 0
+ 1669 0508 01       		.byte	0x1
+ 1670 0509 25050000 		.4byte	0x525
+ 1671 050d 16       		.uleb128 0x16
+ 1672 050e 737000   		.ascii	"sp\000"
+ 1673 0511 01       		.byte	0x1
+ 1674 0512 56       		.byte	0x56
+ 1675 0513 25050000 		.4byte	0x525
+ 1676 0517 01       		.byte	0x1
+ 1677 0518 50       		.byte	0x50
+ 1678 0519 16       		.uleb128 0x16
+ 1679 051a 6E00     		.ascii	"n\000"
+ 1680 051c 01       		.byte	0x1
+ 1681 051d 56       		.byte	0x56
+ 1682 051e EF000000 		.4byte	0xef
+ 1683 0522 01       		.byte	0x1
+ 1684 0523 51       		.byte	0x51
+ 1685 0524 00       		.byte	0
+ 1686 0525 09       		.uleb128 0x9
+ 1687 0526 04       		.byte	0x4
+ 1688 0527 DD030000 		.4byte	0x3dd
+ 1689 052b 17       		.uleb128 0x17
+ 1690 052c 01       		.byte	0x1
+ 1691 052d C3030000 		.4byte	.LASF70
+ 1692 0531 01       		.byte	0x1
+ 1693 0532 88       		.byte	0x88
+ 1694 0533 01       		.byte	0x1
+ 1695 0534 00000000 		.4byte	.LFB9
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 31
+
+
+ 1696 0538 6E000000 		.4byte	.LFE9
+ 1697 053c 00000000 		.4byte	.LLST0
+ 1698 0540 01       		.byte	0x1
+ 1699 0541 C5050000 		.4byte	0x5c5
+ 1700 0545 18       		.uleb128 0x18
+ 1701 0546 737000   		.ascii	"sp\000"
+ 1702 0549 01       		.byte	0x1
+ 1703 054a 88       		.byte	0x88
+ 1704 054b 25050000 		.4byte	0x525
+ 1705 054f 20000000 		.4byte	.LLST1
+ 1706 0553 18       		.uleb128 0x18
+ 1707 0554 6E00     		.ascii	"n\000"
+ 1708 0556 01       		.byte	0x1
+ 1709 0557 88       		.byte	0x88
+ 1710 0558 EF000000 		.4byte	0xef
+ 1711 055c 3E000000 		.4byte	.LLST2
+ 1712 0560 19       		.uleb128 0x19
+ 1713 0561 636E7400 		.ascii	"cnt\000"
+ 1714 0565 01       		.byte	0x1
+ 1715 0566 89       		.byte	0x89
+ 1716 0567 EF000000 		.4byte	0xef
+ 1717 056b 6A000000 		.4byte	.LLST3
+ 1718 056f 1A       		.uleb128 0x1a
+ 1719 0570 7D040000 		.4byte	0x47d
+ 1720 0574 14000000 		.4byte	.LBB24
+ 1721 0578 00000000 		.4byte	.Ldebug_ranges0+0
+ 1722 057c 01       		.byte	0x1
+ 1723 057d 95       		.byte	0x95
+ 1724 057e 97050000 		.4byte	0x597
+ 1725 0582 1B       		.uleb128 0x1b
+ 1726 0583 8E040000 		.4byte	0x48e
+ 1727 0587 88000000 		.4byte	.LLST4
+ 1728 058b 1C       		.uleb128 0x1c
+ 1729 058c 28000000 		.4byte	.Ldebug_ranges0+0x28
+ 1730 0590 1D       		.uleb128 0x1d
+ 1731 0591 99040000 		.4byte	0x499
+ 1732 0595 00       		.byte	0
+ 1733 0596 00       		.byte	0
+ 1734 0597 1E       		.uleb128 0x1e
+ 1735 0598 0A000000 		.4byte	.LVL2
+ 1736 059c A20B0000 		.4byte	0xba2
+ 1737 05a0 1E       		.uleb128 0x1e
+ 1738 05a1 20000000 		.4byte	.LVL5
+ 1739 05a5 AC0B0000 		.4byte	0xbac
+ 1740 05a9 1E       		.uleb128 0x1e
+ 1741 05aa 3C000000 		.4byte	.LVL8
+ 1742 05ae AC0B0000 		.4byte	0xbac
+ 1743 05b2 1E       		.uleb128 0x1e
+ 1744 05b3 50000000 		.4byte	.LVL10
+ 1745 05b7 AC0B0000 		.4byte	0xbac
+ 1746 05bb 1E       		.uleb128 0x1e
+ 1747 05bc 5E000000 		.4byte	.LVL11
+ 1748 05c0 AC0B0000 		.4byte	0xbac
+ 1749 05c4 00       		.byte	0
+ 1750 05c5 17       		.uleb128 0x17
+ 1751 05c6 01       		.byte	0x1
+ 1752 05c7 81010000 		.4byte	.LASF71
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 32
+
+
+ 1753 05cb 01       		.byte	0x1
+ 1754 05cc 6D       		.byte	0x6d
+ 1755 05cd 01       		.byte	0x1
+ 1756 05ce 00000000 		.4byte	.LFB8
+ 1757 05d2 28000000 		.4byte	.LFE8
+ 1758 05d6 A6000000 		.4byte	.LLST5
+ 1759 05da 01       		.byte	0x1
+ 1760 05db 6A060000 		.4byte	0x66a
+ 1761 05df 18       		.uleb128 0x18
+ 1762 05e0 737000   		.ascii	"sp\000"
+ 1763 05e3 01       		.byte	0x1
+ 1764 05e4 6D       		.byte	0x6d
+ 1765 05e5 25050000 		.4byte	0x525
+ 1766 05e9 C6000000 		.4byte	.LLST6
+ 1767 05ed 18       		.uleb128 0x18
+ 1768 05ee 6E00     		.ascii	"n\000"
+ 1769 05f0 01       		.byte	0x1
+ 1770 05f1 6D       		.byte	0x6d
+ 1771 05f2 EF000000 		.4byte	0xef
+ 1772 05f6 E4000000 		.4byte	.LLST7
+ 1773 05fa 1F       		.uleb128 0x1f
+ 1774 05fb 06000000 		.4byte	.LBB32
+ 1775 05ff 0C000000 		.4byte	.LBE32
+ 1776 0603 17060000 		.4byte	0x617
+ 1777 0607 19       		.uleb128 0x19
+ 1778 0608 746D7000 		.ascii	"tmp\000"
+ 1779 060c 01       		.byte	0x1
+ 1780 060d 6F       		.byte	0x6f
+ 1781 060e 70000000 		.4byte	0x70
+ 1782 0612 02010000 		.4byte	.LLST8
+ 1783 0616 00       		.byte	0
+ 1784 0617 1F       		.uleb128 0x1f
+ 1785 0618 20000000 		.4byte	.LBB33
+ 1786 061c 28000000 		.4byte	.LBE33
+ 1787 0620 34060000 		.4byte	0x634
+ 1788 0624 19       		.uleb128 0x19
+ 1789 0625 746D7000 		.ascii	"tmp\000"
+ 1790 0629 01       		.byte	0x1
+ 1791 062a 72       		.byte	0x72
+ 1792 062b 70000000 		.4byte	0x70
+ 1793 062f 15010000 		.4byte	.LLST9
+ 1794 0633 00       		.byte	0
+ 1795 0634 1E       		.uleb128 0x1e
+ 1796 0635 10000000 		.4byte	.LVL18
+ 1797 0639 C40B0000 		.4byte	0xbc4
+ 1798 063d 20       		.uleb128 0x20
+ 1799 063e 18000000 		.4byte	.LVL19
+ 1800 0642 2B050000 		.4byte	0x52b
+ 1801 0646 57060000 		.4byte	0x657
+ 1802 064a 21       		.uleb128 0x21
+ 1803 064b 01       		.byte	0x1
+ 1804 064c 51       		.byte	0x51
+ 1805 064d 02       		.byte	0x2
+ 1806 064e 74       		.byte	0x74
+ 1807 064f 00       		.sleb128 0
+ 1808 0650 21       		.uleb128 0x21
+ 1809 0651 01       		.byte	0x1
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 33
+
+
+ 1810 0652 50       		.byte	0x50
+ 1811 0653 02       		.byte	0x2
+ 1812 0654 75       		.byte	0x75
+ 1813 0655 00       		.sleb128 0
+ 1814 0656 00       		.byte	0
+ 1815 0657 1E       		.uleb128 0x1e
+ 1816 0658 1C000000 		.4byte	.LVL20
+ 1817 065c CE0B0000 		.4byte	0xbce
+ 1818 0660 1E       		.uleb128 0x1e
+ 1819 0661 20000000 		.4byte	.LVL21
+ 1820 0665 D80B0000 		.4byte	0xbd8
+ 1821 0669 00       		.byte	0
+ 1822 066a 22       		.uleb128 0x22
+ 1823 066b 01       		.byte	0x1
+ 1824 066c E5020000 		.4byte	.LASF72
+ 1825 0670 01       		.byte	0x1
+ 1826 0671 B9       		.byte	0xb9
+ 1827 0672 01       		.byte	0x1
+ 1828 0673 CE000000 		.4byte	0xce
+ 1829 0677 00000000 		.4byte	.LFB11
+ 1830 067b 38000000 		.4byte	.LFE11
+ 1831 067f 28010000 		.4byte	.LLST10
+ 1832 0683 01       		.byte	0x1
+ 1833 0684 D5060000 		.4byte	0x6d5
+ 1834 0688 18       		.uleb128 0x18
+ 1835 0689 737000   		.ascii	"sp\000"
+ 1836 068c 01       		.byte	0x1
+ 1837 068d B9       		.byte	0xb9
+ 1838 068e 25050000 		.4byte	0x525
+ 1839 0692 48010000 		.4byte	.LLST11
+ 1840 0696 1A       		.uleb128 0x1a
+ 1841 0697 AA040000 		.4byte	0x4aa
+ 1842 069b 1C000000 		.4byte	.LBB34
+ 1843 069f 50000000 		.4byte	.Ldebug_ranges0+0x50
+ 1844 06a3 01       		.byte	0x1
+ 1845 06a4 C4       		.byte	0xc4
+ 1846 06a5 BC060000 		.4byte	0x6bc
+ 1847 06a9 1B       		.uleb128 0x1b
+ 1848 06aa C1040000 		.4byte	0x4c1
+ 1849 06ae 66010000 		.4byte	.LLST12
+ 1850 06b2 1B       		.uleb128 0x1b
+ 1851 06b3 B7040000 		.4byte	0x4b7
+ 1852 06b7 85010000 		.4byte	.LLST13
+ 1853 06bb 00       		.byte	0
+ 1854 06bc 1E       		.uleb128 0x1e
+ 1855 06bd 08000000 		.4byte	.LVL25
+ 1856 06c1 E20B0000 		.4byte	0xbe2
+ 1857 06c5 23       		.uleb128 0x23
+ 1858 06c6 2C000000 		.4byte	.LVL27
+ 1859 06ca EC0B0000 		.4byte	0xbec
+ 1860 06ce 21       		.uleb128 0x21
+ 1861 06cf 01       		.byte	0x1
+ 1862 06d0 50       		.byte	0x50
+ 1863 06d1 01       		.byte	0x1
+ 1864 06d2 33       		.byte	0x33
+ 1865 06d3 00       		.byte	0
+ 1866 06d4 00       		.byte	0
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 34
+
+
+ 1867 06d5 22       		.uleb128 0x22
+ 1868 06d6 01       		.byte	0x1
+ 1869 06d7 6C030000 		.4byte	.LASF73
+ 1870 06db 01       		.byte	0x1
+ 1871 06dc A4       		.byte	0xa4
+ 1872 06dd 01       		.byte	0x1
+ 1873 06de CE000000 		.4byte	0xce
+ 1874 06e2 00000000 		.4byte	.LFB10
+ 1875 06e6 24000000 		.4byte	.LFE10
+ 1876 06ea 98010000 		.4byte	.LLST14
+ 1877 06ee 01       		.byte	0x1
+ 1878 06ef 6D070000 		.4byte	0x76d
+ 1879 06f3 18       		.uleb128 0x18
+ 1880 06f4 737000   		.ascii	"sp\000"
+ 1881 06f7 01       		.byte	0x1
+ 1882 06f8 A4       		.byte	0xa4
+ 1883 06f9 25050000 		.4byte	0x525
+ 1884 06fd B8010000 		.4byte	.LLST15
+ 1885 0701 19       		.uleb128 0x19
+ 1886 0702 6D736700 		.ascii	"msg\000"
+ 1887 0706 01       		.byte	0x1
+ 1888 0707 A5       		.byte	0xa5
+ 1889 0708 CE000000 		.4byte	0xce
+ 1890 070c E4010000 		.4byte	.LLST16
+ 1891 0710 24       		.uleb128 0x24
+ 1892 0711 68000000 		.4byte	.Ldebug_ranges0+0x68
+ 1893 0715 29070000 		.4byte	0x729
+ 1894 0719 19       		.uleb128 0x19
+ 1895 071a 746D7000 		.ascii	"tmp\000"
+ 1896 071e 01       		.byte	0x1
+ 1897 071f A7       		.byte	0xa7
+ 1898 0720 70000000 		.4byte	0x70
+ 1899 0724 02020000 		.4byte	.LLST17
+ 1900 0728 00       		.byte	0
+ 1901 0729 1F       		.uleb128 0x1f
+ 1902 072a 1A000000 		.4byte	.LBB40
+ 1903 072e 20000000 		.4byte	.LBE40
+ 1904 0732 46070000 		.4byte	0x746
+ 1905 0736 19       		.uleb128 0x19
+ 1906 0737 746D7000 		.ascii	"tmp\000"
+ 1907 073b 01       		.byte	0x1
+ 1908 073c A9       		.byte	0xa9
+ 1909 073d 70000000 		.4byte	0x70
+ 1910 0741 15020000 		.4byte	.LLST18
+ 1911 0745 00       		.byte	0
+ 1912 0746 1E       		.uleb128 0x1e
+ 1913 0747 0E000000 		.4byte	.LVL31
+ 1914 074b C40B0000 		.4byte	0xbc4
+ 1915 074f 20       		.uleb128 0x20
+ 1916 0750 14000000 		.4byte	.LVL32
+ 1917 0754 6A060000 		.4byte	0x66a
+ 1918 0758 63070000 		.4byte	0x763
+ 1919 075c 21       		.uleb128 0x21
+ 1920 075d 01       		.byte	0x1
+ 1921 075e 50       		.byte	0x50
+ 1922 075f 02       		.byte	0x2
+ 1923 0760 74       		.byte	0x74
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 35
+
+
+ 1924 0761 00       		.sleb128 0
+ 1925 0762 00       		.byte	0
+ 1926 0763 1E       		.uleb128 0x1e
+ 1927 0764 1A000000 		.4byte	.LVL34
+ 1928 0768 D80B0000 		.4byte	0xbd8
+ 1929 076c 00       		.byte	0
+ 1930 076d 22       		.uleb128 0x22
+ 1931 076e 01       		.byte	0x1
+ 1932 076f 3E030000 		.4byte	.LASF74
+ 1933 0773 01       		.byte	0x1
+ 1934 0774 FA       		.byte	0xfa
+ 1935 0775 01       		.byte	0x1
+ 1936 0776 CE000000 		.4byte	0xce
+ 1937 077a 00000000 		.4byte	.LFB13
+ 1938 077e 44000000 		.4byte	.LFE13
+ 1939 0782 28020000 		.4byte	.LLST19
+ 1940 0786 01       		.byte	0x1
+ 1941 0787 EF070000 		.4byte	0x7ef
+ 1942 078b 18       		.uleb128 0x18
+ 1943 078c 737000   		.ascii	"sp\000"
+ 1944 078f 01       		.byte	0x1
+ 1945 0790 FA       		.byte	0xfa
+ 1946 0791 25050000 		.4byte	0x525
+ 1947 0795 48020000 		.4byte	.LLST20
+ 1948 0799 25       		.uleb128 0x25
+ 1949 079a 58020000 		.4byte	.LASF75
+ 1950 079e 01       		.byte	0x1
+ 1951 079f FA       		.byte	0xfa
+ 1952 07a0 E4000000 		.4byte	0xe4
+ 1953 07a4 66020000 		.4byte	.LLST21
+ 1954 07a8 26       		.uleb128 0x26
+ 1955 07a9 AA040000 		.4byte	0x4aa
+ 1956 07ad 20000000 		.4byte	.LBB41
+ 1957 07b1 80000000 		.4byte	.Ldebug_ranges0+0x80
+ 1958 07b5 01       		.byte	0x1
+ 1959 07b6 0901     		.2byte	0x109
+ 1960 07b8 CF070000 		.4byte	0x7cf
+ 1961 07bc 1B       		.uleb128 0x1b
+ 1962 07bd C1040000 		.4byte	0x4c1
+ 1963 07c1 84020000 		.4byte	.LLST22
+ 1964 07c5 1B       		.uleb128 0x1b
+ 1965 07c6 B7040000 		.4byte	0x4b7
+ 1966 07ca A3020000 		.4byte	.LLST23
+ 1967 07ce 00       		.byte	0
+ 1968 07cf 1E       		.uleb128 0x1e
+ 1969 07d0 0A000000 		.4byte	.LVL38
+ 1970 07d4 E20B0000 		.4byte	0xbe2
+ 1971 07d8 27       		.uleb128 0x27
+ 1972 07d9 36000000 		.4byte	.LVL40
+ 1973 07dd 01       		.byte	0x1
+ 1974 07de 000C0000 		.4byte	0xc00
+ 1975 07e2 21       		.uleb128 0x21
+ 1976 07e3 01       		.byte	0x1
+ 1977 07e4 51       		.byte	0x51
+ 1978 07e5 02       		.byte	0x2
+ 1979 07e6 75       		.byte	0x75
+ 1980 07e7 00       		.sleb128 0
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 36
+
+
+ 1981 07e8 21       		.uleb128 0x21
+ 1982 07e9 01       		.byte	0x1
+ 1983 07ea 50       		.byte	0x50
+ 1984 07eb 01       		.byte	0x1
+ 1985 07ec 33       		.byte	0x33
+ 1986 07ed 00       		.byte	0
+ 1987 07ee 00       		.byte	0
+ 1988 07ef 22       		.uleb128 0x22
+ 1989 07f0 01       		.byte	0x1
+ 1990 07f1 3D010000 		.4byte	.LASF76
+ 1991 07f5 01       		.byte	0x1
+ 1992 07f6 DE       		.byte	0xde
+ 1993 07f7 01       		.byte	0x1
+ 1994 07f8 CE000000 		.4byte	0xce
+ 1995 07fc 00000000 		.4byte	.LFB12
+ 1996 0800 28000000 		.4byte	.LFE12
+ 1997 0804 B6020000 		.4byte	.LLST24
+ 1998 0808 01       		.byte	0x1
+ 1999 0809 A0080000 		.4byte	0x8a0
+ 2000 080d 18       		.uleb128 0x18
+ 2001 080e 737000   		.ascii	"sp\000"
+ 2002 0811 01       		.byte	0x1
+ 2003 0812 DE       		.byte	0xde
+ 2004 0813 25050000 		.4byte	0x525
+ 2005 0817 D6020000 		.4byte	.LLST25
+ 2006 081b 25       		.uleb128 0x25
+ 2007 081c 58020000 		.4byte	.LASF75
+ 2008 0820 01       		.byte	0x1
+ 2009 0821 DE       		.byte	0xde
+ 2010 0822 E4000000 		.4byte	0xe4
+ 2011 0826 F4020000 		.4byte	.LLST26
+ 2012 082a 19       		.uleb128 0x19
+ 2013 082b 6D736700 		.ascii	"msg\000"
+ 2014 082f 01       		.byte	0x1
+ 2015 0830 DF       		.byte	0xdf
+ 2016 0831 CE000000 		.4byte	0xce
+ 2017 0835 20030000 		.4byte	.LLST27
+ 2018 0839 1F       		.uleb128 0x1f
+ 2019 083a 06000000 		.4byte	.LBB45
+ 2020 083e 0C000000 		.4byte	.LBE45
+ 2021 0842 56080000 		.4byte	0x856
+ 2022 0846 19       		.uleb128 0x19
+ 2023 0847 746D7000 		.ascii	"tmp\000"
+ 2024 084b 01       		.byte	0x1
+ 2025 084c E1       		.byte	0xe1
+ 2026 084d 70000000 		.4byte	0x70
+ 2027 0851 3E030000 		.4byte	.LLST28
+ 2028 0855 00       		.byte	0
+ 2029 0856 1F       		.uleb128 0x1f
+ 2030 0857 1E000000 		.4byte	.LBB46
+ 2031 085b 24000000 		.4byte	.LBE46
+ 2032 085f 73080000 		.4byte	0x873
+ 2033 0863 19       		.uleb128 0x19
+ 2034 0864 746D7000 		.ascii	"tmp\000"
+ 2035 0868 01       		.byte	0x1
+ 2036 0869 E3       		.byte	0xe3
+ 2037 086a 70000000 		.4byte	0x70
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 37
+
+
+ 2038 086e 51030000 		.4byte	.LLST29
+ 2039 0872 00       		.byte	0
+ 2040 0873 1E       		.uleb128 0x1e
+ 2041 0874 10000000 		.4byte	.LVL44
+ 2042 0878 C40B0000 		.4byte	0xbc4
+ 2043 087c 20       		.uleb128 0x20
+ 2044 087d 18000000 		.4byte	.LVL45
+ 2045 0881 6D070000 		.4byte	0x76d
+ 2046 0885 96080000 		.4byte	0x896
+ 2047 0889 21       		.uleb128 0x21
+ 2048 088a 01       		.byte	0x1
+ 2049 088b 51       		.byte	0x51
+ 2050 088c 02       		.byte	0x2
+ 2051 088d 74       		.byte	0x74
+ 2052 088e 00       		.sleb128 0
+ 2053 088f 21       		.uleb128 0x21
+ 2054 0890 01       		.byte	0x1
+ 2055 0891 50       		.byte	0x50
+ 2056 0892 02       		.byte	0x2
+ 2057 0893 75       		.byte	0x75
+ 2058 0894 00       		.sleb128 0
+ 2059 0895 00       		.byte	0
+ 2060 0896 1E       		.uleb128 0x1e
+ 2061 0897 1E000000 		.4byte	.LVL47
+ 2062 089b D80B0000 		.4byte	0xbd8
+ 2063 089f 00       		.byte	0
+ 2064 08a0 28       		.uleb128 0x28
+ 2065 08a1 01       		.byte	0x1
+ 2066 08a2 EC000000 		.4byte	.LASF77
+ 2067 08a6 01       		.byte	0x1
+ 2068 08a7 1601     		.2byte	0x116
+ 2069 08a9 01       		.byte	0x1
+ 2070 08aa 00000000 		.4byte	.LFB14
+ 2071 08ae 34000000 		.4byte	.LFE14
+ 2072 08b2 64030000 		.4byte	.LLST30
+ 2073 08b6 01       		.byte	0x1
+ 2074 08b7 4F090000 		.4byte	0x94f
+ 2075 08bb 29       		.uleb128 0x29
+ 2076 08bc 737000   		.ascii	"sp\000"
+ 2077 08bf 01       		.byte	0x1
+ 2078 08c0 1601     		.2byte	0x116
+ 2079 08c2 25050000 		.4byte	0x525
+ 2080 08c6 84030000 		.4byte	.LLST31
+ 2081 08ca 24       		.uleb128 0x24
+ 2082 08cb 98000000 		.4byte	.Ldebug_ranges0+0x98
+ 2083 08cf E4080000 		.4byte	0x8e4
+ 2084 08d3 2A       		.uleb128 0x2a
+ 2085 08d4 746D7000 		.ascii	"tmp\000"
+ 2086 08d8 01       		.byte	0x1
+ 2087 08d9 1E01     		.2byte	0x11e
+ 2088 08db 70000000 		.4byte	0x70
+ 2089 08df A2030000 		.4byte	.LLST32
+ 2090 08e3 00       		.byte	0
+ 2091 08e4 1F       		.uleb128 0x1f
+ 2092 08e5 1C000000 		.4byte	.LBB49
+ 2093 08e9 24000000 		.4byte	.LBE49
+ 2094 08ed 02090000 		.4byte	0x902
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 38
+
+
+ 2095 08f1 2A       		.uleb128 0x2a
+ 2096 08f2 746D7000 		.ascii	"tmp\000"
+ 2097 08f6 01       		.byte	0x1
+ 2098 08f7 2101     		.2byte	0x121
+ 2099 08f9 70000000 		.4byte	0x70
+ 2100 08fd B5030000 		.4byte	.LLST33
+ 2101 0901 00       		.byte	0
+ 2102 0902 26       		.uleb128 0x26
+ 2103 0903 CD040000 		.4byte	0x4cd
+ 2104 0907 24000000 		.4byte	.LBB50
+ 2105 090b B0000000 		.4byte	.Ldebug_ranges0+0xb0
+ 2106 090f 01       		.byte	0x1
+ 2107 0910 2001     		.2byte	0x120
+ 2108 0912 2D090000 		.4byte	0x92d
+ 2109 0916 2B       		.uleb128 0x2b
+ 2110 0917 DE040000 		.4byte	0x4de
+ 2111 091b 01       		.byte	0x1
+ 2112 091c 54       		.byte	0x54
+ 2113 091d 1C       		.uleb128 0x1c
+ 2114 091e C8000000 		.4byte	.Ldebug_ranges0+0xc8
+ 2115 0922 2C       		.uleb128 0x2c
+ 2116 0923 E9040000 		.4byte	0x4e9
+ 2117 0927 C8030000 		.4byte	.LLST34
+ 2118 092b 00       		.byte	0
+ 2119 092c 00       		.byte	0
+ 2120 092d 1E       		.uleb128 0x1e
+ 2121 092e 0E000000 		.4byte	.LVL53
+ 2122 0932 C40B0000 		.4byte	0xbc4
+ 2123 0936 1E       		.uleb128 0x1e
+ 2124 0937 1C000000 		.4byte	.LVL54
+ 2125 093b D80B0000 		.4byte	0xbd8
+ 2126 093f 23       		.uleb128 0x23
+ 2127 0940 32000000 		.4byte	.LVL59
+ 2128 0944 1D0C0000 		.4byte	0xc1d
+ 2129 0948 21       		.uleb128 0x21
+ 2130 0949 01       		.byte	0x1
+ 2131 094a 51       		.byte	0x51
+ 2132 094b 01       		.byte	0x1
+ 2133 094c 30       		.byte	0x30
+ 2134 094d 00       		.byte	0
+ 2135 094e 00       		.byte	0
+ 2136 094f 28       		.uleb128 0x28
+ 2137 0950 01       		.byte	0x1
+ 2138 0951 13000000 		.4byte	.LASF78
+ 2139 0955 01       		.byte	0x1
+ 2140 0956 2F01     		.2byte	0x12f
+ 2141 0958 01       		.byte	0x1
+ 2142 0959 00000000 		.4byte	.LFB15
+ 2143 095d 2A000000 		.4byte	.LFE15
+ 2144 0961 DB030000 		.4byte	.LLST35
+ 2145 0965 01       		.byte	0x1
+ 2146 0966 CF090000 		.4byte	0x9cf
+ 2147 096a 29       		.uleb128 0x29
+ 2148 096b 737000   		.ascii	"sp\000"
+ 2149 096e 01       		.byte	0x1
+ 2150 096f 2F01     		.2byte	0x12f
+ 2151 0971 25050000 		.4byte	0x525
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 39
+
+
+ 2152 0975 FB030000 		.4byte	.LLST36
+ 2153 0979 24       		.uleb128 0x24
+ 2154 097a E0000000 		.4byte	.Ldebug_ranges0+0xe0
+ 2155 097e C5090000 		.4byte	0x9c5
+ 2156 0982 2D       		.uleb128 0x2d
+ 2157 0983 747000   		.ascii	"tp\000"
+ 2158 0986 01       		.byte	0x1
+ 2159 0987 3B01     		.2byte	0x13b
+ 2160 0989 4F020000 		.4byte	0x24f
+ 2161 098d 01       		.byte	0x1
+ 2162 098e 53       		.byte	0x53
+ 2163 098f 26       		.uleb128 0x26
+ 2164 0990 CD040000 		.4byte	0x4cd
+ 2165 0994 14000000 		.4byte	.LBB55
+ 2166 0998 F8000000 		.4byte	.Ldebug_ranges0+0xf8
+ 2167 099c 01       		.byte	0x1
+ 2168 099d 3B01     		.2byte	0x13b
+ 2169 099f BA090000 		.4byte	0x9ba
+ 2170 09a3 2B       		.uleb128 0x2b
+ 2171 09a4 DE040000 		.4byte	0x4de
+ 2172 09a8 01       		.byte	0x1
+ 2173 09a9 54       		.byte	0x54
+ 2174 09aa 1C       		.uleb128 0x1c
+ 2175 09ab 10010000 		.4byte	.Ldebug_ranges0+0x110
+ 2176 09af 2C       		.uleb128 0x2c
+ 2177 09b0 E9040000 		.4byte	0x4e9
+ 2178 09b4 19040000 		.4byte	.LLST37
+ 2179 09b8 00       		.byte	0
+ 2180 09b9 00       		.byte	0
+ 2181 09ba 2E       		.uleb128 0x2e
+ 2182 09bb 2A000000 		.4byte	.LVL64
+ 2183 09bf 01       		.byte	0x1
+ 2184 09c0 AC0B0000 		.4byte	0xbac
+ 2185 09c4 00       		.byte	0
+ 2186 09c5 1E       		.uleb128 0x1e
+ 2187 09c6 08000000 		.4byte	.LVL61
+ 2188 09ca A20B0000 		.4byte	0xba2
+ 2189 09ce 00       		.byte	0
+ 2190 09cf 28       		.uleb128 0x28
+ 2191 09d0 01       		.byte	0x1
+ 2192 09d1 56000000 		.4byte	.LASF79
+ 2193 09d5 01       		.byte	0x1
+ 2194 09d6 4E01     		.2byte	0x14e
+ 2195 09d8 01       		.byte	0x1
+ 2196 09d9 00000000 		.4byte	.LFB16
+ 2197 09dd A2000000 		.4byte	.LFE16
+ 2198 09e1 2C040000 		.4byte	.LLST38
+ 2199 09e5 01       		.byte	0x1
+ 2200 09e6 620A0000 		.4byte	0xa62
+ 2201 09ea 29       		.uleb128 0x29
+ 2202 09eb 737000   		.ascii	"sp\000"
+ 2203 09ee 01       		.byte	0x1
+ 2204 09ef 4E01     		.2byte	0x14e
+ 2205 09f1 25050000 		.4byte	0x525
+ 2206 09f5 4C040000 		.4byte	.LLST39
+ 2207 09f9 29       		.uleb128 0x29
+ 2208 09fa 6E00     		.ascii	"n\000"
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 40
+
+
+ 2209 09fc 01       		.byte	0x1
+ 2210 09fd 4E01     		.2byte	0x14e
+ 2211 09ff EF000000 		.4byte	0xef
+ 2212 0a03 6A040000 		.4byte	.LLST40
+ 2213 0a07 26       		.uleb128 0x26
+ 2214 0a08 CD040000 		.4byte	0x4cd
+ 2215 0a0c 52000000 		.4byte	.LBB60
+ 2216 0a10 28010000 		.4byte	.Ldebug_ranges0+0x128
+ 2217 0a14 01       		.byte	0x1
+ 2218 0a15 5901     		.2byte	0x159
+ 2219 0a17 340A0000 		.4byte	0xa34
+ 2220 0a1b 1B       		.uleb128 0x1b
+ 2221 0a1c DE040000 		.4byte	0x4de
+ 2222 0a20 AF040000 		.4byte	.LLST41
+ 2223 0a24 1C       		.uleb128 0x1c
+ 2224 0a25 50010000 		.4byte	.Ldebug_ranges0+0x150
+ 2225 0a29 2C       		.uleb128 0x2c
+ 2226 0a2a E9040000 		.4byte	0x4e9
+ 2227 0a2e CD040000 		.4byte	.LLST42
+ 2228 0a32 00       		.byte	0
+ 2229 0a33 00       		.byte	0
+ 2230 0a34 1E       		.uleb128 0x1e
+ 2231 0a35 0A000000 		.4byte	.LVL66
+ 2232 0a39 A20B0000 		.4byte	0xba2
+ 2233 0a3d 1E       		.uleb128 0x1e
+ 2234 0a3e 5E000000 		.4byte	.LVL71
+ 2235 0a42 AC0B0000 		.4byte	0xbac
+ 2236 0a46 1E       		.uleb128 0x1e
+ 2237 0a47 76000000 		.4byte	.LVL73
+ 2238 0a4b AC0B0000 		.4byte	0xbac
+ 2239 0a4f 1E       		.uleb128 0x1e
+ 2240 0a50 8C000000 		.4byte	.LVL76
+ 2241 0a54 AC0B0000 		.4byte	0xbac
+ 2242 0a58 1E       		.uleb128 0x1e
+ 2243 0a59 9C000000 		.4byte	.LVL78
+ 2244 0a5d AC0B0000 		.4byte	0xbac
+ 2245 0a61 00       		.byte	0
+ 2246 0a62 2F       		.uleb128 0x2f
+ 2247 0a63 01       		.byte	0x1
+ 2248 0a64 88000000 		.4byte	.LASF80
+ 2249 0a68 01       		.byte	0x1
+ 2250 0a69 6E01     		.2byte	0x16e
+ 2251 0a6b 01       		.byte	0x1
+ 2252 0a6c CE000000 		.4byte	0xce
+ 2253 0a70 00000000 		.4byte	.LFB17
+ 2254 0a74 68000000 		.4byte	.LFE17
+ 2255 0a78 E0040000 		.4byte	.LLST43
+ 2256 0a7c 01       		.byte	0x1
+ 2257 0a7d 950B0000 		.4byte	0xb95
+ 2258 0a81 29       		.uleb128 0x29
+ 2259 0a82 73707300 		.ascii	"sps\000"
+ 2260 0a86 01       		.byte	0x1
+ 2261 0a87 6E01     		.2byte	0x16e
+ 2262 0a89 25050000 		.4byte	0x525
+ 2263 0a8d 00050000 		.4byte	.LLST44
+ 2264 0a91 29       		.uleb128 0x29
+ 2265 0a92 73707700 		.ascii	"spw\000"
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 41
+
+
+ 2266 0a96 01       		.byte	0x1
+ 2267 0a97 6E01     		.2byte	0x16e
+ 2268 0a99 25050000 		.4byte	0x525
+ 2269 0a9d 50050000 		.4byte	.LLST45
+ 2270 0aa1 2A       		.uleb128 0x2a
+ 2271 0aa2 6D736700 		.ascii	"msg\000"
+ 2272 0aa6 01       		.byte	0x1
+ 2273 0aa7 6F01     		.2byte	0x16f
+ 2274 0aa9 CE000000 		.4byte	0xce
+ 2275 0aad A0050000 		.4byte	.LLST46
+ 2276 0ab1 1F       		.uleb128 0x1f
+ 2277 0ab2 06000000 		.4byte	.LBB68
+ 2278 0ab6 0C000000 		.4byte	.LBE68
+ 2279 0aba CF0A0000 		.4byte	0xacf
+ 2280 0abe 2A       		.uleb128 0x2a
+ 2281 0abf 746D7000 		.ascii	"tmp\000"
+ 2282 0ac3 01       		.byte	0x1
+ 2283 0ac4 7B01     		.2byte	0x17b
+ 2284 0ac6 70000000 		.4byte	0x70
+ 2285 0aca CA050000 		.4byte	.LLST47
+ 2286 0ace 00       		.byte	0
+ 2287 0acf 1F       		.uleb128 0x1f
+ 2288 0ad0 2E000000 		.4byte	.LBB69
+ 2289 0ad4 34000000 		.4byte	.LBE69
+ 2290 0ad8 ED0A0000 		.4byte	0xaed
+ 2291 0adc 2A       		.uleb128 0x2a
+ 2292 0add 746D7000 		.ascii	"tmp\000"
+ 2293 0ae1 01       		.byte	0x1
+ 2294 0ae2 8901     		.2byte	0x189
+ 2295 0ae4 70000000 		.4byte	0x70
+ 2296 0ae8 DD050000 		.4byte	.LLST48
+ 2297 0aec 00       		.byte	0
+ 2298 0aed 1F       		.uleb128 0x1f
+ 2299 0aee 38000000 		.4byte	.LBB70
+ 2300 0af2 52000000 		.4byte	.LBE70
+ 2301 0af6 410B0000 		.4byte	0xb41
+ 2302 0afa 2A       		.uleb128 0x2a
+ 2303 0afb 63747000 		.ascii	"ctp\000"
+ 2304 0aff 01       		.byte	0x1
+ 2305 0b00 7F01     		.2byte	0x17f
+ 2306 0b02 4F020000 		.4byte	0x24f
+ 2307 0b06 F0050000 		.4byte	.LLST49
+ 2308 0b0a 26       		.uleb128 0x26
+ 2309 0b0b AA040000 		.4byte	0x4aa
+ 2310 0b0f 3A000000 		.4byte	.LBB71
+ 2311 0b13 78010000 		.4byte	.Ldebug_ranges0+0x178
+ 2312 0b17 01       		.byte	0x1
+ 2313 0b18 8001     		.2byte	0x180
+ 2314 0b1a 310B0000 		.4byte	0xb31
+ 2315 0b1e 1B       		.uleb128 0x1b
+ 2316 0b1f C1040000 		.4byte	0x4c1
+ 2317 0b23 03060000 		.4byte	.LLST50
+ 2318 0b27 1B       		.uleb128 0x1b
+ 2319 0b28 B7040000 		.4byte	0x4b7
+ 2320 0b2c F0050000 		.4byte	.LLST49
+ 2321 0b30 00       		.byte	0
+ 2322 0b31 23       		.uleb128 0x23
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 42
+
+
+ 2323 0b32 4E000000 		.4byte	.LVL92
+ 2324 0b36 EC0B0000 		.4byte	0xbec
+ 2325 0b3a 21       		.uleb128 0x21
+ 2326 0b3b 01       		.byte	0x1
+ 2327 0b3c 50       		.byte	0x50
+ 2328 0b3d 01       		.byte	0x1
+ 2329 0b3e 33       		.byte	0x33
+ 2330 0b3f 00       		.byte	0
+ 2331 0b40 00       		.byte	0
+ 2332 0b41 30       		.uleb128 0x30
+ 2333 0b42 CD040000 		.4byte	0x4cd
+ 2334 0b46 52000000 		.4byte	.LBB77
+ 2335 0b4a 5A000000 		.4byte	.LBE77
+ 2336 0b4e 01       		.byte	0x1
+ 2337 0b4f 7D01     		.2byte	0x17d
+ 2338 0b51 700B0000 		.4byte	0xb70
+ 2339 0b55 2B       		.uleb128 0x2b
+ 2340 0b56 DE040000 		.4byte	0x4de
+ 2341 0b5a 01       		.byte	0x1
+ 2342 0b5b 55       		.byte	0x55
+ 2343 0b5c 31       		.uleb128 0x31
+ 2344 0b5d 52000000 		.4byte	.LBB78
+ 2345 0b61 5A000000 		.4byte	.LBE78
+ 2346 0b65 2C       		.uleb128 0x2c
+ 2347 0b66 E9040000 		.4byte	0x4e9
+ 2348 0b6a 24060000 		.4byte	.LLST52
+ 2349 0b6e 00       		.byte	0
+ 2350 0b6f 00       		.byte	0
+ 2351 0b70 1E       		.uleb128 0x1e
+ 2352 0b71 10000000 		.4byte	.LVL83
+ 2353 0b75 C40B0000 		.4byte	0xbc4
+ 2354 0b79 1E       		.uleb128 0x1e
+ 2355 0b7a 28000000 		.4byte	.LVL84
+ 2356 0b7e CE0B0000 		.4byte	0xbce
+ 2357 0b82 1E       		.uleb128 0x1e
+ 2358 0b83 2E000000 		.4byte	.LVL86
+ 2359 0b87 D80B0000 		.4byte	0xbd8
+ 2360 0b8b 1E       		.uleb128 0x1e
+ 2361 0b8c 5E000000 		.4byte	.LVL96
+ 2362 0b90 AC0B0000 		.4byte	0xbac
+ 2363 0b94 00       		.byte	0
+ 2364 0b95 32       		.uleb128 0x32
+ 2365 0b96 CF030000 		.4byte	.LASF92
+ 2366 0b9a 08       		.byte	0x8
+ 2367 0b9b 6F       		.byte	0x6f
+ 2368 0b9c A9030000 		.4byte	0x3a9
+ 2369 0ba0 01       		.byte	0x1
+ 2370 0ba1 01       		.byte	0x1
+ 2371 0ba2 33       		.uleb128 0x33
+ 2372 0ba3 01       		.byte	0x1
+ 2373 0ba4 92010000 		.4byte	.LASF81
+ 2374 0ba8 0B       		.byte	0xb
+ 2375 0ba9 ED       		.byte	0xed
+ 2376 0baa 01       		.byte	0x1
+ 2377 0bab 01       		.byte	0x1
+ 2378 0bac 34       		.uleb128 0x34
+ 2379 0bad 01       		.byte	0x1
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 43
+
+
+ 2380 0bae 21030000 		.4byte	.LASF86
+ 2381 0bb2 08       		.byte	0x8
+ 2382 0bb3 90       		.byte	0x90
+ 2383 0bb4 01       		.byte	0x1
+ 2384 0bb5 4F020000 		.4byte	0x24f
+ 2385 0bb9 01       		.byte	0x1
+ 2386 0bba C40B0000 		.4byte	0xbc4
+ 2387 0bbe 35       		.uleb128 0x35
+ 2388 0bbf 4F020000 		.4byte	0x24f
+ 2389 0bc3 00       		.byte	0
+ 2390 0bc4 33       		.uleb128 0x33
+ 2391 0bc5 01       		.byte	0x1
+ 2392 0bc6 27000000 		.4byte	.LASF82
+ 2393 0bca 0B       		.byte	0xb
+ 2394 0bcb E7       		.byte	0xe7
+ 2395 0bcc 01       		.byte	0x1
+ 2396 0bcd 01       		.byte	0x1
+ 2397 0bce 33       		.uleb128 0x33
+ 2398 0bcf 01       		.byte	0x1
+ 2399 0bd0 08010000 		.4byte	.LASF83
+ 2400 0bd4 08       		.byte	0x8
+ 2401 0bd5 9C       		.byte	0x9c
+ 2402 0bd6 01       		.byte	0x1
+ 2403 0bd7 01       		.byte	0x1
+ 2404 0bd8 33       		.uleb128 0x33
+ 2405 0bd9 01       		.byte	0x1
+ 2406 0bda DA010000 		.4byte	.LASF84
+ 2407 0bde 0B       		.byte	0xb
+ 2408 0bdf E8       		.byte	0xe8
+ 2409 0be0 01       		.byte	0x1
+ 2410 0be1 01       		.byte	0x1
+ 2411 0be2 33       		.uleb128 0x33
+ 2412 0be3 01       		.byte	0x1
+ 2413 0be4 AB010000 		.4byte	.LASF85
+ 2414 0be8 0B       		.byte	0xb
+ 2415 0be9 EE       		.byte	0xee
+ 2416 0bea 01       		.byte	0x1
+ 2417 0beb 01       		.byte	0x1
+ 2418 0bec 36       		.uleb128 0x36
+ 2419 0bed 01       		.byte	0x1
+ 2420 0bee F7020000 		.4byte	.LASF93
+ 2421 0bf2 08       		.byte	0x8
+ 2422 0bf3 93       		.byte	0x93
+ 2423 0bf4 01       		.byte	0x1
+ 2424 0bf5 01       		.byte	0x1
+ 2425 0bf6 000C0000 		.4byte	0xc00
+ 2426 0bfa 35       		.uleb128 0x35
+ 2427 0bfb A2000000 		.4byte	0xa2
+ 2428 0bff 00       		.byte	0
+ 2429 0c00 34       		.uleb128 0x34
+ 2430 0c01 01       		.byte	0x1
+ 2431 0c02 0F040000 		.4byte	.LASF87
+ 2432 0c06 08       		.byte	0x8
+ 2433 0c07 96       		.byte	0x96
+ 2434 0c08 01       		.byte	0x1
+ 2435 0c09 CE000000 		.4byte	0xce
+ 2436 0c0d 01       		.byte	0x1
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 44
+
+
+ 2437 0c0e 1D0C0000 		.4byte	0xc1d
+ 2438 0c12 35       		.uleb128 0x35
+ 2439 0c13 A2000000 		.4byte	0xa2
+ 2440 0c17 35       		.uleb128 0x35
+ 2441 0c18 E4000000 		.4byte	0xe4
+ 2442 0c1c 00       		.byte	0
+ 2443 0c1d 37       		.uleb128 0x37
+ 2444 0c1e 01       		.byte	0x1
+ 2445 0c1f 9B030000 		.4byte	.LASF94
+ 2446 0c23 08       		.byte	0x8
+ 2447 0c24 99       		.byte	0x99
+ 2448 0c25 01       		.byte	0x1
+ 2449 0c26 01       		.byte	0x1
+ 2450 0c27 35       		.uleb128 0x35
+ 2451 0c28 4F020000 		.4byte	0x24f
+ 2452 0c2c 35       		.uleb128 0x35
+ 2453 0c2d CE000000 		.4byte	0xce
+ 2454 0c31 00       		.byte	0
+ 2455 0c32 00       		.byte	0
+ 2456              		.section	.debug_abbrev,"",%progbits
+ 2457              	.Ldebug_abbrev0:
+ 2458 0000 01       		.uleb128 0x1
+ 2459 0001 11       		.uleb128 0x11
+ 2460 0002 01       		.byte	0x1
+ 2461 0003 25       		.uleb128 0x25
+ 2462 0004 0E       		.uleb128 0xe
+ 2463 0005 13       		.uleb128 0x13
+ 2464 0006 0B       		.uleb128 0xb
+ 2465 0007 03       		.uleb128 0x3
+ 2466 0008 0E       		.uleb128 0xe
+ 2467 0009 1B       		.uleb128 0x1b
+ 2468 000a 0E       		.uleb128 0xe
+ 2469 000b 55       		.uleb128 0x55
+ 2470 000c 06       		.uleb128 0x6
+ 2471 000d 11       		.uleb128 0x11
+ 2472 000e 01       		.uleb128 0x1
+ 2473 000f 52       		.uleb128 0x52
+ 2474 0010 01       		.uleb128 0x1
+ 2475 0011 10       		.uleb128 0x10
+ 2476 0012 06       		.uleb128 0x6
+ 2477 0013 00       		.byte	0
+ 2478 0014 00       		.byte	0
+ 2479 0015 02       		.uleb128 0x2
+ 2480 0016 24       		.uleb128 0x24
+ 2481 0017 00       		.byte	0
+ 2482 0018 0B       		.uleb128 0xb
+ 2483 0019 0B       		.uleb128 0xb
+ 2484 001a 3E       		.uleb128 0x3e
+ 2485 001b 0B       		.uleb128 0xb
+ 2486 001c 03       		.uleb128 0x3
+ 2487 001d 08       		.uleb128 0x8
+ 2488 001e 00       		.byte	0
+ 2489 001f 00       		.byte	0
+ 2490 0020 03       		.uleb128 0x3
+ 2491 0021 24       		.uleb128 0x24
+ 2492 0022 00       		.byte	0
+ 2493 0023 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 45
+
+
+ 2494 0024 0B       		.uleb128 0xb
+ 2495 0025 3E       		.uleb128 0x3e
+ 2496 0026 0B       		.uleb128 0xb
+ 2497 0027 03       		.uleb128 0x3
+ 2498 0028 0E       		.uleb128 0xe
+ 2499 0029 00       		.byte	0
+ 2500 002a 00       		.byte	0
+ 2501 002b 04       		.uleb128 0x4
+ 2502 002c 16       		.uleb128 0x16
+ 2503 002d 00       		.byte	0
+ 2504 002e 03       		.uleb128 0x3
+ 2505 002f 0E       		.uleb128 0xe
+ 2506 0030 3A       		.uleb128 0x3a
+ 2507 0031 0B       		.uleb128 0xb
+ 2508 0032 3B       		.uleb128 0x3b
+ 2509 0033 0B       		.uleb128 0xb
+ 2510 0034 49       		.uleb128 0x49
+ 2511 0035 13       		.uleb128 0x13
+ 2512 0036 00       		.byte	0
+ 2513 0037 00       		.byte	0
+ 2514 0038 05       		.uleb128 0x5
+ 2515 0039 13       		.uleb128 0x13
+ 2516 003a 01       		.byte	0x1
+ 2517 003b 03       		.uleb128 0x3
+ 2518 003c 0E       		.uleb128 0xe
+ 2519 003d 0B       		.uleb128 0xb
+ 2520 003e 0B       		.uleb128 0xb
+ 2521 003f 3A       		.uleb128 0x3a
+ 2522 0040 0B       		.uleb128 0xb
+ 2523 0041 3B       		.uleb128 0x3b
+ 2524 0042 0B       		.uleb128 0xb
+ 2525 0043 01       		.uleb128 0x1
+ 2526 0044 13       		.uleb128 0x13
+ 2527 0045 00       		.byte	0
+ 2528 0046 00       		.byte	0
+ 2529 0047 06       		.uleb128 0x6
+ 2530 0048 0D       		.uleb128 0xd
+ 2531 0049 00       		.byte	0
+ 2532 004a 03       		.uleb128 0x3
+ 2533 004b 0E       		.uleb128 0xe
+ 2534 004c 3A       		.uleb128 0x3a
+ 2535 004d 0B       		.uleb128 0xb
+ 2536 004e 3B       		.uleb128 0x3b
+ 2537 004f 0B       		.uleb128 0xb
+ 2538 0050 49       		.uleb128 0x49
+ 2539 0051 13       		.uleb128 0x13
+ 2540 0052 38       		.uleb128 0x38
+ 2541 0053 0A       		.uleb128 0xa
+ 2542 0054 00       		.byte	0
+ 2543 0055 00       		.byte	0
+ 2544 0056 07       		.uleb128 0x7
+ 2545 0057 0D       		.uleb128 0xd
+ 2546 0058 00       		.byte	0
+ 2547 0059 03       		.uleb128 0x3
+ 2548 005a 08       		.uleb128 0x8
+ 2549 005b 3A       		.uleb128 0x3a
+ 2550 005c 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 46
+
+
+ 2551 005d 3B       		.uleb128 0x3b
+ 2552 005e 0B       		.uleb128 0xb
+ 2553 005f 49       		.uleb128 0x49
+ 2554 0060 13       		.uleb128 0x13
+ 2555 0061 38       		.uleb128 0x38
+ 2556 0062 0A       		.uleb128 0xa
+ 2557 0063 00       		.byte	0
+ 2558 0064 00       		.byte	0
+ 2559 0065 08       		.uleb128 0x8
+ 2560 0066 13       		.uleb128 0x13
+ 2561 0067 01       		.byte	0x1
+ 2562 0068 0B       		.uleb128 0xb
+ 2563 0069 0B       		.uleb128 0xb
+ 2564 006a 3A       		.uleb128 0x3a
+ 2565 006b 0B       		.uleb128 0xb
+ 2566 006c 3B       		.uleb128 0x3b
+ 2567 006d 0B       		.uleb128 0xb
+ 2568 006e 01       		.uleb128 0x1
+ 2569 006f 13       		.uleb128 0x13
+ 2570 0070 00       		.byte	0
+ 2571 0071 00       		.byte	0
+ 2572 0072 09       		.uleb128 0x9
+ 2573 0073 0F       		.uleb128 0xf
+ 2574 0074 00       		.byte	0
+ 2575 0075 0B       		.uleb128 0xb
+ 2576 0076 0B       		.uleb128 0xb
+ 2577 0077 49       		.uleb128 0x49
+ 2578 0078 13       		.uleb128 0x13
+ 2579 0079 00       		.byte	0
+ 2580 007a 00       		.byte	0
+ 2581 007b 0A       		.uleb128 0xa
+ 2582 007c 0F       		.uleb128 0xf
+ 2583 007d 00       		.byte	0
+ 2584 007e 0B       		.uleb128 0xb
+ 2585 007f 0B       		.uleb128 0xb
+ 2586 0080 00       		.byte	0
+ 2587 0081 00       		.byte	0
+ 2588 0082 0B       		.uleb128 0xb
+ 2589 0083 13       		.uleb128 0x13
+ 2590 0084 01       		.byte	0x1
+ 2591 0085 03       		.uleb128 0x3
+ 2592 0086 0E       		.uleb128 0xe
+ 2593 0087 0B       		.uleb128 0xb
+ 2594 0088 0B       		.uleb128 0xb
+ 2595 0089 3A       		.uleb128 0x3a
+ 2596 008a 0B       		.uleb128 0xb
+ 2597 008b 3B       		.uleb128 0x3b
+ 2598 008c 05       		.uleb128 0x5
+ 2599 008d 01       		.uleb128 0x1
+ 2600 008e 13       		.uleb128 0x13
+ 2601 008f 00       		.byte	0
+ 2602 0090 00       		.byte	0
+ 2603 0091 0C       		.uleb128 0xc
+ 2604 0092 0D       		.uleb128 0xd
+ 2605 0093 00       		.byte	0
+ 2606 0094 03       		.uleb128 0x3
+ 2607 0095 08       		.uleb128 0x8
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 47
+
+
+ 2608 0096 3A       		.uleb128 0x3a
+ 2609 0097 0B       		.uleb128 0xb
+ 2610 0098 3B       		.uleb128 0x3b
+ 2611 0099 05       		.uleb128 0x5
+ 2612 009a 49       		.uleb128 0x49
+ 2613 009b 13       		.uleb128 0x13
+ 2614 009c 38       		.uleb128 0x38
+ 2615 009d 0A       		.uleb128 0xa
+ 2616 009e 00       		.byte	0
+ 2617 009f 00       		.byte	0
+ 2618 00a0 0D       		.uleb128 0xd
+ 2619 00a1 35       		.uleb128 0x35
+ 2620 00a2 00       		.byte	0
+ 2621 00a3 49       		.uleb128 0x49
+ 2622 00a4 13       		.uleb128 0x13
+ 2623 00a5 00       		.byte	0
+ 2624 00a6 00       		.byte	0
+ 2625 00a7 0E       		.uleb128 0xe
+ 2626 00a8 17       		.uleb128 0x17
+ 2627 00a9 01       		.byte	0x1
+ 2628 00aa 0B       		.uleb128 0xb
+ 2629 00ab 0B       		.uleb128 0xb
+ 2630 00ac 3A       		.uleb128 0x3a
+ 2631 00ad 0B       		.uleb128 0xb
+ 2632 00ae 3B       		.uleb128 0x3b
+ 2633 00af 0B       		.uleb128 0xb
+ 2634 00b0 01       		.uleb128 0x1
+ 2635 00b1 13       		.uleb128 0x13
+ 2636 00b2 00       		.byte	0
+ 2637 00b3 00       		.byte	0
+ 2638 00b4 0F       		.uleb128 0xf
+ 2639 00b5 0D       		.uleb128 0xd
+ 2640 00b6 00       		.byte	0
+ 2641 00b7 03       		.uleb128 0x3
+ 2642 00b8 0E       		.uleb128 0xe
+ 2643 00b9 3A       		.uleb128 0x3a
+ 2644 00ba 0B       		.uleb128 0xb
+ 2645 00bb 3B       		.uleb128 0x3b
+ 2646 00bc 0B       		.uleb128 0xb
+ 2647 00bd 49       		.uleb128 0x49
+ 2648 00be 13       		.uleb128 0x13
+ 2649 00bf 00       		.byte	0
+ 2650 00c0 00       		.byte	0
+ 2651 00c1 10       		.uleb128 0x10
+ 2652 00c2 26       		.uleb128 0x26
+ 2653 00c3 00       		.byte	0
+ 2654 00c4 49       		.uleb128 0x49
+ 2655 00c5 13       		.uleb128 0x13
+ 2656 00c6 00       		.byte	0
+ 2657 00c7 00       		.byte	0
+ 2658 00c8 11       		.uleb128 0x11
+ 2659 00c9 2E       		.uleb128 0x2e
+ 2660 00ca 01       		.byte	0x1
+ 2661 00cb 03       		.uleb128 0x3
+ 2662 00cc 0E       		.uleb128 0xe
+ 2663 00cd 3A       		.uleb128 0x3a
+ 2664 00ce 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 48
+
+
+ 2665 00cf 3B       		.uleb128 0x3b
+ 2666 00d0 0B       		.uleb128 0xb
+ 2667 00d1 27       		.uleb128 0x27
+ 2668 00d2 0C       		.uleb128 0xc
+ 2669 00d3 49       		.uleb128 0x49
+ 2670 00d4 13       		.uleb128 0x13
+ 2671 00d5 20       		.uleb128 0x20
+ 2672 00d6 0B       		.uleb128 0xb
+ 2673 00d7 01       		.uleb128 0x1
+ 2674 00d8 13       		.uleb128 0x13
+ 2675 00d9 00       		.byte	0
+ 2676 00da 00       		.byte	0
+ 2677 00db 12       		.uleb128 0x12
+ 2678 00dc 05       		.uleb128 0x5
+ 2679 00dd 00       		.byte	0
+ 2680 00de 03       		.uleb128 0x3
+ 2681 00df 08       		.uleb128 0x8
+ 2682 00e0 3A       		.uleb128 0x3a
+ 2683 00e1 0B       		.uleb128 0xb
+ 2684 00e2 3B       		.uleb128 0x3b
+ 2685 00e3 0B       		.uleb128 0xb
+ 2686 00e4 49       		.uleb128 0x49
+ 2687 00e5 13       		.uleb128 0x13
+ 2688 00e6 00       		.byte	0
+ 2689 00e7 00       		.byte	0
+ 2690 00e8 13       		.uleb128 0x13
+ 2691 00e9 34       		.uleb128 0x34
+ 2692 00ea 00       		.byte	0
+ 2693 00eb 03       		.uleb128 0x3
+ 2694 00ec 08       		.uleb128 0x8
+ 2695 00ed 3A       		.uleb128 0x3a
+ 2696 00ee 0B       		.uleb128 0xb
+ 2697 00ef 3B       		.uleb128 0x3b
+ 2698 00f0 0B       		.uleb128 0xb
+ 2699 00f1 49       		.uleb128 0x49
+ 2700 00f2 13       		.uleb128 0x13
+ 2701 00f3 00       		.byte	0
+ 2702 00f4 00       		.byte	0
+ 2703 00f5 14       		.uleb128 0x14
+ 2704 00f6 2E       		.uleb128 0x2e
+ 2705 00f7 01       		.byte	0x1
+ 2706 00f8 03       		.uleb128 0x3
+ 2707 00f9 0E       		.uleb128 0xe
+ 2708 00fa 3A       		.uleb128 0x3a
+ 2709 00fb 0B       		.uleb128 0xb
+ 2710 00fc 3B       		.uleb128 0x3b
+ 2711 00fd 0B       		.uleb128 0xb
+ 2712 00fe 27       		.uleb128 0x27
+ 2713 00ff 0C       		.uleb128 0xc
+ 2714 0100 20       		.uleb128 0x20
+ 2715 0101 0B       		.uleb128 0xb
+ 2716 0102 01       		.uleb128 0x1
+ 2717 0103 13       		.uleb128 0x13
+ 2718 0104 00       		.byte	0
+ 2719 0105 00       		.byte	0
+ 2720 0106 15       		.uleb128 0x15
+ 2721 0107 2E       		.uleb128 0x2e
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 49
+
+
+ 2722 0108 01       		.byte	0x1
+ 2723 0109 3F       		.uleb128 0x3f
+ 2724 010a 0C       		.uleb128 0xc
+ 2725 010b 03       		.uleb128 0x3
+ 2726 010c 0E       		.uleb128 0xe
+ 2727 010d 3A       		.uleb128 0x3a
+ 2728 010e 0B       		.uleb128 0xb
+ 2729 010f 3B       		.uleb128 0x3b
+ 2730 0110 0B       		.uleb128 0xb
+ 2731 0111 27       		.uleb128 0x27
+ 2732 0112 0C       		.uleb128 0xc
+ 2733 0113 11       		.uleb128 0x11
+ 2734 0114 01       		.uleb128 0x1
+ 2735 0115 12       		.uleb128 0x12
+ 2736 0116 01       		.uleb128 0x1
+ 2737 0117 40       		.uleb128 0x40
+ 2738 0118 0A       		.uleb128 0xa
+ 2739 0119 9742     		.uleb128 0x2117
+ 2740 011b 0C       		.uleb128 0xc
+ 2741 011c 01       		.uleb128 0x1
+ 2742 011d 13       		.uleb128 0x13
+ 2743 011e 00       		.byte	0
+ 2744 011f 00       		.byte	0
+ 2745 0120 16       		.uleb128 0x16
+ 2746 0121 05       		.uleb128 0x5
+ 2747 0122 00       		.byte	0
+ 2748 0123 03       		.uleb128 0x3
+ 2749 0124 08       		.uleb128 0x8
+ 2750 0125 3A       		.uleb128 0x3a
+ 2751 0126 0B       		.uleb128 0xb
+ 2752 0127 3B       		.uleb128 0x3b
+ 2753 0128 0B       		.uleb128 0xb
+ 2754 0129 49       		.uleb128 0x49
+ 2755 012a 13       		.uleb128 0x13
+ 2756 012b 02       		.uleb128 0x2
+ 2757 012c 0A       		.uleb128 0xa
+ 2758 012d 00       		.byte	0
+ 2759 012e 00       		.byte	0
+ 2760 012f 17       		.uleb128 0x17
+ 2761 0130 2E       		.uleb128 0x2e
+ 2762 0131 01       		.byte	0x1
+ 2763 0132 3F       		.uleb128 0x3f
+ 2764 0133 0C       		.uleb128 0xc
+ 2765 0134 03       		.uleb128 0x3
+ 2766 0135 0E       		.uleb128 0xe
+ 2767 0136 3A       		.uleb128 0x3a
+ 2768 0137 0B       		.uleb128 0xb
+ 2769 0138 3B       		.uleb128 0x3b
+ 2770 0139 0B       		.uleb128 0xb
+ 2771 013a 27       		.uleb128 0x27
+ 2772 013b 0C       		.uleb128 0xc
+ 2773 013c 11       		.uleb128 0x11
+ 2774 013d 01       		.uleb128 0x1
+ 2775 013e 12       		.uleb128 0x12
+ 2776 013f 01       		.uleb128 0x1
+ 2777 0140 40       		.uleb128 0x40
+ 2778 0141 06       		.uleb128 0x6
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 50
+
+
+ 2779 0142 9742     		.uleb128 0x2117
+ 2780 0144 0C       		.uleb128 0xc
+ 2781 0145 01       		.uleb128 0x1
+ 2782 0146 13       		.uleb128 0x13
+ 2783 0147 00       		.byte	0
+ 2784 0148 00       		.byte	0
+ 2785 0149 18       		.uleb128 0x18
+ 2786 014a 05       		.uleb128 0x5
+ 2787 014b 00       		.byte	0
+ 2788 014c 03       		.uleb128 0x3
+ 2789 014d 08       		.uleb128 0x8
+ 2790 014e 3A       		.uleb128 0x3a
+ 2791 014f 0B       		.uleb128 0xb
+ 2792 0150 3B       		.uleb128 0x3b
+ 2793 0151 0B       		.uleb128 0xb
+ 2794 0152 49       		.uleb128 0x49
+ 2795 0153 13       		.uleb128 0x13
+ 2796 0154 02       		.uleb128 0x2
+ 2797 0155 06       		.uleb128 0x6
+ 2798 0156 00       		.byte	0
+ 2799 0157 00       		.byte	0
+ 2800 0158 19       		.uleb128 0x19
+ 2801 0159 34       		.uleb128 0x34
+ 2802 015a 00       		.byte	0
+ 2803 015b 03       		.uleb128 0x3
+ 2804 015c 08       		.uleb128 0x8
+ 2805 015d 3A       		.uleb128 0x3a
+ 2806 015e 0B       		.uleb128 0xb
+ 2807 015f 3B       		.uleb128 0x3b
+ 2808 0160 0B       		.uleb128 0xb
+ 2809 0161 49       		.uleb128 0x49
+ 2810 0162 13       		.uleb128 0x13
+ 2811 0163 02       		.uleb128 0x2
+ 2812 0164 06       		.uleb128 0x6
+ 2813 0165 00       		.byte	0
+ 2814 0166 00       		.byte	0
+ 2815 0167 1A       		.uleb128 0x1a
+ 2816 0168 1D       		.uleb128 0x1d
+ 2817 0169 01       		.byte	0x1
+ 2818 016a 31       		.uleb128 0x31
+ 2819 016b 13       		.uleb128 0x13
+ 2820 016c 52       		.uleb128 0x52
+ 2821 016d 01       		.uleb128 0x1
+ 2822 016e 55       		.uleb128 0x55
+ 2823 016f 06       		.uleb128 0x6
+ 2824 0170 58       		.uleb128 0x58
+ 2825 0171 0B       		.uleb128 0xb
+ 2826 0172 59       		.uleb128 0x59
+ 2827 0173 0B       		.uleb128 0xb
+ 2828 0174 01       		.uleb128 0x1
+ 2829 0175 13       		.uleb128 0x13
+ 2830 0176 00       		.byte	0
+ 2831 0177 00       		.byte	0
+ 2832 0178 1B       		.uleb128 0x1b
+ 2833 0179 05       		.uleb128 0x5
+ 2834 017a 00       		.byte	0
+ 2835 017b 31       		.uleb128 0x31
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 51
+
+
+ 2836 017c 13       		.uleb128 0x13
+ 2837 017d 02       		.uleb128 0x2
+ 2838 017e 06       		.uleb128 0x6
+ 2839 017f 00       		.byte	0
+ 2840 0180 00       		.byte	0
+ 2841 0181 1C       		.uleb128 0x1c
+ 2842 0182 0B       		.uleb128 0xb
+ 2843 0183 01       		.byte	0x1
+ 2844 0184 55       		.uleb128 0x55
+ 2845 0185 06       		.uleb128 0x6
+ 2846 0186 00       		.byte	0
+ 2847 0187 00       		.byte	0
+ 2848 0188 1D       		.uleb128 0x1d
+ 2849 0189 34       		.uleb128 0x34
+ 2850 018a 00       		.byte	0
+ 2851 018b 31       		.uleb128 0x31
+ 2852 018c 13       		.uleb128 0x13
+ 2853 018d 00       		.byte	0
+ 2854 018e 00       		.byte	0
+ 2855 018f 1E       		.uleb128 0x1e
+ 2856 0190 898201   		.uleb128 0x4109
+ 2857 0193 00       		.byte	0
+ 2858 0194 11       		.uleb128 0x11
+ 2859 0195 01       		.uleb128 0x1
+ 2860 0196 31       		.uleb128 0x31
+ 2861 0197 13       		.uleb128 0x13
+ 2862 0198 00       		.byte	0
+ 2863 0199 00       		.byte	0
+ 2864 019a 1F       		.uleb128 0x1f
+ 2865 019b 0B       		.uleb128 0xb
+ 2866 019c 01       		.byte	0x1
+ 2867 019d 11       		.uleb128 0x11
+ 2868 019e 01       		.uleb128 0x1
+ 2869 019f 12       		.uleb128 0x12
+ 2870 01a0 01       		.uleb128 0x1
+ 2871 01a1 01       		.uleb128 0x1
+ 2872 01a2 13       		.uleb128 0x13
+ 2873 01a3 00       		.byte	0
+ 2874 01a4 00       		.byte	0
+ 2875 01a5 20       		.uleb128 0x20
+ 2876 01a6 898201   		.uleb128 0x4109
+ 2877 01a9 01       		.byte	0x1
+ 2878 01aa 11       		.uleb128 0x11
+ 2879 01ab 01       		.uleb128 0x1
+ 2880 01ac 31       		.uleb128 0x31
+ 2881 01ad 13       		.uleb128 0x13
+ 2882 01ae 01       		.uleb128 0x1
+ 2883 01af 13       		.uleb128 0x13
+ 2884 01b0 00       		.byte	0
+ 2885 01b1 00       		.byte	0
+ 2886 01b2 21       		.uleb128 0x21
+ 2887 01b3 8A8201   		.uleb128 0x410a
+ 2888 01b6 00       		.byte	0
+ 2889 01b7 02       		.uleb128 0x2
+ 2890 01b8 0A       		.uleb128 0xa
+ 2891 01b9 9142     		.uleb128 0x2111
+ 2892 01bb 0A       		.uleb128 0xa
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 52
+
+
+ 2893 01bc 00       		.byte	0
+ 2894 01bd 00       		.byte	0
+ 2895 01be 22       		.uleb128 0x22
+ 2896 01bf 2E       		.uleb128 0x2e
+ 2897 01c0 01       		.byte	0x1
+ 2898 01c1 3F       		.uleb128 0x3f
+ 2899 01c2 0C       		.uleb128 0xc
+ 2900 01c3 03       		.uleb128 0x3
+ 2901 01c4 0E       		.uleb128 0xe
+ 2902 01c5 3A       		.uleb128 0x3a
+ 2903 01c6 0B       		.uleb128 0xb
+ 2904 01c7 3B       		.uleb128 0x3b
+ 2905 01c8 0B       		.uleb128 0xb
+ 2906 01c9 27       		.uleb128 0x27
+ 2907 01ca 0C       		.uleb128 0xc
+ 2908 01cb 49       		.uleb128 0x49
+ 2909 01cc 13       		.uleb128 0x13
+ 2910 01cd 11       		.uleb128 0x11
+ 2911 01ce 01       		.uleb128 0x1
+ 2912 01cf 12       		.uleb128 0x12
+ 2913 01d0 01       		.uleb128 0x1
+ 2914 01d1 40       		.uleb128 0x40
+ 2915 01d2 06       		.uleb128 0x6
+ 2916 01d3 9742     		.uleb128 0x2117
+ 2917 01d5 0C       		.uleb128 0xc
+ 2918 01d6 01       		.uleb128 0x1
+ 2919 01d7 13       		.uleb128 0x13
+ 2920 01d8 00       		.byte	0
+ 2921 01d9 00       		.byte	0
+ 2922 01da 23       		.uleb128 0x23
+ 2923 01db 898201   		.uleb128 0x4109
+ 2924 01de 01       		.byte	0x1
+ 2925 01df 11       		.uleb128 0x11
+ 2926 01e0 01       		.uleb128 0x1
+ 2927 01e1 31       		.uleb128 0x31
+ 2928 01e2 13       		.uleb128 0x13
+ 2929 01e3 00       		.byte	0
+ 2930 01e4 00       		.byte	0
+ 2931 01e5 24       		.uleb128 0x24
+ 2932 01e6 0B       		.uleb128 0xb
+ 2933 01e7 01       		.byte	0x1
+ 2934 01e8 55       		.uleb128 0x55
+ 2935 01e9 06       		.uleb128 0x6
+ 2936 01ea 01       		.uleb128 0x1
+ 2937 01eb 13       		.uleb128 0x13
+ 2938 01ec 00       		.byte	0
+ 2939 01ed 00       		.byte	0
+ 2940 01ee 25       		.uleb128 0x25
+ 2941 01ef 05       		.uleb128 0x5
+ 2942 01f0 00       		.byte	0
+ 2943 01f1 03       		.uleb128 0x3
+ 2944 01f2 0E       		.uleb128 0xe
+ 2945 01f3 3A       		.uleb128 0x3a
+ 2946 01f4 0B       		.uleb128 0xb
+ 2947 01f5 3B       		.uleb128 0x3b
+ 2948 01f6 0B       		.uleb128 0xb
+ 2949 01f7 49       		.uleb128 0x49
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 53
+
+
+ 2950 01f8 13       		.uleb128 0x13
+ 2951 01f9 02       		.uleb128 0x2
+ 2952 01fa 06       		.uleb128 0x6
+ 2953 01fb 00       		.byte	0
+ 2954 01fc 00       		.byte	0
+ 2955 01fd 26       		.uleb128 0x26
+ 2956 01fe 1D       		.uleb128 0x1d
+ 2957 01ff 01       		.byte	0x1
+ 2958 0200 31       		.uleb128 0x31
+ 2959 0201 13       		.uleb128 0x13
+ 2960 0202 52       		.uleb128 0x52
+ 2961 0203 01       		.uleb128 0x1
+ 2962 0204 55       		.uleb128 0x55
+ 2963 0205 06       		.uleb128 0x6
+ 2964 0206 58       		.uleb128 0x58
+ 2965 0207 0B       		.uleb128 0xb
+ 2966 0208 59       		.uleb128 0x59
+ 2967 0209 05       		.uleb128 0x5
+ 2968 020a 01       		.uleb128 0x1
+ 2969 020b 13       		.uleb128 0x13
+ 2970 020c 00       		.byte	0
+ 2971 020d 00       		.byte	0
+ 2972 020e 27       		.uleb128 0x27
+ 2973 020f 898201   		.uleb128 0x4109
+ 2974 0212 01       		.byte	0x1
+ 2975 0213 11       		.uleb128 0x11
+ 2976 0214 01       		.uleb128 0x1
+ 2977 0215 9542     		.uleb128 0x2115
+ 2978 0217 0C       		.uleb128 0xc
+ 2979 0218 31       		.uleb128 0x31
+ 2980 0219 13       		.uleb128 0x13
+ 2981 021a 00       		.byte	0
+ 2982 021b 00       		.byte	0
+ 2983 021c 28       		.uleb128 0x28
+ 2984 021d 2E       		.uleb128 0x2e
+ 2985 021e 01       		.byte	0x1
+ 2986 021f 3F       		.uleb128 0x3f
+ 2987 0220 0C       		.uleb128 0xc
+ 2988 0221 03       		.uleb128 0x3
+ 2989 0222 0E       		.uleb128 0xe
+ 2990 0223 3A       		.uleb128 0x3a
+ 2991 0224 0B       		.uleb128 0xb
+ 2992 0225 3B       		.uleb128 0x3b
+ 2993 0226 05       		.uleb128 0x5
+ 2994 0227 27       		.uleb128 0x27
+ 2995 0228 0C       		.uleb128 0xc
+ 2996 0229 11       		.uleb128 0x11
+ 2997 022a 01       		.uleb128 0x1
+ 2998 022b 12       		.uleb128 0x12
+ 2999 022c 01       		.uleb128 0x1
+ 3000 022d 40       		.uleb128 0x40
+ 3001 022e 06       		.uleb128 0x6
+ 3002 022f 9742     		.uleb128 0x2117
+ 3003 0231 0C       		.uleb128 0xc
+ 3004 0232 01       		.uleb128 0x1
+ 3005 0233 13       		.uleb128 0x13
+ 3006 0234 00       		.byte	0
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 54
+
+
+ 3007 0235 00       		.byte	0
+ 3008 0236 29       		.uleb128 0x29
+ 3009 0237 05       		.uleb128 0x5
+ 3010 0238 00       		.byte	0
+ 3011 0239 03       		.uleb128 0x3
+ 3012 023a 08       		.uleb128 0x8
+ 3013 023b 3A       		.uleb128 0x3a
+ 3014 023c 0B       		.uleb128 0xb
+ 3015 023d 3B       		.uleb128 0x3b
+ 3016 023e 05       		.uleb128 0x5
+ 3017 023f 49       		.uleb128 0x49
+ 3018 0240 13       		.uleb128 0x13
+ 3019 0241 02       		.uleb128 0x2
+ 3020 0242 06       		.uleb128 0x6
+ 3021 0243 00       		.byte	0
+ 3022 0244 00       		.byte	0
+ 3023 0245 2A       		.uleb128 0x2a
+ 3024 0246 34       		.uleb128 0x34
+ 3025 0247 00       		.byte	0
+ 3026 0248 03       		.uleb128 0x3
+ 3027 0249 08       		.uleb128 0x8
+ 3028 024a 3A       		.uleb128 0x3a
+ 3029 024b 0B       		.uleb128 0xb
+ 3030 024c 3B       		.uleb128 0x3b
+ 3031 024d 05       		.uleb128 0x5
+ 3032 024e 49       		.uleb128 0x49
+ 3033 024f 13       		.uleb128 0x13
+ 3034 0250 02       		.uleb128 0x2
+ 3035 0251 06       		.uleb128 0x6
+ 3036 0252 00       		.byte	0
+ 3037 0253 00       		.byte	0
+ 3038 0254 2B       		.uleb128 0x2b
+ 3039 0255 05       		.uleb128 0x5
+ 3040 0256 00       		.byte	0
+ 3041 0257 31       		.uleb128 0x31
+ 3042 0258 13       		.uleb128 0x13
+ 3043 0259 02       		.uleb128 0x2
+ 3044 025a 0A       		.uleb128 0xa
+ 3045 025b 00       		.byte	0
+ 3046 025c 00       		.byte	0
+ 3047 025d 2C       		.uleb128 0x2c
+ 3048 025e 34       		.uleb128 0x34
+ 3049 025f 00       		.byte	0
+ 3050 0260 31       		.uleb128 0x31
+ 3051 0261 13       		.uleb128 0x13
+ 3052 0262 02       		.uleb128 0x2
+ 3053 0263 06       		.uleb128 0x6
+ 3054 0264 00       		.byte	0
+ 3055 0265 00       		.byte	0
+ 3056 0266 2D       		.uleb128 0x2d
+ 3057 0267 34       		.uleb128 0x34
+ 3058 0268 00       		.byte	0
+ 3059 0269 03       		.uleb128 0x3
+ 3060 026a 08       		.uleb128 0x8
+ 3061 026b 3A       		.uleb128 0x3a
+ 3062 026c 0B       		.uleb128 0xb
+ 3063 026d 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 55
+
+
+ 3064 026e 05       		.uleb128 0x5
+ 3065 026f 49       		.uleb128 0x49
+ 3066 0270 13       		.uleb128 0x13
+ 3067 0271 02       		.uleb128 0x2
+ 3068 0272 0A       		.uleb128 0xa
+ 3069 0273 00       		.byte	0
+ 3070 0274 00       		.byte	0
+ 3071 0275 2E       		.uleb128 0x2e
+ 3072 0276 898201   		.uleb128 0x4109
+ 3073 0279 00       		.byte	0
+ 3074 027a 11       		.uleb128 0x11
+ 3075 027b 01       		.uleb128 0x1
+ 3076 027c 9542     		.uleb128 0x2115
+ 3077 027e 0C       		.uleb128 0xc
+ 3078 027f 31       		.uleb128 0x31
+ 3079 0280 13       		.uleb128 0x13
+ 3080 0281 00       		.byte	0
+ 3081 0282 00       		.byte	0
+ 3082 0283 2F       		.uleb128 0x2f
+ 3083 0284 2E       		.uleb128 0x2e
+ 3084 0285 01       		.byte	0x1
+ 3085 0286 3F       		.uleb128 0x3f
+ 3086 0287 0C       		.uleb128 0xc
+ 3087 0288 03       		.uleb128 0x3
+ 3088 0289 0E       		.uleb128 0xe
+ 3089 028a 3A       		.uleb128 0x3a
+ 3090 028b 0B       		.uleb128 0xb
+ 3091 028c 3B       		.uleb128 0x3b
+ 3092 028d 05       		.uleb128 0x5
+ 3093 028e 27       		.uleb128 0x27
+ 3094 028f 0C       		.uleb128 0xc
+ 3095 0290 49       		.uleb128 0x49
+ 3096 0291 13       		.uleb128 0x13
+ 3097 0292 11       		.uleb128 0x11
+ 3098 0293 01       		.uleb128 0x1
+ 3099 0294 12       		.uleb128 0x12
+ 3100 0295 01       		.uleb128 0x1
+ 3101 0296 40       		.uleb128 0x40
+ 3102 0297 06       		.uleb128 0x6
+ 3103 0298 9742     		.uleb128 0x2117
+ 3104 029a 0C       		.uleb128 0xc
+ 3105 029b 01       		.uleb128 0x1
+ 3106 029c 13       		.uleb128 0x13
+ 3107 029d 00       		.byte	0
+ 3108 029e 00       		.byte	0
+ 3109 029f 30       		.uleb128 0x30
+ 3110 02a0 1D       		.uleb128 0x1d
+ 3111 02a1 01       		.byte	0x1
+ 3112 02a2 31       		.uleb128 0x31
+ 3113 02a3 13       		.uleb128 0x13
+ 3114 02a4 11       		.uleb128 0x11
+ 3115 02a5 01       		.uleb128 0x1
+ 3116 02a6 12       		.uleb128 0x12
+ 3117 02a7 01       		.uleb128 0x1
+ 3118 02a8 58       		.uleb128 0x58
+ 3119 02a9 0B       		.uleb128 0xb
+ 3120 02aa 59       		.uleb128 0x59
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 56
+
+
+ 3121 02ab 05       		.uleb128 0x5
+ 3122 02ac 01       		.uleb128 0x1
+ 3123 02ad 13       		.uleb128 0x13
+ 3124 02ae 00       		.byte	0
+ 3125 02af 00       		.byte	0
+ 3126 02b0 31       		.uleb128 0x31
+ 3127 02b1 0B       		.uleb128 0xb
+ 3128 02b2 01       		.byte	0x1
+ 3129 02b3 11       		.uleb128 0x11
+ 3130 02b4 01       		.uleb128 0x1
+ 3131 02b5 12       		.uleb128 0x12
+ 3132 02b6 01       		.uleb128 0x1
+ 3133 02b7 00       		.byte	0
+ 3134 02b8 00       		.byte	0
+ 3135 02b9 32       		.uleb128 0x32
+ 3136 02ba 34       		.uleb128 0x34
+ 3137 02bb 00       		.byte	0
+ 3138 02bc 03       		.uleb128 0x3
+ 3139 02bd 0E       		.uleb128 0xe
+ 3140 02be 3A       		.uleb128 0x3a
+ 3141 02bf 0B       		.uleb128 0xb
+ 3142 02c0 3B       		.uleb128 0x3b
+ 3143 02c1 0B       		.uleb128 0xb
+ 3144 02c2 49       		.uleb128 0x49
+ 3145 02c3 13       		.uleb128 0x13
+ 3146 02c4 3F       		.uleb128 0x3f
+ 3147 02c5 0C       		.uleb128 0xc
+ 3148 02c6 3C       		.uleb128 0x3c
+ 3149 02c7 0C       		.uleb128 0xc
+ 3150 02c8 00       		.byte	0
+ 3151 02c9 00       		.byte	0
+ 3152 02ca 33       		.uleb128 0x33
+ 3153 02cb 2E       		.uleb128 0x2e
+ 3154 02cc 00       		.byte	0
+ 3155 02cd 3F       		.uleb128 0x3f
+ 3156 02ce 0C       		.uleb128 0xc
+ 3157 02cf 03       		.uleb128 0x3
+ 3158 02d0 0E       		.uleb128 0xe
+ 3159 02d1 3A       		.uleb128 0x3a
+ 3160 02d2 0B       		.uleb128 0xb
+ 3161 02d3 3B       		.uleb128 0x3b
+ 3162 02d4 0B       		.uleb128 0xb
+ 3163 02d5 27       		.uleb128 0x27
+ 3164 02d6 0C       		.uleb128 0xc
+ 3165 02d7 3C       		.uleb128 0x3c
+ 3166 02d8 0C       		.uleb128 0xc
+ 3167 02d9 00       		.byte	0
+ 3168 02da 00       		.byte	0
+ 3169 02db 34       		.uleb128 0x34
+ 3170 02dc 2E       		.uleb128 0x2e
+ 3171 02dd 01       		.byte	0x1
+ 3172 02de 3F       		.uleb128 0x3f
+ 3173 02df 0C       		.uleb128 0xc
+ 3174 02e0 03       		.uleb128 0x3
+ 3175 02e1 0E       		.uleb128 0xe
+ 3176 02e2 3A       		.uleb128 0x3a
+ 3177 02e3 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 57
+
+
+ 3178 02e4 3B       		.uleb128 0x3b
+ 3179 02e5 0B       		.uleb128 0xb
+ 3180 02e6 27       		.uleb128 0x27
+ 3181 02e7 0C       		.uleb128 0xc
+ 3182 02e8 49       		.uleb128 0x49
+ 3183 02e9 13       		.uleb128 0x13
+ 3184 02ea 3C       		.uleb128 0x3c
+ 3185 02eb 0C       		.uleb128 0xc
+ 3186 02ec 01       		.uleb128 0x1
+ 3187 02ed 13       		.uleb128 0x13
+ 3188 02ee 00       		.byte	0
+ 3189 02ef 00       		.byte	0
+ 3190 02f0 35       		.uleb128 0x35
+ 3191 02f1 05       		.uleb128 0x5
+ 3192 02f2 00       		.byte	0
+ 3193 02f3 49       		.uleb128 0x49
+ 3194 02f4 13       		.uleb128 0x13
+ 3195 02f5 00       		.byte	0
+ 3196 02f6 00       		.byte	0
+ 3197 02f7 36       		.uleb128 0x36
+ 3198 02f8 2E       		.uleb128 0x2e
+ 3199 02f9 01       		.byte	0x1
+ 3200 02fa 3F       		.uleb128 0x3f
+ 3201 02fb 0C       		.uleb128 0xc
+ 3202 02fc 03       		.uleb128 0x3
+ 3203 02fd 0E       		.uleb128 0xe
+ 3204 02fe 3A       		.uleb128 0x3a
+ 3205 02ff 0B       		.uleb128 0xb
+ 3206 0300 3B       		.uleb128 0x3b
+ 3207 0301 0B       		.uleb128 0xb
+ 3208 0302 27       		.uleb128 0x27
+ 3209 0303 0C       		.uleb128 0xc
+ 3210 0304 3C       		.uleb128 0x3c
+ 3211 0305 0C       		.uleb128 0xc
+ 3212 0306 01       		.uleb128 0x1
+ 3213 0307 13       		.uleb128 0x13
+ 3214 0308 00       		.byte	0
+ 3215 0309 00       		.byte	0
+ 3216 030a 37       		.uleb128 0x37
+ 3217 030b 2E       		.uleb128 0x2e
+ 3218 030c 01       		.byte	0x1
+ 3219 030d 3F       		.uleb128 0x3f
+ 3220 030e 0C       		.uleb128 0xc
+ 3221 030f 03       		.uleb128 0x3
+ 3222 0310 0E       		.uleb128 0xe
+ 3223 0311 3A       		.uleb128 0x3a
+ 3224 0312 0B       		.uleb128 0xb
+ 3225 0313 3B       		.uleb128 0x3b
+ 3226 0314 0B       		.uleb128 0xb
+ 3227 0315 27       		.uleb128 0x27
+ 3228 0316 0C       		.uleb128 0xc
+ 3229 0317 3C       		.uleb128 0x3c
+ 3230 0318 0C       		.uleb128 0xc
+ 3231 0319 00       		.byte	0
+ 3232 031a 00       		.byte	0
+ 3233 031b 00       		.byte	0
+ 3234              		.section	.debug_loc,"",%progbits
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 58
+
+
+ 3235              	.Ldebug_loc0:
+ 3236              	.LLST0:
+ 3237 0000 00000000 		.4byte	.LFB9
+ 3238 0004 02000000 		.4byte	.LCFI0
+ 3239 0008 0200     		.2byte	0x2
+ 3240 000a 7D       		.byte	0x7d
+ 3241 000b 00       		.sleb128 0
+ 3242 000c 02000000 		.4byte	.LCFI0
+ 3243 0010 6E000000 		.4byte	.LFE9
+ 3244 0014 0200     		.2byte	0x2
+ 3245 0016 7D       		.byte	0x7d
+ 3246 0017 18       		.sleb128 24
+ 3247 0018 00000000 		.4byte	0
+ 3248 001c 00000000 		.4byte	0
+ 3249              	.LLST1:
+ 3250 0020 00000000 		.4byte	.LVL1
+ 3251 0024 09000000 		.4byte	.LVL2-1
+ 3252 0028 0100     		.2byte	0x1
+ 3253 002a 50       		.byte	0x50
+ 3254 002b 09000000 		.4byte	.LVL2-1
+ 3255 002f 6E000000 		.4byte	.LFE9
+ 3256 0033 0100     		.2byte	0x1
+ 3257 0035 54       		.byte	0x54
+ 3258 0036 00000000 		.4byte	0
+ 3259 003a 00000000 		.4byte	0
+ 3260              	.LLST2:
+ 3261 003e 00000000 		.4byte	.LVL1
+ 3262 0042 09000000 		.4byte	.LVL2-1
+ 3263 0046 0100     		.2byte	0x1
+ 3264 0048 51       		.byte	0x51
+ 3265 0049 09000000 		.4byte	.LVL2-1
+ 3266 004d 2C000000 		.4byte	.LVL7
+ 3267 0051 0100     		.2byte	0x1
+ 3268 0053 55       		.byte	0x55
+ 3269 0054 2C000000 		.4byte	.LVL7
+ 3270 0058 6E000000 		.4byte	.LFE9
+ 3271 005c 0400     		.2byte	0x4
+ 3272 005e F3       		.byte	0xf3
+ 3273 005f 01       		.uleb128 0x1
+ 3274 0060 51       		.byte	0x51
+ 3275 0061 9F       		.byte	0x9f
+ 3276 0062 00000000 		.4byte	0
+ 3277 0066 00000000 		.4byte	0
+ 3278              	.LLST3:
+ 3279 006a 0C000000 		.4byte	.LVL3
+ 3280 006e 42000000 		.4byte	.LVL9
+ 3281 0072 0100     		.2byte	0x1
+ 3282 0074 57       		.byte	0x57
+ 3283 0075 6A000000 		.4byte	.LVL13
+ 3284 0079 6C000000 		.4byte	.LVL14
+ 3285 007d 0100     		.2byte	0x1
+ 3286 007f 57       		.byte	0x57
+ 3287 0080 00000000 		.4byte	0
+ 3288 0084 00000000 		.4byte	0
+ 3289              	.LLST4:
+ 3290 0088 28000000 		.4byte	.LVL6
+ 3291 008c 68000000 		.4byte	.LVL12
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 59
+
+
+ 3292 0090 0100     		.2byte	0x1
+ 3293 0092 54       		.byte	0x54
+ 3294 0093 6A000000 		.4byte	.LVL13
+ 3295 0097 6E000000 		.4byte	.LFE9
+ 3296 009b 0100     		.2byte	0x1
+ 3297 009d 54       		.byte	0x54
+ 3298 009e 00000000 		.4byte	0
+ 3299 00a2 00000000 		.4byte	0
+ 3300              	.LLST5:
+ 3301 00a6 00000000 		.4byte	.LFB8
+ 3302 00aa 02000000 		.4byte	.LCFI1
+ 3303 00ae 0200     		.2byte	0x2
+ 3304 00b0 7D       		.byte	0x7d
+ 3305 00b1 00       		.sleb128 0
+ 3306 00b2 02000000 		.4byte	.LCFI1
+ 3307 00b6 28000000 		.4byte	.LFE8
+ 3308 00ba 0200     		.2byte	0x2
+ 3309 00bc 7D       		.byte	0x7d
+ 3310 00bd 10       		.sleb128 16
+ 3311 00be 00000000 		.4byte	0
+ 3312 00c2 00000000 		.4byte	0
+ 3313              	.LLST6:
+ 3314 00c6 00000000 		.4byte	.LVL15
+ 3315 00ca 0F000000 		.4byte	.LVL18-1
+ 3316 00ce 0100     		.2byte	0x1
+ 3317 00d0 50       		.byte	0x50
+ 3318 00d1 0F000000 		.4byte	.LVL18-1
+ 3319 00d5 28000000 		.4byte	.LFE8
+ 3320 00d9 0100     		.2byte	0x1
+ 3321 00db 55       		.byte	0x55
+ 3322 00dc 00000000 		.4byte	0
+ 3323 00e0 00000000 		.4byte	0
+ 3324              	.LLST7:
+ 3325 00e4 00000000 		.4byte	.LVL15
+ 3326 00e8 0F000000 		.4byte	.LVL18-1
+ 3327 00ec 0100     		.2byte	0x1
+ 3328 00ee 51       		.byte	0x51
+ 3329 00ef 0F000000 		.4byte	.LVL18-1
+ 3330 00f3 28000000 		.4byte	.LFE8
+ 3331 00f7 0100     		.2byte	0x1
+ 3332 00f9 54       		.byte	0x54
+ 3333 00fa 00000000 		.4byte	0
+ 3334 00fe 00000000 		.4byte	0
+ 3335              	.LLST8:
+ 3336 0102 0C000000 		.4byte	.LVL17
+ 3337 0106 0F000000 		.4byte	.LVL18-1
+ 3338 010a 0100     		.2byte	0x1
+ 3339 010c 53       		.byte	0x53
+ 3340 010d 00000000 		.4byte	0
+ 3341 0111 00000000 		.4byte	0
+ 3342              	.LLST9:
+ 3343 0115 26000000 		.4byte	.LVL23
+ 3344 0119 28000000 		.4byte	.LFE8
+ 3345 011d 0100     		.2byte	0x1
+ 3346 011f 53       		.byte	0x53
+ 3347 0120 00000000 		.4byte	0
+ 3348 0124 00000000 		.4byte	0
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 60
+
+
+ 3349              	.LLST10:
+ 3350 0128 00000000 		.4byte	.LFB11
+ 3351 012c 02000000 		.4byte	.LCFI2
+ 3352 0130 0200     		.2byte	0x2
+ 3353 0132 7D       		.byte	0x7d
+ 3354 0133 00       		.sleb128 0
+ 3355 0134 02000000 		.4byte	.LCFI2
+ 3356 0138 38000000 		.4byte	.LFE11
+ 3357 013c 0200     		.2byte	0x2
+ 3358 013e 7D       		.byte	0x7d
+ 3359 013f 10       		.sleb128 16
+ 3360 0140 00000000 		.4byte	0
+ 3361 0144 00000000 		.4byte	0
+ 3362              	.LLST11:
+ 3363 0148 00000000 		.4byte	.LVL24
+ 3364 014c 07000000 		.4byte	.LVL25-1
+ 3365 0150 0100     		.2byte	0x1
+ 3366 0152 50       		.byte	0x50
+ 3367 0153 07000000 		.4byte	.LVL25-1
+ 3368 0157 38000000 		.4byte	.LFE11
+ 3369 015b 0100     		.2byte	0x1
+ 3370 015d 54       		.byte	0x54
+ 3371 015e 00000000 		.4byte	0
+ 3372 0162 00000000 		.4byte	0
+ 3373              	.LLST12:
+ 3374 0166 1C000000 		.4byte	.LVL26
+ 3375 016a 2B000000 		.4byte	.LVL27-1
+ 3376 016e 0200     		.2byte	0x2
+ 3377 0170 71       		.byte	0x71
+ 3378 0171 24       		.sleb128 36
+ 3379 0172 2B000000 		.4byte	.LVL27-1
+ 3380 0176 38000000 		.4byte	.LFE11
+ 3381 017a 0100     		.2byte	0x1
+ 3382 017c 54       		.byte	0x54
+ 3383 017d 00000000 		.4byte	0
+ 3384 0181 00000000 		.4byte	0
+ 3385              	.LLST13:
+ 3386 0185 1C000000 		.4byte	.LVL26
+ 3387 0189 2B000000 		.4byte	.LVL27-1
+ 3388 018d 0100     		.2byte	0x1
+ 3389 018f 51       		.byte	0x51
+ 3390 0190 00000000 		.4byte	0
+ 3391 0194 00000000 		.4byte	0
+ 3392              	.LLST14:
+ 3393 0198 00000000 		.4byte	.LFB10
+ 3394 019c 02000000 		.4byte	.LCFI3
+ 3395 01a0 0200     		.2byte	0x2
+ 3396 01a2 7D       		.byte	0x7d
+ 3397 01a3 00       		.sleb128 0
+ 3398 01a4 02000000 		.4byte	.LCFI3
+ 3399 01a8 24000000 		.4byte	.LFE10
+ 3400 01ac 0200     		.2byte	0x2
+ 3401 01ae 7D       		.byte	0x7d
+ 3402 01af 08       		.sleb128 8
+ 3403 01b0 00000000 		.4byte	0
+ 3404 01b4 00000000 		.4byte	0
+ 3405              	.LLST15:
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 61
+
+
+ 3406 01b8 00000000 		.4byte	.LVL28
+ 3407 01bc 0D000000 		.4byte	.LVL31-1
+ 3408 01c0 0100     		.2byte	0x1
+ 3409 01c2 50       		.byte	0x50
+ 3410 01c3 0D000000 		.4byte	.LVL31-1
+ 3411 01c7 16000000 		.4byte	.LVL33
+ 3412 01cb 0100     		.2byte	0x1
+ 3413 01cd 54       		.byte	0x54
+ 3414 01ce 16000000 		.4byte	.LVL33
+ 3415 01d2 24000000 		.4byte	.LFE10
+ 3416 01d6 0400     		.2byte	0x4
+ 3417 01d8 F3       		.byte	0xf3
+ 3418 01d9 01       		.uleb128 0x1
+ 3419 01da 50       		.byte	0x50
+ 3420 01db 9F       		.byte	0x9f
+ 3421 01dc 00000000 		.4byte	0
+ 3422 01e0 00000000 		.4byte	0
+ 3423              	.LLST16:
+ 3424 01e4 16000000 		.4byte	.LVL33
+ 3425 01e8 19000000 		.4byte	.LVL34-1
+ 3426 01ec 0100     		.2byte	0x1
+ 3427 01ee 50       		.byte	0x50
+ 3428 01ef 19000000 		.4byte	.LVL34-1
+ 3429 01f3 24000000 		.4byte	.LFE10
+ 3430 01f7 0100     		.2byte	0x1
+ 3431 01f9 54       		.byte	0x54
+ 3432 01fa 00000000 		.4byte	0
+ 3433 01fe 00000000 		.4byte	0
+ 3434              	.LLST17:
+ 3435 0202 0A000000 		.4byte	.LVL30
+ 3436 0206 0D000000 		.4byte	.LVL31-1
+ 3437 020a 0100     		.2byte	0x1
+ 3438 020c 53       		.byte	0x53
+ 3439 020d 00000000 		.4byte	0
+ 3440 0211 00000000 		.4byte	0
+ 3441              	.LLST18:
+ 3442 0215 20000000 		.4byte	.LVL36
+ 3443 0219 24000000 		.4byte	.LFE10
+ 3444 021d 0100     		.2byte	0x1
+ 3445 021f 53       		.byte	0x53
+ 3446 0220 00000000 		.4byte	0
+ 3447 0224 00000000 		.4byte	0
+ 3448              	.LLST19:
+ 3449 0228 00000000 		.4byte	.LFB13
+ 3450 022c 02000000 		.4byte	.LCFI4
+ 3451 0230 0200     		.2byte	0x2
+ 3452 0232 7D       		.byte	0x7d
+ 3453 0233 00       		.sleb128 0
+ 3454 0234 02000000 		.4byte	.LCFI4
+ 3455 0238 44000000 		.4byte	.LFE13
+ 3456 023c 0200     		.2byte	0x2
+ 3457 023e 7D       		.byte	0x7d
+ 3458 023f 10       		.sleb128 16
+ 3459 0240 00000000 		.4byte	0
+ 3460 0244 00000000 		.4byte	0
+ 3461              	.LLST20:
+ 3462 0248 00000000 		.4byte	.LVL37
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 62
+
+
+ 3463 024c 09000000 		.4byte	.LVL38-1
+ 3464 0250 0100     		.2byte	0x1
+ 3465 0252 50       		.byte	0x50
+ 3466 0253 09000000 		.4byte	.LVL38-1
+ 3467 0257 44000000 		.4byte	.LFE13
+ 3468 025b 0100     		.2byte	0x1
+ 3469 025d 54       		.byte	0x54
+ 3470 025e 00000000 		.4byte	0
+ 3471 0262 00000000 		.4byte	0
+ 3472              	.LLST21:
+ 3473 0266 00000000 		.4byte	.LVL37
+ 3474 026a 09000000 		.4byte	.LVL38-1
+ 3475 026e 0100     		.2byte	0x1
+ 3476 0270 51       		.byte	0x51
+ 3477 0271 09000000 		.4byte	.LVL38-1
+ 3478 0275 44000000 		.4byte	.LFE13
+ 3479 0279 0100     		.2byte	0x1
+ 3480 027b 55       		.byte	0x55
+ 3481 027c 00000000 		.4byte	0
+ 3482 0280 00000000 		.4byte	0
+ 3483              	.LLST22:
+ 3484 0284 20000000 		.4byte	.LVL39
+ 3485 0288 35000000 		.4byte	.LVL40-1
+ 3486 028c 0200     		.2byte	0x2
+ 3487 028e 73       		.byte	0x73
+ 3488 028f 24       		.sleb128 36
+ 3489 0290 35000000 		.4byte	.LVL40-1
+ 3490 0294 36000000 		.4byte	.LVL40
+ 3491 0298 0100     		.2byte	0x1
+ 3492 029a 54       		.byte	0x54
+ 3493 029b 00000000 		.4byte	0
+ 3494 029f 00000000 		.4byte	0
+ 3495              	.LLST23:
+ 3496 02a3 20000000 		.4byte	.LVL39
+ 3497 02a7 35000000 		.4byte	.LVL40-1
+ 3498 02ab 0100     		.2byte	0x1
+ 3499 02ad 53       		.byte	0x53
+ 3500 02ae 00000000 		.4byte	0
+ 3501 02b2 00000000 		.4byte	0
+ 3502              	.LLST24:
+ 3503 02b6 00000000 		.4byte	.LFB12
+ 3504 02ba 02000000 		.4byte	.LCFI5
+ 3505 02be 0200     		.2byte	0x2
+ 3506 02c0 7D       		.byte	0x7d
+ 3507 02c1 00       		.sleb128 0
+ 3508 02c2 02000000 		.4byte	.LCFI5
+ 3509 02c6 28000000 		.4byte	.LFE12
+ 3510 02ca 0200     		.2byte	0x2
+ 3511 02cc 7D       		.byte	0x7d
+ 3512 02cd 10       		.sleb128 16
+ 3513 02ce 00000000 		.4byte	0
+ 3514 02d2 00000000 		.4byte	0
+ 3515              	.LLST25:
+ 3516 02d6 00000000 		.4byte	.LVL41
+ 3517 02da 0F000000 		.4byte	.LVL44-1
+ 3518 02de 0100     		.2byte	0x1
+ 3519 02e0 50       		.byte	0x50
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 63
+
+
+ 3520 02e1 0F000000 		.4byte	.LVL44-1
+ 3521 02e5 28000000 		.4byte	.LFE12
+ 3522 02e9 0100     		.2byte	0x1
+ 3523 02eb 55       		.byte	0x55
+ 3524 02ec 00000000 		.4byte	0
+ 3525 02f0 00000000 		.4byte	0
+ 3526              	.LLST26:
+ 3527 02f4 00000000 		.4byte	.LVL41
+ 3528 02f8 0F000000 		.4byte	.LVL44-1
+ 3529 02fc 0100     		.2byte	0x1
+ 3530 02fe 51       		.byte	0x51
+ 3531 02ff 0F000000 		.4byte	.LVL44-1
+ 3532 0303 1A000000 		.4byte	.LVL46
+ 3533 0307 0100     		.2byte	0x1
+ 3534 0309 54       		.byte	0x54
+ 3535 030a 1A000000 		.4byte	.LVL46
+ 3536 030e 28000000 		.4byte	.LFE12
+ 3537 0312 0400     		.2byte	0x4
+ 3538 0314 F3       		.byte	0xf3
+ 3539 0315 01       		.uleb128 0x1
+ 3540 0316 51       		.byte	0x51
+ 3541 0317 9F       		.byte	0x9f
+ 3542 0318 00000000 		.4byte	0
+ 3543 031c 00000000 		.4byte	0
+ 3544              	.LLST27:
+ 3545 0320 1A000000 		.4byte	.LVL46
+ 3546 0324 1D000000 		.4byte	.LVL47-1
+ 3547 0328 0100     		.2byte	0x1
+ 3548 032a 50       		.byte	0x50
+ 3549 032b 1D000000 		.4byte	.LVL47-1
+ 3550 032f 28000000 		.4byte	.LFE12
+ 3551 0333 0100     		.2byte	0x1
+ 3552 0335 54       		.byte	0x54
+ 3553 0336 00000000 		.4byte	0
+ 3554 033a 00000000 		.4byte	0
+ 3555              	.LLST28:
+ 3556 033e 0C000000 		.4byte	.LVL43
+ 3557 0342 0F000000 		.4byte	.LVL44-1
+ 3558 0346 0100     		.2byte	0x1
+ 3559 0348 53       		.byte	0x53
+ 3560 0349 00000000 		.4byte	0
+ 3561 034d 00000000 		.4byte	0
+ 3562              	.LLST29:
+ 3563 0351 24000000 		.4byte	.LVL49
+ 3564 0355 28000000 		.4byte	.LFE12
+ 3565 0359 0100     		.2byte	0x1
+ 3566 035b 53       		.byte	0x53
+ 3567 035c 00000000 		.4byte	0
+ 3568 0360 00000000 		.4byte	0
+ 3569              	.LLST30:
+ 3570 0364 00000000 		.4byte	.LFB14
+ 3571 0368 02000000 		.4byte	.LCFI6
+ 3572 036c 0200     		.2byte	0x2
+ 3573 036e 7D       		.byte	0x7d
+ 3574 036f 00       		.sleb128 0
+ 3575 0370 02000000 		.4byte	.LCFI6
+ 3576 0374 34000000 		.4byte	.LFE14
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 64
+
+
+ 3577 0378 0200     		.2byte	0x2
+ 3578 037a 7D       		.byte	0x7d
+ 3579 037b 08       		.sleb128 8
+ 3580 037c 00000000 		.4byte	0
+ 3581 0380 00000000 		.4byte	0
+ 3582              	.LLST31:
+ 3583 0384 00000000 		.4byte	.LVL50
+ 3584 0388 0D000000 		.4byte	.LVL53-1
+ 3585 038c 0100     		.2byte	0x1
+ 3586 038e 50       		.byte	0x50
+ 3587 038f 0D000000 		.4byte	.LVL53-1
+ 3588 0393 34000000 		.4byte	.LFE14
+ 3589 0397 0100     		.2byte	0x1
+ 3590 0399 54       		.byte	0x54
+ 3591 039a 00000000 		.4byte	0
+ 3592 039e 00000000 		.4byte	0
+ 3593              	.LLST32:
+ 3594 03a2 0A000000 		.4byte	.LVL52
+ 3595 03a6 0D000000 		.4byte	.LVL53-1
+ 3596 03aa 0100     		.2byte	0x1
+ 3597 03ac 53       		.byte	0x53
+ 3598 03ad 00000000 		.4byte	0
+ 3599 03b1 00000000 		.4byte	0
+ 3600              	.LLST33:
+ 3601 03b5 22000000 		.4byte	.LVL56
+ 3602 03b9 24000000 		.4byte	.LVL57
+ 3603 03bd 0100     		.2byte	0x1
+ 3604 03bf 53       		.byte	0x53
+ 3605 03c0 00000000 		.4byte	0
+ 3606 03c4 00000000 		.4byte	0
+ 3607              	.LLST34:
+ 3608 03c8 26000000 		.4byte	.LVL58
+ 3609 03cc 31000000 		.4byte	.LVL59-1
+ 3610 03d0 0100     		.2byte	0x1
+ 3611 03d2 50       		.byte	0x50
+ 3612 03d3 00000000 		.4byte	0
+ 3613 03d7 00000000 		.4byte	0
+ 3614              	.LLST35:
+ 3615 03db 00000000 		.4byte	.LFB15
+ 3616 03df 02000000 		.4byte	.LCFI7
+ 3617 03e3 0200     		.2byte	0x2
+ 3618 03e5 7D       		.byte	0x7d
+ 3619 03e6 00       		.sleb128 0
+ 3620 03e7 02000000 		.4byte	.LCFI7
+ 3621 03eb 2A000000 		.4byte	.LFE15
+ 3622 03ef 0200     		.2byte	0x2
+ 3623 03f1 7D       		.byte	0x7d
+ 3624 03f2 08       		.sleb128 8
+ 3625 03f3 00000000 		.4byte	0
+ 3626 03f7 00000000 		.4byte	0
+ 3627              	.LLST36:
+ 3628 03fb 00000000 		.4byte	.LVL60
+ 3629 03ff 07000000 		.4byte	.LVL61-1
+ 3630 0403 0100     		.2byte	0x1
+ 3631 0405 50       		.byte	0x50
+ 3632 0406 07000000 		.4byte	.LVL61-1
+ 3633 040a 2A000000 		.4byte	.LFE15
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 65
+
+
+ 3634 040e 0100     		.2byte	0x1
+ 3635 0410 54       		.byte	0x54
+ 3636 0411 00000000 		.4byte	0
+ 3637 0415 00000000 		.4byte	0
+ 3638              	.LLST37:
+ 3639 0419 16000000 		.4byte	.LVL63
+ 3640 041d 29000000 		.4byte	.LVL64-1
+ 3641 0421 0100     		.2byte	0x1
+ 3642 0423 51       		.byte	0x51
+ 3643 0424 00000000 		.4byte	0
+ 3644 0428 00000000 		.4byte	0
+ 3645              	.LLST38:
+ 3646 042c 00000000 		.4byte	.LFB16
+ 3647 0430 02000000 		.4byte	.LCFI8
+ 3648 0434 0200     		.2byte	0x2
+ 3649 0436 7D       		.byte	0x7d
+ 3650 0437 00       		.sleb128 0
+ 3651 0438 02000000 		.4byte	.LCFI8
+ 3652 043c A2000000 		.4byte	.LFE16
+ 3653 0440 0200     		.2byte	0x2
+ 3654 0442 7D       		.byte	0x7d
+ 3655 0443 18       		.sleb128 24
+ 3656 0444 00000000 		.4byte	0
+ 3657 0448 00000000 		.4byte	0
+ 3658              	.LLST39:
+ 3659 044c 00000000 		.4byte	.LVL65
+ 3660 0450 09000000 		.4byte	.LVL66-1
+ 3661 0454 0100     		.2byte	0x1
+ 3662 0456 50       		.byte	0x50
+ 3663 0457 09000000 		.4byte	.LVL66-1
+ 3664 045b A2000000 		.4byte	.LFE16
+ 3665 045f 0100     		.2byte	0x1
+ 3666 0461 54       		.byte	0x54
+ 3667 0462 00000000 		.4byte	0
+ 3668 0466 00000000 		.4byte	0
+ 3669              	.LLST40:
+ 3670 046a 00000000 		.4byte	.LVL65
+ 3671 046e 09000000 		.4byte	.LVL66-1
+ 3672 0472 0100     		.2byte	0x1
+ 3673 0474 51       		.byte	0x51
+ 3674 0475 09000000 		.4byte	.LVL66-1
+ 3675 0479 22000000 		.4byte	.LVL67
+ 3676 047d 0100     		.2byte	0x1
+ 3677 047f 55       		.byte	0x55
+ 3678 0480 22000000 		.4byte	.LVL67
+ 3679 0484 30000000 		.4byte	.LVL68
+ 3680 0488 0400     		.2byte	0x4
+ 3681 048a F3       		.byte	0xf3
+ 3682 048b 01       		.uleb128 0x1
+ 3683 048c 51       		.byte	0x51
+ 3684 048d 9F       		.byte	0x9f
+ 3685 048e 80000000 		.4byte	.LVL75
+ 3686 0492 90000000 		.4byte	.LVL77
+ 3687 0496 0100     		.2byte	0x1
+ 3688 0498 55       		.byte	0x55
+ 3689 0499 90000000 		.4byte	.LVL77
+ 3690 049d A0000000 		.4byte	.LVL79
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 66
+
+
+ 3691 04a1 0400     		.2byte	0x4
+ 3692 04a3 F3       		.byte	0xf3
+ 3693 04a4 01       		.uleb128 0x1
+ 3694 04a5 51       		.byte	0x51
+ 3695 04a6 9F       		.byte	0x9f
+ 3696 04a7 00000000 		.4byte	0
+ 3697 04ab 00000000 		.4byte	0
+ 3698              	.LLST41:
+ 3699 04af 52000000 		.4byte	.LVL69
+ 3700 04b3 7C000000 		.4byte	.LVL74
+ 3701 04b7 0100     		.2byte	0x1
+ 3702 04b9 54       		.byte	0x54
+ 3703 04ba 80000000 		.4byte	.LVL75
+ 3704 04be A0000000 		.4byte	.LVL79
+ 3705 04c2 0100     		.2byte	0x1
+ 3706 04c4 54       		.byte	0x54
+ 3707 04c5 00000000 		.4byte	0
+ 3708 04c9 00000000 		.4byte	0
+ 3709              	.LLST42:
+ 3710 04cd 54000000 		.4byte	.LVL70
+ 3711 04d1 5D000000 		.4byte	.LVL71-1
+ 3712 04d5 0100     		.2byte	0x1
+ 3713 04d7 50       		.byte	0x50
+ 3714 04d8 00000000 		.4byte	0
+ 3715 04dc 00000000 		.4byte	0
+ 3716              	.LLST43:
+ 3717 04e0 00000000 		.4byte	.LFB17
+ 3718 04e4 02000000 		.4byte	.LCFI9
+ 3719 04e8 0200     		.2byte	0x2
+ 3720 04ea 7D       		.byte	0x7d
+ 3721 04eb 00       		.sleb128 0
+ 3722 04ec 02000000 		.4byte	.LCFI9
+ 3723 04f0 68000000 		.4byte	.LFE17
+ 3724 04f4 0200     		.2byte	0x2
+ 3725 04f6 7D       		.byte	0x7d
+ 3726 04f7 10       		.sleb128 16
+ 3727 04f8 00000000 		.4byte	0
+ 3728 04fc 00000000 		.4byte	0
+ 3729              	.LLST44:
+ 3730 0500 00000000 		.4byte	.LVL80
+ 3731 0504 0F000000 		.4byte	.LVL83-1
+ 3732 0508 0100     		.2byte	0x1
+ 3733 050a 50       		.byte	0x50
+ 3734 050b 0F000000 		.4byte	.LVL83-1
+ 3735 050f 2A000000 		.4byte	.LVL85
+ 3736 0513 0100     		.2byte	0x1
+ 3737 0515 55       		.byte	0x55
+ 3738 0516 2A000000 		.4byte	.LVL85
+ 3739 051a 38000000 		.4byte	.LVL89
+ 3740 051e 0400     		.2byte	0x4
+ 3741 0520 F3       		.byte	0xf3
+ 3742 0521 01       		.uleb128 0x1
+ 3743 0522 50       		.byte	0x50
+ 3744 0523 9F       		.byte	0x9f
+ 3745 0524 38000000 		.4byte	.LVL89
+ 3746 0528 3A000000 		.4byte	.LVL90
+ 3747 052c 0100     		.2byte	0x1
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 67
+
+
+ 3748 052e 55       		.byte	0x55
+ 3749 052f 3A000000 		.4byte	.LVL90
+ 3750 0533 52000000 		.4byte	.LVL94
+ 3751 0537 0400     		.2byte	0x4
+ 3752 0539 F3       		.byte	0xf3
+ 3753 053a 01       		.uleb128 0x1
+ 3754 053b 50       		.byte	0x50
+ 3755 053c 9F       		.byte	0x9f
+ 3756 053d 52000000 		.4byte	.LVL94
+ 3757 0541 68000000 		.4byte	.LFE17
+ 3758 0545 0100     		.2byte	0x1
+ 3759 0547 55       		.byte	0x55
+ 3760 0548 00000000 		.4byte	0
+ 3761 054c 00000000 		.4byte	0
+ 3762              	.LLST45:
+ 3763 0550 00000000 		.4byte	.LVL80
+ 3764 0554 0F000000 		.4byte	.LVL83-1
+ 3765 0558 0100     		.2byte	0x1
+ 3766 055a 51       		.byte	0x51
+ 3767 055b 0F000000 		.4byte	.LVL83-1
+ 3768 055f 2A000000 		.4byte	.LVL85
+ 3769 0563 0100     		.2byte	0x1
+ 3770 0565 54       		.byte	0x54
+ 3771 0566 2A000000 		.4byte	.LVL85
+ 3772 056a 38000000 		.4byte	.LVL89
+ 3773 056e 0400     		.2byte	0x4
+ 3774 0570 F3       		.byte	0xf3
+ 3775 0571 01       		.uleb128 0x1
+ 3776 0572 51       		.byte	0x51
+ 3777 0573 9F       		.byte	0x9f
+ 3778 0574 38000000 		.4byte	.LVL89
+ 3779 0578 50000000 		.4byte	.LVL93
+ 3780 057c 0100     		.2byte	0x1
+ 3781 057e 54       		.byte	0x54
+ 3782 057f 50000000 		.4byte	.LVL93
+ 3783 0583 52000000 		.4byte	.LVL94
+ 3784 0587 0400     		.2byte	0x4
+ 3785 0589 F3       		.byte	0xf3
+ 3786 058a 01       		.uleb128 0x1
+ 3787 058b 51       		.byte	0x51
+ 3788 058c 9F       		.byte	0x9f
+ 3789 058d 52000000 		.4byte	.LVL94
+ 3790 0591 68000000 		.4byte	.LFE17
+ 3791 0595 0100     		.2byte	0x1
+ 3792 0597 54       		.byte	0x54
+ 3793 0598 00000000 		.4byte	0
+ 3794 059c 00000000 		.4byte	0
+ 3795              	.LLST46:
+ 3796 05a0 28000000 		.4byte	.LVL84
+ 3797 05a4 2A000000 		.4byte	.LVL85
+ 3798 05a8 0200     		.2byte	0x2
+ 3799 05aa 30       		.byte	0x30
+ 3800 05ab 9F       		.byte	0x9f
+ 3801 05ac 2A000000 		.4byte	.LVL85
+ 3802 05b0 38000000 		.4byte	.LVL89
+ 3803 05b4 0100     		.2byte	0x1
+ 3804 05b6 54       		.byte	0x54
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 68
+
+
+ 3805 05b7 50000000 		.4byte	.LVL93
+ 3806 05bb 52000000 		.4byte	.LVL94
+ 3807 05bf 0100     		.2byte	0x1
+ 3808 05c1 54       		.byte	0x54
+ 3809 05c2 00000000 		.4byte	0
+ 3810 05c6 00000000 		.4byte	0
+ 3811              	.LLST47:
+ 3812 05ca 0C000000 		.4byte	.LVL82
+ 3813 05ce 0F000000 		.4byte	.LVL83-1
+ 3814 05d2 0100     		.2byte	0x1
+ 3815 05d4 53       		.byte	0x53
+ 3816 05d5 00000000 		.4byte	0
+ 3817 05d9 00000000 		.4byte	0
+ 3818              	.LLST48:
+ 3819 05dd 34000000 		.4byte	.LVL88
+ 3820 05e1 38000000 		.4byte	.LVL89
+ 3821 05e5 0100     		.2byte	0x1
+ 3822 05e7 53       		.byte	0x53
+ 3823 05e8 00000000 		.4byte	0
+ 3824 05ec 00000000 		.4byte	0
+ 3825              	.LLST49:
+ 3826 05f0 3E000000 		.4byte	.LVL91
+ 3827 05f4 52000000 		.4byte	.LVL94
+ 3828 05f8 0100     		.2byte	0x1
+ 3829 05fa 55       		.byte	0x55
+ 3830 05fb 00000000 		.4byte	0
+ 3831 05ff 00000000 		.4byte	0
+ 3832              	.LLST50:
+ 3833 0603 3E000000 		.4byte	.LVL91
+ 3834 0607 50000000 		.4byte	.LVL93
+ 3835 060b 0100     		.2byte	0x1
+ 3836 060d 54       		.byte	0x54
+ 3837 060e 50000000 		.4byte	.LVL93
+ 3838 0612 52000000 		.4byte	.LVL94
+ 3839 0616 0400     		.2byte	0x4
+ 3840 0618 F3       		.byte	0xf3
+ 3841 0619 01       		.uleb128 0x1
+ 3842 061a 51       		.byte	0x51
+ 3843 061b 9F       		.byte	0x9f
+ 3844 061c 00000000 		.4byte	0
+ 3845 0620 00000000 		.4byte	0
+ 3846              	.LLST52:
+ 3847 0624 54000000 		.4byte	.LVL95
+ 3848 0628 5D000000 		.4byte	.LVL96-1
+ 3849 062c 0100     		.2byte	0x1
+ 3850 062e 50       		.byte	0x50
+ 3851 062f 00000000 		.4byte	0
+ 3852 0633 00000000 		.4byte	0
+ 3853              		.section	.debug_aranges,"",%progbits
+ 3854 0000 6C000000 		.4byte	0x6c
+ 3855 0004 0200     		.2byte	0x2
+ 3856 0006 00000000 		.4byte	.Ldebug_info0
+ 3857 000a 04       		.byte	0x4
+ 3858 000b 00       		.byte	0
+ 3859 000c 0000     		.2byte	0
+ 3860 000e 0000     		.2byte	0
+ 3861 0010 00000000 		.4byte	.LFB7
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 69
+
+
+ 3862 0014 08000000 		.4byte	.LFE7-.LFB7
+ 3863 0018 00000000 		.4byte	.LFB9
+ 3864 001c 6E000000 		.4byte	.LFE9-.LFB9
+ 3865 0020 00000000 		.4byte	.LFB8
+ 3866 0024 28000000 		.4byte	.LFE8-.LFB8
+ 3867 0028 00000000 		.4byte	.LFB11
+ 3868 002c 38000000 		.4byte	.LFE11-.LFB11
+ 3869 0030 00000000 		.4byte	.LFB10
+ 3870 0034 24000000 		.4byte	.LFE10-.LFB10
+ 3871 0038 00000000 		.4byte	.LFB13
+ 3872 003c 44000000 		.4byte	.LFE13-.LFB13
+ 3873 0040 00000000 		.4byte	.LFB12
+ 3874 0044 28000000 		.4byte	.LFE12-.LFB12
+ 3875 0048 00000000 		.4byte	.LFB14
+ 3876 004c 34000000 		.4byte	.LFE14-.LFB14
+ 3877 0050 00000000 		.4byte	.LFB15
+ 3878 0054 2A000000 		.4byte	.LFE15-.LFB15
+ 3879 0058 00000000 		.4byte	.LFB16
+ 3880 005c A2000000 		.4byte	.LFE16-.LFB16
+ 3881 0060 00000000 		.4byte	.LFB17
+ 3882 0064 68000000 		.4byte	.LFE17-.LFB17
+ 3883 0068 00000000 		.4byte	0
+ 3884 006c 00000000 		.4byte	0
+ 3885              		.section	.debug_ranges,"",%progbits
+ 3886              	.Ldebug_ranges0:
+ 3887 0000 14000000 		.4byte	.LBB24
+ 3888 0004 1C000000 		.4byte	.LBE24
+ 3889 0008 30000000 		.4byte	.LBB29
+ 3890 000c 38000000 		.4byte	.LBE29
+ 3891 0010 44000000 		.4byte	.LBB30
+ 3892 0014 4C000000 		.4byte	.LBE30
+ 3893 0018 52000000 		.4byte	.LBB31
+ 3894 001c 5A000000 		.4byte	.LBE31
+ 3895 0020 00000000 		.4byte	0
+ 3896 0024 00000000 		.4byte	0
+ 3897 0028 14000000 		.4byte	.LBB25
+ 3898 002c 1C000000 		.4byte	.LBE25
+ 3899 0030 30000000 		.4byte	.LBB26
+ 3900 0034 38000000 		.4byte	.LBE26
+ 3901 0038 44000000 		.4byte	.LBB27
+ 3902 003c 4C000000 		.4byte	.LBE27
+ 3903 0040 52000000 		.4byte	.LBB28
+ 3904 0044 5A000000 		.4byte	.LBE28
+ 3905 0048 00000000 		.4byte	0
+ 3906 004c 00000000 		.4byte	0
+ 3907 0050 1C000000 		.4byte	.LBB34
+ 3908 0054 22000000 		.4byte	.LBE34
+ 3909 0058 24000000 		.4byte	.LBB37
+ 3910 005c 28000000 		.4byte	.LBE37
+ 3911 0060 00000000 		.4byte	0
+ 3912 0064 00000000 		.4byte	0
+ 3913 0068 02000000 		.4byte	.LBB38
+ 3914 006c 04000000 		.4byte	.LBE38
+ 3915 0070 06000000 		.4byte	.LBB39
+ 3916 0074 0A000000 		.4byte	.LBE39
+ 3917 0078 00000000 		.4byte	0
+ 3918 007c 00000000 		.4byte	0
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 70
+
+
+ 3919 0080 20000000 		.4byte	.LBB41
+ 3920 0084 24000000 		.4byte	.LBE41
+ 3921 0088 28000000 		.4byte	.LBB44
+ 3922 008c 2E000000 		.4byte	.LBE44
+ 3923 0090 00000000 		.4byte	0
+ 3924 0094 00000000 		.4byte	0
+ 3925 0098 02000000 		.4byte	.LBB47
+ 3926 009c 04000000 		.4byte	.LBE47
+ 3927 00a0 06000000 		.4byte	.LBB48
+ 3928 00a4 0A000000 		.4byte	.LBE48
+ 3929 00a8 00000000 		.4byte	0
+ 3930 00ac 00000000 		.4byte	0
+ 3931 00b0 24000000 		.4byte	.LBB50
+ 3932 00b4 28000000 		.4byte	.LBE50
+ 3933 00b8 2A000000 		.4byte	.LBB53
+ 3934 00bc 2E000000 		.4byte	.LBE53
+ 3935 00c0 00000000 		.4byte	0
+ 3936 00c4 00000000 		.4byte	0
+ 3937 00c8 24000000 		.4byte	.LBB51
+ 3938 00cc 28000000 		.4byte	.LBE51
+ 3939 00d0 2A000000 		.4byte	.LBB52
+ 3940 00d4 2E000000 		.4byte	.LBE52
+ 3941 00d8 00000000 		.4byte	0
+ 3942 00dc 00000000 		.4byte	0
+ 3943 00e0 14000000 		.4byte	.LBB54
+ 3944 00e4 22000000 		.4byte	.LBE54
+ 3945 00e8 26000000 		.4byte	.LBB59
+ 3946 00ec 2A000000 		.4byte	.LBE59
+ 3947 00f0 00000000 		.4byte	0
+ 3948 00f4 00000000 		.4byte	0
+ 3949 00f8 14000000 		.4byte	.LBB55
+ 3950 00fc 18000000 		.4byte	.LBE55
+ 3951 0100 1C000000 		.4byte	.LBB58
+ 3952 0104 20000000 		.4byte	.LBE58
+ 3953 0108 00000000 		.4byte	0
+ 3954 010c 00000000 		.4byte	0
+ 3955 0110 14000000 		.4byte	.LBB56
+ 3956 0114 18000000 		.4byte	.LBE56
+ 3957 0118 1C000000 		.4byte	.LBB57
+ 3958 011c 20000000 		.4byte	.LBE57
+ 3959 0120 00000000 		.4byte	0
+ 3960 0124 00000000 		.4byte	0
+ 3961 0128 52000000 		.4byte	.LBB60
+ 3962 012c 5A000000 		.4byte	.LBE60
+ 3963 0130 6A000000 		.4byte	.LBB65
+ 3964 0134 72000000 		.4byte	.LBE65
+ 3965 0138 80000000 		.4byte	.LBB66
+ 3966 013c 88000000 		.4byte	.LBE66
+ 3967 0140 90000000 		.4byte	.LBB67
+ 3968 0144 98000000 		.4byte	.LBE67
+ 3969 0148 00000000 		.4byte	0
+ 3970 014c 00000000 		.4byte	0
+ 3971 0150 52000000 		.4byte	.LBB61
+ 3972 0154 5A000000 		.4byte	.LBE61
+ 3973 0158 6A000000 		.4byte	.LBB62
+ 3974 015c 72000000 		.4byte	.LBE62
+ 3975 0160 80000000 		.4byte	.LBB63
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 71
+
+
+ 3976 0164 88000000 		.4byte	.LBE63
+ 3977 0168 90000000 		.4byte	.LBB64
+ 3978 016c 98000000 		.4byte	.LBE64
+ 3979 0170 00000000 		.4byte	0
+ 3980 0174 00000000 		.4byte	0
+ 3981 0178 3A000000 		.4byte	.LBB71
+ 3982 017c 3C000000 		.4byte	.LBE71
+ 3983 0180 40000000 		.4byte	.LBB75
+ 3984 0184 46000000 		.4byte	.LBE75
+ 3985 0188 48000000 		.4byte	.LBB76
+ 3986 018c 4A000000 		.4byte	.LBE76
+ 3987 0190 00000000 		.4byte	0
+ 3988 0194 00000000 		.4byte	0
+ 3989 0198 00000000 		.4byte	.LFB7
+ 3990 019c 08000000 		.4byte	.LFE7
+ 3991 01a0 00000000 		.4byte	.LFB9
+ 3992 01a4 6E000000 		.4byte	.LFE9
+ 3993 01a8 00000000 		.4byte	.LFB8
+ 3994 01ac 28000000 		.4byte	.LFE8
+ 3995 01b0 00000000 		.4byte	.LFB11
+ 3996 01b4 38000000 		.4byte	.LFE11
+ 3997 01b8 00000000 		.4byte	.LFB10
+ 3998 01bc 24000000 		.4byte	.LFE10
+ 3999 01c0 00000000 		.4byte	.LFB13
+ 4000 01c4 44000000 		.4byte	.LFE13
+ 4001 01c8 00000000 		.4byte	.LFB12
+ 4002 01cc 28000000 		.4byte	.LFE12
+ 4003 01d0 00000000 		.4byte	.LFB14
+ 4004 01d4 34000000 		.4byte	.LFE14
+ 4005 01d8 00000000 		.4byte	.LFB15
+ 4006 01dc 2A000000 		.4byte	.LFE15
+ 4007 01e0 00000000 		.4byte	.LFB16
+ 4008 01e4 A2000000 		.4byte	.LFE16
+ 4009 01e8 00000000 		.4byte	.LFB17
+ 4010 01ec 68000000 		.4byte	.LFE17
+ 4011 01f0 00000000 		.4byte	0
+ 4012 01f4 00000000 		.4byte	0
+ 4013              		.section	.debug_line,"",%progbits
+ 4014              	.Ldebug_line0:
+ 4015 0000 95030000 		.section	.debug_str,"MS",%progbits,1
+ 4015      02007A01 
+ 4015      00000201 
+ 4015      FB0E0D00 
+ 4015      01010101 
+ 4016              	.LASF37:
+ 4017 0000 705F6D73 		.ascii	"p_msg\000"
+ 4017      6700
+ 4018              	.LASF91:
+ 4019 0006 71756575 		.ascii	"queue_insert\000"
+ 4019      655F696E 
+ 4019      73657274 
+ 4019      00
+ 4020              	.LASF78:
+ 4021 0013 63685365 		.ascii	"chSemSignalI\000"
+ 4021      6D536967 
+ 4021      6E616C49 
+ 4021      00
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 72
+
+
+ 4022              	.LASF62:
+ 4023 0020 7264796D 		.ascii	"rdymsg\000"
+ 4023      736700
+ 4024              	.LASF82:
+ 4025 0027 6462675F 		.ascii	"dbg_check_lock\000"
+ 4025      63686563 
+ 4025      6B5F6C6F 
+ 4025      636B00
+ 4026              	.LASF11:
+ 4027 0036 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 4027      206C6F6E 
+ 4027      6720756E 
+ 4027      7369676E 
+ 4027      65642069 
+ 4028              	.LASF63:
+ 4029 004d 65786974 		.ascii	"exitcode\000"
+ 4029      636F6465 
+ 4029      00
+ 4030              	.LASF79:
+ 4031 0056 63685365 		.ascii	"chSemAddCounterI\000"
+ 4031      6D416464 
+ 4031      436F756E 
+ 4031      74657249 
+ 4031      00
+ 4032              	.LASF25:
+ 4033 0067 705F7072 		.ascii	"p_prio\000"
+ 4033      696F00
+ 4034              	.LASF10:
+ 4035 006e 6C6F6E67 		.ascii	"long long int\000"
+ 4035      206C6F6E 
+ 4035      6720696E 
+ 4035      7400
+ 4036              	.LASF1:
+ 4037 007c 7369676E 		.ascii	"signed char\000"
+ 4037      65642063 
+ 4037      68617200 
+ 4038              	.LASF80:
+ 4039 0088 63685365 		.ascii	"chSemSignalWait\000"
+ 4039      6D536967 
+ 4039      6E616C57 
+ 4039      61697400 
+ 4040              	.LASF41:
+ 4041 0098 705F6D70 		.ascii	"p_mpool\000"
+ 4041      6F6F6C00 
+ 4042              	.LASF59:
+ 4043 00a0 6D5F7175 		.ascii	"m_queue\000"
+ 4043      65756500 
+ 4044              	.LASF90:
+ 4045 00a8 433A5C43 		.ascii	"C:\\ChibiStudio\\workspace26\\Mobile_phone\000"
+ 4045      68696269 
+ 4045      53747564 
+ 4045      696F5C77 
+ 4045      6F726B73 
+ 4046              	.LASF16:
+ 4047 00d0 74736C69 		.ascii	"tslices_t\000"
+ 4047      6365735F 
+ 4047      7400
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 73
+
+
+ 4048              	.LASF7:
+ 4049 00da 6C6F6E67 		.ascii	"long int\000"
+ 4049      20696E74 
+ 4049      00
+ 4050              	.LASF14:
+ 4051 00e3 74737461 		.ascii	"tstate_t\000"
+ 4051      74655F74 
+ 4051      00
+ 4052              	.LASF77:
+ 4053 00ec 63685365 		.ascii	"chSemSignal\000"
+ 4053      6D536967 
+ 4053      6E616C00 
+ 4054              	.LASF27:
+ 4055 00f8 705F6E65 		.ascii	"p_newer\000"
+ 4055      77657200 
+ 4056              	.LASF56:
+ 4057 0100 735F7175 		.ascii	"s_queue\000"
+ 4057      65756500 
+ 4058              	.LASF83:
+ 4059 0108 63685363 		.ascii	"chSchRescheduleS\000"
+ 4059      68526573 
+ 4059      63686564 
+ 4059      756C6553 
+ 4059      00
+ 4060              	.LASF51:
+ 4061 0119 725F6E65 		.ascii	"r_newer\000"
+ 4061      77657200 
+ 4062              	.LASF44:
+ 4063 0121 72656761 		.ascii	"regarm_t\000"
+ 4063      726D5F74 
+ 4063      00
+ 4064              	.LASF21:
+ 4065 012a 636E745F 		.ascii	"cnt_t\000"
+ 4065      7400
+ 4066              	.LASF0:
+ 4067 0130 756E7369 		.ascii	"unsigned int\000"
+ 4067      676E6564 
+ 4067      20696E74 
+ 4067      00
+ 4068              	.LASF76:
+ 4069 013d 63685365 		.ascii	"chSemWaitTimeout\000"
+ 4069      6D576169 
+ 4069      7454696D 
+ 4069      656F7574 
+ 4069      00
+ 4070              	.LASF9:
+ 4071 014e 6C6F6E67 		.ascii	"long unsigned int\000"
+ 4071      20756E73 
+ 4071      69676E65 
+ 4071      6420696E 
+ 4071      7400
+ 4072              	.LASF57:
+ 4073 0160 735F636E 		.ascii	"s_cnt\000"
+ 4073      7400
+ 4074              	.LASF46:
+ 4075 0166 636F6E74 		.ascii	"context\000"
+ 4075      65787400 
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 74
+
+
+ 4076              	.LASF4:
+ 4077 016e 73686F72 		.ascii	"short unsigned int\000"
+ 4077      7420756E 
+ 4077      7369676E 
+ 4077      65642069 
+ 4077      6E7400
+ 4078              	.LASF71:
+ 4079 0181 63685365 		.ascii	"chSemReset\000"
+ 4079      6D526573 
+ 4079      657400
+ 4080              	.LASF18:
+ 4081 018c 6D73675F 		.ascii	"msg_t\000"
+ 4081      7400
+ 4082              	.LASF81:
+ 4083 0192 63684462 		.ascii	"chDbgCheckClassI\000"
+ 4083      67436865 
+ 4083      636B436C 
+ 4083      61737349 
+ 4083      00
+ 4084              	.LASF13:
+ 4085 01a3 746D6F64 		.ascii	"tmode_t\000"
+ 4085      655F7400 
+ 4086              	.LASF85:
+ 4087 01ab 63684462 		.ascii	"chDbgCheckClassS\000"
+ 4087      67436865 
+ 4087      636B436C 
+ 4087      61737353 
+ 4087      00
+ 4088              	.LASF43:
+ 4089 01bc 54687265 		.ascii	"ThreadsList\000"
+ 4089      6164734C 
+ 4089      69737400 
+ 4090              	.LASF19:
+ 4091 01c8 6576656E 		.ascii	"eventmask_t\000"
+ 4091      746D6173 
+ 4091      6B5F7400 
+ 4092              	.LASF58:
+ 4093 01d4 4D757465 		.ascii	"Mutex\000"
+ 4093      7800
+ 4094              	.LASF84:
+ 4095 01da 6462675F 		.ascii	"dbg_check_unlock\000"
+ 4095      63686563 
+ 4095      6B5F756E 
+ 4095      6C6F636B 
+ 4095      00
+ 4096              	.LASF47:
+ 4097 01eb 73697A65 		.ascii	"sizetype\000"
+ 4097      74797065 
+ 4097      00
+ 4098              	.LASF88:
+ 4099 01f4 474E5520 		.ascii	"GNU C 4.7.4 20140401 (release) [ARM/embedded-4_7-br"
+ 4099      4320342E 
+ 4099      372E3420 
+ 4099      32303134 
+ 4099      30343031 
+ 4100 0227 616E6368 		.ascii	"anch revision 209195]\000"
+ 4100      20726576 
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 75
+
+
+ 4100      6973696F 
+ 4100      6E203230 
+ 4100      39313935 
+ 4101              	.LASF28:
+ 4102 023d 705F6F6C 		.ascii	"p_older\000"
+ 4102      64657200 
+ 4103              	.LASF50:
+ 4104 0245 725F6374 		.ascii	"r_ctx\000"
+ 4104      7800
+ 4105              	.LASF42:
+ 4106 024b 54687265 		.ascii	"ThreadsQueue\000"
+ 4106      61647351 
+ 4106      75657565 
+ 4106      00
+ 4107              	.LASF75:
+ 4108 0258 74696D65 		.ascii	"time\000"
+ 4108      00
+ 4109              	.LASF53:
+ 4110 025d 725F6375 		.ascii	"r_current\000"
+ 4110      7272656E 
+ 4110      7400
+ 4111              	.LASF52:
+ 4112 0267 725F6F6C 		.ascii	"r_older\000"
+ 4112      64657200 
+ 4113              	.LASF15:
+ 4114 026f 74726566 		.ascii	"trefs_t\000"
+ 4114      735F7400 
+ 4115              	.LASF24:
+ 4116 0277 705F7072 		.ascii	"p_prev\000"
+ 4116      657600
+ 4117              	.LASF17:
+ 4118 027e 74707269 		.ascii	"tprio_t\000"
+ 4118      6F5F7400 
+ 4119              	.LASF12:
+ 4120 0286 5F426F6F 		.ascii	"_Bool\000"
+ 4120      6C00
+ 4121              	.LASF6:
+ 4122 028c 696E7433 		.ascii	"int32_t\000"
+ 4122      325F7400 
+ 4123              	.LASF2:
+ 4124 0294 756E7369 		.ascii	"unsigned char\000"
+ 4124      676E6564 
+ 4124      20636861 
+ 4124      7200
+ 4125              	.LASF39:
+ 4126 02a2 705F6D74 		.ascii	"p_mtxlist\000"
+ 4126      786C6973 
+ 4126      7400
+ 4127              	.LASF3:
+ 4128 02ac 73686F72 		.ascii	"short int\000"
+ 4128      7420696E 
+ 4128      7400
+ 4129              	.LASF30:
+ 4130 02b6 705F7374 		.ascii	"p_state\000"
+ 4130      61746500 
+ 4131              	.LASF33:
+ 4132 02be 705F7072 		.ascii	"p_preempt\000"
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 76
+
+
+ 4132      65656D70 
+ 4132      7400
+ 4133              	.LASF49:
+ 4134 02c8 725F7072 		.ascii	"r_prio\000"
+ 4134      696F00
+ 4135              	.LASF65:
+ 4136 02cf 65776D61 		.ascii	"ewmask\000"
+ 4136      736B00
+ 4137              	.LASF23:
+ 4138 02d6 705F6E65 		.ascii	"p_next\000"
+ 4138      787400
+ 4139              	.LASF31:
+ 4140 02dd 705F666C 		.ascii	"p_flags\000"
+ 4140      61677300 
+ 4141              	.LASF72:
+ 4142 02e5 63685365 		.ascii	"chSemWaitS\000"
+ 4142      6D576169 
+ 4142      745300
+ 4143              	.LASF22:
+ 4144 02f0 54687265 		.ascii	"Thread\000"
+ 4144      616400
+ 4145              	.LASF93:
+ 4146 02f7 63685363 		.ascii	"chSchGoSleepS\000"
+ 4146      68476F53 
+ 4146      6C656570 
+ 4146      5300
+ 4147              	.LASF38:
+ 4148 0305 705F6570 		.ascii	"p_epending\000"
+ 4148      656E6469 
+ 4148      6E6700
+ 4149              	.LASF8:
+ 4150 0310 75696E74 		.ascii	"uint32_t\000"
+ 4150      33325F74 
+ 4150      00
+ 4151              	.LASF48:
+ 4152 0319 725F7175 		.ascii	"r_queue\000"
+ 4152      65756500 
+ 4153              	.LASF86:
+ 4154 0321 63685363 		.ascii	"chSchReadyI\000"
+ 4154      68526561 
+ 4154      64794900 
+ 4155              	.LASF66:
+ 4156 032d 63686172 		.ascii	"char\000"
+ 4156      00
+ 4157              	.LASF68:
+ 4158 0332 6669666F 		.ascii	"fifo_remove\000"
+ 4158      5F72656D 
+ 4158      6F766500 
+ 4159              	.LASF74:
+ 4160 033e 63685365 		.ascii	"chSemWaitTimeoutS\000"
+ 4160      6D576169 
+ 4160      7454696D 
+ 4160      656F7574 
+ 4160      5300
+ 4161              	.LASF61:
+ 4162 0350 6D5F6E65 		.ascii	"m_next\000"
+ 4162      787400
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 77
+
+
+ 4163              	.LASF20:
+ 4164 0357 73797374 		.ascii	"systime_t\000"
+ 4164      696D655F 
+ 4164      7400
+ 4165              	.LASF40:
+ 4166 0361 705F7265 		.ascii	"p_realprio\000"
+ 4166      616C7072 
+ 4166      696F00
+ 4167              	.LASF73:
+ 4168 036c 63685365 		.ascii	"chSemWait\000"
+ 4168      6D576169 
+ 4168      7400
+ 4169              	.LASF34:
+ 4170 0376 705F7469 		.ascii	"p_time\000"
+ 4170      6D6500
+ 4171              	.LASF67:
+ 4172 037d 6C69666F 		.ascii	"lifo_remove\000"
+ 4172      5F72656D 
+ 4172      6F766500 
+ 4173              	.LASF45:
+ 4174 0389 696E7463 		.ascii	"intctx\000"
+ 4174      747800
+ 4175              	.LASF36:
+ 4176 0390 705F6D73 		.ascii	"p_msgqueue\000"
+ 4176      67717565 
+ 4176      756500
+ 4177              	.LASF94:
+ 4178 039b 63685363 		.ascii	"chSchWakeupS\000"
+ 4178      6857616B 
+ 4178      65757053 
+ 4178      00
+ 4179              	.LASF55:
+ 4180 03a8 53656D61 		.ascii	"Semaphore\000"
+ 4180      70686F72 
+ 4180      6500
+ 4181              	.LASF32:
+ 4182 03b2 705F7265 		.ascii	"p_refs\000"
+ 4182      667300
+ 4183              	.LASF54:
+ 4184 03b9 52656164 		.ascii	"ReadyList\000"
+ 4184      794C6973 
+ 4184      7400
+ 4185              	.LASF70:
+ 4186 03c3 63685365 		.ascii	"chSemResetI\000"
+ 4186      6D526573 
+ 4186      65744900 
+ 4187              	.LASF92:
+ 4188 03cf 726C6973 		.ascii	"rlist\000"
+ 4188      7400
+ 4189              	.LASF5:
+ 4190 03d5 75696E74 		.ascii	"uint8_t\000"
+ 4190      385F7400 
+ 4191              	.LASF89:
+ 4192 03dd 2E2E2F2E 		.ascii	"../../chibios/os/kernel/src/chsem.c\000"
+ 4192      2E2F6368 
+ 4192      6962696F 
+ 4192      732F6F73 
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 78
+
+
+ 4192      2F6B6572 
+ 4193              	.LASF64:
+ 4194 0401 77746F62 		.ascii	"wtobjp\000"
+ 4194      6A7000
+ 4195              	.LASF29:
+ 4196 0408 705F6E61 		.ascii	"p_name\000"
+ 4196      6D6500
+ 4197              	.LASF87:
+ 4198 040f 63685363 		.ascii	"chSchGoSleepTimeoutS\000"
+ 4198      68476F53 
+ 4198      6C656570 
+ 4198      54696D65 
+ 4198      6F757453 
+ 4199              	.LASF60:
+ 4200 0424 6D5F6F77 		.ascii	"m_owner\000"
+ 4200      6E657200 
+ 4201              	.LASF26:
+ 4202 042c 705F6374 		.ascii	"p_ctx\000"
+ 4202      7800
+ 4203              	.LASF35:
+ 4204 0432 705F7761 		.ascii	"p_waiting\000"
+ 4204      6974696E 
+ 4204      6700
+ 4205              	.LASF69:
+ 4206 043c 63685365 		.ascii	"chSemInit\000"
+ 4206      6D496E69 
+ 4206      7400
+ 4207              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.4 20140401 (release) [ARM/embedded-4_7-br
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s 			page 79
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 chsem.c
+C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s:19     .text.chSemInit:00000000 $t
+C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s:25     .text.chSemInit:00000000 chSemInit
+C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s:44     .text.chSemResetI:00000000 $t
+C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s:50     .text.chSemResetI:00000000 chSemResetI
+C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s:175    .text.chSemReset:00000000 $t
+C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s:181    .text.chSemReset:00000000 chSemReset
+C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s:235    .text.chSemWaitS:00000000 $t
+C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s:241    .text.chSemWaitS:00000000 chSemWaitS
+C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s:305    .text.chSemWaitS:00000034 $d
+C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s:310    .text.chSemWait:00000000 $t
+C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s:316    .text.chSemWait:00000000 chSemWait
+C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s:370    .text.chSemWaitTimeoutS:00000000 $t
+C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s:376    .text.chSemWaitTimeoutS:00000000 chSemWaitTimeoutS
+C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s:449    .text.chSemWaitTimeoutS:00000040 $d
+C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s:454    .text.chSemWaitTimeout:00000000 $t
+C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s:460    .text.chSemWaitTimeout:00000000 chSemWaitTimeout
+C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s:515    .text.chSemSignal:00000000 $t
+C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s:521    .text.chSemSignal:00000000 chSemSignal
+C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s:598    .text.chSemSignalI:00000000 $t
+C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s:604    .text.chSemSignalI:00000000 chSemSignalI
+C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s:665    .text.chSemAddCounterI:00000000 $t
+C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s:671    .text.chSemAddCounterI:00000000 chSemAddCounterI
+C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s:835    .text.chSemSignalWait:00000000 $t
+C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s:841    .text.chSemSignalWait:00000000 chSemSignalWait
+C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s:970    .text.chSemSignalWait:00000064 $d
+                     .debug_frame:00000010 $d
+C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s:309    .text.chSemWaitS:00000038 $t
+C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s:453    .text.chSemWaitTimeoutS:00000044 $t
+C:\Users\Elis\AppData\Local\Temp\cc0TgQXe.s:974    .text.chSemSignalWait:00000068 $t
+
+UNDEFINED SYMBOLS
+chDbgCheckClassI
+chSchReadyI
+dbg_check_lock
+chSchRescheduleS
+dbg_check_unlock
+chDbgCheckClassS
+chSchGoSleepS
+rlist
+chSchGoSleepTimeoutS
+chSchWakeupS

@@ -1,0 +1,1664 @@
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\ccPjilfL.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m4
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 2
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"hal.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.halInit,"ax",%progbits
+  19              		.align	2
+  20              		.p2align 4,,15
+  21              		.global	halInit
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	halInit, %function
+  25              	halInit:
+  26              	.LFB118:
+  27              		.file 1 "../../chibios/os/hal/src/hal.c"
+  28              		.loc 1 68 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 08B5     		push	{r3, lr}
+  33              	.LCFI0:
+  34              		.cfi_def_cfa_offset 8
+  35              		.cfi_offset 3, -8
+  36              		.cfi_offset 14, -4
+  37              		.loc 1 70 0
+  38 0002 FFF7FEFF 		bl	hal_lld_init
+  39              	.LVL0:
+  40              		.loc 1 76 0
+  41 0006 40F20000 		movw	r0, #:lower16:pal_default_config
+  42 000a C0F20000 		movt	r0, #:upper16:pal_default_config
+  43 000e FFF7FEFF 		bl	_pal_lld_init
+  44              	.LVL1:
+  45              		.loc 1 100 0
+  46 0012 FFF7FEFF 		bl	pwmInit
+  47              	.LVL2:
+  48              		.loc 1 103 0
+  49 0016 FFF7FEFF 		bl	sdInit
+  50              	.LVL3:
+  51              		.loc 1 106 0
+  52 001a FFF7FEFF 		bl	sdcInit
+  53              	.LVL4:
+  54              		.loc 1 109 0
+  55 001e FFF7FEFF 		bl	spiInit
+  56              	.LVL5:
+  57              		.loc 1 128 0
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\ccPjilfL.s 			page 2
+
+
+  58 0022 BDE80840 		pop	{r3, lr}
+  59              		.loc 1 127 0
+  60 0026 FFF7FEBF 		b	boardInit
+  61              	.LVL6:
+  62              		.cfi_endproc
+  63              	.LFE118:
+  64              		.size	halInit, .-halInit
+  65              		.section	.text.halIsCounterWithin,"ax",%progbits
+  66              		.align	2
+  67              		.p2align 4,,15
+  68              		.global	halIsCounterWithin
+  69              		.thumb
+  70              		.thumb_func
+  71              		.type	halIsCounterWithin, %function
+  72              	halIsCounterWithin:
+  73              	.LFB119:
+  74              		.loc 1 174 0
+  75              		.cfi_startproc
+  76              		@ args = 0, pretend = 0, frame = 0
+  77              		@ frame_needed = 0, uses_anonymous_args = 0
+  78              		@ link register save eliminated.
+  79              	.LVL7:
+  80              		.loc 1 175 0
+  81 0000 4FF48053 		mov	r3, #4096
+  82 0004 CEF20003 		movt	r3, 57344
+  83              		.loc 1 177 0
+  84 0008 8142     		cmp	r1, r0
+  85              		.loc 1 175 0
+  86 000a 5A68     		ldr	r2, [r3, #4]
+  87              	.LVL8:
+  88              		.loc 1 177 0
+  89 000c 06D9     		bls	.L3
+  90              		.loc 1 177 0 is_stmt 0 discriminator 1
+  91 000e 8242     		cmp	r2, r0
+  92 0010 08D3     		bcc	.L7
+  93              	.L9:
+  94              		.loc 1 178 0 is_stmt 1 discriminator 2
+  95 0012 8A42     		cmp	r2, r1
+  96 0014 2CBF     		ite	cs
+  97 0016 0020     		movcs	r0, #0
+  98              	.LVL9:
+  99 0018 0120     		movcc	r0, #1
+ 100 001a 7047     		bx	lr
+ 101              	.LVL10:
+ 102              	.L3:
+ 103              		.loc 1 178 0 is_stmt 0
+ 104 001c 8242     		cmp	r2, r0
+ 105 001e F8D3     		bcc	.L9
+ 106 0020 0120     		movs	r0, #1
+ 107              	.LVL11:
+ 108              		.loc 1 179 0 is_stmt 1
+ 109 0022 7047     		bx	lr
+ 110              	.LVL12:
+ 111              	.L7:
+ 112              		.loc 1 177 0
+ 113 0024 0020     		movs	r0, #0
+ 114              	.LVL13:
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\ccPjilfL.s 			page 3
+
+
+ 115 0026 7047     		bx	lr
+ 116              		.cfi_endproc
+ 117              	.LFE119:
+ 118              		.size	halIsCounterWithin, .-halIsCounterWithin
+ 119 0028 AFF30080 		.section	.text.halPolledDelay,"ax",%progbits
+ 119      AFF30080 
+ 120              		.align	2
+ 121              		.p2align 4,,15
+ 122              		.global	halPolledDelay
+ 123              		.thumb
+ 124              		.thumb_func
+ 125              		.type	halPolledDelay, %function
+ 126              	halPolledDelay:
+ 127              	.LFB120:
+ 128              		.loc 1 193 0
+ 129              		.cfi_startproc
+ 130              		@ args = 0, pretend = 0, frame = 0
+ 131              		@ frame_needed = 0, uses_anonymous_args = 0
+ 132              		@ link register save eliminated.
+ 133              	.LVL14:
+ 134              		.loc 1 194 0
+ 135 0000 4FF48053 		mov	r3, #4096
+ 136 0004 CEF20003 		movt	r3, 57344
+ 137              	.LBB4:
+ 138              	.LBB5:
+ 139              		.loc 1 175 0
+ 140 0008 1946     		mov	r1, r3
+ 141              	.LBE5:
+ 142              	.LBE4:
+ 143              		.loc 1 194 0
+ 144 000a 5A68     		ldr	r2, [r3, #4]
+ 145              	.LVL15:
+ 146              		.loc 1 195 0
+ 147 000c 8018     		adds	r0, r0, r2
+ 148              	.LVL16:
+ 149              	.L21:
+ 150              	.LBB7:
+ 151              	.LBB6:
+ 152              		.loc 1 177 0 discriminator 1
+ 153 000e 8242     		cmp	r2, r0
+ 154              		.loc 1 175 0 discriminator 1
+ 155 0010 4B68     		ldr	r3, [r1, #4]
+ 156              	.LVL17:
+ 157              		.loc 1 177 0 discriminator 1
+ 158 0012 02D2     		bcs	.L12
+ 159              		.loc 1 177 0 is_stmt 0
+ 160 0014 9A42     		cmp	r2, r3
+ 161 0016 02D9     		bls	.L22
+ 162 0018 7047     		bx	lr
+ 163              	.L12:
+ 164              		.loc 1 178 0 is_stmt 1
+ 165 001a 9A42     		cmp	r2, r3
+ 166 001c F7D9     		bls	.L21
+ 167              	.L22:
+ 168 001e 9842     		cmp	r0, r3
+ 169 0020 94BF     		ite	ls
+ 170 0022 0023     		movls	r3, #0
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\ccPjilfL.s 			page 4
+
+
+ 171              	.LVL18:
+ 172 0024 0123     		movhi	r3, #1
+ 173              	.LBE6:
+ 174              	.LBE7:
+ 175              		.loc 1 196 0
+ 176 0026 002B     		cmp	r3, #0
+ 177 0028 F1D1     		bne	.L21
+ 178 002a 7047     		bx	lr
+ 179              		.cfi_endproc
+ 180              	.LFE120:
+ 181              		.size	halPolledDelay, .-halPolledDelay
+ 182 002c AFF30080 		.text
+ 183              	.Letext0:
+ 184              		.file 2 "c:\\chibistudio\\tools\\gnu tools arm embedded\\4.7 2014q2\\bin\\../lib/gcc/arm-none-eabi
+ 185              		.file 3 "../../chibios/os/ports/GCC/ARMCMx/chtypes.h"
+ 186              		.file 4 "../../chibios/os/ports/common/ARMCMx/nvic.h"
+ 187              		.file 5 "../../chibios/os/hal/platforms/STM32F4xx/hal_lld.h"
+ 188              		.file 6 "../../chibios/os/hal/platforms/STM32/GPIOv2/pal_lld.h"
+ 189              		.file 7 "../../chibios/os/ports/common/ARMCMx/CMSIS/include/core_cm4.h"
+ 190              		.file 8 "../../chibios/os/hal/include/pwm.h"
+ 191              		.file 9 "../../chibios/os/hal/include/serial.h"
+ 192              		.file 10 "../../chibios/os/hal/include/sdc.h"
+ 193              		.file 11 "../../chibios/os/hal/include/spi.h"
+ 194              		.file 12 "../../ugfx/boards/base/STM32F407/chibios_board/board.h"
+ 195              		.section	.debug_info,"",%progbits
+ 196              	.Ldebug_info0:
+ 197 0000 05040000 		.4byte	0x405
+ 198 0004 0200     		.2byte	0x2
+ 199 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 200 000a 04       		.byte	0x4
+ 201 000b 01       		.uleb128 0x1
+ 202 000c 3F000000 		.4byte	.LASF55
+ 203 0010 01       		.byte	0x1
+ 204 0011 29020000 		.4byte	.LASF56
+ 205 0015 3B010000 		.4byte	.LASF57
+ 206 0019 30000000 		.4byte	.Ldebug_ranges0+0x30
+ 207 001d 00000000 		.4byte	0
+ 208 0021 00000000 		.4byte	0
+ 209 0025 00000000 		.4byte	.Ldebug_line0
+ 210 0029 02       		.uleb128 0x2
+ 211 002a 04       		.byte	0x4
+ 212 002b 05       		.byte	0x5
+ 213 002c 696E7400 		.ascii	"int\000"
+ 214 0030 03       		.uleb128 0x3
+ 215 0031 04       		.byte	0x4
+ 216 0032 07       		.byte	0x7
+ 217 0033 86020000 		.4byte	.LASF0
+ 218 0037 03       		.uleb128 0x3
+ 219 0038 01       		.byte	0x1
+ 220 0039 06       		.byte	0x6
+ 221 003a 63010000 		.4byte	.LASF1
+ 222 003e 03       		.uleb128 0x3
+ 223 003f 01       		.byte	0x1
+ 224 0040 08       		.byte	0x8
+ 225 0041 28010000 		.4byte	.LASF2
+ 226 0045 03       		.uleb128 0x3
+ 227 0046 02       		.byte	0x2
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\ccPjilfL.s 			page 5
+
+
+ 228 0047 05       		.byte	0x5
+ 229 0048 27000000 		.4byte	.LASF3
+ 230 004c 03       		.uleb128 0x3
+ 231 004d 02       		.byte	0x2
+ 232 004e 07       		.byte	0x7
+ 233 004f BC010000 		.4byte	.LASF4
+ 234 0053 04       		.uleb128 0x4
+ 235 0054 D4010000 		.4byte	.LASF6
+ 236 0058 02       		.byte	0x2
+ 237 0059 4F       		.byte	0x4f
+ 238 005a 5E000000 		.4byte	0x5e
+ 239 005e 03       		.uleb128 0x3
+ 240 005f 04       		.byte	0x4
+ 241 0060 05       		.byte	0x5
+ 242 0061 E9000000 		.4byte	.LASF5
+ 243 0065 04       		.uleb128 0x4
+ 244 0066 86010000 		.4byte	.LASF7
+ 245 006a 02       		.byte	0x2
+ 246 006b 50       		.byte	0x50
+ 247 006c 70000000 		.4byte	0x70
+ 248 0070 03       		.uleb128 0x3
+ 249 0071 04       		.byte	0x4
+ 250 0072 07       		.byte	0x7
+ 251 0073 10020000 		.4byte	.LASF8
+ 252 0077 03       		.uleb128 0x3
+ 253 0078 08       		.byte	0x8
+ 254 0079 05       		.byte	0x5
+ 255 007a C4000000 		.4byte	.LASF9
+ 256 007e 03       		.uleb128 0x3
+ 257 007f 08       		.byte	0x8
+ 258 0080 07       		.byte	0x7
+ 259 0081 6F010000 		.4byte	.LASF10
+ 260 0085 04       		.uleb128 0x4
+ 261 0086 DC010000 		.4byte	.LASF11
+ 262 008a 03       		.byte	0x3
+ 263 008b 2B       		.byte	0x2b
+ 264 008c 90000000 		.4byte	0x90
+ 265 0090 03       		.uleb128 0x3
+ 266 0091 01       		.byte	0x1
+ 267 0092 02       		.byte	0x2
+ 268 0093 F4010000 		.4byte	.LASF12
+ 269 0097 04       		.uleb128 0x4
+ 270 0098 B5000000 		.4byte	.LASF13
+ 271 009c 04       		.byte	0x4
+ 272 009d 3A       		.byte	0x3a
+ 273 009e A2000000 		.4byte	0xa2
+ 274 00a2 05       		.uleb128 0x5
+ 275 00a3 65000000 		.4byte	0x65
+ 276 00a7 03       		.uleb128 0x3
+ 277 00a8 04       		.byte	0x4
+ 278 00a9 07       		.byte	0x7
+ 279 00aa 36000000 		.4byte	.LASF14
+ 280 00ae 06       		.uleb128 0x6
+ 281 00af 20       		.byte	0x20
+ 282 00b0 04       		.byte	0x4
+ 283 00b1 0601     		.2byte	0x106
+ 284 00b3 30010000 		.4byte	0x130
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\ccPjilfL.s 			page 6
+
+
+ 285 00b7 07       		.uleb128 0x7
+ 286 00b8 36010000 		.4byte	.LASF15
+ 287 00bc 04       		.byte	0x4
+ 288 00bd 0701     		.2byte	0x107
+ 289 00bf 97000000 		.4byte	0x97
+ 290 00c3 02       		.byte	0x2
+ 291 00c4 23       		.byte	0x23
+ 292 00c5 00       		.uleb128 0
+ 293 00c6 07       		.uleb128 0x7
+ 294 00c7 DA000000 		.4byte	.LASF16
+ 295 00cb 04       		.byte	0x4
+ 296 00cc 0801     		.2byte	0x108
+ 297 00ce 97000000 		.4byte	0x97
+ 298 00d2 02       		.byte	0x2
+ 299 00d3 23       		.byte	0x23
+ 300 00d4 04       		.uleb128 0x4
+ 301 00d5 07       		.uleb128 0x7
+ 302 00d6 09020000 		.4byte	.LASF17
+ 303 00da 04       		.byte	0x4
+ 304 00db 0901     		.2byte	0x109
+ 305 00dd 97000000 		.4byte	0x97
+ 306 00e1 02       		.byte	0x2
+ 307 00e2 23       		.byte	0x23
+ 308 00e3 08       		.uleb128 0x8
+ 309 00e4 07       		.uleb128 0x7
+ 310 00e5 A6020000 		.4byte	.LASF18
+ 311 00e9 04       		.byte	0x4
+ 312 00ea 0A01     		.2byte	0x10a
+ 313 00ec 97000000 		.4byte	0x97
+ 314 00f0 02       		.byte	0x2
+ 315 00f1 23       		.byte	0x23
+ 316 00f2 0C       		.uleb128 0xc
+ 317 00f3 07       		.uleb128 0x7
+ 318 00f4 53020000 		.4byte	.LASF19
+ 319 00f8 04       		.byte	0x4
+ 320 00f9 0B01     		.2byte	0x10b
+ 321 00fb 97000000 		.4byte	0x97
+ 322 00ff 02       		.byte	0x2
+ 323 0100 23       		.byte	0x23
+ 324 0101 10       		.uleb128 0x10
+ 325 0102 07       		.uleb128 0x7
+ 326 0103 62020000 		.4byte	.LASF20
+ 327 0107 04       		.byte	0x4
+ 328 0108 0C01     		.2byte	0x10c
+ 329 010a 97000000 		.4byte	0x97
+ 330 010e 02       		.byte	0x2
+ 331 010f 23       		.byte	0x23
+ 332 0110 14       		.uleb128 0x14
+ 333 0111 07       		.uleb128 0x7
+ 334 0112 9E000000 		.4byte	.LASF21
+ 335 0116 04       		.byte	0x4
+ 336 0117 0D01     		.2byte	0x10d
+ 337 0119 97000000 		.4byte	0x97
+ 338 011d 02       		.byte	0x2
+ 339 011e 23       		.byte	0x23
+ 340 011f 18       		.uleb128 0x18
+ 341 0120 07       		.uleb128 0x7
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\ccPjilfL.s 			page 7
+
+
+ 342 0121 31000000 		.4byte	.LASF22
+ 343 0125 04       		.byte	0x4
+ 344 0126 0E01     		.2byte	0x10e
+ 345 0128 97000000 		.4byte	0x97
+ 346 012c 02       		.byte	0x2
+ 347 012d 23       		.byte	0x23
+ 348 012e 1C       		.uleb128 0x1c
+ 349 012f 00       		.byte	0
+ 350 0130 08       		.uleb128 0x8
+ 351 0131 FA010000 		.4byte	.LASF23
+ 352 0135 04       		.byte	0x4
+ 353 0136 0F01     		.2byte	0x10f
+ 354 0138 AE000000 		.4byte	0xae
+ 355 013c 03       		.uleb128 0x3
+ 356 013d 01       		.byte	0x1
+ 357 013e 08       		.byte	0x8
+ 358 013f CF010000 		.4byte	.LASF24
+ 359 0143 05       		.uleb128 0x5
+ 360 0144 53000000 		.4byte	0x53
+ 361 0148 08       		.uleb128 0x8
+ 362 0149 48020000 		.4byte	.LASF25
+ 363 014d 05       		.byte	0x5
+ 364 014e C006     		.2byte	0x6c0
+ 365 0150 65000000 		.4byte	0x65
+ 366 0154 09       		.uleb128 0x9
+ 367 0155 1C       		.byte	0x1c
+ 368 0156 06       		.byte	0x6
+ 369 0157 A3       		.byte	0xa3
+ 370 0158 BF010000 		.4byte	0x1bf
+ 371 015c 0A       		.uleb128 0xa
+ 372 015d 73020000 		.4byte	.LASF26
+ 373 0161 06       		.byte	0x6
+ 374 0162 A5       		.byte	0xa5
+ 375 0163 65000000 		.4byte	0x65
+ 376 0167 02       		.byte	0x2
+ 377 0168 23       		.byte	0x23
+ 378 0169 00       		.uleb128 0
+ 379 016a 0A       		.uleb128 0xa
+ 380 016b 8F010000 		.4byte	.LASF27
+ 381 016f 06       		.byte	0x6
+ 382 0170 A7       		.byte	0xa7
+ 383 0171 65000000 		.4byte	0x65
+ 384 0175 02       		.byte	0x2
+ 385 0176 23       		.byte	0x23
+ 386 0177 04       		.uleb128 0x4
+ 387 0178 0A       		.uleb128 0xa
+ 388 0179 E1000000 		.4byte	.LASF28
+ 389 017d 06       		.byte	0x6
+ 390 017e A9       		.byte	0xa9
+ 391 017f 65000000 		.4byte	0x65
+ 392 0183 02       		.byte	0x2
+ 393 0184 23       		.byte	0x23
+ 394 0185 08       		.uleb128 0x8
+ 395 0186 0A       		.uleb128 0xa
+ 396 0187 5C020000 		.4byte	.LASF29
+ 397 018b 06       		.byte	0x6
+ 398 018c AB       		.byte	0xab
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\ccPjilfL.s 			page 8
+
+
+ 399 018d 65000000 		.4byte	0x65
+ 400 0191 02       		.byte	0x2
+ 401 0192 23       		.byte	0x23
+ 402 0193 0C       		.uleb128 0xc
+ 403 0194 0B       		.uleb128 0xb
+ 404 0195 6F647200 		.ascii	"odr\000"
+ 405 0199 06       		.byte	0x6
+ 406 019a AD       		.byte	0xad
+ 407 019b 65000000 		.4byte	0x65
+ 408 019f 02       		.byte	0x2
+ 409 01a0 23       		.byte	0x23
+ 410 01a1 10       		.uleb128 0x10
+ 411 01a2 0A       		.uleb128 0xa
+ 412 01a3 6E020000 		.4byte	.LASF30
+ 413 01a7 06       		.byte	0x6
+ 414 01a8 AF       		.byte	0xaf
+ 415 01a9 65000000 		.4byte	0x65
+ 416 01ad 02       		.byte	0x2
+ 417 01ae 23       		.byte	0x23
+ 418 01af 14       		.uleb128 0x14
+ 419 01b0 0A       		.uleb128 0xa
+ 420 01b1 69020000 		.4byte	.LASF31
+ 421 01b5 06       		.byte	0x6
+ 422 01b6 B1       		.byte	0xb1
+ 423 01b7 65000000 		.4byte	0x65
+ 424 01bb 02       		.byte	0x2
+ 425 01bc 23       		.byte	0x23
+ 426 01bd 18       		.uleb128 0x18
+ 427 01be 00       		.byte	0
+ 428 01bf 04       		.uleb128 0x4
+ 429 01c0 96010000 		.4byte	.LASF32
+ 430 01c4 06       		.byte	0x6
+ 431 01c5 B2       		.byte	0xb2
+ 432 01c6 54010000 		.4byte	0x154
+ 433 01ca 09       		.uleb128 0x9
+ 434 01cb FC       		.byte	0xfc
+ 435 01cc 06       		.byte	0x6
+ 436 01cd BB       		.byte	0xbb
+ 437 01ce 55020000 		.4byte	0x255
+ 438 01d2 0A       		.uleb128 0xa
+ 439 01d3 BD000000 		.4byte	.LASF33
+ 440 01d7 06       		.byte	0x6
+ 441 01d8 BE       		.byte	0xbe
+ 442 01d9 BF010000 		.4byte	0x1bf
+ 443 01dd 02       		.byte	0x2
+ 444 01de 23       		.byte	0x23
+ 445 01df 00       		.uleb128 0
+ 446 01e0 0A       		.uleb128 0xa
+ 447 01e1 ED010000 		.4byte	.LASF34
+ 448 01e5 06       		.byte	0x6
+ 449 01e6 C2       		.byte	0xc2
+ 450 01e7 BF010000 		.4byte	0x1bf
+ 451 01eb 02       		.byte	0x2
+ 452 01ec 23       		.byte	0x23
+ 453 01ed 1C       		.uleb128 0x1c
+ 454 01ee 0A       		.uleb128 0xa
+ 455 01ef 21010000 		.4byte	.LASF35
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\ccPjilfL.s 			page 9
+
+
+ 456 01f3 06       		.byte	0x6
+ 457 01f4 C6       		.byte	0xc6
+ 458 01f5 BF010000 		.4byte	0x1bf
+ 459 01f9 02       		.byte	0x2
+ 460 01fa 23       		.byte	0x23
+ 461 01fb 38       		.uleb128 0x38
+ 462 01fc 0A       		.uleb128 0xa
+ 463 01fd FA000000 		.4byte	.LASF36
+ 464 0201 06       		.byte	0x6
+ 465 0202 CA       		.byte	0xca
+ 466 0203 BF010000 		.4byte	0x1bf
+ 467 0207 02       		.byte	0x2
+ 468 0208 23       		.byte	0x23
+ 469 0209 54       		.uleb128 0x54
+ 470 020a 0A       		.uleb128 0xa
+ 471 020b 02020000 		.4byte	.LASF37
+ 472 020f 06       		.byte	0x6
+ 473 0210 CE       		.byte	0xce
+ 474 0211 BF010000 		.4byte	0x1bf
+ 475 0215 02       		.byte	0x2
+ 476 0216 23       		.byte	0x23
+ 477 0217 70       		.uleb128 0x70
+ 478 0218 0A       		.uleb128 0xa
+ 479 0219 90000000 		.4byte	.LASF38
+ 480 021d 06       		.byte	0x6
+ 481 021e D2       		.byte	0xd2
+ 482 021f BF010000 		.4byte	0x1bf
+ 483 0223 03       		.byte	0x3
+ 484 0224 23       		.byte	0x23
+ 485 0225 8C01     		.uleb128 0x8c
+ 486 0227 0A       		.uleb128 0xa
+ 487 0228 1A010000 		.4byte	.LASF39
+ 488 022c 06       		.byte	0x6
+ 489 022d D6       		.byte	0xd6
+ 490 022e BF010000 		.4byte	0x1bf
+ 491 0232 03       		.byte	0x3
+ 492 0233 23       		.byte	0x23
+ 493 0234 A801     		.uleb128 0xa8
+ 494 0236 0A       		.uleb128 0xa
+ 495 0237 22020000 		.4byte	.LASF40
+ 496 023b 06       		.byte	0x6
+ 497 023c DA       		.byte	0xda
+ 498 023d BF010000 		.4byte	0x1bf
+ 499 0241 03       		.byte	0x3
+ 500 0242 23       		.byte	0x23
+ 501 0243 C401     		.uleb128 0xc4
+ 502 0245 0A       		.uleb128 0xa
+ 503 0246 97000000 		.4byte	.LASF41
+ 504 024a 06       		.byte	0x6
+ 505 024b DE       		.byte	0xde
+ 506 024c BF010000 		.4byte	0x1bf
+ 507 0250 03       		.byte	0x3
+ 508 0251 23       		.byte	0x23
+ 509 0252 E001     		.uleb128 0xe0
+ 510 0254 00       		.byte	0
+ 511 0255 04       		.uleb128 0x4
+ 512 0256 E3010000 		.4byte	.LASF42
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\ccPjilfL.s 			page 10
+
+
+ 513 025a 06       		.byte	0x6
+ 514 025b E0       		.byte	0xe0
+ 515 025c CA010000 		.4byte	0x1ca
+ 516 0260 0C       		.uleb128 0xc
+ 517 0261 01       		.byte	0x1
+ 518 0262 93020000 		.4byte	.LASF58
+ 519 0266 01       		.byte	0x1
+ 520 0267 AE       		.byte	0xae
+ 521 0268 01       		.byte	0x1
+ 522 0269 85000000 		.4byte	0x85
+ 523 026d 01       		.byte	0x1
+ 524 026e 94020000 		.4byte	0x294
+ 525 0272 0D       		.uleb128 0xd
+ 526 0273 B6010000 		.4byte	.LASF43
+ 527 0277 01       		.byte	0x1
+ 528 0278 AE       		.byte	0xae
+ 529 0279 48010000 		.4byte	0x148
+ 530 027d 0E       		.uleb128 0xe
+ 531 027e 656E6400 		.ascii	"end\000"
+ 532 0282 01       		.byte	0x1
+ 533 0283 AE       		.byte	0xae
+ 534 0284 48010000 		.4byte	0x148
+ 535 0288 0F       		.uleb128 0xf
+ 536 0289 6E6F7700 		.ascii	"now\000"
+ 537 028d 01       		.byte	0x1
+ 538 028e AF       		.byte	0xaf
+ 539 028f 48010000 		.4byte	0x148
+ 540 0293 00       		.byte	0
+ 541 0294 10       		.uleb128 0x10
+ 542 0295 01       		.byte	0x1
+ 543 0296 D2000000 		.4byte	.LASF44
+ 544 029a 01       		.byte	0x1
+ 545 029b 44       		.byte	0x44
+ 546 029c 01       		.byte	0x1
+ 547 029d 00000000 		.4byte	.LFB118
+ 548 02a1 2A000000 		.4byte	.LFE118
+ 549 02a5 00000000 		.4byte	.LLST0
+ 550 02a9 01       		.byte	0x1
+ 551 02aa EF020000 		.4byte	0x2ef
+ 552 02ae 11       		.uleb128 0x11
+ 553 02af 06000000 		.4byte	.LVL0
+ 554 02b3 AD030000 		.4byte	0x3ad
+ 555 02b7 11       		.uleb128 0x11
+ 556 02b8 12000000 		.4byte	.LVL1
+ 557 02bc B8030000 		.4byte	0x3b8
+ 558 02c0 11       		.uleb128 0x11
+ 559 02c1 16000000 		.4byte	.LVL2
+ 560 02c5 D3030000 		.4byte	0x3d3
+ 561 02c9 11       		.uleb128 0x11
+ 562 02ca 1A000000 		.4byte	.LVL3
+ 563 02ce DD030000 		.4byte	0x3dd
+ 564 02d2 11       		.uleb128 0x11
+ 565 02d3 1E000000 		.4byte	.LVL4
+ 566 02d7 E8030000 		.4byte	0x3e8
+ 567 02db 11       		.uleb128 0x11
+ 568 02dc 22000000 		.4byte	.LVL5
+ 569 02e0 F2030000 		.4byte	0x3f2
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\ccPjilfL.s 			page 11
+
+
+ 570 02e4 12       		.uleb128 0x12
+ 571 02e5 2A000000 		.4byte	.LVL6
+ 572 02e9 01       		.byte	0x1
+ 573 02ea FD030000 		.4byte	0x3fd
+ 574 02ee 00       		.byte	0
+ 575 02ef 13       		.uleb128 0x13
+ 576 02f0 60020000 		.4byte	0x260
+ 577 02f4 00000000 		.4byte	.LFB119
+ 578 02f8 28000000 		.4byte	.LFE119
+ 579 02fc 02       		.byte	0x2
+ 580 02fd 7D       		.byte	0x7d
+ 581 02fe 00       		.sleb128 0
+ 582 02ff 01       		.byte	0x1
+ 583 0300 1C030000 		.4byte	0x31c
+ 584 0304 14       		.uleb128 0x14
+ 585 0305 72020000 		.4byte	0x272
+ 586 0309 20000000 		.4byte	.LLST1
+ 587 030d 15       		.uleb128 0x15
+ 588 030e 7D020000 		.4byte	0x27d
+ 589 0312 01       		.byte	0x1
+ 590 0313 51       		.byte	0x51
+ 591 0314 16       		.uleb128 0x16
+ 592 0315 88020000 		.4byte	0x288
+ 593 0319 01       		.byte	0x1
+ 594 031a 52       		.byte	0x52
+ 595 031b 00       		.byte	0
+ 596 031c 17       		.uleb128 0x17
+ 597 031d 01       		.byte	0x1
+ 598 031e 01010000 		.4byte	.LASF45
+ 599 0322 01       		.byte	0x1
+ 600 0323 C1       		.byte	0xc1
+ 601 0324 01       		.byte	0x1
+ 602 0325 00000000 		.4byte	.LFB120
+ 603 0329 2C000000 		.4byte	.LFE120
+ 604 032d 02       		.byte	0x2
+ 605 032e 7D       		.byte	0x7d
+ 606 032f 00       		.sleb128 0
+ 607 0330 01       		.byte	0x1
+ 608 0331 8C030000 		.4byte	0x38c
+ 609 0335 18       		.uleb128 0x18
+ 610 0336 00000000 		.4byte	.LASF59
+ 611 033a 01       		.byte	0x1
+ 612 033b C1       		.byte	0xc1
+ 613 033c 48010000 		.4byte	0x148
+ 614 0340 73000000 		.4byte	.LLST2
+ 615 0344 19       		.uleb128 0x19
+ 616 0345 B6010000 		.4byte	.LASF43
+ 617 0349 01       		.byte	0x1
+ 618 034a C2       		.byte	0xc2
+ 619 034b 48010000 		.4byte	0x148
+ 620 034f 01       		.byte	0x1
+ 621 0350 52       		.byte	0x52
+ 622 0351 19       		.uleb128 0x19
+ 623 0352 AD020000 		.4byte	.LASF46
+ 624 0356 01       		.byte	0x1
+ 625 0357 C3       		.byte	0xc3
+ 626 0358 48010000 		.4byte	0x148
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\ccPjilfL.s 			page 12
+
+
+ 627 035c 01       		.byte	0x1
+ 628 035d 50       		.byte	0x50
+ 629 035e 1A       		.uleb128 0x1a
+ 630 035f 60020000 		.4byte	0x260
+ 631 0363 08000000 		.4byte	.LBB4
+ 632 0367 00000000 		.4byte	.Ldebug_ranges0+0
+ 633 036b 01       		.byte	0x1
+ 634 036c C4       		.byte	0xc4
+ 635 036d 15       		.uleb128 0x15
+ 636 036e 7D020000 		.4byte	0x27d
+ 637 0372 01       		.byte	0x1
+ 638 0373 50       		.byte	0x50
+ 639 0374 15       		.uleb128 0x15
+ 640 0375 72020000 		.4byte	0x272
+ 641 0379 01       		.byte	0x1
+ 642 037a 52       		.byte	0x52
+ 643 037b 1B       		.uleb128 0x1b
+ 644 037c 18000000 		.4byte	.Ldebug_ranges0+0x18
+ 645 0380 1C       		.uleb128 0x1c
+ 646 0381 88020000 		.4byte	0x288
+ 647 0385 94000000 		.4byte	.LLST3
+ 648 0389 00       		.byte	0
+ 649 038a 00       		.byte	0
+ 650 038b 00       		.byte	0
+ 651 038c 1D       		.uleb128 0x1d
+ 652 038d 79020000 		.4byte	.LASF47
+ 653 0391 07       		.byte	0x7
+ 654 0392 9806     		.2byte	0x698
+ 655 0394 43010000 		.4byte	0x143
+ 656 0398 01       		.byte	0x1
+ 657 0399 01       		.byte	0x1
+ 658 039a 1D       		.uleb128 0x1d
+ 659 039b 14000000 		.4byte	.LASF48
+ 660 039f 06       		.byte	0x6
+ 661 03a0 BC01     		.2byte	0x1bc
+ 662 03a2 A8030000 		.4byte	0x3a8
+ 663 03a6 01       		.byte	0x1
+ 664 03a7 01       		.byte	0x1
+ 665 03a8 1E       		.uleb128 0x1e
+ 666 03a9 55020000 		.4byte	0x255
+ 667 03ad 1F       		.uleb128 0x1f
+ 668 03ae 01       		.byte	0x1
+ 669 03af A9010000 		.4byte	.LASF49
+ 670 03b3 05       		.byte	0x5
+ 671 03b4 E906     		.2byte	0x6e9
+ 672 03b6 01       		.byte	0x1
+ 673 03b7 01       		.byte	0x1
+ 674 03b8 20       		.uleb128 0x20
+ 675 03b9 01       		.byte	0x1
+ 676 03ba 06000000 		.4byte	.LASF60
+ 677 03be 06       		.byte	0x6
+ 678 03bf C101     		.2byte	0x1c1
+ 679 03c1 01       		.byte	0x1
+ 680 03c2 01       		.byte	0x1
+ 681 03c3 CD030000 		.4byte	0x3cd
+ 682 03c7 21       		.uleb128 0x21
+ 683 03c8 CD030000 		.4byte	0x3cd
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\ccPjilfL.s 			page 13
+
+
+ 684 03cc 00       		.byte	0
+ 685 03cd 22       		.uleb128 0x22
+ 686 03ce 04       		.byte	0x4
+ 687 03cf A8030000 		.4byte	0x3a8
+ 688 03d3 23       		.uleb128 0x23
+ 689 03d4 01       		.byte	0x1
+ 690 03d5 F2000000 		.4byte	.LASF50
+ 691 03d9 08       		.byte	0x8
+ 692 03da F2       		.byte	0xf2
+ 693 03db 01       		.byte	0x1
+ 694 03dc 01       		.byte	0x1
+ 695 03dd 1F       		.uleb128 0x1f
+ 696 03de 01       		.byte	0x1
+ 697 03df AE000000 		.4byte	.LASF51
+ 698 03e3 09       		.byte	0x9
+ 699 03e4 3501     		.2byte	0x135
+ 700 03e6 01       		.byte	0x1
+ 701 03e7 01       		.byte	0x1
+ 702 03e8 23       		.uleb128 0x23
+ 703 03e9 01       		.byte	0x1
+ 704 03ea 88000000 		.4byte	.LASF52
+ 705 03ee 0A       		.byte	0xa
+ 706 03ef A6       		.byte	0xa6
+ 707 03f0 01       		.byte	0x1
+ 708 03f1 01       		.byte	0x1
+ 709 03f2 1F       		.uleb128 0x1f
+ 710 03f3 01       		.byte	0x1
+ 711 03f4 A6000000 		.4byte	.LASF53
+ 712 03f8 0B       		.byte	0xb
+ 713 03f9 2E01     		.2byte	0x12e
+ 714 03fb 01       		.byte	0x1
+ 715 03fc 01       		.byte	0x1
+ 716 03fd 1F       		.uleb128 0x1f
+ 717 03fe 01       		.byte	0x1
+ 718 03ff 10010000 		.4byte	.LASF54
+ 719 0403 0C       		.byte	0xc
+ 720 0404 0A05     		.2byte	0x50a
+ 721 0406 01       		.byte	0x1
+ 722 0407 01       		.byte	0x1
+ 723 0408 00       		.byte	0
+ 724              		.section	.debug_abbrev,"",%progbits
+ 725              	.Ldebug_abbrev0:
+ 726 0000 01       		.uleb128 0x1
+ 727 0001 11       		.uleb128 0x11
+ 728 0002 01       		.byte	0x1
+ 729 0003 25       		.uleb128 0x25
+ 730 0004 0E       		.uleb128 0xe
+ 731 0005 13       		.uleb128 0x13
+ 732 0006 0B       		.uleb128 0xb
+ 733 0007 03       		.uleb128 0x3
+ 734 0008 0E       		.uleb128 0xe
+ 735 0009 1B       		.uleb128 0x1b
+ 736 000a 0E       		.uleb128 0xe
+ 737 000b 55       		.uleb128 0x55
+ 738 000c 06       		.uleb128 0x6
+ 739 000d 11       		.uleb128 0x11
+ 740 000e 01       		.uleb128 0x1
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\ccPjilfL.s 			page 14
+
+
+ 741 000f 52       		.uleb128 0x52
+ 742 0010 01       		.uleb128 0x1
+ 743 0011 10       		.uleb128 0x10
+ 744 0012 06       		.uleb128 0x6
+ 745 0013 00       		.byte	0
+ 746 0014 00       		.byte	0
+ 747 0015 02       		.uleb128 0x2
+ 748 0016 24       		.uleb128 0x24
+ 749 0017 00       		.byte	0
+ 750 0018 0B       		.uleb128 0xb
+ 751 0019 0B       		.uleb128 0xb
+ 752 001a 3E       		.uleb128 0x3e
+ 753 001b 0B       		.uleb128 0xb
+ 754 001c 03       		.uleb128 0x3
+ 755 001d 08       		.uleb128 0x8
+ 756 001e 00       		.byte	0
+ 757 001f 00       		.byte	0
+ 758 0020 03       		.uleb128 0x3
+ 759 0021 24       		.uleb128 0x24
+ 760 0022 00       		.byte	0
+ 761 0023 0B       		.uleb128 0xb
+ 762 0024 0B       		.uleb128 0xb
+ 763 0025 3E       		.uleb128 0x3e
+ 764 0026 0B       		.uleb128 0xb
+ 765 0027 03       		.uleb128 0x3
+ 766 0028 0E       		.uleb128 0xe
+ 767 0029 00       		.byte	0
+ 768 002a 00       		.byte	0
+ 769 002b 04       		.uleb128 0x4
+ 770 002c 16       		.uleb128 0x16
+ 771 002d 00       		.byte	0
+ 772 002e 03       		.uleb128 0x3
+ 773 002f 0E       		.uleb128 0xe
+ 774 0030 3A       		.uleb128 0x3a
+ 775 0031 0B       		.uleb128 0xb
+ 776 0032 3B       		.uleb128 0x3b
+ 777 0033 0B       		.uleb128 0xb
+ 778 0034 49       		.uleb128 0x49
+ 779 0035 13       		.uleb128 0x13
+ 780 0036 00       		.byte	0
+ 781 0037 00       		.byte	0
+ 782 0038 05       		.uleb128 0x5
+ 783 0039 35       		.uleb128 0x35
+ 784 003a 00       		.byte	0
+ 785 003b 49       		.uleb128 0x49
+ 786 003c 13       		.uleb128 0x13
+ 787 003d 00       		.byte	0
+ 788 003e 00       		.byte	0
+ 789 003f 06       		.uleb128 0x6
+ 790 0040 13       		.uleb128 0x13
+ 791 0041 01       		.byte	0x1
+ 792 0042 0B       		.uleb128 0xb
+ 793 0043 0B       		.uleb128 0xb
+ 794 0044 3A       		.uleb128 0x3a
+ 795 0045 0B       		.uleb128 0xb
+ 796 0046 3B       		.uleb128 0x3b
+ 797 0047 05       		.uleb128 0x5
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\ccPjilfL.s 			page 15
+
+
+ 798 0048 01       		.uleb128 0x1
+ 799 0049 13       		.uleb128 0x13
+ 800 004a 00       		.byte	0
+ 801 004b 00       		.byte	0
+ 802 004c 07       		.uleb128 0x7
+ 803 004d 0D       		.uleb128 0xd
+ 804 004e 00       		.byte	0
+ 805 004f 03       		.uleb128 0x3
+ 806 0050 0E       		.uleb128 0xe
+ 807 0051 3A       		.uleb128 0x3a
+ 808 0052 0B       		.uleb128 0xb
+ 809 0053 3B       		.uleb128 0x3b
+ 810 0054 05       		.uleb128 0x5
+ 811 0055 49       		.uleb128 0x49
+ 812 0056 13       		.uleb128 0x13
+ 813 0057 38       		.uleb128 0x38
+ 814 0058 0A       		.uleb128 0xa
+ 815 0059 00       		.byte	0
+ 816 005a 00       		.byte	0
+ 817 005b 08       		.uleb128 0x8
+ 818 005c 16       		.uleb128 0x16
+ 819 005d 00       		.byte	0
+ 820 005e 03       		.uleb128 0x3
+ 821 005f 0E       		.uleb128 0xe
+ 822 0060 3A       		.uleb128 0x3a
+ 823 0061 0B       		.uleb128 0xb
+ 824 0062 3B       		.uleb128 0x3b
+ 825 0063 05       		.uleb128 0x5
+ 826 0064 49       		.uleb128 0x49
+ 827 0065 13       		.uleb128 0x13
+ 828 0066 00       		.byte	0
+ 829 0067 00       		.byte	0
+ 830 0068 09       		.uleb128 0x9
+ 831 0069 13       		.uleb128 0x13
+ 832 006a 01       		.byte	0x1
+ 833 006b 0B       		.uleb128 0xb
+ 834 006c 0B       		.uleb128 0xb
+ 835 006d 3A       		.uleb128 0x3a
+ 836 006e 0B       		.uleb128 0xb
+ 837 006f 3B       		.uleb128 0x3b
+ 838 0070 0B       		.uleb128 0xb
+ 839 0071 01       		.uleb128 0x1
+ 840 0072 13       		.uleb128 0x13
+ 841 0073 00       		.byte	0
+ 842 0074 00       		.byte	0
+ 843 0075 0A       		.uleb128 0xa
+ 844 0076 0D       		.uleb128 0xd
+ 845 0077 00       		.byte	0
+ 846 0078 03       		.uleb128 0x3
+ 847 0079 0E       		.uleb128 0xe
+ 848 007a 3A       		.uleb128 0x3a
+ 849 007b 0B       		.uleb128 0xb
+ 850 007c 3B       		.uleb128 0x3b
+ 851 007d 0B       		.uleb128 0xb
+ 852 007e 49       		.uleb128 0x49
+ 853 007f 13       		.uleb128 0x13
+ 854 0080 38       		.uleb128 0x38
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\ccPjilfL.s 			page 16
+
+
+ 855 0081 0A       		.uleb128 0xa
+ 856 0082 00       		.byte	0
+ 857 0083 00       		.byte	0
+ 858 0084 0B       		.uleb128 0xb
+ 859 0085 0D       		.uleb128 0xd
+ 860 0086 00       		.byte	0
+ 861 0087 03       		.uleb128 0x3
+ 862 0088 08       		.uleb128 0x8
+ 863 0089 3A       		.uleb128 0x3a
+ 864 008a 0B       		.uleb128 0xb
+ 865 008b 3B       		.uleb128 0x3b
+ 866 008c 0B       		.uleb128 0xb
+ 867 008d 49       		.uleb128 0x49
+ 868 008e 13       		.uleb128 0x13
+ 869 008f 38       		.uleb128 0x38
+ 870 0090 0A       		.uleb128 0xa
+ 871 0091 00       		.byte	0
+ 872 0092 00       		.byte	0
+ 873 0093 0C       		.uleb128 0xc
+ 874 0094 2E       		.uleb128 0x2e
+ 875 0095 01       		.byte	0x1
+ 876 0096 3F       		.uleb128 0x3f
+ 877 0097 0C       		.uleb128 0xc
+ 878 0098 03       		.uleb128 0x3
+ 879 0099 0E       		.uleb128 0xe
+ 880 009a 3A       		.uleb128 0x3a
+ 881 009b 0B       		.uleb128 0xb
+ 882 009c 3B       		.uleb128 0x3b
+ 883 009d 0B       		.uleb128 0xb
+ 884 009e 27       		.uleb128 0x27
+ 885 009f 0C       		.uleb128 0xc
+ 886 00a0 49       		.uleb128 0x49
+ 887 00a1 13       		.uleb128 0x13
+ 888 00a2 20       		.uleb128 0x20
+ 889 00a3 0B       		.uleb128 0xb
+ 890 00a4 01       		.uleb128 0x1
+ 891 00a5 13       		.uleb128 0x13
+ 892 00a6 00       		.byte	0
+ 893 00a7 00       		.byte	0
+ 894 00a8 0D       		.uleb128 0xd
+ 895 00a9 05       		.uleb128 0x5
+ 896 00aa 00       		.byte	0
+ 897 00ab 03       		.uleb128 0x3
+ 898 00ac 0E       		.uleb128 0xe
+ 899 00ad 3A       		.uleb128 0x3a
+ 900 00ae 0B       		.uleb128 0xb
+ 901 00af 3B       		.uleb128 0x3b
+ 902 00b0 0B       		.uleb128 0xb
+ 903 00b1 49       		.uleb128 0x49
+ 904 00b2 13       		.uleb128 0x13
+ 905 00b3 00       		.byte	0
+ 906 00b4 00       		.byte	0
+ 907 00b5 0E       		.uleb128 0xe
+ 908 00b6 05       		.uleb128 0x5
+ 909 00b7 00       		.byte	0
+ 910 00b8 03       		.uleb128 0x3
+ 911 00b9 08       		.uleb128 0x8
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\ccPjilfL.s 			page 17
+
+
+ 912 00ba 3A       		.uleb128 0x3a
+ 913 00bb 0B       		.uleb128 0xb
+ 914 00bc 3B       		.uleb128 0x3b
+ 915 00bd 0B       		.uleb128 0xb
+ 916 00be 49       		.uleb128 0x49
+ 917 00bf 13       		.uleb128 0x13
+ 918 00c0 00       		.byte	0
+ 919 00c1 00       		.byte	0
+ 920 00c2 0F       		.uleb128 0xf
+ 921 00c3 34       		.uleb128 0x34
+ 922 00c4 00       		.byte	0
+ 923 00c5 03       		.uleb128 0x3
+ 924 00c6 08       		.uleb128 0x8
+ 925 00c7 3A       		.uleb128 0x3a
+ 926 00c8 0B       		.uleb128 0xb
+ 927 00c9 3B       		.uleb128 0x3b
+ 928 00ca 0B       		.uleb128 0xb
+ 929 00cb 49       		.uleb128 0x49
+ 930 00cc 13       		.uleb128 0x13
+ 931 00cd 00       		.byte	0
+ 932 00ce 00       		.byte	0
+ 933 00cf 10       		.uleb128 0x10
+ 934 00d0 2E       		.uleb128 0x2e
+ 935 00d1 01       		.byte	0x1
+ 936 00d2 3F       		.uleb128 0x3f
+ 937 00d3 0C       		.uleb128 0xc
+ 938 00d4 03       		.uleb128 0x3
+ 939 00d5 0E       		.uleb128 0xe
+ 940 00d6 3A       		.uleb128 0x3a
+ 941 00d7 0B       		.uleb128 0xb
+ 942 00d8 3B       		.uleb128 0x3b
+ 943 00d9 0B       		.uleb128 0xb
+ 944 00da 27       		.uleb128 0x27
+ 945 00db 0C       		.uleb128 0xc
+ 946 00dc 11       		.uleb128 0x11
+ 947 00dd 01       		.uleb128 0x1
+ 948 00de 12       		.uleb128 0x12
+ 949 00df 01       		.uleb128 0x1
+ 950 00e0 40       		.uleb128 0x40
+ 951 00e1 06       		.uleb128 0x6
+ 952 00e2 9742     		.uleb128 0x2117
+ 953 00e4 0C       		.uleb128 0xc
+ 954 00e5 01       		.uleb128 0x1
+ 955 00e6 13       		.uleb128 0x13
+ 956 00e7 00       		.byte	0
+ 957 00e8 00       		.byte	0
+ 958 00e9 11       		.uleb128 0x11
+ 959 00ea 898201   		.uleb128 0x4109
+ 960 00ed 00       		.byte	0
+ 961 00ee 11       		.uleb128 0x11
+ 962 00ef 01       		.uleb128 0x1
+ 963 00f0 31       		.uleb128 0x31
+ 964 00f1 13       		.uleb128 0x13
+ 965 00f2 00       		.byte	0
+ 966 00f3 00       		.byte	0
+ 967 00f4 12       		.uleb128 0x12
+ 968 00f5 898201   		.uleb128 0x4109
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\ccPjilfL.s 			page 18
+
+
+ 969 00f8 00       		.byte	0
+ 970 00f9 11       		.uleb128 0x11
+ 971 00fa 01       		.uleb128 0x1
+ 972 00fb 9542     		.uleb128 0x2115
+ 973 00fd 0C       		.uleb128 0xc
+ 974 00fe 31       		.uleb128 0x31
+ 975 00ff 13       		.uleb128 0x13
+ 976 0100 00       		.byte	0
+ 977 0101 00       		.byte	0
+ 978 0102 13       		.uleb128 0x13
+ 979 0103 2E       		.uleb128 0x2e
+ 980 0104 01       		.byte	0x1
+ 981 0105 31       		.uleb128 0x31
+ 982 0106 13       		.uleb128 0x13
+ 983 0107 11       		.uleb128 0x11
+ 984 0108 01       		.uleb128 0x1
+ 985 0109 12       		.uleb128 0x12
+ 986 010a 01       		.uleb128 0x1
+ 987 010b 40       		.uleb128 0x40
+ 988 010c 0A       		.uleb128 0xa
+ 989 010d 9742     		.uleb128 0x2117
+ 990 010f 0C       		.uleb128 0xc
+ 991 0110 01       		.uleb128 0x1
+ 992 0111 13       		.uleb128 0x13
+ 993 0112 00       		.byte	0
+ 994 0113 00       		.byte	0
+ 995 0114 14       		.uleb128 0x14
+ 996 0115 05       		.uleb128 0x5
+ 997 0116 00       		.byte	0
+ 998 0117 31       		.uleb128 0x31
+ 999 0118 13       		.uleb128 0x13
+ 1000 0119 02       		.uleb128 0x2
+ 1001 011a 06       		.uleb128 0x6
+ 1002 011b 00       		.byte	0
+ 1003 011c 00       		.byte	0
+ 1004 011d 15       		.uleb128 0x15
+ 1005 011e 05       		.uleb128 0x5
+ 1006 011f 00       		.byte	0
+ 1007 0120 31       		.uleb128 0x31
+ 1008 0121 13       		.uleb128 0x13
+ 1009 0122 02       		.uleb128 0x2
+ 1010 0123 0A       		.uleb128 0xa
+ 1011 0124 00       		.byte	0
+ 1012 0125 00       		.byte	0
+ 1013 0126 16       		.uleb128 0x16
+ 1014 0127 34       		.uleb128 0x34
+ 1015 0128 00       		.byte	0
+ 1016 0129 31       		.uleb128 0x31
+ 1017 012a 13       		.uleb128 0x13
+ 1018 012b 02       		.uleb128 0x2
+ 1019 012c 0A       		.uleb128 0xa
+ 1020 012d 00       		.byte	0
+ 1021 012e 00       		.byte	0
+ 1022 012f 17       		.uleb128 0x17
+ 1023 0130 2E       		.uleb128 0x2e
+ 1024 0131 01       		.byte	0x1
+ 1025 0132 3F       		.uleb128 0x3f
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\ccPjilfL.s 			page 19
+
+
+ 1026 0133 0C       		.uleb128 0xc
+ 1027 0134 03       		.uleb128 0x3
+ 1028 0135 0E       		.uleb128 0xe
+ 1029 0136 3A       		.uleb128 0x3a
+ 1030 0137 0B       		.uleb128 0xb
+ 1031 0138 3B       		.uleb128 0x3b
+ 1032 0139 0B       		.uleb128 0xb
+ 1033 013a 27       		.uleb128 0x27
+ 1034 013b 0C       		.uleb128 0xc
+ 1035 013c 11       		.uleb128 0x11
+ 1036 013d 01       		.uleb128 0x1
+ 1037 013e 12       		.uleb128 0x12
+ 1038 013f 01       		.uleb128 0x1
+ 1039 0140 40       		.uleb128 0x40
+ 1040 0141 0A       		.uleb128 0xa
+ 1041 0142 9742     		.uleb128 0x2117
+ 1042 0144 0C       		.uleb128 0xc
+ 1043 0145 01       		.uleb128 0x1
+ 1044 0146 13       		.uleb128 0x13
+ 1045 0147 00       		.byte	0
+ 1046 0148 00       		.byte	0
+ 1047 0149 18       		.uleb128 0x18
+ 1048 014a 05       		.uleb128 0x5
+ 1049 014b 00       		.byte	0
+ 1050 014c 03       		.uleb128 0x3
+ 1051 014d 0E       		.uleb128 0xe
+ 1052 014e 3A       		.uleb128 0x3a
+ 1053 014f 0B       		.uleb128 0xb
+ 1054 0150 3B       		.uleb128 0x3b
+ 1055 0151 0B       		.uleb128 0xb
+ 1056 0152 49       		.uleb128 0x49
+ 1057 0153 13       		.uleb128 0x13
+ 1058 0154 02       		.uleb128 0x2
+ 1059 0155 06       		.uleb128 0x6
+ 1060 0156 00       		.byte	0
+ 1061 0157 00       		.byte	0
+ 1062 0158 19       		.uleb128 0x19
+ 1063 0159 34       		.uleb128 0x34
+ 1064 015a 00       		.byte	0
+ 1065 015b 03       		.uleb128 0x3
+ 1066 015c 0E       		.uleb128 0xe
+ 1067 015d 3A       		.uleb128 0x3a
+ 1068 015e 0B       		.uleb128 0xb
+ 1069 015f 3B       		.uleb128 0x3b
+ 1070 0160 0B       		.uleb128 0xb
+ 1071 0161 49       		.uleb128 0x49
+ 1072 0162 13       		.uleb128 0x13
+ 1073 0163 02       		.uleb128 0x2
+ 1074 0164 0A       		.uleb128 0xa
+ 1075 0165 00       		.byte	0
+ 1076 0166 00       		.byte	0
+ 1077 0167 1A       		.uleb128 0x1a
+ 1078 0168 1D       		.uleb128 0x1d
+ 1079 0169 01       		.byte	0x1
+ 1080 016a 31       		.uleb128 0x31
+ 1081 016b 13       		.uleb128 0x13
+ 1082 016c 52       		.uleb128 0x52
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\ccPjilfL.s 			page 20
+
+
+ 1083 016d 01       		.uleb128 0x1
+ 1084 016e 55       		.uleb128 0x55
+ 1085 016f 06       		.uleb128 0x6
+ 1086 0170 58       		.uleb128 0x58
+ 1087 0171 0B       		.uleb128 0xb
+ 1088 0172 59       		.uleb128 0x59
+ 1089 0173 0B       		.uleb128 0xb
+ 1090 0174 00       		.byte	0
+ 1091 0175 00       		.byte	0
+ 1092 0176 1B       		.uleb128 0x1b
+ 1093 0177 0B       		.uleb128 0xb
+ 1094 0178 01       		.byte	0x1
+ 1095 0179 55       		.uleb128 0x55
+ 1096 017a 06       		.uleb128 0x6
+ 1097 017b 00       		.byte	0
+ 1098 017c 00       		.byte	0
+ 1099 017d 1C       		.uleb128 0x1c
+ 1100 017e 34       		.uleb128 0x34
+ 1101 017f 00       		.byte	0
+ 1102 0180 31       		.uleb128 0x31
+ 1103 0181 13       		.uleb128 0x13
+ 1104 0182 02       		.uleb128 0x2
+ 1105 0183 06       		.uleb128 0x6
+ 1106 0184 00       		.byte	0
+ 1107 0185 00       		.byte	0
+ 1108 0186 1D       		.uleb128 0x1d
+ 1109 0187 34       		.uleb128 0x34
+ 1110 0188 00       		.byte	0
+ 1111 0189 03       		.uleb128 0x3
+ 1112 018a 0E       		.uleb128 0xe
+ 1113 018b 3A       		.uleb128 0x3a
+ 1114 018c 0B       		.uleb128 0xb
+ 1115 018d 3B       		.uleb128 0x3b
+ 1116 018e 05       		.uleb128 0x5
+ 1117 018f 49       		.uleb128 0x49
+ 1118 0190 13       		.uleb128 0x13
+ 1119 0191 3F       		.uleb128 0x3f
+ 1120 0192 0C       		.uleb128 0xc
+ 1121 0193 3C       		.uleb128 0x3c
+ 1122 0194 0C       		.uleb128 0xc
+ 1123 0195 00       		.byte	0
+ 1124 0196 00       		.byte	0
+ 1125 0197 1E       		.uleb128 0x1e
+ 1126 0198 26       		.uleb128 0x26
+ 1127 0199 00       		.byte	0
+ 1128 019a 49       		.uleb128 0x49
+ 1129 019b 13       		.uleb128 0x13
+ 1130 019c 00       		.byte	0
+ 1131 019d 00       		.byte	0
+ 1132 019e 1F       		.uleb128 0x1f
+ 1133 019f 2E       		.uleb128 0x2e
+ 1134 01a0 00       		.byte	0
+ 1135 01a1 3F       		.uleb128 0x3f
+ 1136 01a2 0C       		.uleb128 0xc
+ 1137 01a3 03       		.uleb128 0x3
+ 1138 01a4 0E       		.uleb128 0xe
+ 1139 01a5 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\ccPjilfL.s 			page 21
+
+
+ 1140 01a6 0B       		.uleb128 0xb
+ 1141 01a7 3B       		.uleb128 0x3b
+ 1142 01a8 05       		.uleb128 0x5
+ 1143 01a9 27       		.uleb128 0x27
+ 1144 01aa 0C       		.uleb128 0xc
+ 1145 01ab 3C       		.uleb128 0x3c
+ 1146 01ac 0C       		.uleb128 0xc
+ 1147 01ad 00       		.byte	0
+ 1148 01ae 00       		.byte	0
+ 1149 01af 20       		.uleb128 0x20
+ 1150 01b0 2E       		.uleb128 0x2e
+ 1151 01b1 01       		.byte	0x1
+ 1152 01b2 3F       		.uleb128 0x3f
+ 1153 01b3 0C       		.uleb128 0xc
+ 1154 01b4 03       		.uleb128 0x3
+ 1155 01b5 0E       		.uleb128 0xe
+ 1156 01b6 3A       		.uleb128 0x3a
+ 1157 01b7 0B       		.uleb128 0xb
+ 1158 01b8 3B       		.uleb128 0x3b
+ 1159 01b9 05       		.uleb128 0x5
+ 1160 01ba 27       		.uleb128 0x27
+ 1161 01bb 0C       		.uleb128 0xc
+ 1162 01bc 3C       		.uleb128 0x3c
+ 1163 01bd 0C       		.uleb128 0xc
+ 1164 01be 01       		.uleb128 0x1
+ 1165 01bf 13       		.uleb128 0x13
+ 1166 01c0 00       		.byte	0
+ 1167 01c1 00       		.byte	0
+ 1168 01c2 21       		.uleb128 0x21
+ 1169 01c3 05       		.uleb128 0x5
+ 1170 01c4 00       		.byte	0
+ 1171 01c5 49       		.uleb128 0x49
+ 1172 01c6 13       		.uleb128 0x13
+ 1173 01c7 00       		.byte	0
+ 1174 01c8 00       		.byte	0
+ 1175 01c9 22       		.uleb128 0x22
+ 1176 01ca 0F       		.uleb128 0xf
+ 1177 01cb 00       		.byte	0
+ 1178 01cc 0B       		.uleb128 0xb
+ 1179 01cd 0B       		.uleb128 0xb
+ 1180 01ce 49       		.uleb128 0x49
+ 1181 01cf 13       		.uleb128 0x13
+ 1182 01d0 00       		.byte	0
+ 1183 01d1 00       		.byte	0
+ 1184 01d2 23       		.uleb128 0x23
+ 1185 01d3 2E       		.uleb128 0x2e
+ 1186 01d4 00       		.byte	0
+ 1187 01d5 3F       		.uleb128 0x3f
+ 1188 01d6 0C       		.uleb128 0xc
+ 1189 01d7 03       		.uleb128 0x3
+ 1190 01d8 0E       		.uleb128 0xe
+ 1191 01d9 3A       		.uleb128 0x3a
+ 1192 01da 0B       		.uleb128 0xb
+ 1193 01db 3B       		.uleb128 0x3b
+ 1194 01dc 0B       		.uleb128 0xb
+ 1195 01dd 27       		.uleb128 0x27
+ 1196 01de 0C       		.uleb128 0xc
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\ccPjilfL.s 			page 22
+
+
+ 1197 01df 3C       		.uleb128 0x3c
+ 1198 01e0 0C       		.uleb128 0xc
+ 1199 01e1 00       		.byte	0
+ 1200 01e2 00       		.byte	0
+ 1201 01e3 00       		.byte	0
+ 1202              		.section	.debug_loc,"",%progbits
+ 1203              	.Ldebug_loc0:
+ 1204              	.LLST0:
+ 1205 0000 00000000 		.4byte	.LFB118
+ 1206 0004 02000000 		.4byte	.LCFI0
+ 1207 0008 0200     		.2byte	0x2
+ 1208 000a 7D       		.byte	0x7d
+ 1209 000b 00       		.sleb128 0
+ 1210 000c 02000000 		.4byte	.LCFI0
+ 1211 0010 2A000000 		.4byte	.LFE118
+ 1212 0014 0200     		.2byte	0x2
+ 1213 0016 7D       		.byte	0x7d
+ 1214 0017 08       		.sleb128 8
+ 1215 0018 00000000 		.4byte	0
+ 1216 001c 00000000 		.4byte	0
+ 1217              	.LLST1:
+ 1218 0020 00000000 		.4byte	.LVL7
+ 1219 0024 18000000 		.4byte	.LVL9
+ 1220 0028 0100     		.2byte	0x1
+ 1221 002a 50       		.byte	0x50
+ 1222 002b 18000000 		.4byte	.LVL9
+ 1223 002f 1C000000 		.4byte	.LVL10
+ 1224 0033 0400     		.2byte	0x4
+ 1225 0035 F3       		.byte	0xf3
+ 1226 0036 01       		.uleb128 0x1
+ 1227 0037 50       		.byte	0x50
+ 1228 0038 9F       		.byte	0x9f
+ 1229 0039 1C000000 		.4byte	.LVL10
+ 1230 003d 22000000 		.4byte	.LVL11
+ 1231 0041 0100     		.2byte	0x1
+ 1232 0043 50       		.byte	0x50
+ 1233 0044 22000000 		.4byte	.LVL11
+ 1234 0048 24000000 		.4byte	.LVL12
+ 1235 004c 0400     		.2byte	0x4
+ 1236 004e F3       		.byte	0xf3
+ 1237 004f 01       		.uleb128 0x1
+ 1238 0050 50       		.byte	0x50
+ 1239 0051 9F       		.byte	0x9f
+ 1240 0052 24000000 		.4byte	.LVL12
+ 1241 0056 26000000 		.4byte	.LVL13
+ 1242 005a 0100     		.2byte	0x1
+ 1243 005c 50       		.byte	0x50
+ 1244 005d 26000000 		.4byte	.LVL13
+ 1245 0061 28000000 		.4byte	.LFE119
+ 1246 0065 0400     		.2byte	0x4
+ 1247 0067 F3       		.byte	0xf3
+ 1248 0068 01       		.uleb128 0x1
+ 1249 0069 50       		.byte	0x50
+ 1250 006a 9F       		.byte	0x9f
+ 1251 006b 00000000 		.4byte	0
+ 1252 006f 00000000 		.4byte	0
+ 1253              	.LLST2:
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\ccPjilfL.s 			page 23
+
+
+ 1254 0073 00000000 		.4byte	.LVL14
+ 1255 0077 0E000000 		.4byte	.LVL16
+ 1256 007b 0100     		.2byte	0x1
+ 1257 007d 50       		.byte	0x50
+ 1258 007e 0E000000 		.4byte	.LVL16
+ 1259 0082 2C000000 		.4byte	.LFE120
+ 1260 0086 0400     		.2byte	0x4
+ 1261 0088 F3       		.byte	0xf3
+ 1262 0089 01       		.uleb128 0x1
+ 1263 008a 50       		.byte	0x50
+ 1264 008b 9F       		.byte	0x9f
+ 1265 008c 00000000 		.4byte	0
+ 1266 0090 00000000 		.4byte	0
+ 1267              	.LLST3:
+ 1268 0094 12000000 		.4byte	.LVL17
+ 1269 0098 24000000 		.4byte	.LVL18
+ 1270 009c 0100     		.2byte	0x1
+ 1271 009e 53       		.byte	0x53
+ 1272 009f 00000000 		.4byte	0
+ 1273 00a3 00000000 		.4byte	0
+ 1274              		.section	.debug_aranges,"",%progbits
+ 1275 0000 2C000000 		.4byte	0x2c
+ 1276 0004 0200     		.2byte	0x2
+ 1277 0006 00000000 		.4byte	.Ldebug_info0
+ 1278 000a 04       		.byte	0x4
+ 1279 000b 00       		.byte	0
+ 1280 000c 0000     		.2byte	0
+ 1281 000e 0000     		.2byte	0
+ 1282 0010 00000000 		.4byte	.LFB118
+ 1283 0014 2A000000 		.4byte	.LFE118-.LFB118
+ 1284 0018 00000000 		.4byte	.LFB119
+ 1285 001c 28000000 		.4byte	.LFE119-.LFB119
+ 1286 0020 00000000 		.4byte	.LFB120
+ 1287 0024 2C000000 		.4byte	.LFE120-.LFB120
+ 1288 0028 00000000 		.4byte	0
+ 1289 002c 00000000 		.4byte	0
+ 1290              		.section	.debug_ranges,"",%progbits
+ 1291              	.Ldebug_ranges0:
+ 1292 0000 08000000 		.4byte	.LBB4
+ 1293 0004 0A000000 		.4byte	.LBE4
+ 1294 0008 0E000000 		.4byte	.LBB7
+ 1295 000c 26000000 		.4byte	.LBE7
+ 1296 0010 00000000 		.4byte	0
+ 1297 0014 00000000 		.4byte	0
+ 1298 0018 08000000 		.4byte	.LBB5
+ 1299 001c 0A000000 		.4byte	.LBE5
+ 1300 0020 0E000000 		.4byte	.LBB6
+ 1301 0024 26000000 		.4byte	.LBE6
+ 1302 0028 00000000 		.4byte	0
+ 1303 002c 00000000 		.4byte	0
+ 1304 0030 00000000 		.4byte	.LFB118
+ 1305 0034 2A000000 		.4byte	.LFE118
+ 1306 0038 00000000 		.4byte	.LFB119
+ 1307 003c 28000000 		.4byte	.LFE119
+ 1308 0040 00000000 		.4byte	.LFB120
+ 1309 0044 2C000000 		.4byte	.LFE120
+ 1310 0048 00000000 		.4byte	0
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\ccPjilfL.s 			page 24
+
+
+ 1311 004c 00000000 		.4byte	0
+ 1312              		.section	.debug_line,"",%progbits
+ 1313              	.Ldebug_line0:
+ 1314 0000 C0020000 		.section	.debug_str,"MS",%progbits,1
+ 1314      02004902 
+ 1314      00000201 
+ 1314      FB0E0D00 
+ 1314      01010101 
+ 1315              	.LASF59:
+ 1316 0000 7469636B 		.ascii	"ticks\000"
+ 1316      7300
+ 1317              	.LASF60:
+ 1318 0006 5F70616C 		.ascii	"_pal_lld_init\000"
+ 1318      5F6C6C64 
+ 1318      5F696E69 
+ 1318      7400
+ 1319              	.LASF48:
+ 1320 0014 70616C5F 		.ascii	"pal_default_config\000"
+ 1320      64656661 
+ 1320      756C745F 
+ 1320      636F6E66 
+ 1320      696700
+ 1321              	.LASF3:
+ 1322 0027 73686F72 		.ascii	"short int\000"
+ 1322      7420696E 
+ 1322      7400
+ 1323              	.LASF22:
+ 1324 0031 50435352 		.ascii	"PCSR\000"
+ 1324      00
+ 1325              	.LASF14:
+ 1326 0036 73697A65 		.ascii	"sizetype\000"
+ 1326      74797065 
+ 1326      00
+ 1327              	.LASF55:
+ 1328 003f 474E5520 		.ascii	"GNU C 4.7.4 20140401 (release) [ARM/embedded-4_7-br"
+ 1328      4320342E 
+ 1328      372E3420 
+ 1328      32303134 
+ 1328      30343031 
+ 1329 0072 616E6368 		.ascii	"anch revision 209195]\000"
+ 1329      20726576 
+ 1329      6973696F 
+ 1329      6E203230 
+ 1329      39313935 
+ 1330              	.LASF52:
+ 1331 0088 73646349 		.ascii	"sdcInit\000"
+ 1331      6E697400 
+ 1332              	.LASF38:
+ 1333 0090 50464461 		.ascii	"PFData\000"
+ 1333      746100
+ 1334              	.LASF41:
+ 1335 0097 50494461 		.ascii	"PIData\000"
+ 1335      746100
+ 1336              	.LASF21:
+ 1337 009e 464F4C44 		.ascii	"FOLDCNT\000"
+ 1337      434E5400 
+ 1338              	.LASF53:
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\ccPjilfL.s 			page 25
+
+
+ 1339 00a6 73706949 		.ascii	"spiInit\000"
+ 1339      6E697400 
+ 1340              	.LASF51:
+ 1341 00ae 7364496E 		.ascii	"sdInit\000"
+ 1341      697400
+ 1342              	.LASF13:
+ 1343 00b5 494F5245 		.ascii	"IOREG32\000"
+ 1343      47333200 
+ 1344              	.LASF33:
+ 1345 00bd 50414461 		.ascii	"PAData\000"
+ 1345      746100
+ 1346              	.LASF9:
+ 1347 00c4 6C6F6E67 		.ascii	"long long int\000"
+ 1347      206C6F6E 
+ 1347      6720696E 
+ 1347      7400
+ 1348              	.LASF44:
+ 1349 00d2 68616C49 		.ascii	"halInit\000"
+ 1349      6E697400 
+ 1350              	.LASF16:
+ 1351 00da 43594343 		.ascii	"CYCCNT\000"
+ 1351      4E5400
+ 1352              	.LASF28:
+ 1353 00e1 6F737065 		.ascii	"ospeedr\000"
+ 1353      65647200 
+ 1354              	.LASF5:
+ 1355 00e9 6C6F6E67 		.ascii	"long int\000"
+ 1355      20696E74 
+ 1355      00
+ 1356              	.LASF50:
+ 1357 00f2 70776D49 		.ascii	"pwmInit\000"
+ 1357      6E697400 
+ 1358              	.LASF36:
+ 1359 00fa 50444461 		.ascii	"PDData\000"
+ 1359      746100
+ 1360              	.LASF45:
+ 1361 0101 68616C50 		.ascii	"halPolledDelay\000"
+ 1361      6F6C6C65 
+ 1361      6444656C 
+ 1361      617900
+ 1362              	.LASF54:
+ 1363 0110 626F6172 		.ascii	"boardInit\000"
+ 1363      64496E69 
+ 1363      7400
+ 1364              	.LASF39:
+ 1365 011a 50474461 		.ascii	"PGData\000"
+ 1365      746100
+ 1366              	.LASF35:
+ 1367 0121 50434461 		.ascii	"PCData\000"
+ 1367      746100
+ 1368              	.LASF2:
+ 1369 0128 756E7369 		.ascii	"unsigned char\000"
+ 1369      676E6564 
+ 1369      20636861 
+ 1369      7200
+ 1370              	.LASF15:
+ 1371 0136 4354524C 		.ascii	"CTRL\000"
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\ccPjilfL.s 			page 26
+
+
+ 1371      00
+ 1372              	.LASF57:
+ 1373 013b 433A5C43 		.ascii	"C:\\ChibiStudio\\workspace26\\Mobile_phone\000"
+ 1373      68696269 
+ 1373      53747564 
+ 1373      696F5C77 
+ 1373      6F726B73 
+ 1374              	.LASF1:
+ 1375 0163 7369676E 		.ascii	"signed char\000"
+ 1375      65642063 
+ 1375      68617200 
+ 1376              	.LASF10:
+ 1377 016f 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1377      206C6F6E 
+ 1377      6720756E 
+ 1377      7369676E 
+ 1377      65642069 
+ 1378              	.LASF7:
+ 1379 0186 75696E74 		.ascii	"uint32_t\000"
+ 1379      33325F74 
+ 1379      00
+ 1380              	.LASF27:
+ 1381 018f 6F747970 		.ascii	"otyper\000"
+ 1381      657200
+ 1382              	.LASF32:
+ 1383 0196 73746D33 		.ascii	"stm32_gpio_setup_t\000"
+ 1383      325F6770 
+ 1383      696F5F73 
+ 1383      65747570 
+ 1383      5F7400
+ 1384              	.LASF49:
+ 1385 01a9 68616C5F 		.ascii	"hal_lld_init\000"
+ 1385      6C6C645F 
+ 1385      696E6974 
+ 1385      00
+ 1386              	.LASF43:
+ 1387 01b6 73746172 		.ascii	"start\000"
+ 1387      7400
+ 1388              	.LASF4:
+ 1389 01bc 73686F72 		.ascii	"short unsigned int\000"
+ 1389      7420756E 
+ 1389      7369676E 
+ 1389      65642069 
+ 1389      6E7400
+ 1390              	.LASF24:
+ 1391 01cf 63686172 		.ascii	"char\000"
+ 1391      00
+ 1392              	.LASF6:
+ 1393 01d4 696E7433 		.ascii	"int32_t\000"
+ 1393      325F7400 
+ 1394              	.LASF11:
+ 1395 01dc 626F6F6C 		.ascii	"bool_t\000"
+ 1395      5F7400
+ 1396              	.LASF42:
+ 1397 01e3 50414C43 		.ascii	"PALConfig\000"
+ 1397      6F6E6669 
+ 1397      6700
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\ccPjilfL.s 			page 27
+
+
+ 1398              	.LASF34:
+ 1399 01ed 50424461 		.ascii	"PBData\000"
+ 1399      746100
+ 1400              	.LASF12:
+ 1401 01f4 5F426F6F 		.ascii	"_Bool\000"
+ 1401      6C00
+ 1402              	.LASF23:
+ 1403 01fa 434D785F 		.ascii	"CMx_DWT\000"
+ 1403      44575400 
+ 1404              	.LASF37:
+ 1405 0202 50454461 		.ascii	"PEData\000"
+ 1405      746100
+ 1406              	.LASF17:
+ 1407 0209 43504943 		.ascii	"CPICNT\000"
+ 1407      4E5400
+ 1408              	.LASF8:
+ 1409 0210 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1409      20756E73 
+ 1409      69676E65 
+ 1409      6420696E 
+ 1409      7400
+ 1410              	.LASF40:
+ 1411 0222 50484461 		.ascii	"PHData\000"
+ 1411      746100
+ 1412              	.LASF56:
+ 1413 0229 2E2E2F2E 		.ascii	"../../chibios/os/hal/src/hal.c\000"
+ 1413      2E2F6368 
+ 1413      6962696F 
+ 1413      732F6F73 
+ 1413      2F68616C 
+ 1414              	.LASF25:
+ 1415 0248 68616C72 		.ascii	"halrtcnt_t\000"
+ 1415      74636E74 
+ 1415      5F7400
+ 1416              	.LASF19:
+ 1417 0253 534C4545 		.ascii	"SLEEPCNT\000"
+ 1417      50434E54 
+ 1417      00
+ 1418              	.LASF29:
+ 1419 025c 70757064 		.ascii	"pupdr\000"
+ 1419      7200
+ 1420              	.LASF20:
+ 1421 0262 4C535543 		.ascii	"LSUCNT\000"
+ 1421      4E5400
+ 1422              	.LASF31:
+ 1423 0269 61667268 		.ascii	"afrh\000"
+ 1423      00
+ 1424              	.LASF30:
+ 1425 026e 6166726C 		.ascii	"afrl\000"
+ 1425      00
+ 1426              	.LASF26:
+ 1427 0273 6D6F6465 		.ascii	"moder\000"
+ 1427      7200
+ 1428              	.LASF47:
+ 1429 0279 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1429      52784275 
+ 1429      66666572 
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\ccPjilfL.s 			page 28
+
+
+ 1429      00
+ 1430              	.LASF0:
+ 1431 0286 756E7369 		.ascii	"unsigned int\000"
+ 1431      676E6564 
+ 1431      20696E74 
+ 1431      00
+ 1432              	.LASF58:
+ 1433 0293 68616C49 		.ascii	"halIsCounterWithin\000"
+ 1433      73436F75 
+ 1433      6E746572 
+ 1433      57697468 
+ 1433      696E00
+ 1434              	.LASF18:
+ 1435 02a6 45584343 		.ascii	"EXCCNT\000"
+ 1435      4E5400
+ 1436              	.LASF46:
+ 1437 02ad 74696D65 		.ascii	"timeout\000"
+ 1437      6F757400 
+ 1438              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.4 20140401 (release) [ARM/embedded-4_7-br
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\ccPjilfL.s 			page 29
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 hal.c
+C:\Users\Elis\AppData\Local\Temp\ccPjilfL.s:19     .text.halInit:00000000 $t
+C:\Users\Elis\AppData\Local\Temp\ccPjilfL.s:25     .text.halInit:00000000 halInit
+C:\Users\Elis\AppData\Local\Temp\ccPjilfL.s:66     .text.halIsCounterWithin:00000000 $t
+C:\Users\Elis\AppData\Local\Temp\ccPjilfL.s:72     .text.halIsCounterWithin:00000000 halIsCounterWithin
+C:\Users\Elis\AppData\Local\Temp\ccPjilfL.s:120    .text.halPolledDelay:00000000 $t
+C:\Users\Elis\AppData\Local\Temp\ccPjilfL.s:126    .text.halPolledDelay:00000000 halPolledDelay
+                     .debug_frame:00000010 $d
+
+UNDEFINED SYMBOLS
+hal_lld_init
+pal_default_config
+_pal_lld_init
+pwmInit
+sdInit
+sdcInit
+spiInit
+boardInit

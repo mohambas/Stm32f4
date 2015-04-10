@@ -1,0 +1,511 @@
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\ccKLrDcf.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m4
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 2
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"ginput.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text._ginputInit,"ax",%progbits
+  19              		.align	2
+  20              		.p2align 4,,15
+  21              		.global	_ginputInit
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	_ginputInit, %function
+  25              	_ginputInit:
+  26              	.LFB118:
+  27              		.file 1 "../../ugfx/src/ginput/ginput.c"
+  28              		.loc 1 29 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  33              		.loc 1 40 0
+  34              		.loc 1 31 0
+  35 0000 FFF7FEBF 		b	_gmouseInit
+  36              	.LVL0:
+  37              		.cfi_endproc
+  38              	.LFE118:
+  39              		.size	_ginputInit, .-_ginputInit
+  40 0004 AFF30080 		.section	.text._ginputDeinit,"ax",%progbits
+  40      AFF30080 
+  40      AFF30080 
+  41              		.align	2
+  42              		.p2align 4,,15
+  43              		.global	_ginputDeinit
+  44              		.thumb
+  45              		.thumb_func
+  46              		.type	_ginputDeinit, %function
+  47              	_ginputDeinit:
+  48              	.LFB119:
+  49              		.loc 1 43 0
+  50              		.cfi_startproc
+  51              		@ args = 0, pretend = 0, frame = 0
+  52              		@ frame_needed = 0, uses_anonymous_args = 0
+  53              		@ link register save eliminated.
+  54              		.loc 1 50 0
+  55              		.loc 1 48 0
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\ccKLrDcf.s 			page 2
+
+
+  56 0000 FFF7FEBF 		b	_gmouseDeinit
+  57              	.LVL1:
+  58              		.cfi_endproc
+  59              	.LFE119:
+  60              		.size	_ginputDeinit, .-_ginputDeinit
+  61 0004 AFF30080 		.text
+  61      AFF30080 
+  61      AFF30080 
+  62              	.Letext0:
+  63              		.file 2 "c:\\chibistudio\\tools\\gnu tools arm embedded\\4.7 2014q2\\bin\\../lib/gcc/arm-none-eabi
+  64              		.file 3 "../../chibios/os/ports/common/ARMCMx/CMSIS/include/core_cm4.h"
+  65              		.section	.debug_info,"",%progbits
+  66              	.Ldebug_info0:
+  67 0000 FB000000 		.4byte	0xfb
+  68 0004 0200     		.2byte	0x2
+  69 0006 00000000 		.4byte	.Ldebug_abbrev0
+  70 000a 04       		.byte	0x4
+  71 000b 01       		.uleb128 0x1
+  72 000c 4D000000 		.4byte	.LASF16
+  73 0010 01       		.byte	0x1
+  74 0011 21000000 		.4byte	.LASF17
+  75 0015 08010000 		.4byte	.LASF18
+  76 0019 00000000 		.4byte	.Ldebug_ranges0+0
+  77 001d 00000000 		.4byte	0
+  78 0021 00000000 		.4byte	0
+  79 0025 00000000 		.4byte	.Ldebug_line0
+  80 0029 02       		.uleb128 0x2
+  81 002a 04       		.byte	0x4
+  82 002b 05       		.byte	0x5
+  83 002c 696E7400 		.ascii	"int\000"
+  84 0030 03       		.uleb128 0x3
+  85 0031 04       		.byte	0x4
+  86 0032 07       		.byte	0x7
+  87 0033 40000000 		.4byte	.LASF0
+  88 0037 03       		.uleb128 0x3
+  89 0038 01       		.byte	0x1
+  90 0039 06       		.byte	0x6
+  91 003a FC000000 		.4byte	.LASF1
+  92 003e 03       		.uleb128 0x3
+  93 003f 01       		.byte	0x1
+  94 0040 08       		.byte	0x8
+  95 0041 CD000000 		.4byte	.LASF2
+  96 0045 03       		.uleb128 0x3
+  97 0046 02       		.byte	0x2
+  98 0047 05       		.byte	0x5
+  99 0048 3C010000 		.4byte	.LASF3
+ 100 004c 03       		.uleb128 0x3
+ 101 004d 02       		.byte	0x2
+ 102 004e 07       		.byte	0x7
+ 103 004f 0E000000 		.4byte	.LASF4
+ 104 0053 04       		.uleb128 0x4
+ 105 0054 46010000 		.4byte	.LASF19
+ 106 0058 02       		.byte	0x2
+ 107 0059 4F       		.byte	0x4f
+ 108 005a 5E000000 		.4byte	0x5e
+ 109 005e 03       		.uleb128 0x3
+ 110 005f 04       		.byte	0x4
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\ccKLrDcf.s 			page 3
+
+
+ 111 0060 05       		.byte	0x5
+ 112 0061 E0000000 		.4byte	.LASF5
+ 113 0065 03       		.uleb128 0x3
+ 114 0066 04       		.byte	0x4
+ 115 0067 07       		.byte	0x7
+ 116 0068 96000000 		.4byte	.LASF6
+ 117 006c 03       		.uleb128 0x3
+ 118 006d 08       		.byte	0x8
+ 119 006e 05       		.byte	0x5
+ 120 006f 00000000 		.4byte	.LASF7
+ 121 0073 03       		.uleb128 0x3
+ 122 0074 08       		.byte	0x8
+ 123 0075 07       		.byte	0x7
+ 124 0076 A8000000 		.4byte	.LASF8
+ 125 007a 03       		.uleb128 0x3
+ 126 007b 01       		.byte	0x1
+ 127 007c 02       		.byte	0x2
+ 128 007d E9000000 		.4byte	.LASF9
+ 129 0081 03       		.uleb128 0x3
+ 130 0082 04       		.byte	0x4
+ 131 0083 07       		.byte	0x7
+ 132 0084 68010000 		.4byte	.LASF10
+ 133 0088 03       		.uleb128 0x3
+ 134 0089 01       		.byte	0x1
+ 135 008a 08       		.byte	0x8
+ 136 008b DB000000 		.4byte	.LASF11
+ 137 008f 05       		.uleb128 0x5
+ 138 0090 53000000 		.4byte	0x53
+ 139 0094 06       		.uleb128 0x6
+ 140 0095 01       		.byte	0x1
+ 141 0096 5C010000 		.4byte	.LASF12
+ 142 009a 01       		.byte	0x1
+ 143 009b 1C       		.byte	0x1c
+ 144 009c 01       		.byte	0x1
+ 145 009d 00000000 		.4byte	.LFB118
+ 146 00a1 04000000 		.4byte	.LFE118
+ 147 00a5 02       		.byte	0x2
+ 148 00a6 7D       		.byte	0x7d
+ 149 00a7 00       		.sleb128 0
+ 150 00a8 01       		.byte	0x1
+ 151 00a9 B8000000 		.4byte	0xb8
+ 152 00ad 07       		.uleb128 0x7
+ 153 00ae 04000000 		.4byte	.LVL0
+ 154 00b2 01       		.byte	0x1
+ 155 00b3 EA000000 		.4byte	0xea
+ 156 00b7 00       		.byte	0
+ 157 00b8 06       		.uleb128 0x6
+ 158 00b9 01       		.byte	0x1
+ 159 00ba BF000000 		.4byte	.LASF13
+ 160 00be 01       		.byte	0x1
+ 161 00bf 2A       		.byte	0x2a
+ 162 00c0 01       		.byte	0x1
+ 163 00c1 00000000 		.4byte	.LFB119
+ 164 00c5 04000000 		.4byte	.LFE119
+ 165 00c9 02       		.byte	0x2
+ 166 00ca 7D       		.byte	0x7d
+ 167 00cb 00       		.sleb128 0
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\ccKLrDcf.s 			page 4
+
+
+ 168 00cc 01       		.byte	0x1
+ 169 00cd DC000000 		.4byte	0xdc
+ 170 00d1 07       		.uleb128 0x7
+ 171 00d2 04000000 		.4byte	.LVL1
+ 172 00d6 01       		.byte	0x1
+ 173 00d7 F4000000 		.4byte	0xf4
+ 174 00db 00       		.byte	0
+ 175 00dc 08       		.uleb128 0x8
+ 176 00dd EF000000 		.4byte	.LASF20
+ 177 00e1 03       		.byte	0x3
+ 178 00e2 9806     		.2byte	0x698
+ 179 00e4 8F000000 		.4byte	0x8f
+ 180 00e8 01       		.byte	0x1
+ 181 00e9 01       		.byte	0x1
+ 182 00ea 09       		.uleb128 0x9
+ 183 00eb 01       		.byte	0x1
+ 184 00ec 30010000 		.4byte	.LASF14
+ 185 00f0 01       		.byte	0x1
+ 186 00f1 14       		.byte	0x14
+ 187 00f2 01       		.byte	0x1
+ 188 00f3 01       		.byte	0x1
+ 189 00f4 09       		.uleb128 0x9
+ 190 00f5 01       		.byte	0x1
+ 191 00f6 4E010000 		.4byte	.LASF15
+ 192 00fa 01       		.byte	0x1
+ 193 00fb 15       		.byte	0x15
+ 194 00fc 01       		.byte	0x1
+ 195 00fd 01       		.byte	0x1
+ 196 00fe 00       		.byte	0
+ 197              		.section	.debug_abbrev,"",%progbits
+ 198              	.Ldebug_abbrev0:
+ 199 0000 01       		.uleb128 0x1
+ 200 0001 11       		.uleb128 0x11
+ 201 0002 01       		.byte	0x1
+ 202 0003 25       		.uleb128 0x25
+ 203 0004 0E       		.uleb128 0xe
+ 204 0005 13       		.uleb128 0x13
+ 205 0006 0B       		.uleb128 0xb
+ 206 0007 03       		.uleb128 0x3
+ 207 0008 0E       		.uleb128 0xe
+ 208 0009 1B       		.uleb128 0x1b
+ 209 000a 0E       		.uleb128 0xe
+ 210 000b 55       		.uleb128 0x55
+ 211 000c 06       		.uleb128 0x6
+ 212 000d 11       		.uleb128 0x11
+ 213 000e 01       		.uleb128 0x1
+ 214 000f 52       		.uleb128 0x52
+ 215 0010 01       		.uleb128 0x1
+ 216 0011 10       		.uleb128 0x10
+ 217 0012 06       		.uleb128 0x6
+ 218 0013 00       		.byte	0
+ 219 0014 00       		.byte	0
+ 220 0015 02       		.uleb128 0x2
+ 221 0016 24       		.uleb128 0x24
+ 222 0017 00       		.byte	0
+ 223 0018 0B       		.uleb128 0xb
+ 224 0019 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\ccKLrDcf.s 			page 5
+
+
+ 225 001a 3E       		.uleb128 0x3e
+ 226 001b 0B       		.uleb128 0xb
+ 227 001c 03       		.uleb128 0x3
+ 228 001d 08       		.uleb128 0x8
+ 229 001e 00       		.byte	0
+ 230 001f 00       		.byte	0
+ 231 0020 03       		.uleb128 0x3
+ 232 0021 24       		.uleb128 0x24
+ 233 0022 00       		.byte	0
+ 234 0023 0B       		.uleb128 0xb
+ 235 0024 0B       		.uleb128 0xb
+ 236 0025 3E       		.uleb128 0x3e
+ 237 0026 0B       		.uleb128 0xb
+ 238 0027 03       		.uleb128 0x3
+ 239 0028 0E       		.uleb128 0xe
+ 240 0029 00       		.byte	0
+ 241 002a 00       		.byte	0
+ 242 002b 04       		.uleb128 0x4
+ 243 002c 16       		.uleb128 0x16
+ 244 002d 00       		.byte	0
+ 245 002e 03       		.uleb128 0x3
+ 246 002f 0E       		.uleb128 0xe
+ 247 0030 3A       		.uleb128 0x3a
+ 248 0031 0B       		.uleb128 0xb
+ 249 0032 3B       		.uleb128 0x3b
+ 250 0033 0B       		.uleb128 0xb
+ 251 0034 49       		.uleb128 0x49
+ 252 0035 13       		.uleb128 0x13
+ 253 0036 00       		.byte	0
+ 254 0037 00       		.byte	0
+ 255 0038 05       		.uleb128 0x5
+ 256 0039 35       		.uleb128 0x35
+ 257 003a 00       		.byte	0
+ 258 003b 49       		.uleb128 0x49
+ 259 003c 13       		.uleb128 0x13
+ 260 003d 00       		.byte	0
+ 261 003e 00       		.byte	0
+ 262 003f 06       		.uleb128 0x6
+ 263 0040 2E       		.uleb128 0x2e
+ 264 0041 01       		.byte	0x1
+ 265 0042 3F       		.uleb128 0x3f
+ 266 0043 0C       		.uleb128 0xc
+ 267 0044 03       		.uleb128 0x3
+ 268 0045 0E       		.uleb128 0xe
+ 269 0046 3A       		.uleb128 0x3a
+ 270 0047 0B       		.uleb128 0xb
+ 271 0048 3B       		.uleb128 0x3b
+ 272 0049 0B       		.uleb128 0xb
+ 273 004a 27       		.uleb128 0x27
+ 274 004b 0C       		.uleb128 0xc
+ 275 004c 11       		.uleb128 0x11
+ 276 004d 01       		.uleb128 0x1
+ 277 004e 12       		.uleb128 0x12
+ 278 004f 01       		.uleb128 0x1
+ 279 0050 40       		.uleb128 0x40
+ 280 0051 0A       		.uleb128 0xa
+ 281 0052 9742     		.uleb128 0x2117
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\ccKLrDcf.s 			page 6
+
+
+ 282 0054 0C       		.uleb128 0xc
+ 283 0055 01       		.uleb128 0x1
+ 284 0056 13       		.uleb128 0x13
+ 285 0057 00       		.byte	0
+ 286 0058 00       		.byte	0
+ 287 0059 07       		.uleb128 0x7
+ 288 005a 898201   		.uleb128 0x4109
+ 289 005d 00       		.byte	0
+ 290 005e 11       		.uleb128 0x11
+ 291 005f 01       		.uleb128 0x1
+ 292 0060 9542     		.uleb128 0x2115
+ 293 0062 0C       		.uleb128 0xc
+ 294 0063 31       		.uleb128 0x31
+ 295 0064 13       		.uleb128 0x13
+ 296 0065 00       		.byte	0
+ 297 0066 00       		.byte	0
+ 298 0067 08       		.uleb128 0x8
+ 299 0068 34       		.uleb128 0x34
+ 300 0069 00       		.byte	0
+ 301 006a 03       		.uleb128 0x3
+ 302 006b 0E       		.uleb128 0xe
+ 303 006c 3A       		.uleb128 0x3a
+ 304 006d 0B       		.uleb128 0xb
+ 305 006e 3B       		.uleb128 0x3b
+ 306 006f 05       		.uleb128 0x5
+ 307 0070 49       		.uleb128 0x49
+ 308 0071 13       		.uleb128 0x13
+ 309 0072 3F       		.uleb128 0x3f
+ 310 0073 0C       		.uleb128 0xc
+ 311 0074 3C       		.uleb128 0x3c
+ 312 0075 0C       		.uleb128 0xc
+ 313 0076 00       		.byte	0
+ 314 0077 00       		.byte	0
+ 315 0078 09       		.uleb128 0x9
+ 316 0079 2E       		.uleb128 0x2e
+ 317 007a 00       		.byte	0
+ 318 007b 3F       		.uleb128 0x3f
+ 319 007c 0C       		.uleb128 0xc
+ 320 007d 03       		.uleb128 0x3
+ 321 007e 0E       		.uleb128 0xe
+ 322 007f 3A       		.uleb128 0x3a
+ 323 0080 0B       		.uleb128 0xb
+ 324 0081 3B       		.uleb128 0x3b
+ 325 0082 0B       		.uleb128 0xb
+ 326 0083 27       		.uleb128 0x27
+ 327 0084 0C       		.uleb128 0xc
+ 328 0085 3C       		.uleb128 0x3c
+ 329 0086 0C       		.uleb128 0xc
+ 330 0087 00       		.byte	0
+ 331 0088 00       		.byte	0
+ 332 0089 00       		.byte	0
+ 333              		.section	.debug_aranges,"",%progbits
+ 334 0000 24000000 		.4byte	0x24
+ 335 0004 0200     		.2byte	0x2
+ 336 0006 00000000 		.4byte	.Ldebug_info0
+ 337 000a 04       		.byte	0x4
+ 338 000b 00       		.byte	0
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\ccKLrDcf.s 			page 7
+
+
+ 339 000c 0000     		.2byte	0
+ 340 000e 0000     		.2byte	0
+ 341 0010 00000000 		.4byte	.LFB118
+ 342 0014 04000000 		.4byte	.LFE118-.LFB118
+ 343 0018 00000000 		.4byte	.LFB119
+ 344 001c 04000000 		.4byte	.LFE119-.LFB119
+ 345 0020 00000000 		.4byte	0
+ 346 0024 00000000 		.4byte	0
+ 347              		.section	.debug_ranges,"",%progbits
+ 348              	.Ldebug_ranges0:
+ 349 0000 00000000 		.4byte	.LFB118
+ 350 0004 04000000 		.4byte	.LFE118
+ 351 0008 00000000 		.4byte	.LFB119
+ 352 000c 04000000 		.4byte	.LFE119
+ 353 0010 00000000 		.4byte	0
+ 354 0014 00000000 		.4byte	0
+ 355              		.section	.debug_line,"",%progbits
+ 356              	.Ldebug_line0:
+ 357 0000 2A010000 		.section	.debug_str,"MS",%progbits,1
+ 357      0200FE00 
+ 357      00000201 
+ 357      FB0E0D00 
+ 357      01010101 
+ 358              	.LASF7:
+ 359 0000 6C6F6E67 		.ascii	"long long int\000"
+ 359      206C6F6E 
+ 359      6720696E 
+ 359      7400
+ 360              	.LASF4:
+ 361 000e 73686F72 		.ascii	"short unsigned int\000"
+ 361      7420756E 
+ 361      7369676E 
+ 361      65642069 
+ 361      6E7400
+ 362              	.LASF17:
+ 363 0021 2E2E2F2E 		.ascii	"../../ugfx/src/ginput/ginput.c\000"
+ 363      2E2F7567 
+ 363      66782F73 
+ 363      72632F67 
+ 363      696E7075 
+ 364              	.LASF0:
+ 365 0040 756E7369 		.ascii	"unsigned int\000"
+ 365      676E6564 
+ 365      20696E74 
+ 365      00
+ 366              	.LASF16:
+ 367 004d 474E5520 		.ascii	"GNU C 4.7.4 20140401 (release) [ARM/embedded-4_7-br"
+ 367      4320342E 
+ 367      372E3420 
+ 367      32303134 
+ 367      30343031 
+ 368 0080 616E6368 		.ascii	"anch revision 209195]\000"
+ 368      20726576 
+ 368      6973696F 
+ 368      6E203230 
+ 368      39313935 
+ 369              	.LASF6:
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\ccKLrDcf.s 			page 8
+
+
+ 370 0096 6C6F6E67 		.ascii	"long unsigned int\000"
+ 370      20756E73 
+ 370      69676E65 
+ 370      6420696E 
+ 370      7400
+ 371              	.LASF8:
+ 372 00a8 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 372      206C6F6E 
+ 372      6720756E 
+ 372      7369676E 
+ 372      65642069 
+ 373              	.LASF13:
+ 374 00bf 5F67696E 		.ascii	"_ginputDeinit\000"
+ 374      70757444 
+ 374      65696E69 
+ 374      7400
+ 375              	.LASF2:
+ 376 00cd 756E7369 		.ascii	"unsigned char\000"
+ 376      676E6564 
+ 376      20636861 
+ 376      7200
+ 377              	.LASF11:
+ 378 00db 63686172 		.ascii	"char\000"
+ 378      00
+ 379              	.LASF5:
+ 380 00e0 6C6F6E67 		.ascii	"long int\000"
+ 380      20696E74 
+ 380      00
+ 381              	.LASF9:
+ 382 00e9 5F426F6F 		.ascii	"_Bool\000"
+ 382      6C00
+ 383              	.LASF20:
+ 384 00ef 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 384      52784275 
+ 384      66666572 
+ 384      00
+ 385              	.LASF1:
+ 386 00fc 7369676E 		.ascii	"signed char\000"
+ 386      65642063 
+ 386      68617200 
+ 387              	.LASF18:
+ 388 0108 433A5C43 		.ascii	"C:\\ChibiStudio\\workspace26\\Mobile_phone\000"
+ 388      68696269 
+ 388      53747564 
+ 388      696F5C77 
+ 388      6F726B73 
+ 389              	.LASF14:
+ 390 0130 5F676D6F 		.ascii	"_gmouseInit\000"
+ 390      75736549 
+ 390      6E697400 
+ 391              	.LASF3:
+ 392 013c 73686F72 		.ascii	"short int\000"
+ 392      7420696E 
+ 392      7400
+ 393              	.LASF19:
+ 394 0146 696E7433 		.ascii	"int32_t\000"
+ 394      325F7400 
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\ccKLrDcf.s 			page 9
+
+
+ 395              	.LASF15:
+ 396 014e 5F676D6F 		.ascii	"_gmouseDeinit\000"
+ 396      75736544 
+ 396      65696E69 
+ 396      7400
+ 397              	.LASF12:
+ 398 015c 5F67696E 		.ascii	"_ginputInit\000"
+ 398      70757449 
+ 398      6E697400 
+ 399              	.LASF10:
+ 400 0168 73697A65 		.ascii	"sizetype\000"
+ 400      74797065 
+ 400      00
+ 401              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.4 20140401 (release) [ARM/embedded-4_7-br
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\ccKLrDcf.s 			page 10
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 ginput.c
+C:\Users\Elis\AppData\Local\Temp\ccKLrDcf.s:19     .text._ginputInit:00000000 $t
+C:\Users\Elis\AppData\Local\Temp\ccKLrDcf.s:25     .text._ginputInit:00000000 _ginputInit
+C:\Users\Elis\AppData\Local\Temp\ccKLrDcf.s:41     .text._ginputDeinit:00000000 $t
+C:\Users\Elis\AppData\Local\Temp\ccKLrDcf.s:47     .text._ginputDeinit:00000000 _ginputDeinit
+                     .debug_frame:00000010 $d
+
+UNDEFINED SYMBOLS
+_gmouseInit
+_gmouseDeinit

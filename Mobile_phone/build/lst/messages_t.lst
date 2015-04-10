@@ -1,0 +1,457 @@
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cci7CnvL.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m4
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 2
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.file	"messages_t.c"
+  15              		.text
+  16              	.Ltext0:
+  17              		.cfi_sections	.debug_frame
+  18              		.section	.text.messages_t,"ax",%progbits
+  19              		.align	2
+  20              		.p2align 4,,15
+  21              		.global	messages_t
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	messages_t, %function
+  25              	messages_t:
+  26              	.LFB118:
+  27              		.file 1 "../../workspace26/Mobile_phone/tasks/messages_t.c"
+  28              		.loc 1 3 0
+  29              		.cfi_startproc
+  30              		@ Volatile: function does not return.
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              		@ link register save eliminated.
+  34              	.LVL0:
+  35              	.L2:
+  36 0000 FEE7     		b	.L2
+  37              		.cfi_endproc
+  38              	.LFE118:
+  39              		.size	messages_t, .-messages_t
+  40 0002 00BFAFF3 		.text
+  40      0080AFF3 
+  40      0080AFF3 
+  40      0080
+  41              	.Letext0:
+  42              		.file 2 "c:\\chibistudio\\tools\\gnu tools arm embedded\\4.7 2014q2\\bin\\../lib/gcc/arm-none-eabi
+  43              		.file 3 "../../chibios/os/ports/GCC/ARMCMx/chtypes.h"
+  44              		.file 4 "../../ugfx/src/gos/gos_chibios.h"
+  45              		.file 5 "../../chibios/os/ports/common/ARMCMx/CMSIS/include/core_cm4.h"
+  46              		.section	.debug_info,"",%progbits
+  47              	.Ldebug_info0:
+  48 0000 E2000000 		.4byte	0xe2
+  49 0004 0200     		.2byte	0x2
+  50 0006 00000000 		.4byte	.Ldebug_abbrev0
+  51 000a 04       		.byte	0x4
+  52 000b 01       		.uleb128 0x1
+  53 000c 2E000000 		.4byte	.LASF15
+  54 0010 01       		.byte	0x1
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cci7CnvL.s 			page 2
+
+
+  55 0011 23010000 		.4byte	.LASF16
+  56 0015 FB000000 		.4byte	.LASF17
+  57 0019 00000000 		.4byte	.Ldebug_ranges0+0
+  58 001d 00000000 		.4byte	0
+  59 0021 00000000 		.4byte	0
+  60 0025 00000000 		.4byte	.Ldebug_line0
+  61 0029 02       		.uleb128 0x2
+  62 002a 04       		.byte	0x4
+  63 002b 07       		.byte	0x7
+  64 002c 67010000 		.4byte	.LASF0
+  65 0030 02       		.uleb128 0x2
+  66 0031 01       		.byte	0x1
+  67 0032 08       		.byte	0x8
+  68 0033 CE000000 		.4byte	.LASF1
+  69 0037 03       		.uleb128 0x3
+  70 0038 04       		.byte	0x4
+  71 0039 05       		.byte	0x5
+  72 003a 696E7400 		.ascii	"int\000"
+  73 003e 02       		.uleb128 0x2
+  74 003f 04       		.byte	0x4
+  75 0040 07       		.byte	0x7
+  76 0041 21000000 		.4byte	.LASF2
+  77 0045 02       		.uleb128 0x2
+  78 0046 01       		.byte	0x1
+  79 0047 08       		.byte	0x8
+  80 0048 C0000000 		.4byte	.LASF3
+  81 004c 02       		.uleb128 0x2
+  82 004d 01       		.byte	0x1
+  83 004e 06       		.byte	0x6
+  84 004f EF000000 		.4byte	.LASF4
+  85 0053 02       		.uleb128 0x2
+  86 0054 02       		.byte	0x2
+  87 0055 05       		.byte	0x5
+  88 0056 55010000 		.4byte	.LASF5
+  89 005a 02       		.uleb128 0x2
+  90 005b 02       		.byte	0x2
+  91 005c 07       		.byte	0x7
+  92 005d 0E000000 		.4byte	.LASF6
+  93 0061 04       		.uleb128 0x4
+  94 0062 5F010000 		.4byte	.LASF12
+  95 0066 02       		.byte	0x2
+  96 0067 4F       		.byte	0x4f
+  97 0068 6C000000 		.4byte	0x6c
+  98 006c 02       		.uleb128 0x2
+  99 006d 04       		.byte	0x4
+ 100 006e 05       		.byte	0x5
+ 101 006f D3000000 		.4byte	.LASF7
+ 102 0073 02       		.uleb128 0x2
+ 103 0074 04       		.byte	0x4
+ 104 0075 07       		.byte	0x7
+ 105 0076 77000000 		.4byte	.LASF8
+ 106 007a 02       		.uleb128 0x2
+ 107 007b 08       		.byte	0x8
+ 108 007c 05       		.byte	0x5
+ 109 007d 00000000 		.4byte	.LASF9
+ 110 0081 02       		.uleb128 0x2
+ 111 0082 08       		.byte	0x8
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cci7CnvL.s 			page 3
+
+
+ 112 0083 07       		.byte	0x7
+ 113 0084 89000000 		.4byte	.LASF10
+ 114 0088 02       		.uleb128 0x2
+ 115 0089 01       		.byte	0x1
+ 116 008a 02       		.byte	0x2
+ 117 008b DC000000 		.4byte	.LASF11
+ 118 008f 04       		.uleb128 0x4
+ 119 0090 AB000000 		.4byte	.LASF13
+ 120 0094 03       		.byte	0x3
+ 121 0095 31       		.byte	0x31
+ 122 0096 61000000 		.4byte	0x61
+ 123 009a 05       		.uleb128 0x5
+ 124 009b 04       		.byte	0x4
+ 125 009c 06       		.uleb128 0x6
+ 126 009d 61000000 		.4byte	0x61
+ 127 00a1 04       		.uleb128 0x4
+ 128 00a2 B1000000 		.4byte	.LASF14
+ 129 00a6 04       		.byte	0x4
+ 130 00a7 31       		.byte	0x31
+ 131 00a8 8F000000 		.4byte	0x8f
+ 132 00ac 07       		.uleb128 0x7
+ 133 00ad 01       		.byte	0x1
+ 134 00ae A0000000 		.4byte	.LASF18
+ 135 00b2 01       		.byte	0x1
+ 136 00b3 03       		.byte	0x3
+ 137 00b4 01       		.byte	0x1
+ 138 00b5 A1000000 		.4byte	0xa1
+ 139 00b9 00000000 		.4byte	.LFB118
+ 140 00bd 02000000 		.4byte	.LFE118
+ 141 00c1 02       		.byte	0x2
+ 142 00c2 7D       		.byte	0x7d
+ 143 00c3 00       		.sleb128 0
+ 144 00c4 01       		.byte	0x1
+ 145 00c5 D7000000 		.4byte	0xd7
+ 146 00c9 08       		.uleb128 0x8
+ 147 00ca 70010000 		.4byte	.LASF19
+ 148 00ce 01       		.byte	0x1
+ 149 00cf 03       		.byte	0x3
+ 150 00d0 9A000000 		.4byte	0x9a
+ 151 00d4 01       		.byte	0x1
+ 152 00d5 50       		.byte	0x50
+ 153 00d6 00       		.byte	0
+ 154 00d7 09       		.uleb128 0x9
+ 155 00d8 E2000000 		.4byte	.LASF20
+ 156 00dc 05       		.byte	0x5
+ 157 00dd 9806     		.2byte	0x698
+ 158 00df 9C000000 		.4byte	0x9c
+ 159 00e3 01       		.byte	0x1
+ 160 00e4 01       		.byte	0x1
+ 161 00e5 00       		.byte	0
+ 162              		.section	.debug_abbrev,"",%progbits
+ 163              	.Ldebug_abbrev0:
+ 164 0000 01       		.uleb128 0x1
+ 165 0001 11       		.uleb128 0x11
+ 166 0002 01       		.byte	0x1
+ 167 0003 25       		.uleb128 0x25
+ 168 0004 0E       		.uleb128 0xe
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cci7CnvL.s 			page 4
+
+
+ 169 0005 13       		.uleb128 0x13
+ 170 0006 0B       		.uleb128 0xb
+ 171 0007 03       		.uleb128 0x3
+ 172 0008 0E       		.uleb128 0xe
+ 173 0009 1B       		.uleb128 0x1b
+ 174 000a 0E       		.uleb128 0xe
+ 175 000b 55       		.uleb128 0x55
+ 176 000c 06       		.uleb128 0x6
+ 177 000d 11       		.uleb128 0x11
+ 178 000e 01       		.uleb128 0x1
+ 179 000f 52       		.uleb128 0x52
+ 180 0010 01       		.uleb128 0x1
+ 181 0011 10       		.uleb128 0x10
+ 182 0012 06       		.uleb128 0x6
+ 183 0013 00       		.byte	0
+ 184 0014 00       		.byte	0
+ 185 0015 02       		.uleb128 0x2
+ 186 0016 24       		.uleb128 0x24
+ 187 0017 00       		.byte	0
+ 188 0018 0B       		.uleb128 0xb
+ 189 0019 0B       		.uleb128 0xb
+ 190 001a 3E       		.uleb128 0x3e
+ 191 001b 0B       		.uleb128 0xb
+ 192 001c 03       		.uleb128 0x3
+ 193 001d 0E       		.uleb128 0xe
+ 194 001e 00       		.byte	0
+ 195 001f 00       		.byte	0
+ 196 0020 03       		.uleb128 0x3
+ 197 0021 24       		.uleb128 0x24
+ 198 0022 00       		.byte	0
+ 199 0023 0B       		.uleb128 0xb
+ 200 0024 0B       		.uleb128 0xb
+ 201 0025 3E       		.uleb128 0x3e
+ 202 0026 0B       		.uleb128 0xb
+ 203 0027 03       		.uleb128 0x3
+ 204 0028 08       		.uleb128 0x8
+ 205 0029 00       		.byte	0
+ 206 002a 00       		.byte	0
+ 207 002b 04       		.uleb128 0x4
+ 208 002c 16       		.uleb128 0x16
+ 209 002d 00       		.byte	0
+ 210 002e 03       		.uleb128 0x3
+ 211 002f 0E       		.uleb128 0xe
+ 212 0030 3A       		.uleb128 0x3a
+ 213 0031 0B       		.uleb128 0xb
+ 214 0032 3B       		.uleb128 0x3b
+ 215 0033 0B       		.uleb128 0xb
+ 216 0034 49       		.uleb128 0x49
+ 217 0035 13       		.uleb128 0x13
+ 218 0036 00       		.byte	0
+ 219 0037 00       		.byte	0
+ 220 0038 05       		.uleb128 0x5
+ 221 0039 0F       		.uleb128 0xf
+ 222 003a 00       		.byte	0
+ 223 003b 0B       		.uleb128 0xb
+ 224 003c 0B       		.uleb128 0xb
+ 225 003d 00       		.byte	0
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cci7CnvL.s 			page 5
+
+
+ 226 003e 00       		.byte	0
+ 227 003f 06       		.uleb128 0x6
+ 228 0040 35       		.uleb128 0x35
+ 229 0041 00       		.byte	0
+ 230 0042 49       		.uleb128 0x49
+ 231 0043 13       		.uleb128 0x13
+ 232 0044 00       		.byte	0
+ 233 0045 00       		.byte	0
+ 234 0046 07       		.uleb128 0x7
+ 235 0047 2E       		.uleb128 0x2e
+ 236 0048 01       		.byte	0x1
+ 237 0049 3F       		.uleb128 0x3f
+ 238 004a 0C       		.uleb128 0xc
+ 239 004b 03       		.uleb128 0x3
+ 240 004c 0E       		.uleb128 0xe
+ 241 004d 3A       		.uleb128 0x3a
+ 242 004e 0B       		.uleb128 0xb
+ 243 004f 3B       		.uleb128 0x3b
+ 244 0050 0B       		.uleb128 0xb
+ 245 0051 27       		.uleb128 0x27
+ 246 0052 0C       		.uleb128 0xc
+ 247 0053 49       		.uleb128 0x49
+ 248 0054 13       		.uleb128 0x13
+ 249 0055 11       		.uleb128 0x11
+ 250 0056 01       		.uleb128 0x1
+ 251 0057 12       		.uleb128 0x12
+ 252 0058 01       		.uleb128 0x1
+ 253 0059 40       		.uleb128 0x40
+ 254 005a 0A       		.uleb128 0xa
+ 255 005b 9742     		.uleb128 0x2117
+ 256 005d 0C       		.uleb128 0xc
+ 257 005e 01       		.uleb128 0x1
+ 258 005f 13       		.uleb128 0x13
+ 259 0060 00       		.byte	0
+ 260 0061 00       		.byte	0
+ 261 0062 08       		.uleb128 0x8
+ 262 0063 05       		.uleb128 0x5
+ 263 0064 00       		.byte	0
+ 264 0065 03       		.uleb128 0x3
+ 265 0066 0E       		.uleb128 0xe
+ 266 0067 3A       		.uleb128 0x3a
+ 267 0068 0B       		.uleb128 0xb
+ 268 0069 3B       		.uleb128 0x3b
+ 269 006a 0B       		.uleb128 0xb
+ 270 006b 49       		.uleb128 0x49
+ 271 006c 13       		.uleb128 0x13
+ 272 006d 02       		.uleb128 0x2
+ 273 006e 0A       		.uleb128 0xa
+ 274 006f 00       		.byte	0
+ 275 0070 00       		.byte	0
+ 276 0071 09       		.uleb128 0x9
+ 277 0072 34       		.uleb128 0x34
+ 278 0073 00       		.byte	0
+ 279 0074 03       		.uleb128 0x3
+ 280 0075 0E       		.uleb128 0xe
+ 281 0076 3A       		.uleb128 0x3a
+ 282 0077 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cci7CnvL.s 			page 6
+
+
+ 283 0078 3B       		.uleb128 0x3b
+ 284 0079 05       		.uleb128 0x5
+ 285 007a 49       		.uleb128 0x49
+ 286 007b 13       		.uleb128 0x13
+ 287 007c 3F       		.uleb128 0x3f
+ 288 007d 0C       		.uleb128 0xc
+ 289 007e 3C       		.uleb128 0x3c
+ 290 007f 0C       		.uleb128 0xc
+ 291 0080 00       		.byte	0
+ 292 0081 00       		.byte	0
+ 293 0082 00       		.byte	0
+ 294              		.section	.debug_aranges,"",%progbits
+ 295 0000 1C000000 		.4byte	0x1c
+ 296 0004 0200     		.2byte	0x2
+ 297 0006 00000000 		.4byte	.Ldebug_info0
+ 298 000a 04       		.byte	0x4
+ 299 000b 00       		.byte	0
+ 300 000c 0000     		.2byte	0
+ 301 000e 0000     		.2byte	0
+ 302 0010 00000000 		.4byte	.LFB118
+ 303 0014 02000000 		.4byte	.LFE118-.LFB118
+ 304 0018 00000000 		.4byte	0
+ 305 001c 00000000 		.4byte	0
+ 306              		.section	.debug_ranges,"",%progbits
+ 307              	.Ldebug_ranges0:
+ 308 0000 00000000 		.4byte	.LFB118
+ 309 0004 02000000 		.4byte	.LFE118
+ 310 0008 00000000 		.4byte	0
+ 311 000c 00000000 		.4byte	0
+ 312              		.section	.debug_line,"",%progbits
+ 313              	.Ldebug_line0:
+ 314 0000 77010000 		.section	.debug_str,"MS",%progbits,1
+ 314      02006401 
+ 314      00000201 
+ 314      FB0E0D00 
+ 314      01010101 
+ 315              	.LASF9:
+ 316 0000 6C6F6E67 		.ascii	"long long int\000"
+ 316      206C6F6E 
+ 316      6720696E 
+ 316      7400
+ 317              	.LASF6:
+ 318 000e 73686F72 		.ascii	"short unsigned int\000"
+ 318      7420756E 
+ 318      7369676E 
+ 318      65642069 
+ 318      6E7400
+ 319              	.LASF2:
+ 320 0021 756E7369 		.ascii	"unsigned int\000"
+ 320      676E6564 
+ 320      20696E74 
+ 320      00
+ 321              	.LASF15:
+ 322 002e 474E5520 		.ascii	"GNU C 4.7.4 20140401 (release) [ARM/embedded-4_7-br"
+ 322      4320342E 
+ 322      372E3420 
+ 322      32303134 
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cci7CnvL.s 			page 7
+
+
+ 322      30343031 
+ 323 0061 616E6368 		.ascii	"anch revision 209195]\000"
+ 323      20726576 
+ 323      6973696F 
+ 323      6E203230 
+ 323      39313935 
+ 324              	.LASF8:
+ 325 0077 6C6F6E67 		.ascii	"long unsigned int\000"
+ 325      20756E73 
+ 325      69676E65 
+ 325      6420696E 
+ 325      7400
+ 326              	.LASF10:
+ 327 0089 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 327      206C6F6E 
+ 327      6720756E 
+ 327      7369676E 
+ 327      65642069 
+ 328              	.LASF18:
+ 329 00a0 6D657373 		.ascii	"messages_t\000"
+ 329      61676573 
+ 329      5F7400
+ 330              	.LASF13:
+ 331 00ab 6D73675F 		.ascii	"msg_t\000"
+ 331      7400
+ 332              	.LASF14:
+ 333 00b1 74687265 		.ascii	"threadreturn_t\000"
+ 333      61647265 
+ 333      7475726E 
+ 333      5F7400
+ 334              	.LASF3:
+ 335 00c0 756E7369 		.ascii	"unsigned char\000"
+ 335      676E6564 
+ 335      20636861 
+ 335      7200
+ 336              	.LASF1:
+ 337 00ce 63686172 		.ascii	"char\000"
+ 337      00
+ 338              	.LASF7:
+ 339 00d3 6C6F6E67 		.ascii	"long int\000"
+ 339      20696E74 
+ 339      00
+ 340              	.LASF11:
+ 341 00dc 5F426F6F 		.ascii	"_Bool\000"
+ 341      6C00
+ 342              	.LASF20:
+ 343 00e2 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 343      52784275 
+ 343      66666572 
+ 343      00
+ 344              	.LASF4:
+ 345 00ef 7369676E 		.ascii	"signed char\000"
+ 345      65642063 
+ 345      68617200 
+ 346              	.LASF17:
+ 347 00fb 433A5C43 		.ascii	"C:\\ChibiStudio\\workspace26\\Mobile_phone\000"
+ 347      68696269 
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cci7CnvL.s 			page 8
+
+
+ 347      53747564 
+ 347      696F5C77 
+ 347      6F726B73 
+ 348              	.LASF16:
+ 349 0123 2E2E2F2E 		.ascii	"../../workspace26/Mobile_phone/tasks/messages_t.c\000"
+ 349      2E2F776F 
+ 349      726B7370 
+ 349      61636532 
+ 349      362F4D6F 
+ 350              	.LASF5:
+ 351 0155 73686F72 		.ascii	"short int\000"
+ 351      7420696E 
+ 351      7400
+ 352              	.LASF12:
+ 353 015f 696E7433 		.ascii	"int32_t\000"
+ 353      325F7400 
+ 354              	.LASF0:
+ 355 0167 73697A65 		.ascii	"sizetype\000"
+ 355      74797065 
+ 355      00
+ 356              	.LASF19:
+ 357 0170 70617261 		.ascii	"param\000"
+ 357      6D00
+ 358              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.4 20140401 (release) [ARM/embedded-4_7-br
+ARM GAS  C:\Users\Elis\AppData\Local\Temp\cci7CnvL.s 			page 9
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 messages_t.c
+C:\Users\Elis\AppData\Local\Temp\cci7CnvL.s:19     .text.messages_t:00000000 $t
+C:\Users\Elis\AppData\Local\Temp\cci7CnvL.s:25     .text.messages_t:00000000 messages_t
+                     .debug_frame:00000010 $d
+
+NO UNDEFINED SYMBOLS

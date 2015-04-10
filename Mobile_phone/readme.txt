@@ -1,4 +1,4 @@
-Mobile phone is comprised from various components such as GSM module, SD card module, LCD touch screen and a STM32f4 discovery development board.
+Mobile phone is comprised of various components such as GSM module, SD card module, LCD touch screen and a STM32f4 discovery development board.
 There is a chibios RTOS running on a microcontroller and on the top of the chibios is a gui library named uGFX which can be downloaded from http://ugfx.org/ and is free.
 
 Mobile phone has the following features implemented in v1.0:

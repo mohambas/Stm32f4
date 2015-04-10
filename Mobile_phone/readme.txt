@@ -1,31 +1,10 @@
-*****************************************************************************
-** ChibiOS/RT port for ARM-Cortex-M4 STM32F407.                            **
-*****************************************************************************
+Mobile phone is comprised from various components such as GSM module, SD card module, LCD touch screen and a STM32f4 discovery development board.
+There is a chibios RTOS running on a microcontroller and on the top of the chibios is a gui library named uGFX which can be downloaded from http://ugfx.org/ and is free.
 
-** TARGET **
-
-The demo runs on an ST STM32F4-Discovery board.
-
-** The Demo **
-
-The demo shows how to use the ADC, PWM and SPI drivers using asynchronous
-APIs. The ADC samples two channels (temperature sensor and PC1) and modulates
-the PWM using the sampled values. The sample data is also transmitted using
-the SPI port 2 (NSS=PB12, SCK=PB13, MISO=PB14, MOSI=PB15).
-By pressing the button located on the board the test procedure is activated
-with output on the serial port SD2 (USART2).
-
-** Build Procedure **
-
-The demo has been tested by using the free Codesourcery GCC-based toolchain
-and YAGARTO. just modify the TRGT line in the makefile in order to use
-different GCC toolchains.
-
-** Notes **
-
-Some files used by the demo are not part of ChibiOS/RT but are copyright of
-ST Microelectronics and are licensed under a different license.
-Also note that not all the files present in the ST library are distributed
-with ChibiOS/RT, you can find the whole library on the ST web site:
-
-                             http://www.st.com
+Mobile phone has the following features implemented in v1.0:
+- User can make and receive a call. Mobile phone also provides ability to show missed calls.
+- User can send and receive sms. Mobile phone also provides ability to show new sms. > Not implemented yet
+- User can watch pictures which are preloaded on the sd card.
+- User can add and delete contacts. Mobile phone also provides ability to make a call from a contacts section.
+- User can change brightness and theme in a settings section. Themes can be uploaded on the sd card.
+- User can listen to music in an audio player section. > Not implemented yet

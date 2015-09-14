@@ -26,7 +26,7 @@ uint8_t showSprite(uint8_t x, uint8_t y, uint8_t* sprite, uint8_t size){
   
   for(lineIndex = 0; lineIndex < size; lineIndex++){
     
-    // Iterate through pixels of a line
+    // Iterate through pixels of a sprite line
     
     for(pixleIndex = 0; pixleIndex < 8; pixleIndex++){
       

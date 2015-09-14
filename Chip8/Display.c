@@ -65,7 +65,7 @@ void displayListOfGames(void){
   
   short y;
   
-  // Go through the names
+  // Go through the list of game names
   
   for(nameIndex = 0; nameIndex < NUM_OF_GAMES; nameIndex++){
     

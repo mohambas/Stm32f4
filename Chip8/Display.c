@@ -18,63 +18,45 @@ void initDisplay(void){
 
 uint8_t showSprite(uint8_t x, uint8_t y, uint8_t* sprite, uint8_t size){
 
-  // Variables
+  uint8_t lineIndex;
+  uint8_t pixleIndex;
+  uint8_t vf = 0;
   
-  uint8_t xT, yT, vf, spriteCounter = 0;
+  // Iterate through sprite lines
   
-  // Apply mod operations on x and y to wrap around if x bigger is than WIDTH or y is bigger than HEIGHT
-  
-  x = x % WIDTH; y = y % HEIGHT;yT = y;
-  
-  while(yT < (y + size) && yT < HEIGHT){
+  for(lineIndex = 0; lineIndex < size; lineIndex++){
     
-    // Set xT to x
+    // Iterate through pixels of a line
     
-    xT = x;
-  
-    while(xT < (x + 8) && xT < WIDTH){
-    
-      // Check if sprite bits overlap with bits in display array
+    for(pixleIndex = 0; pixleIndex < 8; pixleIndex++){
       
-      if(display[yT * WIDTH + xT] & (sprite[spriteCounter] >> 7) == 1){
+      // Check if the current sprite line pixel is set to one
+      
+      if(sprite[lineIndex] >> 7 == 1){
+      
+        // If the pixel needs to be changed, set vf flag
         
-        // Set flag because collision is detected
-      
-        vf = 1;
+        if(display[(y + lineIndex) * WIDTH + x + pixleIndex] & (sprite[lineIndex] >> 7) == 1)
+          vf = 1;
+        display[(y + lineIndex) * WIDTH + x + pixleIndex] ^= sprite[lineIndex] >> 7;
+        
+        // Display or clear pixels
+     
+        display[(y + lineIndex) * WIDTH + x + pixleIndex] == 1 ? LCD_SetTextColor(PIXEL_COLOR) : LCD_SetTextColor(BACKGROUND_COLOR);
+        
+        if((y + lineIndex) * WIDTH + x + pixleIndex <= WIDTH * HEIGHT)
+          LCD_DrawFullRect((HEIGHT - (y + lineIndex)) * PIXEL_SIZE, (x + pixleIndex) * PIXEL_SIZE, PIXEL_SIZE, PIXEL_SIZE);
         
       }
-      
-      // Xor
-      
-      display[yT * WIDTH + xT] = display[yT * WIDTH + xT] ^ (sprite[spriteCounter] >> 7);
-      
-      // Refresh display pixel
-      
-      display[yT * WIDTH + xT] ? LCD_SetTextColor(PIXEL_COLOR) : LCD_SetTextColor(BACKGROUND_COLOR);
-      
-      LCD_DrawFullRect((HEIGHT - yT) * PIXEL_SIZE, xT * PIXEL_SIZE, PIXEL_SIZE, PIXEL_SIZE);
-      
-      // Shift sprite left
-      
-      sprite[spriteCounter] = sprite[spriteCounter] << 1;
-      
-      // Increase x
-      
-      xT++;
-      
+        
+    sprite[lineIndex] = sprite[lineIndex] << 1;
+            
     }
-    
-    // Increase y and spriteCounter
-    
-    yT++;spriteCounter++;
     
   }
   
-  // Return flag
-  
   return vf;
-  
-  
+   
 }
 
 void displayListOfGames(void){

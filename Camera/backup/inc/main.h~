@@ -1,0 +1,15 @@
+#ifndef MAIN_H
+#define MAIN_H
+
+#include "stdlib.h"
+#include "uart.h"
+#include "camera.h"
+
+#define MAX_PIC_BUFF_LEN 256
+#define MAX_MODE_LEN 15
+
+#define MIN(x, y) (((x) < (y)) ? (x) : (y))
+
+void main();
+
+#endif

@@ -4,8 +4,7 @@
 pjpeg_image_info_t imageInfo;
 RESPONSE response;
 uint8_t mode[MAX_MODE_LEN];
-int mcu_x = 0;
-int mcu_y = 0;
+uint8_t MCURow, MCUCol, MCURowX, MCUColY;
 
 void main(){
 
@@ -14,7 +13,7 @@ void main(){
 
     // Clear the screen
     LCD_Clear(LCD_COLOR_WHITE);
-    
+
     // Init camera uart
     initCameraUart();
 
@@ -47,55 +46,39 @@ void main(){
 
         // Draw image    
         while(pjpeg_decode_mcu() != PJPG_NO_MORE_BLOCKS){
+       
+            MCUColY = 0;
 
-            for (int y = 0; y < imageInfo.m_MCUHeight; y += 8)
-            {
-                const int by_limit = MIN(8, imageInfo.m_height - (mcu_y * imageInfo.m_MCUHeight + y));
-                for (int x = 0; x < imageInfo.m_MCUWidth; x += 8)
-                {
- 
-                    unsigned int src_ofs = (x * 8U) + (y * 16U);
-                    const unsigned char *pSrcR = imageInfo.m_pMCUBufR + src_ofs;
-                    const unsigned char *pSrcG = imageInfo.m_pMCUBufG + src_ofs;
-                    const unsigned char *pSrcB = imageInfo.m_pMCUBufB + src_ofs;
-                    const int bx_limit = MIN(8, imageInfo.m_width - (mcu_x * imageInfo.m_MCUWidth + x));
-
-                    for (int by = 0; by < by_limit; by++)
-                    {
-                        for (int bx = 0; bx < bx_limit; bx++)
-                        {
-   
-                            Pixel(mcu_y*imageInfo.m_MCUHeight+y+by,mcu_x*imageInfo.m_MCUWidth+x+bx, ASSEMBLE_RGB(*pSrcR++, *pSrcG++, *pSrcB++));
-                        }
- 
-                        pSrcR += (8 - bx_limit);
-                        pSrcG += (8 - bx_limit);
-                        pSrcB += (8 - bx_limit);
-
-                    }
+            // Draw block
+            while(MCUColY < imageInfo.m_MCUHeight){
+                while(MCURowX < imageInfo.m_MCUWidth){
+                    Pixel(240 - MCUCol * imageInfo.m_MCUHeight + MCUColY, MCURow * imageInfo.m_MCUWidth + MCURowX,ASSEMBLE_RGB(*(imageInfo.m_pMCUBufR + (MCUColY * imageInfo.m_MCUWidth + MCURowX)),*(imageInfo.m_pMCUBufG + (MCUColY * imageInfo.m_MCUWidth + MCURowX)),*(imageInfo.m_pMCUBufB + (MCUColY * imageInfo.m_MCUWidth + MCURowX))));
+                    MCURowX++;
                 }
+                MCURowX = 0;
+                MCUColY++;           
             }
- 
-        mcu_x++;
-        if (mcu_x == imageInfo.m_MCUSPerRow)
-        {
-            mcu_x = 0;
-            mcu_y++;
+
+            if(MCURow == imageInfo.m_MCUSPerRow){
+                MCURow = 0;
+                MCUCol++;            
+            }
+            else
+                MCURow++;
+    
         }
 
-    }
-    
-    mcu_x = mcu_y = 0;
+        MCURow = MCUCol = 0;
 
-    // Clear the screen
-    LCD_Clear(LCD_COLOR_WHITE);
+        // Clear the screen
+        LCD_Clear(LCD_COLOR_WHITE);
 
-    // Resume a frame
-    mode[0] = RESUME_FRAME;     
-    response = fbufControl(mode);
-    if(response.status != EXEC_COMMAND_RIGHT)
-        for(;;); // Error
-
+        // Resume a frame
+        mode[0] = RESUME_FRAME;     
+        response = fbufControl(mode);
+        if(response.status != EXEC_COMMAND_RIGHT)
+            for(;;); // Error
+        Delay(1000);
     }
 
 }
@@ -126,10 +109,7 @@ unsigned char readPictureBytes(unsigned char* pBuf, unsigned char buf_size, unsi
     // Read a picture data
     mode[0] = CURRENT_FRAME;
     mode[1] = DMA_DATA_TRANSFER;
-    if(buf_size < 8)
-        bytesToRead = buf_size;
-    else
-        bytesToRead = MIN((buf_size) - (buf_size % 8), picLen);
+    bytesToRead = MIN(buf_size - (buf_size % 8), picLen);
     mode[2] = picAddr >> 24;mode[3] = (picAddr >> 16) & 0xFF;
     mode[4] = (picAddr >> 8) & 0xFF; mode[5] = picAddr & 0xFF;
     mode[6] = bytesToRead >> 24;mode[7] = (bytesToRead >> 16) & 0xFF;

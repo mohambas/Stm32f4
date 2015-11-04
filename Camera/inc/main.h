@@ -5,6 +5,7 @@
 #include "uart.h"
 #include "camera.h"
 #include "picojpeg.h"
+#include "SSD1289.h"
 
 #define MAX_MODE_LEN 15
 #define PICTURE_WIDTH 320

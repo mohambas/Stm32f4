@@ -5,7 +5,14 @@ SRCS = src/main.c \
        src/startup_stm32f4xx.s \
 	   src/uart.c \
 	   src/camera.c \
-       src/picojpeg.c
+       src/picojpeg.c \
+       src/SSD1289.c \
+       src/AsciiLib.c \
+       src/delay.c \
+	   ../../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_rcc.c \
+	   ../../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_gpio.c \
+	   ../../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_fsmc.c \
+	   ../../Libraries/STM32F4xx_StdPeriph_Driver/src/stm32f4xx_tim.c
 
 
 CC=arm-none-eabi-gcc
@@ -20,7 +27,7 @@ CFLAGS += -specs=nosys.specs
 # TODO: hard float was causing an exception; see what's up.
 LDFLAGS = -Wl,-Map,$(OBJDIR)/$(PROJ_NAME).map -g -T./src/stm32f4_flash.ld
 
-CFLAGS += -I./inc -I../../Libraries/CMSIS/ST/STM32F4xx/Include -I../../Libraries/CMSIS/Include
+CFLAGS += -I./inc -I../../Libraries/CMSIS/ST/STM32F4xx/Include -I../../Libraries/CMSIS/Include -I../../Libraries/STM32F4xx_StdPeriph_Driver/inc -DUSE_STDPERIPH_DRIVER
 
 OBJS := $(SRCS:.c=.o)
 OBJS := $(OBJS:.s=.o)

@@ -4,8 +4,15 @@
 pjpeg_image_info_t imageInfo;
 RESPONSE response;
 uint8_t mode[MAX_MODE_LEN];
+uint8_t MCURow, MCUCol, MCURowX, MCUColY;
 
 void main(){
+
+    // Init LCD
+    LCD_Init();
+
+    // Clear the screen
+    LCD_Clear(LCD_COLOR_WHITE);
 
     // Init camera uart
     initCameraUart();
@@ -19,10 +26,10 @@ void main(){
         for(;;); // Error  
 
     // Set the resolution by means of a downsize option. Zoom out height and width by 1/2
-    mode[0] = 5;
+    /*mode[0] = 5;
     response = setDownsize(mode);
     if(response.status != EXEC_COMMAND_RIGHT)
-        for(;;); // Error
+        for(;;); // Error*/
 
 
     for(;;){
@@ -37,16 +44,41 @@ void main(){
         if(pjpeg_decode_init(&imageInfo, readPictureBytes, NULL, 0) != 0)
             for(;;); // Error
 
-        // Draw image        
+        // Draw image    
         while(pjpeg_decode_mcu() != PJPG_NO_MORE_BLOCKS){
+       
+            MCUColY = 0;
 
+            // Draw block
+            while(MCUColY < imageInfo.m_MCUHeight){
+                while(MCURowX < imageInfo.m_MCUWidth){
+                    Pixel(240 - MCUCol * imageInfo.m_MCUHeight + MCUColY, MCURow * imageInfo.m_MCUWidth + MCURowX,ASSEMBLE_RGB(*(imageInfo.m_pMCUBufR + (MCUColY * imageInfo.m_MCUWidth + MCURowX)),*(imageInfo.m_pMCUBufG + (MCUColY * imageInfo.m_MCUWidth + MCURowX)),*(imageInfo.m_pMCUBufB + (MCUColY * imageInfo.m_MCUWidth + MCURowX))));
+                    MCURowX++;
+                }
+                MCURowX = 0;
+                MCUColY++;           
+            }
+
+            if(MCURow == imageInfo.m_MCUSPerRow){
+                MCURow = 0;
+                MCUCol++;            
+            }
+            else
+                MCURow++;
+    
         }
+
+        MCURow = MCUCol = 0;
+
+        // Clear the screen
+        LCD_Clear(LCD_COLOR_WHITE);
 
         // Resume a frame
         mode[0] = RESUME_FRAME;     
         response = fbufControl(mode);
         if(response.status != EXEC_COMMAND_RIGHT)
             for(;;); // Error
+        Delay(1000);
     }
 
 }

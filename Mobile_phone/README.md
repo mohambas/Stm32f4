@@ -6,3 +6,8 @@ Mobile phone has the following features implemented in v1.0:
 - User can watch pictures which are preloaded on the sd card.
 - User can add and delete contacts. Mobile phone also provides ability to make a call from a contacts section.
 - User can change brightness and theme in a settings section. Themes can be uploaded on the sd card.
+
+
+Here are the pictures of the components and screens:
+
+![Main screen](./Pictures/IMG_20150410_134732.jpg)

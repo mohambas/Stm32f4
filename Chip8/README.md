@@ -3,3 +3,10 @@ on it. I developed Chip8 interpreter for Stm32f4 Discovery board and it requires
 SSD1289 controller incorporated. Besides that it also requires 4x4 keypad which is used as a keyboard.
 User has an ability to select a game he wants to play. At the beginning, a list of all possible games
 is showed to the user.
+
+
+Here is the link to the video which shows emulator in action:
+
+[![Alt text for your video](https://i.ytimg.com/vi_webp/EH1jzBQI7Xs/mqdefault.webpg)]https://www.youtube.com/watch?v=EH1jzBQI7Xs)
+
+

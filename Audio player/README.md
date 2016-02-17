@@ -7,5 +7,5 @@ Audio player plays songs in .wav format. Player reads songs from an external mic
 
 Here are the pictures of the player:
 
-![GitHub Logo](/Pictures/IMG_20141105_173829.jpg)
+![music control](Audio player/Pictures/IMG_20141105_173829.jpg)
 

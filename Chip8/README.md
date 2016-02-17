@@ -5,7 +5,7 @@ User has an ability to select a game he wants to play. At the beginning, a list 
 is showed to the user.
 
 
-Here is the link to the video which shows emulator in action:
+Here is the link to the video which shows the emulator in action:
 
 [![Alt text for your video](http://img.youtube.com/vi/EH1jzBQI7Xs/0.jpg)](https://www.youtube.com/watch?v=EH1jzBQI7Xs)
 

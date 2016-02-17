@@ -7,6 +7,6 @@ is showed to the user.
 
 Here is the link to the video which shows emulator in action:
 
-[![Alt text for your video](https://i.ytimg.com/vi_webp/EH1jzBQI7Xs/mqdefault.webpg)](https://www.youtube.com/watch?v=EH1jzBQI7Xs)
+[![Alt text for your video](http://img.youtube.com/vi/https://www.youtube.com/watch?v=EH1jzBQI7Xs/0.jpg)](https://www.youtube.com/watch?v=EH1jzBQI7Xs)
 
 
